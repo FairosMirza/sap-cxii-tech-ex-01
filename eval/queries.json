@@ -1,0 +1,324 @@
+{
+  "created": "2026-10-21",
+  "seed": 20261021,
+  "dataset_sha256": "dfe14353fc4b31419fa67ad04e6f57baf4ab9de7b37ba73cb3f762d602be9d12",
+  "image_status_used": true,
+  "strata": {
+    "common_category": 9,
+    "rare_category": 5,
+    "missing_category": 3,
+    "missing_brand": 3,
+    "missing_price": 2,
+    "image_failure": 2,
+    "variant_family": 3,
+    "ambiguous_title": 2,
+    "duplicate_asin": 1
+  },
+  "split_counts": {
+    "holdout": 10,
+    "dev": 20
+  },
+  "note": "Selected by stratum with a fixed seed before any tuning; no model output was used.",
+  "queries": [
+    {
+      "id": "2730bc07d8321f1766b63d0ebe5f28c4",
+      "split": "holdout",
+      "stratum": "common_category",
+      "name": "Jashn Women's Straight Kurta",
+      "category": "WomensKurtasKurtis",
+      "category_source": "rank",
+      "brand_known": false,
+      "price": 775.0
+    },
+    {
+      "id": "781b8b8c0ff454479e50cba23967ce16",
+      "split": "holdout",
+      "stratum": "common_category",
+      "name": "Katso Men's Cotton Hooded Side Stripes T-Shirt",
+      "category": "MensT_Shirts",
+      "category_source": "rank",
+      "brand_known": true,
+      "price": 449.0
+    },
+    {
+      "id": "e6a692821ea347a5c0be699573d090f9",
+      "split": "holdout",
+      "stratum": "common_category",
+      "name": "Peter England Men's Plain Regular Fit Formal Shirt",
+      "category": "MensFormalShirts",
+      "category_source": "rank",
+      "brand_known": false,
+      "price": 749.0
+    },
+    {
+      "id": "ab6a6605b0a017c3ca05f793b2ec4cd1",
+      "split": "dev",
+      "stratum": "common_category",
+      "name": "Juniper Women's Straight Kurta",
+      "category": "WomensKurtasKurtis",
+      "category_source": "rank",
+      "brand_known": false,
+      "price": 599.0
+    },
+    {
+      "id": "6824ff5de39aa84b58d0698410189a93",
+      "split": "dev",
+      "stratum": "common_category",
+      "name": "United Colors of Benetton Men's Printed Slim Fit Casual Shirt",
+      "category": "MensCasualShirts",
+      "category_source": "rank",
+      "brand_known": false,
+      "price": 838.0
+    },
+    {
+      "id": "314be9c0b9c934e10bbe5b4aa6d2de79",
+      "split": "dev",
+      "stratum": "common_category",
+      "name": "AVN Collections Girls Birthday Dress Gown_AVN_888",
+      "category": "GirlsDressesJumpsuits",
+      "category_source": "rank",
+      "brand_known": true,
+      "price": 699.0
+    },
+    {
+      "id": "6fc91245defaa0c1210e86268249a132",
+      "split": "dev",
+      "stratum": "common_category",
+      "name": "American Hawk Boys 3 Piece Pack V-Neck T-Shirt",
+      "category": "BoysT_Shirts",
+      "category_source": "browsenode",
+      "brand_known": true,
+      "price": 3074.0
+    },
+    {
+      "id": "65ae3f3110f8ead580b7948e9196cf79",
+      "split": "dev",
+      "stratum": "common_category",
+      "name": "Silk Zone kanjivaram Silk Saree With Blouse(MB0003_Multi color_ free size)",
+      "category": "WomensSarees",
+      "category_source": "rank",
+      "brand_known": true,
+      "price": 1099.0
+    },
+    {
+      "id": "e5f36cab588ff86e649372d530a10007",
+      "split": "dev",
+      "stratum": "common_category",
+      "name": "Nomad Skull Cap Biker Style Headwraps Doo Rags - Black",
+      "category": "MensCapsHats",
+      "category_source": "browsenode",
+      "brand_known": true,
+      "price": 3336.0
+    },
+    {
+      "id": "ba87dae5b45b81f4c30c2991f9900ced",
+      "split": "holdout",
+      "stratum": "rare_category",
+      "name": "Dollar Ultra Women's Thermal Set",
+      "category": "WomensThermalSets",
+      "category_source": "browsenode",
+      "brand_known": true,
+      "price": 944.0
+    },
+    {
+      "id": "9a73f1c1ac4911a5daf786581868e019",
+      "split": "dev",
+      "stratum": "rare_category",
+      "name": "DREAMDROP WHITE WINTER SPAKDY FOR WOMEN",
+      "category": "WomensThermalTops",
+      "category_source": "rank",
+      "brand_known": true,
+      "price": 165.0
+    },
+    {
+      "id": "307bed4226c0f82c3451a86f34d7f285",
+      "split": "dev",
+      "stratum": "rare_category",
+      "name": "Marvel Avengers Girls Cotton Poly Round Neck Cap Sleeves Tops - Black (DMAGT0036.2)",
+      "category": "GirlsTops",
+      "category_source": "rank",
+      "brand_known": false,
+      "price": 494.0
+    },
+    {
+      "id": "6a8674d8512c66cb9f89f1617c4929c9",
+      "split": "dev",
+      "stratum": "rare_category",
+      "name": "Kavish Women's Black Windcheater with Hidden Collar Pocket for Cap",
+      "category": "WomensRainwear",
+      "category_source": "browsenode",
+      "brand_known": true,
+      "price": 279.0
+    },
+    {
+      "id": "3efe54d408d85ddd91800c9f8db62d82",
+      "split": "dev",
+      "stratum": "rare_category",
+      "name": "Conceited Ultra Soft Harem Shorts - Pockets - 40 Trending Prints",
+      "category": "WomensShorts",
+      "category_source": "browsenode",
+      "brand_known": true,
+      "price": null
+    },
+    {
+      "id": "9a3716a16c7012941ec585aab6122f3d",
+      "split": "holdout",
+      "stratum": "missing_category",
+      "name": "Fitkit Weight Lifting Gloves with extra long wrist strap, (Pair)",
+      "category": null,
+      "category_source": "none",
+      "brand_known": true,
+      "price": 250.0
+    },
+    {
+      "id": "cd3af562275bf079983c4252e8751757",
+      "split": "dev",
+      "stratum": "missing_category",
+      "name": "Little Things Mean A Lot Baby Boys Formal White Poly Cotton 5 Piece Classic Suit Set with Tail - 9M",
+      "category": null,
+      "category_source": "none",
+      "brand_known": true,
+      "price": 7609.0
+    },
+    {
+      "id": "ac12b8121767f032eace03ba3ace0164",
+      "split": "dev",
+      "stratum": "missing_category",
+      "name": "Kids CC Ages 2-7 Pom Pom Ears Chunky Thick Stretchy Knit Soft Beanie Hat Navy",
+      "category": "MensCapsHats",
+      "category_source": "browsenode",
+      "brand_known": true,
+      "price": null
+    },
+    {
+      "id": "67f00af00e1ddfd2415de4c13861b5a9",
+      "split": "holdout",
+      "stratum": "missing_brand",
+      "name": "Clovia Women's Saree Shapewear",
+      "category": "WomensSarees",
+      "category_source": "rank",
+      "brand_known": false,
+      "price": 899.0
+    },
+    {
+      "id": "0ac35cf60852dd2e2c6ec5df9c737b2f",
+      "split": "dev",
+      "stratum": "missing_brand",
+      "name": "Amazon Brand - Inkast Denim Co. Men's Solid Slim fit T-Shirt (AZ-TS-10B_White_XL)",
+      "category": "MensT_Shirts",
+      "category_source": "rank",
+      "brand_known": false,
+      "price": 274.0
+    },
+    {
+      "id": "2b7081d70a8db985ca3c4962f0e89b17",
+      "split": "dev",
+      "stratum": "missing_brand",
+      "name": "Nike Men's Regular fit T-Shirt",
+      "category": "MensSportsT_ShirtsJerseys",
+      "category_source": "rank",
+      "brand_known": false,
+      "price": 1003.0
+    },
+    {
+      "id": "4b3cd01a0d2fa712ab96edd4978a1eaa",
+      "split": "holdout",
+      "stratum": "missing_price",
+      "name": "Augusta Sportswear Men's Micro Poly Windshirt/Lined, Clear, 3X-Large",
+      "category": "MensSportsT_ShirtsJerseys",
+      "category_source": "browsenode",
+      "brand_known": true,
+      "price": null
+    },
+    {
+      "id": "5b448a5e5ee04b444d9944e119177170",
+      "split": "dev",
+      "stratum": "missing_price",
+      "name": "Teen Titans Group Action Pose Green Seatbelt Belt",
+      "category": "MensBelts",
+      "category_source": "browsenode",
+      "brand_known": true,
+      "price": null
+    },
+    {
+      "id": "0fc48853ec5cedfd815557996e96287c",
+      "split": "holdout",
+      "stratum": "image_failure",
+      "name": "Shut up Legs!: My Wild Ride On and Off the Bike",
+      "category": "CyclingBooks",
+      "category_source": "rank",
+      "brand_known": false,
+      "price": 400.0
+    },
+    {
+      "id": "b275133a29852973c8d88633e4a29e09",
+      "split": "dev",
+      "stratum": "image_failure",
+      "name": "Speedo Women's Active Skirtini, Black, X-Small",
+      "category": "SwimmingSwimwear",
+      "category_source": "browsenode",
+      "brand_known": true,
+      "price": null
+    },
+    {
+      "id": "6e7cfe7eee23a2ed3dd648b375ef14ac",
+      "split": "holdout",
+      "stratum": "variant_family",
+      "name": "Bonjour Men's Handkerchief (Pack of 6)(Colors & Print May Vary)",
+      "category": "MensAccessories",
+      "category_source": "rank",
+      "brand_known": true,
+      "price": 439.0
+    },
+    {
+      "id": "136167a49469fd5c47adb997429516ae",
+      "split": "dev",
+      "stratum": "variant_family",
+      "name": "Lux Inferno Mens Cotton Thermal Top",
+      "category": "MensWinterwear",
+      "category_source": "rank",
+      "brand_known": true,
+      "price": 368.0
+    },
+    {
+      "id": "41193ccf14fa06857dbc57c9e3f8a857",
+      "split": "dev",
+      "stratum": "variant_family",
+      "name": "Batman By Kidsville Boy's Plain Regular fit T-Shirt",
+      "category": "BoysT_Shirts",
+      "category_source": "rank",
+      "brand_known": true,
+      "price": 324.0
+    },
+    {
+      "id": "b35378d7bc3038fc63f57dbe120883c8",
+      "split": "holdout",
+      "stratum": "ambiguous_title",
+      "name": "Puma 57665201",
+      "category": null,
+      "category_source": "none",
+      "brand_known": false,
+      "price": 4119.0
+    },
+    {
+      "id": "12831a10980a52f52e495bffe669a6a7",
+      "split": "dev",
+      "stratum": "ambiguous_title",
+      "name": "Max Boy's Shorts",
+      "category": "BoysShorts",
+      "category_source": "rank",
+      "brand_known": true,
+      "price": 359.0
+    },
+    {
+      "id": "c3a4df40ae456e1cc76c107d16382c75",
+      "split": "dev",
+      "stratum": "duplicate_asin",
+      "name": "TIRUPUR GUIDEFASHION Mens Cotton Sports Night Capri Black Combo Style - 011",
+      "category": "BoysPyjamaSets",
+      "category_source": "rank",
+      "brand_known": true,
+      "price": 499.0
+    }
+  ]
+}

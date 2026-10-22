@@ -1,0 +1,29 @@
+# Scorer configuration. Weights are untuned starting points: block weights are
+# chosen later on the development queries; attribute sub-weights stay fixed.
+scoring:
+  block_weights: {text: 0.5, image: 0.0, attributes: 0.5}
+  # Product type dominates; price tier, brand and colour refine; weight is 79% missing.
+  attribute_weights: {category: 0.4, price: 0.2, brand: 0.15, color: 0.15, weight: 0.1, rating: 0.0}
+  # If the evidence both products share covers less than this fraction of the total
+  # weight, the missing part counts as zero similarity.
+  min_evidence: 0.5
+  # ln 2: a component falls to 1/e when one product's price (or weight) is double the other's.
+  price_scale: 0.6931
+  weight_scale: 0.6931
+
+eligibility:
+  exclude_same_asin: true
+  # Variant families are products sharing brand and normalised title (mostly size variants).
+  exclude_query_family: true
+  max_per_family: 1
+  # Optional result-diversity rule (results per normalised title). Off for the primary comparison;
+  # 2 is an experimental setting, compared later with human relevance and redundancy judgements.
+  max_per_title: null
+  max_results: 100
+
+# Approaches compared during development; each overrides the settings above.
+methods:
+  A_structured:
+    block_weights: {text: 0.0, image: 0.0, attributes: 1.0}
+  B_tfidf:
+    block_weights: {text: 0.5, image: 0.0, attributes: 0.5}

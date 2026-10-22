@@ -1,0 +1,3168 @@
+{
+  "k": 10,
+  "build_seconds": 2.6,
+  "title_cap": "off (primary comparison)",
+  "text_anchors": {
+    "random_median": 0.0,
+    "top1_median": 0.7682081460952759
+  },
+  "latency_method": {
+    "scope": "In-process scoring and ranking of one query against the full catalogue (score_all + rank). Excludes catalogue/feature building, HTTP handling and JSON serialisation.",
+    "statistic": "median and p95 over 5 timed runs per development query after 1 warm-up run",
+    "hardware": "arm64 macOS-26.5.2-arm64-arm-64bit, Python 3.12.13, default threading"
+  },
+  "methods": {
+    "A_structured": {
+      "config": {
+        "text": 0.0,
+        "image": 0.0,
+        "category": 0.4,
+        "brand": 0.15,
+        "color": 0.15,
+        "price": 0.2,
+        "weight": 0.1,
+        "rating": 0.0
+      },
+      "dev_summary": {
+        "queries": 20,
+        "mean_results_returned": 10.0,
+        "category_agreement_at_10": 0.9579,
+        "brand_agreement_at_10": 0.1733,
+        "median_abs_log_price_ratio": 0.1483
+      },
+      "latency_ms": {
+        "median": 5.12,
+        "p95": 5.6,
+        "timed_runs": 100
+      },
+      "queries": [
+        {
+          "query": "2730bc07d8321f1766b63d0ebe5f28c4",
+          "split": "holdout",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "1c351a6b3befc1a924581539dab7c91c",
+              "score": 1.0
+            },
+            {
+              "id": "700fa665ec89742fbe907e2923e40383",
+              "score": 1.0
+            },
+            {
+              "id": "ce60b0019580b75a5d1a508c7735e0b1",
+              "score": 1.0
+            },
+            {
+              "id": "2d92d0dbdc15e835273574f810c4fd74",
+              "score": 1.0
+            },
+            {
+              "id": "d5e3bab737508047ce9c30215c876b01",
+              "score": 1.0
+            },
+            {
+              "id": "a4ebad54e1aee813bf62ad4addb276c9",
+              "score": 1.0
+            },
+            {
+              "id": "6cdc8dcf52581c6a646259dadff80780",
+              "score": 0.9994
+            },
+            {
+              "id": "42397e04225a091839c4768e92582d2d",
+              "score": 0.9994
+            },
+            {
+              "id": "a67be6cb210701e46f79604bc8f13382",
+              "score": 0.9994
+            },
+            {
+              "id": "6a6924071717b7daf5c76c608edd1d42",
+              "score": 0.9994
+            }
+          ]
+        },
+        {
+          "query": "781b8b8c0ff454479e50cba23967ce16",
+          "split": "holdout",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "7ae6661f2bf63cb729872efa50463f50",
+              "score": 1.0
+            },
+            {
+              "id": "158c8203d9bf83f18c69203f68c6c093",
+              "score": 1.0
+            },
+            {
+              "id": "2b253a6540b48191dc4422668133afb0",
+              "score": 1.0
+            },
+            {
+              "id": "2c7a89fd5ee57ea33a630bbf24ea5510",
+              "score": 1.0
+            },
+            {
+              "id": "31a35f3bbbc649eb31b02e32570ad6d7",
+              "score": 1.0
+            },
+            {
+              "id": "6ba76d9841c6c2d2e3de4fc4ce4667e0",
+              "score": 1.0
+            },
+            {
+              "id": "73f408890d81af2d4db37337579f8b40",
+              "score": 1.0
+            },
+            {
+              "id": "7bef286043794db1ec915b96cbd7efc6",
+              "score": 1.0
+            },
+            {
+              "id": "8530be3ea679f3daa494bc4c6f4cf39c",
+              "score": 1.0
+            },
+            {
+              "id": "945527f18059ef7fe3e71b86c38e8e7d",
+              "score": 1.0
+            }
+          ]
+        },
+        {
+          "query": "e6a692821ea347a5c0be699573d090f9",
+          "split": "holdout",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "66d1721f1865a063d95c0908973ba68e",
+              "score": 1.0
+            },
+            {
+              "id": "b5345b1ecd4f82ac74974791b88f8332",
+              "score": 1.0
+            },
+            {
+              "id": "e560d2dbef83b7eac7972c1eeef486e9",
+              "score": 1.0
+            },
+            {
+              "id": "2d1739a4c74bed9ddc621f44d0bebf69",
+              "score": 1.0
+            },
+            {
+              "id": "4155eeb21338dad1a19f416b73ad6777",
+              "score": 1.0
+            },
+            {
+              "id": "3a0beb2aee04609b06c65d09be0710b0",
+              "score": 1.0
+            },
+            {
+              "id": "0cb2307fe664b814311f93354afcee9b",
+              "score": 1.0
+            },
+            {
+              "id": "01a2900db70d4d035312f72a4cf7fbc6",
+              "score": 1.0
+            },
+            {
+              "id": "66ad375dceb072eccbb40b54f9311f41",
+              "score": 1.0
+            },
+            {
+              "id": "765805a01196e144acff5eaf24f67ac7",
+              "score": 1.0
+            }
+          ]
+        },
+        {
+          "query": "ab6a6605b0a017c3ca05f793b2ec4cd1",
+          "split": "dev",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "dd1cb64935c8b2a3984518609bfbced0",
+              "score": 1.0
+            },
+            {
+              "id": "bbb709844b4acdde8f7d1663d5dd5ac4",
+              "score": 1.0
+            },
+            {
+              "id": "9d21a0f866d81bdc8b37b93e7d2aa893",
+              "score": 1.0
+            },
+            {
+              "id": "4247684c996009321dcb29eafb5434bf",
+              "score": 1.0
+            },
+            {
+              "id": "6ca90c18dcf6f9813a06c80dcb87d75b",
+              "score": 1.0
+            },
+            {
+              "id": "b86a8d5078ab8ba5aee9d936c995d900",
+              "score": 1.0
+            },
+            {
+              "id": "c94b51d64702ea8a2b23c2b07d3378d6",
+              "score": 1.0
+            },
+            {
+              "id": "cc9676e94964dafc9a76c00faed3125d",
+              "score": 1.0
+            },
+            {
+              "id": "02c56beec5edd9354c5028f2dd9001c6",
+              "score": 1.0
+            },
+            {
+              "id": "1fa065f151508749670ba07dfe055a30",
+              "score": 1.0
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "median_abs_log_price_ratio": 0.0
+          }
+        },
+        {
+          "query": "6824ff5de39aa84b58d0698410189a93",
+          "split": "dev",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "5699803d24bf8ae25c1de66d59406e0f",
+              "score": 1.0
+            },
+            {
+              "id": "52a6ba7830421032fe4ec8f1f739462e",
+              "score": 1.0
+            },
+            {
+              "id": "3122b6750cbf87eb32118b08ecae0886",
+              "score": 0.9994
+            },
+            {
+              "id": "3a09a50cf36dd38e6a6f053d66922a80",
+              "score": 0.9994
+            },
+            {
+              "id": "722b0e75165f3103b49a8df4514a6699",
+              "score": 0.9994
+            },
+            {
+              "id": "ca13f448a1e9184c2677548f39a8629b",
+              "score": 0.9994
+            },
+            {
+              "id": "d1199b4cb6416e31257fdbd856a2c6b2",
+              "score": 0.9994
+            },
+            {
+              "id": "3ad6d7ca3d9eced54b404f3667a0571f",
+              "score": 0.9994
+            },
+            {
+              "id": "7a05190d9602171a5aecdbdad00fb5db",
+              "score": 0.9994
+            },
+            {
+              "id": "279c4fd20810d72778e8683cb5f9a932",
+              "score": 0.9994
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "median_abs_log_price_ratio": 0.0011926059851231061
+          }
+        },
+        {
+          "query": "314be9c0b9c934e10bbe5b4aa6d2de79",
+          "split": "dev",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "7db87b75b4016bb5835f1dba21f7b192",
+              "score": 0.9986
+            },
+            {
+              "id": "35802aa3086cf0434d88ee6988b9b8cb",
+              "score": 0.9966
+            },
+            {
+              "id": "978450ee54cc58e8c4bf2854f207d381",
+              "score": 0.9938
+            },
+            {
+              "id": "c4ec9ad026ebf0f052f47099b2af6d51",
+              "score": 0.9938
+            },
+            {
+              "id": "e2ddbb09612e64e6ed4d97b403cc29d9",
+              "score": 0.9931
+            },
+            {
+              "id": "f991bfec156c62e2267332b5e3a6187a",
+              "score": 0.9931
+            },
+            {
+              "id": "096f0b6b0fdeec06b894522d0690c1ee",
+              "score": 0.9899
+            },
+            {
+              "id": "968109deab73a3f53a49974d17807bc0",
+              "score": 0.988
+            },
+            {
+              "id": "e217fd8493b36379ca8709435f8ed878",
+              "score": 0.9863
+            },
+            {
+              "id": "2717ac1f402956750997915371d909c9",
+              "score": 0.9842
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.0,
+            "median_abs_log_price_ratio": 0.01440947122015168
+          }
+        },
+        {
+          "query": "6fc91245defaa0c1210e86268249a132",
+          "split": "dev",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "e3456af19944826339b4acb0eeae10c6",
+              "score": 0.8659
+            },
+            {
+              "id": "d406402a47a7d635e41fe6756b413ae7",
+              "score": 0.8182
+            },
+            {
+              "id": "816b849b974b45b0caea83d02c7648e0",
+              "score": 0.8
+            },
+            {
+              "id": "877df98eed1ea392fa92d551806320ab",
+              "score": 0.8
+            },
+            {
+              "id": "f0b1b6bf553e32bd4980ac4c969b0cfb",
+              "score": 0.8
+            },
+            {
+              "id": "c1a7b944bb12eff42d8181308169d486",
+              "score": 0.787
+            },
+            {
+              "id": "81bbb45010d1ea59b8e83946c05dfe09",
+              "score": 0.7273
+            },
+            {
+              "id": "826f82144c55f2457e68d2638618c3b5",
+              "score": 0.7273
+            },
+            {
+              "id": "afa6d02d1c6ae3e0e86120907e3b96f6",
+              "score": 0.7273
+            },
+            {
+              "id": "de59b121cc3b9f072b72b7c8f609f8c4",
+              "score": 0.7273
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.1,
+            "median_abs_log_price_ratio": 0.10730335431173534
+          }
+        },
+        {
+          "query": "65ae3f3110f8ead580b7948e9196cf79",
+          "split": "dev",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "a6aef41154e83911b235689d8da3669f",
+              "score": 0.9859
+            },
+            {
+              "id": "71cdaa5c6a8dee02d7a688e5a036cfe6",
+              "score": 0.966
+            },
+            {
+              "id": "af6816d1c7e4a63f991dd013a4159eef",
+              "score": 0.9451
+            },
+            {
+              "id": "d58a71fc81836d24051192dd719db56e",
+              "score": 0.9056
+            },
+            {
+              "id": "20d29dec0ef5113e624774c68503c3a9",
+              "score": 0.9017
+            },
+            {
+              "id": "59f0c93c1b645b0715c8c9794b8bc623",
+              "score": 0.8581
+            },
+            {
+              "id": "c0f70626618a1c714476880ca8fe30d7",
+              "score": 0.8499
+            },
+            {
+              "id": "1b4e8347c681902600561bc73323c6ac",
+              "score": 0.8444
+            },
+            {
+              "id": "799ccef2ed9fb63a7479f2fb1282ff5c",
+              "score": 0.8444
+            },
+            {
+              "id": "30dd8002ec46daa68d09413f189885fe",
+              "score": 0.8402
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.1,
+            "median_abs_log_price_ratio": 0.4525052121698111
+          }
+        },
+        {
+          "query": "e5f36cab588ff86e649372d530a10007",
+          "split": "dev",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "7fecf1a590d06efc43f720597f479065",
+              "score": 1.0
+            },
+            {
+              "id": "25ab4d2adedc82c287820441af6e75a1",
+              "score": 1.0
+            },
+            {
+              "id": "30ae7dc4a423c549bbd6bca20eaeafa3",
+              "score": 1.0
+            },
+            {
+              "id": "0e6ba845ba57c2ad0837113e30425318",
+              "score": 1.0
+            },
+            {
+              "id": "2886624466a3cbfb2122dabb733ac84f",
+              "score": 1.0
+            },
+            {
+              "id": "843107fb50d66fdcd181e404e7d4b37d",
+              "score": 1.0
+            },
+            {
+              "id": "02d83fe6440875fffcf51b6c4f124c24",
+              "score": 1.0
+            },
+            {
+              "id": "45073214eb117d9542a5f3596f7f3b20",
+              "score": 1.0
+            },
+            {
+              "id": "c805c258645812a83d3219fd379d076c",
+              "score": 0.9209
+            },
+            {
+              "id": "c00112ba50fdeb7e3ca838366ab00dc1",
+              "score": 0.9184
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.2,
+            "median_abs_log_price_ratio": 0.24850273903976206
+          }
+        },
+        {
+          "query": "ba87dae5b45b81f4c30c2991f9900ced",
+          "split": "holdout",
+          "stratum": "rare_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "2cd31518b14adb1d6d499a8e58494b1e",
+              "score": 0.7823
+            },
+            {
+              "id": "85db679da35d66581f9f543fbf051765",
+              "score": 0.7692
+            },
+            {
+              "id": "d7a74da4cd07e4b732a4927bec073a0a",
+              "score": 0.7692
+            },
+            {
+              "id": "e99a40caf69909c7279f921272e67486",
+              "score": 0.7665
+            },
+            {
+              "id": "fa01370347ca1d126cc2b56c5f312ba6",
+              "score": 0.756
+            },
+            {
+              "id": "f22dd43e8ddc3521df813dd64c8d606c",
+              "score": 0.7544
+            },
+            {
+              "id": "a7de28abc46156eab4eb2d66b12bcb65",
+              "score": 0.743
+            },
+            {
+              "id": "52c4ed9d0a9ac7e80d35ee051deffc2b",
+              "score": 0.743
+            },
+            {
+              "id": "9e51a5aa37f34748cc2cda296737933f",
+              "score": 0.7352
+            },
+            {
+              "id": "8bce8bdcc0802d3d6efc00ea1d268dcb",
+              "score": 0.7273
+            }
+          ]
+        },
+        {
+          "query": "9a73f1c1ac4911a5daf786581868e019",
+          "split": "dev",
+          "stratum": "rare_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "ef7ef313326573015cdac189147020a8",
+              "score": 0.7518
+            },
+            {
+              "id": "026e3ea21c2b5bf4d29edf69ddbe9148",
+              "score": 0.7273
+            },
+            {
+              "id": "4fceb946c8f1e1fee5def8bf1d6dc95f",
+              "score": 0.7054
+            },
+            {
+              "id": "147b6bc033a705396f079ef73aee10ef",
+              "score": 0.7002
+            },
+            {
+              "id": "75346454ed73507e01d57e91220b2828",
+              "score": 0.6818
+            },
+            {
+              "id": "9373fe30e003cf310a66fe2fcf00b73c",
+              "score": 0.6771
+            },
+            {
+              "id": "68240d7b178bcf7ad7bc6602e74ea74c",
+              "score": 0.6635
+            },
+            {
+              "id": "02e0ccfcbd84602df4a5be59eb5b4086",
+              "score": 0.6382
+            },
+            {
+              "id": "c08d5f166ce2c03164f16259490779ce",
+              "score": 0.6363
+            },
+            {
+              "id": "1555c6693fc1cb68ae5145a60a5b3137",
+              "score": 0.6363
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.0,
+            "median_abs_log_price_ratio": 0.659245628884264
+          }
+        },
+        {
+          "query": "307bed4226c0f82c3451a86f34d7f285",
+          "split": "dev",
+          "stratum": "rare_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "48b78b601ee4d4f127ce79db5a556f63",
+              "score": 0.9241
+            },
+            {
+              "id": "15c28d8421d0a7a37dcd5e63fe5c665b",
+              "score": 0.9116
+            },
+            {
+              "id": "29159bc4c8126b62b81bb9ba789592a2",
+              "score": 0.9116
+            },
+            {
+              "id": "8b83b7eaafebdff6ece493cd6f87ba2d",
+              "score": 0.8495
+            },
+            {
+              "id": "f67b45633eca8f57258c428bd510c144",
+              "score": 0.829
+            },
+            {
+              "id": "ca5e8b6e7309234a443d4c990ab248cb",
+              "score": 0.7853
+            },
+            {
+              "id": "16fd4e2dec9133abc567d763ed9b1d4e",
+              "score": 0.7846
+            },
+            {
+              "id": "5e37826fbe4d2921108db5d339bf0ce5",
+              "score": 0.6942
+            },
+            {
+              "id": "7034d0a18ee5ec6b4ccef9e9c36ccbdd",
+              "score": 0.6886
+            },
+            {
+              "id": "0b650fd39b65c6494e79747a5b6cea97",
+              "score": 0.6854
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 0.8,
+            "median_abs_log_price_ratio": 0.1963310122624744
+          }
+        },
+        {
+          "query": "6a8674d8512c66cb9f89f1617c4929c9",
+          "split": "dev",
+          "stratum": "rare_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "9b7fa16a69b9d2f98967633ad6d0f995",
+              "score": 0.7273
+            },
+            {
+              "id": "560604665163c919513ff1848760395b",
+              "score": 0.7264
+            },
+            {
+              "id": "f8a53b0f2d267896c53f0e960711f5ac",
+              "score": 0.6925
+            },
+            {
+              "id": "d354a3c0d32ec96927770ed3382d615e",
+              "score": 0.6918
+            },
+            {
+              "id": "6074601cf454061f73ace43978cfeff0",
+              "score": 0.6802
+            },
+            {
+              "id": "528aa0992500d3769730481721d5a8ae",
+              "score": 0.6783
+            },
+            {
+              "id": "9455ab1b2444aadcbe8f59acc8171a98",
+              "score": 0.6655
+            },
+            {
+              "id": "63806599adf16988765c114332f1700b",
+              "score": 0.6434
+            },
+            {
+              "id": "da57373bb82ff133b5df13edd98fe76a",
+              "score": 0.6395
+            },
+            {
+              "id": "c003b687132c4713ac0e97d0abdd859c",
+              "score": 0.6395
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 0.4,
+            "brand_agreement": 0.0,
+            "median_abs_log_price_ratio": 0.10575884268958169
+          }
+        },
+        {
+          "query": "3efe54d408d85ddd91800c9f8db62d82",
+          "split": "dev",
+          "stratum": "rare_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "53c07f123340aaee911d113130b4b6e8",
+              "score": 1.0
+            },
+            {
+              "id": "8bb10f832a6431bfce17e0e3f44db22e",
+              "score": 0.8
+            },
+            {
+              "id": "bf802260f7738fd50e64c58f4a9b08fb",
+              "score": 0.8
+            },
+            {
+              "id": "2aa6c8fc86c47efc21cfbc79fbf22b6a",
+              "score": 0.8
+            },
+            {
+              "id": "3458fba9754d19831293f69ae357956d",
+              "score": 0.8
+            },
+            {
+              "id": "a0ac63be934fb976f93a03580e0ca714",
+              "score": 0.8
+            },
+            {
+              "id": "001e596259c7511264dc5a0eec04af20",
+              "score": 0.8
+            },
+            {
+              "id": "dc2f17cccaaaa14a231b0d126485ad37",
+              "score": 0.8
+            },
+            {
+              "id": "441d07d7d8f02319b695755a22dee842",
+              "score": 0.8
+            },
+            {
+              "id": "0aee14c02029eafa8d60f8d41ef6385c",
+              "score": 0.8
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.0
+          }
+        },
+        {
+          "query": "9a3716a16c7012941ec585aab6122f3d",
+          "split": "holdout",
+          "stratum": "missing_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "312bfb4941b0c164e24ea917b07f1ba2",
+              "score": 0.4
+            },
+            {
+              "id": "9b4ed74384723af28842f6b908055f59",
+              "score": 0.4
+            },
+            {
+              "id": "b62b368ec8ddb42f44386c57bdcbf255",
+              "score": 0.4
+            },
+            {
+              "id": "00629a78ca67c04176c38805d391cac3",
+              "score": 0.4
+            },
+            {
+              "id": "de47d2e51a8cd0d8af88d66dfed39437",
+              "score": 0.4
+            },
+            {
+              "id": "dcb68d3e7ce9d7af42a37fc64ecbfe90",
+              "score": 0.4
+            },
+            {
+              "id": "a1aa97df79042396e52de55ae9e6acb2",
+              "score": 0.4
+            },
+            {
+              "id": "42e12bffa287ec7c01ae37c5f0712b6b",
+              "score": 0.4
+            },
+            {
+              "id": "724adf5143019917b9102e613e3281ed",
+              "score": 0.4
+            },
+            {
+              "id": "c292031f32065cf22a6c6933e1cba3bb",
+              "score": 0.4
+            }
+          ]
+        },
+        {
+          "query": "cd3af562275bf079983c4252e8751757",
+          "split": "dev",
+          "stratum": "missing_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "0fcc3f155262a8f90e967a604ac7bce5",
+              "score": 0.6721
+            },
+            {
+              "id": "75fb124d13f909aa107b3d9787f76126",
+              "score": 0.6334
+            },
+            {
+              "id": "963a79ffd43c2ec2cc6197f72da5e069",
+              "score": 0.5882
+            },
+            {
+              "id": "e910c3231bf8681a77affb158ce6cfab",
+              "score": 0.5843
+            },
+            {
+              "id": "43e78d983004b9adef1a5263f6d20c1d",
+              "score": 0.5806
+            },
+            {
+              "id": "414b6f992804965dd8da36c39a159939",
+              "score": 0.5757
+            },
+            {
+              "id": "26839b2700be8b1340f188771dd3e754",
+              "score": 0.5676
+            },
+            {
+              "id": "203391060e019182c3290b40497fe9d6",
+              "score": 0.5629
+            },
+            {
+              "id": "228abaf95f801804c040272afb29d4f0",
+              "score": 0.538
+            },
+            {
+              "id": "faf2dd52711dee6eb9a7c6662fb53f31",
+              "score": 0.5379
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "brand_agreement": 0.0,
+            "median_abs_log_price_ratio": 0.24252487877397383
+          }
+        },
+        {
+          "query": "ac12b8121767f032eace03ba3ace0164",
+          "split": "dev",
+          "stratum": "missing_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "d12e8ea145c9b28d2ad437d46363ce21",
+              "score": 1.0
+            },
+            {
+              "id": "d5d7f74449c3fbca2db0206e40fe8656",
+              "score": 1.0
+            },
+            {
+              "id": "cacfcfa51dcf65e701eaec04a221cf17",
+              "score": 1.0
+            },
+            {
+              "id": "7d3ca2f8d6786d2a8f4b868a5d5e7dae",
+              "score": 1.0
+            },
+            {
+              "id": "fda97016274ebbd6fb5ffcadcc45bd43",
+              "score": 1.0
+            },
+            {
+              "id": "5b665d157d68923239aa61459bf65183",
+              "score": 1.0
+            },
+            {
+              "id": "03e661a1442bc0fc187db282cc709baa",
+              "score": 1.0
+            },
+            {
+              "id": "dde76ec9c65deff2038a319f061ca657",
+              "score": 1.0
+            },
+            {
+              "id": "372c7be112efafd9c60db25d9830ad5f",
+              "score": 1.0
+            },
+            {
+              "id": "29765256432314772a0e3d9219ba9a98",
+              "score": 1.0
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.2
+          }
+        },
+        {
+          "query": "67f00af00e1ddfd2415de4c13861b5a9",
+          "split": "holdout",
+          "stratum": "missing_brand",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "29d20dc99a4b2ce72776499bedcc49cd",
+              "score": 1.0
+            },
+            {
+              "id": "e52c82b6daa076c3a7759a38040f3b97",
+              "score": 0.9741
+            },
+            {
+              "id": "9829fd8d361e27e1ef5f180f065998af",
+              "score": 0.9478
+            },
+            {
+              "id": "9ea8c4ecdde91b61b160d0b9f49807f7",
+              "score": 0.9356
+            },
+            {
+              "id": "af8a89e4399cfee25f0b58a8d592e27e",
+              "score": 0.9329
+            },
+            {
+              "id": "cb4c8b1f1b6b53ed1f66991f64a9ea3e",
+              "score": 0.9329
+            },
+            {
+              "id": "903cfcb1bbb401708d3148cd5d67269e",
+              "score": 0.9329
+            },
+            {
+              "id": "ae9cc2a4c3f9cb94b5670053ae850e7e",
+              "score": 0.9329
+            },
+            {
+              "id": "95a25e785e70e20c8240ae0ec88364be",
+              "score": 0.9329
+            },
+            {
+              "id": "e43004d3308086bd6ea312b824843f28",
+              "score": 0.9329
+            }
+          ]
+        },
+        {
+          "query": "0ac35cf60852dd2e2c6ec5df9c737b2f",
+          "split": "dev",
+          "stratum": "missing_brand",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "01f55cc8ad5aac38479c9cba3a087d24",
+              "score": 1.0
+            },
+            {
+              "id": "3581f544bfe7767d8803fccb06268bc0",
+              "score": 1.0
+            },
+            {
+              "id": "4e294813725cceedb2fee220a0bdcb07",
+              "score": 1.0
+            },
+            {
+              "id": "beb80b450efe9b7bfe1df6933099004c",
+              "score": 1.0
+            },
+            {
+              "id": "f825f68bcc78e987153ce0d4f2b32cdf",
+              "score": 1.0
+            },
+            {
+              "id": "5a85c1726935807c8036beefd3947d83",
+              "score": 1.0
+            },
+            {
+              "id": "07245bf280018c2dfdb78058ed0d5b04",
+              "score": 1.0
+            },
+            {
+              "id": "46f47cbf4b8b5721110b7280ee60a6a5",
+              "score": 1.0
+            },
+            {
+              "id": "e1d99e9027977ab4ec60191e1b630211",
+              "score": 1.0
+            },
+            {
+              "id": "f84c479baf419c0eefcb1e10cc5186d2",
+              "score": 1.0
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0
+          }
+        },
+        {
+          "query": "2b7081d70a8db985ca3c4962f0e89b17",
+          "split": "dev",
+          "stratum": "missing_brand",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "63d06176d3097336d32213c93dec7252",
+              "score": 0.9995
+            },
+            {
+              "id": "c597898e1183ad046bfe7b346cf84efa",
+              "score": 0.9986
+            },
+            {
+              "id": "9a2cf5afdb9248d93807b6f18aaf9c8f",
+              "score": 0.9986
+            },
+            {
+              "id": "8e97d55fe44abc620640189be912064e",
+              "score": 0.9981
+            },
+            {
+              "id": "2801b377dbe8a31ac4571e48c9876aad",
+              "score": 0.9981
+            },
+            {
+              "id": "dd6c1cf4792931664325c46d6dd5b223",
+              "score": 0.9981
+            },
+            {
+              "id": "f9039dcfa1d7c0a34ee0bd0d1e82c69b",
+              "score": 0.9981
+            },
+            {
+              "id": "e3e9e08bb7d682a2d9f799432b8fd886",
+              "score": 0.9981
+            },
+            {
+              "id": "29168e4655959c510efec7f14d7c20fe",
+              "score": 0.9981
+            },
+            {
+              "id": "6703c7ff7e71f5d9b667e6b661ec3dfe",
+              "score": 0.9976
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "median_abs_log_price_ratio": 0.003996009313381976
+          }
+        },
+        {
+          "query": "4b3cd01a0d2fa712ab96edd4978a1eaa",
+          "split": "holdout",
+          "stratum": "missing_price",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "b5175b8881dbd4fa1719f9bbf189b1bf",
+              "score": 1.0
+            },
+            {
+              "id": "bc8e96ddbccf34fe51358bd25f09ba6d",
+              "score": 1.0
+            },
+            {
+              "id": "401f6e2bbbd0ab25bb29feee717243f8",
+              "score": 1.0
+            },
+            {
+              "id": "7eb83bff50cebd8a8d56860d274d5cf6",
+              "score": 1.0
+            },
+            {
+              "id": "925ea6ad926cde5e14684c5a3641ddf8",
+              "score": 1.0
+            },
+            {
+              "id": "cd4105dca7a3e4ca091b76b10cba6b4c",
+              "score": 1.0
+            },
+            {
+              "id": "0420d80532eba53ac5e52067a7553db6",
+              "score": 1.0
+            },
+            {
+              "id": "1f15520ccea2b9164b35d66aec4cc7ae",
+              "score": 1.0
+            },
+            {
+              "id": "7ed5dbee5283ec4932213dfe3dedb27c",
+              "score": 1.0
+            },
+            {
+              "id": "cb6cb5c53b3927d182ad037975889dfb",
+              "score": 1.0
+            }
+          ]
+        },
+        {
+          "query": "5b448a5e5ee04b444d9944e119177170",
+          "split": "dev",
+          "stratum": "missing_price",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "02190881c9e67a524fe840abcde1fbf1",
+              "score": 1.0
+            },
+            {
+              "id": "21d9ebc8680351a76204aaf7b1f79760",
+              "score": 1.0
+            },
+            {
+              "id": "46ee05f66ce5e5d97f9c20a0c0a0a332",
+              "score": 1.0
+            },
+            {
+              "id": "0560a0ebd0bf026eb744f76ecdaacdd7",
+              "score": 1.0
+            },
+            {
+              "id": "98a19a2126b4e9a12acf9f01c2f600af",
+              "score": 1.0
+            },
+            {
+              "id": "d793e8bfb17f0560abc8a84c923e1a4a",
+              "score": 1.0
+            },
+            {
+              "id": "47708cab2a25375cb29e5802298c0fcf",
+              "score": 1.0
+            },
+            {
+              "id": "7e4f00710dc583c9dfa44ea4bb8b8a63",
+              "score": 1.0
+            },
+            {
+              "id": "8908496b362aa09e929da962f3ef50fe",
+              "score": 1.0
+            },
+            {
+              "id": "c6ef381b3e00d712c7b106182cdc3625",
+              "score": 1.0
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 1.0
+          }
+        },
+        {
+          "query": "0fc48853ec5cedfd815557996e96287c",
+          "split": "holdout",
+          "stratum": "image_failure",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "1801170d49189d243bb86a3fe1536329",
+              "score": 0.4
+            },
+            {
+              "id": "563d9e904ac452e0215e1c3c561cefdb",
+              "score": 0.3986
+            },
+            {
+              "id": "157128be630db0143d5c966f9a2f9ed7",
+              "score": 0.3986
+            },
+            {
+              "id": "ca9003b78966eb86120b13934782b3bf",
+              "score": 0.3986
+            },
+            {
+              "id": "0c29b58b7d9429b767465f026ce01464",
+              "score": 0.3986
+            },
+            {
+              "id": "341fb041358e1f73588b174a92dec6c7",
+              "score": 0.3986
+            },
+            {
+              "id": "3753850fb875256c52e01dfcf5fa5a7c",
+              "score": 0.3986
+            },
+            {
+              "id": "834c3c4b72d0aeae3af861ff13308d45",
+              "score": 0.3986
+            },
+            {
+              "id": "c06711a3e2b355ac9300902557ab8a72",
+              "score": 0.3986
+            },
+            {
+              "id": "d399d957d3df9a5854cc264315a4dc9f",
+              "score": 0.3986
+            }
+          ]
+        },
+        {
+          "query": "b275133a29852973c8d88633e4a29e09",
+          "split": "dev",
+          "stratum": "image_failure",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "5e935b99ae5a2e8371d03fada29ebb51",
+              "score": 1.0
+            },
+            {
+              "id": "24f6990937cebe03528ff1bdc008700f",
+              "score": 1.0
+            },
+            {
+              "id": "931862e06b9061c590d28813f68937ae",
+              "score": 1.0
+            },
+            {
+              "id": "d92bec17561caedad42da2210ad71533",
+              "score": 1.0
+            },
+            {
+              "id": "b8230c08d50c91a9a9544fb31d68d3c0",
+              "score": 1.0
+            },
+            {
+              "id": "5877d9bf1c601616d3301b503c387214",
+              "score": 1.0
+            },
+            {
+              "id": "7018875cd889b554bebd91bb9edcc7d6",
+              "score": 1.0
+            },
+            {
+              "id": "f0892585878ad1d1bf5d8191eb9f474b",
+              "score": 1.0
+            },
+            {
+              "id": "f5f08c6336a722e659b70f8233d4e0a0",
+              "score": 1.0
+            },
+            {
+              "id": "a0beb211a634b1047a488ddce1fe15d5",
+              "score": 1.0
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.8
+          }
+        },
+        {
+          "query": "6e7cfe7eee23a2ed3dd648b375ef14ac",
+          "split": "holdout",
+          "stratum": "variant_family",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "add8c38144b769c85d3a2a36c887458d",
+              "score": 1.0
+            },
+            {
+              "id": "4df8e6dc4e269723b88053879bd10443",
+              "score": 0.9573
+            },
+            {
+              "id": "d4837b46511adbfd381883c11c7b3d78",
+              "score": 0.9071
+            },
+            {
+              "id": "23f2f05ff6fca0b6000b210e46985aeb",
+              "score": 0.9061
+            },
+            {
+              "id": "4a18ef666d1126e6a82ec8b520632fef",
+              "score": 0.9061
+            },
+            {
+              "id": "91d6a813157e4166b858192bae5b0aa3",
+              "score": 0.9061
+            },
+            {
+              "id": "edc5d8cc071952da0deecf6ccb7845db",
+              "score": 0.8582
+            },
+            {
+              "id": "7420d155523412123b12bcf565c3864b",
+              "score": 0.831
+            },
+            {
+              "id": "8c16333db5409f4cedf70e4ad3c4648a",
+              "score": 0.8066
+            },
+            {
+              "id": "7787bb946bd23a3c19825003e438d39e",
+              "score": 0.802
+            }
+          ]
+        },
+        {
+          "query": "136167a49469fd5c47adb997429516ae",
+          "split": "dev",
+          "stratum": "variant_family",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "27b7fa90e79a068dd19f962015b740fb",
+              "score": 0.9755
+            },
+            {
+              "id": "a7c583bce1e7666360214eaec662717b",
+              "score": 0.9706
+            },
+            {
+              "id": "5e0f5aede9963fc64d85325e4f633123",
+              "score": 0.9644
+            },
+            {
+              "id": "60f00ed55d4117dd1d91e947cf03527d",
+              "score": 0.9639
+            },
+            {
+              "id": "b37c7643c4de94ff12b838c8cdf69bf2",
+              "score": 0.9633
+            },
+            {
+              "id": "db5af638d6ff198796e88c71e03865f5",
+              "score": 0.9469
+            },
+            {
+              "id": "0a31d7a9b3de91de94447361a9ebe439",
+              "score": 0.9393
+            },
+            {
+              "id": "d7a0a8e52cc42d50f548a5a71f003f86",
+              "score": 0.9294
+            },
+            {
+              "id": "982e681d09a2d04ac9a9203102dacf4d",
+              "score": 0.8878
+            },
+            {
+              "id": "3b51f831952550d12edd21e8ecc8cf5b",
+              "score": 0.8809
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.2,
+            "median_abs_log_price_ratio": 0.11046291466771574
+          }
+        },
+        {
+          "query": "41193ccf14fa06857dbc57c9e3f8a857",
+          "split": "dev",
+          "stratum": "variant_family",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "0efacb6bbd85df302fb96070eb588a57",
+              "score": 1.0
+            },
+            {
+              "id": "82d4fde545fbcbaa20ae579c5f4baf5b",
+              "score": 0.9985
+            },
+            {
+              "id": "b57ad89aad118c552c112dd263fd349f",
+              "score": 0.997
+            },
+            {
+              "id": "a8b588b8347610f2d988a03701c11203",
+              "score": 0.997
+            },
+            {
+              "id": "4b2e1c264384bf3ef1990a01e2ee2a70",
+              "score": 0.9942
+            },
+            {
+              "id": "c98d2f232f00a68ca42cac5ef2eef56d",
+              "score": 0.9941
+            },
+            {
+              "id": "40299eb8b4b3efa2715a38d676ab32ff",
+              "score": 0.9926
+            },
+            {
+              "id": "ff40d1fd8a0d96ac061f8720a843b441",
+              "score": 0.9913
+            },
+            {
+              "id": "5ffc82d1edf4242b0916153ce2dbb458",
+              "score": 0.9911
+            },
+            {
+              "id": "772a9b0a19a54c0734601301be0ec2d8",
+              "score": 0.9899
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.0,
+            "median_abs_log_price_ratio": 0.012346306295185804
+          }
+        },
+        {
+          "query": "b35378d7bc3038fc63f57dbe120883c8",
+          "split": "holdout",
+          "stratum": "ambiguous_title",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "1fa9a01ba7a373df64fd4c978cfa04ad",
+              "score": 0.4
+            },
+            {
+              "id": "1a62ad484cad4a98f052444dacca05b3",
+              "score": 0.3999
+            },
+            {
+              "id": "24699ca876e64ad517da55075d524ab9",
+              "score": 0.3996
+            },
+            {
+              "id": "75ccaccb35ec94cb371d7acf737b369b",
+              "score": 0.3986
+            },
+            {
+              "id": "f8a2225eab96b1ee81939e62c254bbae",
+              "score": 0.3986
+            },
+            {
+              "id": "bcd4aad14b1d8ca30926713ddd54d912",
+              "score": 0.3986
+            },
+            {
+              "id": "7a4709a85b850481bf8bc047330264de",
+              "score": 0.3975
+            },
+            {
+              "id": "afa8c6ecb2f779ffab071e6bcb53a563",
+              "score": 0.3972
+            },
+            {
+              "id": "36e35644e29636d0f14b54878e73a0d0",
+              "score": 0.3972
+            },
+            {
+              "id": "c4e9b05d22299158e5acf339d7f771ee",
+              "score": 0.3972
+            }
+          ]
+        },
+        {
+          "query": "12831a10980a52f52e495bffe669a6a7",
+          "split": "dev",
+          "stratum": "ambiguous_title",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "34932c8dcd1a334772ee934634429d28",
+              "score": 0.9987
+            },
+            {
+              "id": "d6591388c481870062e6b1771c4b50fc",
+              "score": 0.9973
+            },
+            {
+              "id": "942aa4f11d52959e95e3c7a9c2649c6a",
+              "score": 0.992
+            },
+            {
+              "id": "a9c9eaa524ee350148830b11612c23c2",
+              "score": 0.9907
+            },
+            {
+              "id": "821a65c4de784c43f83b10af4f118309",
+              "score": 0.9867
+            },
+            {
+              "id": "490bdfbec919da65ab98228a475f5a75",
+              "score": 0.9867
+            },
+            {
+              "id": "c5ca7abd6404034f2d611356e32eccab",
+              "score": 0.9867
+            },
+            {
+              "id": "f10d050e8f918076c2ad02eb447c9770",
+              "score": 0.9827
+            },
+            {
+              "id": "fc188dc7c5ad3ce9c08de517763d26df",
+              "score": 0.9775
+            },
+            {
+              "id": "ff8ee049075c2f39d7e5ec4c08c1da5b",
+              "score": 0.9773
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.0,
+            "median_abs_log_price_ratio": 0.028250466285851733
+          }
+        },
+        {
+          "query": "c3a4df40ae456e1cc76c107d16382c75",
+          "split": "dev",
+          "stratum": "duplicate_asin",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "f41c16cc118fba5b955e7ea5ad97cd8b",
+              "score": 0.9687
+            },
+            {
+              "id": "7177f47b7b40cab09e587f98ec12fca9",
+              "score": 0.8635
+            },
+            {
+              "id": "65a0c5bad36bdec45ed53e12d69a9ef4",
+              "score": 0.8235
+            },
+            {
+              "id": "a09c1909084a120fdb94bbc9b030d366",
+              "score": 0.8
+            },
+            {
+              "id": "857bfd848c3e1c3438fd816c974f6bd4",
+              "score": 0.8
+            },
+            {
+              "id": "d3a01147829420558c183a6b4f9b84ba",
+              "score": 0.8
+            },
+            {
+              "id": "17d53355f043f3aaea1c2e2a818c63c6",
+              "score": 0.7857
+            },
+            {
+              "id": "ea13aa9c1be4367485e372e921123ecc",
+              "score": 0.7846
+            },
+            {
+              "id": "68227070031856d287582583f0682b79",
+              "score": 0.77
+            },
+            {
+              "id": "24f1d332f3d60ff0490a84802fa7c133",
+              "score": 0.7623
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.0,
+            "median_abs_log_price_ratio": 0.04122271582395431
+          }
+        }
+      ]
+    },
+    "B_tfidf": {
+      "config": {
+        "text": 0.5,
+        "image": 0.0,
+        "category": 0.2,
+        "brand": 0.075,
+        "color": 0.075,
+        "price": 0.1,
+        "weight": 0.05,
+        "rating": 0.0
+      },
+      "dev_summary": {
+        "queries": 20,
+        "mean_results_returned": 10.0,
+        "category_agreement_at_10": 0.8474,
+        "brand_agreement_at_10": 0.3,
+        "median_abs_log_price_ratio": 0.133
+      },
+      "latency_ms": {
+        "median": 6.53,
+        "p95": 6.93,
+        "timed_runs": 100
+      },
+      "queries": [
+        {
+          "query": "2730bc07d8321f1766b63d0ebe5f28c4",
+          "split": "holdout",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "c8b87523d86f4e1c8cdf9c28e7cf73c2",
+              "score": 0.9435
+            },
+            {
+              "id": "c7c42832a8967d6a899885501977ac2f",
+              "score": 0.9416
+            },
+            {
+              "id": "a6ed320d451348cfae1866ec09bf23dc",
+              "score": 0.9187
+            },
+            {
+              "id": "49e9c3a330ce67cc85d1370e97b80e93",
+              "score": 0.6464
+            },
+            {
+              "id": "669faeea8db1292137d9cb4468e5387c",
+              "score": 0.6452
+            },
+            {
+              "id": "3ec61b284fb166c75495538e7bcd2c2d",
+              "score": 0.6415
+            },
+            {
+              "id": "95c8b1913db1ca6c60051547d5a28e9b",
+              "score": 0.6415
+            },
+            {
+              "id": "41f659493c2f38f4f236042f95dff2a9",
+              "score": 0.6314
+            },
+            {
+              "id": "c9e9fac085772963834c1bbca030a551",
+              "score": 0.6302
+            },
+            {
+              "id": "1d5c59fe035e16b4cb5d84bdcfcd1696",
+              "score": 0.6264
+            }
+          ]
+        },
+        {
+          "query": "781b8b8c0ff454479e50cba23967ce16",
+          "split": "holdout",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "6ba76d9841c6c2d2e3de4fc4ce4667e0",
+              "score": 0.9602
+            },
+            {
+              "id": "cc4d4d73d763de2f66f471ce3d229f60",
+              "score": 0.8812
+            },
+            {
+              "id": "9b2ccc567d632531f126d82f6525ef01",
+              "score": 0.8214
+            },
+            {
+              "id": "9c8ea869c439ff3316c9684dd91b77d0",
+              "score": 0.6395
+            },
+            {
+              "id": "6e641c4d6ddc4638595c8079125ca1c3",
+              "score": 0.5399
+            },
+            {
+              "id": "c5811002479e798bfcc867be0224d52c",
+              "score": 0.4778
+            },
+            {
+              "id": "5e87a74b0ddeb21db1ddbcfc6c185082",
+              "score": 0.4769
+            },
+            {
+              "id": "c2eb4ae701873ff722326dca4af49122",
+              "score": 0.4768
+            },
+            {
+              "id": "ac1925cf193ebd0fc4700d0899a7f749",
+              "score": 0.4736
+            },
+            {
+              "id": "f0b87deeac531fde9e0ace7338414707",
+              "score": 0.465
+            }
+          ]
+        },
+        {
+          "query": "e6a692821ea347a5c0be699573d090f9",
+          "split": "holdout",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "8061ecea4a53b14c0da906842ab204dd",
+              "score": 0.9755
+            },
+            {
+              "id": "d1b1976cad1b196acb2f296db6ea5279",
+              "score": 0.9755
+            },
+            {
+              "id": "2d1739a4c74bed9ddc621f44d0bebf69",
+              "score": 0.9722
+            },
+            {
+              "id": "9ad8cf29e3bf166a759e952c71b820c0",
+              "score": 0.9721
+            },
+            {
+              "id": "427ddbfff6e12342ae12a814e0b4e188",
+              "score": 0.9721
+            },
+            {
+              "id": "ce33a0eff5a69145cb7264f9b84a3a6a",
+              "score": 0.9721
+            },
+            {
+              "id": "4cd0db67b956623c74eb11304d7e50a0",
+              "score": 0.9721
+            },
+            {
+              "id": "c6a366d73beb362e762e5c98497244f6",
+              "score": 0.9578
+            },
+            {
+              "id": "9c480472b9b27a0e841cb3dfe3d2e57f",
+              "score": 0.9577
+            },
+            {
+              "id": "95e2e2161f7fc1c1c37bc8b9a7f957c7",
+              "score": 0.9575
+            }
+          ]
+        },
+        {
+          "query": "ab6a6605b0a017c3ca05f793b2ec4cd1",
+          "split": "dev",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "a4b8c19421d8ae0010269161fcaa174e",
+              "score": 0.9778
+            },
+            {
+              "id": "2998128e6877dd3fc96fa203ca63dabb",
+              "score": 0.9575
+            },
+            {
+              "id": "3e0dd6fa257554220d4e3fce121edcea",
+              "score": 0.7171
+            },
+            {
+              "id": "5577bd35dcc4e0af29f5245046d44994",
+              "score": 0.7169
+            },
+            {
+              "id": "da7ee4a073af49bb16f8e71d908954b9",
+              "score": 0.6871
+            },
+            {
+              "id": "9900fcf72d53ff03d4b473ae30c059f4",
+              "score": 0.6531
+            },
+            {
+              "id": "2d685614c1eb8866cda29b590d0e1290",
+              "score": 0.6523
+            },
+            {
+              "id": "035740d905f12698c1a5b8ff886f7c88",
+              "score": 0.652
+            },
+            {
+              "id": "a89b13e0c1562adbb34a87a3a64f80e9",
+              "score": 0.6514
+            },
+            {
+              "id": "23380db7fe590f8a887b500beb2654f9",
+              "score": 0.6513
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "median_abs_log_price_ratio": 0.01836600463436499
+          }
+        },
+        {
+          "query": "6824ff5de39aa84b58d0698410189a93",
+          "split": "dev",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "5b1ffbcc5feeef8c25dda0a71617f2c9",
+              "score": 0.996
+            },
+            {
+              "id": "7c3eb5a83d17db5a600d2191961187bf",
+              "score": 0.9921
+            },
+            {
+              "id": "72382817a988cde852a7ea0f9746ebdd",
+              "score": 0.9915
+            },
+            {
+              "id": "fc5052d097945c38b36b8959f825943e",
+              "score": 0.9896
+            },
+            {
+              "id": "76d7f51d1b639fc9b10cc63f79d505fe",
+              "score": 0.9889
+            },
+            {
+              "id": "8a392cb082daa0d39c4fab8f5eb35bea",
+              "score": 0.971
+            },
+            {
+              "id": "9d3cd821faf6a7fb2f12194c2e5b9758",
+              "score": 0.9624
+            },
+            {
+              "id": "97bdadca0497862d62aebe746104b2e9",
+              "score": 0.9569
+            },
+            {
+              "id": "c132a8b583fec7a7ca196c251fe52a00",
+              "score": 0.956
+            },
+            {
+              "id": "22df072f18f6921c410adce2a191d480",
+              "score": 0.9513
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "median_abs_log_price_ratio": 0.04833530209663159
+          }
+        },
+        {
+          "query": "314be9c0b9c934e10bbe5b4aa6d2de79",
+          "split": "dev",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "d3d7fab97b34846e985c50c0aeaaaf1f",
+              "score": 0.9366
+            },
+            {
+              "id": "3f0cea7297f3a3ee8e2cf890d6aeb496",
+              "score": 0.7291
+            },
+            {
+              "id": "8d89a4ab9cb44009f8b56d8b9b5294d6",
+              "score": 0.6348
+            },
+            {
+              "id": "a3d2de7ead19bf943c4b935bf1cb2787",
+              "score": 0.6162
+            },
+            {
+              "id": "a4e2c24b77215873c9d97354f45bf357",
+              "score": 0.5945
+            },
+            {
+              "id": "894f301347f29430b268070612dc03b8",
+              "score": 0.5915
+            },
+            {
+              "id": "cea76fa5b8ed7d5fe3c5217e3025fd40",
+              "score": 0.4734
+            },
+            {
+              "id": "b42e381a23f7a8b51b006b7d92ef7814",
+              "score": 0.4544
+            },
+            {
+              "id": "5b17b7645e41042026f692b62646d08a",
+              "score": 0.4405
+            },
+            {
+              "id": "5104ff2630670e6eb7613ea59eac9617",
+              "score": 0.436
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.2,
+            "median_abs_log_price_ratio": 0.13371020353246435
+          }
+        },
+        {
+          "query": "6fc91245defaa0c1210e86268249a132",
+          "split": "dev",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "e3456af19944826339b4acb0eeae10c6",
+              "score": 0.7334
+            },
+            {
+              "id": "f8c0a30d868c2eb7cab31b0712f68c7e",
+              "score": 0.4768
+            },
+            {
+              "id": "84cc57c8eaeefce9dd22a7ef31376176",
+              "score": 0.3894
+            },
+            {
+              "id": "816b849b974b45b0caea83d02c7648e0",
+              "score": 0.383
+            },
+            {
+              "id": "877df98eed1ea392fa92d551806320ab",
+              "score": 0.3702
+            },
+            {
+              "id": "61da469abfc6396cf61b2152c883e16e",
+              "score": 0.3697
+            },
+            {
+              "id": "081b061356820eea3f99d9669b2d9d0c",
+              "score": 0.3679
+            },
+            {
+              "id": "f6a46350a09f4690330340fcecc965b3",
+              "score": 0.3646
+            },
+            {
+              "id": "c1a7b944bb12eff42d8181308169d486",
+              "score": 0.3644
+            },
+            {
+              "id": "45df1b5ffca712ba48ece515f8f3e385",
+              "score": 0.3546
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.1,
+            "median_abs_log_price_ratio": 0.10413232491715696
+          }
+        },
+        {
+          "query": "65ae3f3110f8ead580b7948e9196cf79",
+          "split": "dev",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "a6aef41154e83911b235689d8da3669f",
+              "score": 0.8416
+            },
+            {
+              "id": "38783d25d67961d6e4a1381aea134ede",
+              "score": 0.697
+            },
+            {
+              "id": "9392f8b0e2701fa6e4b94b609e113883",
+              "score": 0.62
+            },
+            {
+              "id": "3fc46ab02f0c396ba2475e5e7f514028",
+              "score": 0.5479
+            },
+            {
+              "id": "af1923dac8da0f8f8aabdfa8ae2d7f77",
+              "score": 0.5371
+            },
+            {
+              "id": "8984021492815a3ccb15f285121ef0c5",
+              "score": 0.5279
+            },
+            {
+              "id": "1dd8d55241b97d68ede26bae2ada1a72",
+              "score": 0.4905
+            },
+            {
+              "id": "4b457569ebf3e9f3411613ec05324943",
+              "score": 0.4889
+            },
+            {
+              "id": "8508d300b59deb8592189ec178deee32",
+              "score": 0.4835
+            },
+            {
+              "id": "19cb25dca623725f77bbd28cc7b223fc",
+              "score": 0.4744
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.4,
+            "median_abs_log_price_ratio": 0.08625247588912238
+          }
+        },
+        {
+          "query": "e5f36cab588ff86e649372d530a10007",
+          "split": "dev",
+          "stratum": "common_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "c805c258645812a83d3219fd379d076c",
+              "score": 0.7661
+            },
+            {
+              "id": "45073214eb117d9542a5f3596f7f3b20",
+              "score": 0.6665
+            },
+            {
+              "id": "c2c0e2c98c062e55acf5733a362cdacb",
+              "score": 0.5365
+            },
+            {
+              "id": "38cce4723d38fdfac1f54f16445df467",
+              "score": 0.4819
+            },
+            {
+              "id": "1dda982f2f44ab81282a945909dd079b",
+              "score": 0.4624
+            },
+            {
+              "id": "0ef2b79c103041050b5c0f488576af9f",
+              "score": 0.4599
+            },
+            {
+              "id": "76276ec549c34e399461c10a7916c59f",
+              "score": 0.4587
+            },
+            {
+              "id": "62673f5a1de662b723edb180338e939f",
+              "score": 0.4524
+            },
+            {
+              "id": "1a2d956594596cac9f21b1de0d2dc18c",
+              "score": 0.4522
+            },
+            {
+              "id": "d0beaef7c497278f15726140834b3028",
+              "score": 0.4485
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.2,
+            "median_abs_log_price_ratio": 0.13868338753395063
+          }
+        },
+        {
+          "query": "ba87dae5b45b81f4c30c2991f9900ced",
+          "split": "holdout",
+          "stratum": "rare_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "8a6d782af1a7ad5dcced2cc2c0573fae",
+              "score": 0.6686
+            },
+            {
+              "id": "2f82ed41d673fcb0371f1fd2c9f27caa",
+              "score": 0.6343
+            },
+            {
+              "id": "ad2408ed92b9487c3643b9d506ec3042",
+              "score": 0.431
+            },
+            {
+              "id": "a7de28abc46156eab4eb2d66b12bcb65",
+              "score": 0.4269
+            },
+            {
+              "id": "e99a40caf69909c7279f921272e67486",
+              "score": 0.4246
+            },
+            {
+              "id": "23c902f42ec01786688fd07e71d81201",
+              "score": 0.4175
+            },
+            {
+              "id": "2cd31518b14adb1d6d499a8e58494b1e",
+              "score": 0.4027
+            },
+            {
+              "id": "fa01370347ca1d126cc2b56c5f312ba6",
+              "score": 0.3876
+            },
+            {
+              "id": "ccc1ba5b98da0c0e9521b648a7fecf86",
+              "score": 0.384
+            },
+            {
+              "id": "f22dd43e8ddc3521df813dd64c8d606c",
+              "score": 0.3718
+            }
+          ]
+        },
+        {
+          "query": "9a73f1c1ac4911a5daf786581868e019",
+          "split": "dev",
+          "stratum": "rare_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "6d75cfc7c037f7e6fbaf723595238f7f",
+              "score": 0.609
+            },
+            {
+              "id": "2576fa08dd03aa8395e654cc109e7277",
+              "score": 0.5311
+            },
+            {
+              "id": "518254c9cc5843f4072561e0c0abc6de",
+              "score": 0.518
+            },
+            {
+              "id": "208c6bb70ea1284843d1256f83d93e96",
+              "score": 0.5177
+            },
+            {
+              "id": "d697c13de7ebfe1a0f09504d3e871f81",
+              "score": 0.4559
+            },
+            {
+              "id": "f7448058371abbe28731169efcc9a963",
+              "score": 0.4224
+            },
+            {
+              "id": "a166f04ef5667ca781427148daf6b55e",
+              "score": 0.4201
+            },
+            {
+              "id": "0d8cde1a5bdfd450f77b9710eccd6ea1",
+              "score": 0.4186
+            },
+            {
+              "id": "26c7f367dc1f5dab8ad88b610fdd9e9f",
+              "score": 0.399
+            },
+            {
+              "id": "91310308a3a6bbc725395cc77eb30439",
+              "score": 0.3872
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 0.0,
+            "brand_agreement": 1.0,
+            "median_abs_log_price_ratio": 0.25391520998096345
+          }
+        },
+        {
+          "query": "307bed4226c0f82c3451a86f34d7f285",
+          "split": "dev",
+          "stratum": "rare_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "07acb0f50c466064c30afe3027522c53",
+              "score": 0.7183
+            },
+            {
+              "id": "ecbf95534aefd14214ae7d964faf3789",
+              "score": 0.7183
+            },
+            {
+              "id": "31b8695eed87b920b90b615586a99c63",
+              "score": 0.6113
+            },
+            {
+              "id": "2bfc6ca5c04cf74f1e16c5fa5ea604bc",
+              "score": 0.6113
+            },
+            {
+              "id": "24184bb874f9f71b5bd6d0fc9c99a7d9",
+              "score": 0.5928
+            },
+            {
+              "id": "04519ee9c0f2bd881f9cb8c6dd966424",
+              "score": 0.5734
+            },
+            {
+              "id": "2fddfbb41443f4e2b3eff91e05f55b4e",
+              "score": 0.5734
+            },
+            {
+              "id": "0150c32493c0c9124ba49f74c5d6ee4e",
+              "score": 0.4744
+            },
+            {
+              "id": "e3a416098dad0a68ab23f0eb79e51cf2",
+              "score": 0.4744
+            },
+            {
+              "id": "b553dffe942719cd7f67cb735882355b",
+              "score": 0.4203
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 0.0,
+            "median_abs_log_price_ratio": 0.08718005372107468
+          }
+        },
+        {
+          "query": "6a8674d8512c66cb9f89f1617c4929c9",
+          "split": "dev",
+          "stratum": "rare_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "2dc03b4c83f2bc2fb2b97067acd739a1",
+              "score": 0.5989
+            },
+            {
+              "id": "6d6927b54f4468c20b58707fba695018",
+              "score": 0.4667
+            },
+            {
+              "id": "a78e7cbd386e09201461d97d6cdcf264",
+              "score": 0.4614
+            },
+            {
+              "id": "fdf64108222c28ac65619ec40fc01cf5",
+              "score": 0.3485
+            },
+            {
+              "id": "9455ab1b2444aadcbe8f59acc8171a98",
+              "score": 0.3152
+            },
+            {
+              "id": "560604665163c919513ff1848760395b",
+              "score": 0.3147
+            },
+            {
+              "id": "c1b843d4519afad1eef3f0ccdd34751f",
+              "score": 0.3083
+            },
+            {
+              "id": "f8a53b0f2d267896c53f0e960711f5ac",
+              "score": 0.2993
+            },
+            {
+              "id": "a223f3e78e5c43f436824887208d0877",
+              "score": 0.2973
+            },
+            {
+              "id": "9b7fa16a69b9d2f98967633ad6d0f995",
+              "score": 0.2916
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 0.7,
+            "brand_agreement": 0.2,
+            "median_abs_log_price_ratio": 0.3577496350684979
+          }
+        },
+        {
+          "query": "3efe54d408d85ddd91800c9f8db62d82",
+          "split": "dev",
+          "stratum": "rare_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "53c07f123340aaee911d113130b4b6e8",
+              "score": 0.3825
+            },
+            {
+              "id": "793e59adacf158ca802850448d7d78fd",
+              "score": 0.3701
+            },
+            {
+              "id": "893250355a4236f37c3f8b16921d97f3",
+              "score": 0.3479
+            },
+            {
+              "id": "441d07d7d8f02319b695755a22dee842",
+              "score": 0.3448
+            },
+            {
+              "id": "001e596259c7511264dc5a0eec04af20",
+              "score": 0.3428
+            },
+            {
+              "id": "2aa6c8fc86c47efc21cfbc79fbf22b6a",
+              "score": 0.339
+            },
+            {
+              "id": "0aee14c02029eafa8d60f8d41ef6385c",
+              "score": 0.339
+            },
+            {
+              "id": "08d02ff8153169734913a2b82f2831c1",
+              "score": 0.339
+            },
+            {
+              "id": "7e03c835f7551addc1bfd79d3f141e28",
+              "score": 0.339
+            },
+            {
+              "id": "8bb10f832a6431bfce17e0e3f44db22e",
+              "score": 0.3385
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.0
+          }
+        },
+        {
+          "query": "9a3716a16c7012941ec585aab6122f3d",
+          "split": "holdout",
+          "stratum": "missing_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "34ebbb470d47a6f90c3935ad44137d82",
+              "score": 0.4377
+            },
+            {
+              "id": "2a5a23d38ed873e2e42dcc7ac810d987",
+              "score": 0.416
+            },
+            {
+              "id": "6ff1ca25dacb642d79138be97f3a3edf",
+              "score": 0.3861
+            },
+            {
+              "id": "e959604959caf51ab4b61701abdaf9f6",
+              "score": 0.3719
+            },
+            {
+              "id": "bfb350ca9287ad0f5b4dda10efa8d732",
+              "score": 0.3629
+            },
+            {
+              "id": "6efc4cc0394f12f9354dabbd4e56fc9b",
+              "score": 0.3481
+            },
+            {
+              "id": "7a917e856893917e6818b20247ae584e",
+              "score": 0.3457
+            },
+            {
+              "id": "e1171e22f80b58c58df5832e8b1b7156",
+              "score": 0.3402
+            },
+            {
+              "id": "5bb999c72dfc732126203ac40884e5cd",
+              "score": 0.3325
+            },
+            {
+              "id": "8a77d22f129f329950870a4d0962b8bb",
+              "score": 0.3308
+            }
+          ]
+        },
+        {
+          "query": "cd3af562275bf079983c4252e8751757",
+          "split": "dev",
+          "stratum": "missing_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "75fb124d13f909aa107b3d9787f76126",
+              "score": 0.3951
+            },
+            {
+              "id": "c82df81a5b82a445e1993b2698bb5df0",
+              "score": 0.3078
+            },
+            {
+              "id": "94607c3d4b03e1dff074277312684cbf",
+              "score": 0.3039
+            },
+            {
+              "id": "1b1f286c6e47a5d8e747a8a5b014928b",
+              "score": 0.2999
+            },
+            {
+              "id": "faf2dd52711dee6eb9a7c6662fb53f31",
+              "score": 0.2597
+            },
+            {
+              "id": "e7544c16982328126390c4c3dc5bd613",
+              "score": 0.2545
+            },
+            {
+              "id": "e910c3231bf8681a77affb158ce6cfab",
+              "score": 0.2428
+            },
+            {
+              "id": "0fcc3f155262a8f90e967a604ac7bce5",
+              "score": 0.2345
+            },
+            {
+              "id": "203391060e019182c3290b40497fe9d6",
+              "score": 0.2332
+            },
+            {
+              "id": "74062ab3d35ca94d76b695fa8967f7af",
+              "score": 0.2332
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "brand_agreement": 0.0,
+            "median_abs_log_price_ratio": 0.05023477667360127
+          }
+        },
+        {
+          "query": "ac12b8121767f032eace03ba3ace0164",
+          "split": "dev",
+          "stratum": "missing_category",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "5df071236d5b33bb2340a6ae9dbd0a05",
+              "score": 0.5879
+            },
+            {
+              "id": "02bef27e0455b63972fcb8b44f591925",
+              "score": 0.5701
+            },
+            {
+              "id": "224ac0a8f5da624752a6ea3b1567c1ed",
+              "score": 0.5433
+            },
+            {
+              "id": "d1cf79532f25d9911670fc08073f9ae8",
+              "score": 0.5364
+            },
+            {
+              "id": "0f65ef41890292c033f1ff5c2ce0bbe2",
+              "score": 0.5302
+            },
+            {
+              "id": "9ecf5fccb5b5d35f0ef0a6b51d36de79",
+              "score": 0.5059
+            },
+            {
+              "id": "e74bf0828357583c54fa5bf36c425fd1",
+              "score": 0.4999
+            },
+            {
+              "id": "6c3e187468ff32ca58422604a33c63ed",
+              "score": 0.4962
+            },
+            {
+              "id": "ef86244c7f6c7aa27293608c19307f7a",
+              "score": 0.489
+            },
+            {
+              "id": "f3b439844ef1243795ebb19e0362198f",
+              "score": 0.4805
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.1
+          }
+        },
+        {
+          "query": "67f00af00e1ddfd2415de4c13861b5a9",
+          "split": "holdout",
+          "stratum": "missing_brand",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "28394de0910c17fcb6e850b09e404c41",
+              "score": 0.4914
+            },
+            {
+              "id": "26f637ab6515bf53ef7206267ff41797",
+              "score": 0.4804
+            },
+            {
+              "id": "014745c6967e48d5aacacb0b04b0a99d",
+              "score": 0.4688
+            },
+            {
+              "id": "3307fd3ac06a3ab6b7d30fd1780dee23",
+              "score": 0.4618
+            },
+            {
+              "id": "79dd5169f5a22ac4b9e383191665aab6",
+              "score": 0.4598
+            },
+            {
+              "id": "92ac8dfafc4a78e58a09e60cf20c9d12",
+              "score": 0.4496
+            },
+            {
+              "id": "e43004d3308086bd6ea312b824843f28",
+              "score": 0.4488
+            },
+            {
+              "id": "9ea8c4ecdde91b61b160d0b9f49807f7",
+              "score": 0.4487
+            },
+            {
+              "id": "b64e49ca929edfd027e45402b0f66735",
+              "score": 0.4482
+            },
+            {
+              "id": "903cfcb1bbb401708d3148cd5d67269e",
+              "score": 0.4476
+            }
+          ]
+        },
+        {
+          "query": "0ac35cf60852dd2e2c6ec5df9c737b2f",
+          "split": "dev",
+          "stratum": "missing_brand",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "d5ad18a6ad800c1dd6957dac73048af0",
+              "score": 0.913
+            },
+            {
+              "id": "dac56bf7e4e28592e3c0d6065312287f",
+              "score": 0.7335
+            },
+            {
+              "id": "87a74fe4eafb4120d9af86eac86bc4a4",
+              "score": 0.7256
+            },
+            {
+              "id": "6e323eccc8899103a06013356b47b896",
+              "score": 0.7256
+            },
+            {
+              "id": "dce488f8529faddf9348f77ff0ea1b98",
+              "score": 0.7057
+            },
+            {
+              "id": "a9a4019963899ea76c3e4f6a21f624c1",
+              "score": 0.6938
+            },
+            {
+              "id": "59adecd05cd3e33dc38f0f20d48728c5",
+              "score": 0.5078
+            },
+            {
+              "id": "56358f7f88b062079d1249f74efde9fa",
+              "score": 0.5078
+            },
+            {
+              "id": "b52135b3ab305600fd8bed5ae96b5cd3",
+              "score": 0.5017
+            },
+            {
+              "id": "255cd2df7ed4a5325c88d574e4035624",
+              "score": 0.5017
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "median_abs_log_price_ratio": 0.05329858172436192
+          }
+        },
+        {
+          "query": "2b7081d70a8db985ca3c4962f0e89b17",
+          "split": "dev",
+          "stratum": "missing_brand",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "7646a7cd795d0297788682041da0b1a1",
+              "score": 0.6452
+            },
+            {
+              "id": "30bae2e7be5d4f7667c4214f1ba6045a",
+              "score": 0.6356
+            },
+            {
+              "id": "5f67d8ec49c34999903bcbcd4eb098d3",
+              "score": 0.6283
+            },
+            {
+              "id": "e58f5e5c9e7544d69a5acef2f1ecd5fa",
+              "score": 0.5967
+            },
+            {
+              "id": "1612d7581eb0afae0af7761138a780e0",
+              "score": 0.588
+            },
+            {
+              "id": "8d427d414269759461fd7ed053b410bf",
+              "score": 0.5728
+            },
+            {
+              "id": "113a19c67e8e2c68394436b20125a2e5",
+              "score": 0.5665
+            },
+            {
+              "id": "75c9b49f5073ad9004104353e4149159",
+              "score": 0.558
+            },
+            {
+              "id": "286743584255accf1e0223f957feb2d6",
+              "score": 0.5502
+            },
+            {
+              "id": "ef572d8eb449c102479c44d2dc8ebedf",
+              "score": 0.5441
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 0.5,
+            "median_abs_log_price_ratio": 0.2201221216625417
+          }
+        },
+        {
+          "query": "4b3cd01a0d2fa712ab96edd4978a1eaa",
+          "split": "holdout",
+          "stratum": "missing_price",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "8c3a88888a8fc1b09ad37f35ed563ffa",
+              "score": 0.7798
+            },
+            {
+              "id": "b630a32867fba048f5feb3a1b33f5690",
+              "score": 0.7507
+            },
+            {
+              "id": "7b76d569cba1a2f723e60451b8a7abe8",
+              "score": 0.7503
+            },
+            {
+              "id": "7ed5dbee5283ec4932213dfe3dedb27c",
+              "score": 0.749
+            },
+            {
+              "id": "aba9f3048a1114f7d0ddcb896ad96aa7",
+              "score": 0.7345
+            },
+            {
+              "id": "ec02bab320b8969d735b2738287aae7c",
+              "score": 0.7002
+            },
+            {
+              "id": "cd4105dca7a3e4ca091b76b10cba6b4c",
+              "score": 0.6964
+            },
+            {
+              "id": "bc8e96ddbccf34fe51358bd25f09ba6d",
+              "score": 0.6959
+            },
+            {
+              "id": "cb6cb5c53b3927d182ad037975889dfb",
+              "score": 0.6947
+            },
+            {
+              "id": "401f6e2bbbd0ab25bb29feee717243f8",
+              "score": 0.6946
+            }
+          ]
+        },
+        {
+          "query": "5b448a5e5ee04b444d9944e119177170",
+          "split": "dev",
+          "stratum": "missing_price",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "d5f4c52837b832bc90427a265b038f03",
+              "score": 0.8462
+            },
+            {
+              "id": "8683a77be9f8ee170c2a12102a2d6c84",
+              "score": 0.6989
+            },
+            {
+              "id": "98a19a2126b4e9a12acf9f01c2f600af",
+              "score": 0.6733
+            },
+            {
+              "id": "d2db7d7debfec17c393b44b12eb7f1a0",
+              "score": 0.6435
+            },
+            {
+              "id": "21d9ebc8680351a76204aaf7b1f79760",
+              "score": 0.6379
+            },
+            {
+              "id": "6fbd23f7e299e37429682ddd588bcdd0",
+              "score": 0.6278
+            },
+            {
+              "id": "2613a890281b34740bc1743cbac87d07",
+              "score": 0.6141
+            },
+            {
+              "id": "fc61b1e3f489a9a98835e6eacabff365",
+              "score": 0.5967
+            },
+            {
+              "id": "3a70236dc202cd6d2a126929d32a7371",
+              "score": 0.5863
+            },
+            {
+              "id": "6fa7995978328e4222d7b8dc8a77111e",
+              "score": 0.5801
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 1.0
+          }
+        },
+        {
+          "query": "0fc48853ec5cedfd815557996e96287c",
+          "split": "holdout",
+          "stratum": "image_failure",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "0c29b58b7d9429b767465f026ce01464",
+              "score": 0.3291
+            },
+            {
+              "id": "f69eb718554096a2078623bd188078a1",
+              "score": 0.2725
+            },
+            {
+              "id": "aecf3705f1c1d6cd397c1f419f17484a",
+              "score": 0.2591
+            },
+            {
+              "id": "674b2a497214ee7ec33d3fc05b0d7664",
+              "score": 0.1888
+            },
+            {
+              "id": "b0307131d103f31395b032fb3cbfb709",
+              "score": 0.1858
+            },
+            {
+              "id": "b6b5a9b06e0c99f38623d3be3d5ac7cd",
+              "score": 0.1801
+            },
+            {
+              "id": "7f5c2c686f1fbd8d33aec8d07910b5c1",
+              "score": 0.1799
+            },
+            {
+              "id": "b71809763c611526ead91219185345d3",
+              "score": 0.1776
+            },
+            {
+              "id": "c7ee243f2a58d92c8ab5685a2c33cb88",
+              "score": 0.1771
+            },
+            {
+              "id": "2b253a6540b48191dc4422668133afb0",
+              "score": 0.1755
+            }
+          ]
+        },
+        {
+          "query": "b275133a29852973c8d88633e4a29e09",
+          "split": "dev",
+          "stratum": "image_failure",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "074e23e699a3e623aa22496a395bc4c2",
+              "score": 0.9191
+            },
+            {
+              "id": "a0beb211a634b1047a488ddce1fe15d5",
+              "score": 0.6991
+            },
+            {
+              "id": "2beff1b8e3e4f24bfe604851d6970042",
+              "score": 0.5702
+            },
+            {
+              "id": "931862e06b9061c590d28813f68937ae",
+              "score": 0.5446
+            },
+            {
+              "id": "0c9425df8b880e4272e43ac8e33ddb47",
+              "score": 0.5446
+            },
+            {
+              "id": "d92bec17561caedad42da2210ad71533",
+              "score": 0.5368
+            },
+            {
+              "id": "c78d15da281060ad901f5aa36dfdaf4d",
+              "score": 0.5368
+            },
+            {
+              "id": "c63b59abf4d526c532f554702b4beee7",
+              "score": 0.5162
+            },
+            {
+              "id": "26bb15bbc7a43953a67e3dacc5ae007b",
+              "score": 0.5002
+            },
+            {
+              "id": "a265dc853d304e11048e4151a7e4f6d3",
+              "score": 0.4867
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.5
+          }
+        },
+        {
+          "query": "6e7cfe7eee23a2ed3dd648b375ef14ac",
+          "split": "holdout",
+          "stratum": "variant_family",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "add8c38144b769c85d3a2a36c887458d",
+              "score": 0.6561
+            },
+            {
+              "id": "4df8e6dc4e269723b88053879bd10443",
+              "score": 0.4777
+            },
+            {
+              "id": "7420d155523412123b12bcf565c3864b",
+              "score": 0.4743
+            },
+            {
+              "id": "23f2f05ff6fca0b6000b210e46985aeb",
+              "score": 0.4199
+            },
+            {
+              "id": "cd85bd2e87effd2eb621700f6a8a46ea",
+              "score": 0.4176
+            },
+            {
+              "id": "f0cb01516e93ddeaa93da82c95bc3516",
+              "score": 0.3984
+            },
+            {
+              "id": "3d77f84afa6aa3f29d4cf0ba58d66187",
+              "score": 0.3924
+            },
+            {
+              "id": "b3f82c9148276d6cb5f1ef701203bc05",
+              "score": 0.3894
+            },
+            {
+              "id": "696f8a379e69fd531fa65ddc93912f8d",
+              "score": 0.3884
+            },
+            {
+              "id": "91d6a813157e4166b858192bae5b0aa3",
+              "score": 0.3787
+            }
+          ]
+        },
+        {
+          "query": "136167a49469fd5c47adb997429516ae",
+          "split": "dev",
+          "stratum": "variant_family",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "a7c583bce1e7666360214eaec662717b",
+              "score": 0.9874
+            },
+            {
+              "id": "e8bd22d1cba0f126c4b3efb375292d78",
+              "score": 0.7622
+            },
+            {
+              "id": "60f00ed55d4117dd1d91e947cf03527d",
+              "score": 0.7439
+            },
+            {
+              "id": "560e2d43b866f4f2d1e7e73cfdfb81e8",
+              "score": 0.6892
+            },
+            {
+              "id": "1bc1ab3744a97bfcfc445f36a0e3ecde",
+              "score": 0.4875
+            },
+            {
+              "id": "3b51f831952550d12edd21e8ecc8cf5b",
+              "score": 0.4766
+            },
+            {
+              "id": "27b7fa90e79a068dd19f962015b740fb",
+              "score": 0.4669
+            },
+            {
+              "id": "0a31d7a9b3de91de94447361a9ebe439",
+              "score": 0.4533
+            },
+            {
+              "id": "d7a0a8e52cc42d50f548a5a71f003f86",
+              "score": 0.4508
+            },
+            {
+              "id": "fd3c6dab20cad243a4d3c180830f3f23",
+              "score": 0.4336
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.3,
+            "median_abs_log_price_ratio": 0.15218449561839778
+          }
+        },
+        {
+          "query": "41193ccf14fa06857dbc57c9e3f8a857",
+          "split": "dev",
+          "stratum": "variant_family",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "fc06c8fb889acfad746eb2abe750245a",
+              "score": 0.9348
+            },
+            {
+              "id": "b2bc03b57184feebe78cf93e0c67d74b",
+              "score": 0.8023
+            },
+            {
+              "id": "5ca64f14bdd56a8c59b8cca8698d9245",
+              "score": 0.7732
+            },
+            {
+              "id": "f977a8a62a76bf98956fbb50a29af979",
+              "score": 0.7706
+            },
+            {
+              "id": "6e5f77adaa9b712836f7446bc011621d",
+              "score": 0.766
+            },
+            {
+              "id": "c0f9e53aeec039767e0dc4d8213ef8e9",
+              "score": 0.758
+            },
+            {
+              "id": "748d8a2f8df15b6d1c9d9798f9b6f170",
+              "score": 0.7382
+            },
+            {
+              "id": "6f44f9f4080f41049b748d6d52837eaa",
+              "score": 0.7352
+            },
+            {
+              "id": "2813818a1b585a5eb6097cef9531c183",
+              "score": 0.7313
+            },
+            {
+              "id": "afa6d02d1c6ae3e0e86120907e3b96f6",
+              "score": 0.7255
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.3,
+            "median_abs_log_price_ratio": 0.2673147696273473
+          }
+        },
+        {
+          "query": "b35378d7bc3038fc63f57dbe120883c8",
+          "split": "holdout",
+          "stratum": "ambiguous_title",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "3450bf568c62d347994578410238d769",
+              "score": 1.0
+            },
+            {
+              "id": "43e78d983004b9adef1a5263f6d20c1d",
+              "score": 0.758
+            },
+            {
+              "id": "246742f903de763ab91e078f9fe44546",
+              "score": 0.7195
+            },
+            {
+              "id": "c0146b68c55db481a51d4cd9d433788a",
+              "score": 0.7157
+            },
+            {
+              "id": "f210b3a1d70253a5db01027e96b846ec",
+              "score": 0.6953
+            },
+            {
+              "id": "4443bb4aaf1e5af3ca0e21a510db830b",
+              "score": 0.6806
+            },
+            {
+              "id": "4c3dcad69b4705f7a174d75b41ef31bf",
+              "score": 0.6806
+            },
+            {
+              "id": "0b85baf93a81822bdf037f67691acc85",
+              "score": 0.6747
+            },
+            {
+              "id": "0ce865a1fadb0e0df13ab2303f3169af",
+              "score": 0.6639
+            },
+            {
+              "id": "440f6aa2d3a51cccb41bf3d2a606e38d",
+              "score": 0.6589
+            }
+          ]
+        },
+        {
+          "query": "12831a10980a52f52e495bffe669a6a7",
+          "split": "dev",
+          "stratum": "ambiguous_title",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "ea1bc796f600e57c0717b6e0770328a7",
+              "score": 0.8879
+            },
+            {
+              "id": "7a65fa14e5487a93f30cde45294dc0ea",
+              "score": 0.691
+            },
+            {
+              "id": "2f5a3eecfc56513a9cb7bcf9d98cb6ec",
+              "score": 0.6789
+            },
+            {
+              "id": "490bdfbec919da65ab98228a475f5a75",
+              "score": 0.6774
+            },
+            {
+              "id": "c5ca7abd6404034f2d611356e32eccab",
+              "score": 0.6774
+            },
+            {
+              "id": "6f4c7f2a6f6ea198f77f3e0321fcb51f",
+              "score": 0.6705
+            },
+            {
+              "id": "56324361dc2897e8dc5f0168089ab417",
+              "score": 0.6652
+            },
+            {
+              "id": "c1b0f850bc2eed64a49f8bf6352e6213",
+              "score": 0.6652
+            },
+            {
+              "id": "6a44653526ea417b0d85bcb6f52d1601",
+              "score": 0.6652
+            },
+            {
+              "id": "942aa4f11d52959e95e3c7a9c2649c6a",
+              "score": 0.6627
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 1.0,
+            "brand_agreement": 0.1,
+            "median_abs_log_price_ratio": 0.10257887269594945
+          }
+        },
+        {
+          "query": "c3a4df40ae456e1cc76c107d16382c75",
+          "split": "dev",
+          "stratum": "duplicate_asin",
+          "title_cap_shortfall": 0,
+          "results": [
+            {
+              "id": "6eaebccbcc8ff7a5e7286f527c02a02e",
+              "score": 0.627
+            },
+            {
+              "id": "1ee8d225460801ec1d4e88fc1fa58904",
+              "score": 0.382
+            },
+            {
+              "id": "65a0c5bad36bdec45ed53e12d69a9ef4",
+              "score": 0.3784
+            },
+            {
+              "id": "f41c16cc118fba5b955e7ea5ad97cd8b",
+              "score": 0.3632
+            },
+            {
+              "id": "5525816175bcfeeb72d679cc6528f631",
+              "score": 0.3603
+            },
+            {
+              "id": "3a33ba812dfb3cc26d31375ffd477b90",
+              "score": 0.3561
+            },
+            {
+              "id": "29645a3d3a2222189708de01c7c897df",
+              "score": 0.3508
+            },
+            {
+              "id": "68227070031856d287582583f0682b79",
+              "score": 0.3486
+            },
+            {
+              "id": "d3a01147829420558c183a6b4f9b84ba",
+              "score": 0.347
+            },
+            {
+              "id": "857bfd848c3e1c3438fd816c974f6bd4",
+              "score": 0.3458
+            }
+          ],
+          "diagnostics": {
+            "returned": 10,
+            "category_agreement": 0.9,
+            "brand_agreement": 0.1,
+            "median_abs_log_price_ratio": 0.05385912452012138
+          }
+        }
+      ]
+    }
+  },
+  "dev_top10_jaccard_A_vs_B": 0.1326
+}

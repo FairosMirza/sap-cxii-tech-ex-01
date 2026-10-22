@@ -1,0 +1,85 @@
+{
+  "source": {
+    "path": "data/marketing_sample_for_amazon_com-amazon_fashion_products__20200201_20200430__30k_data.ldjson",
+    "sha256": "dfe14353fc4b31419fa67ad04e6f57baf4ab9de7b37ba73cb3f762d602be9d12",
+    "rows": 30000,
+    "malformed_lines": 0,
+    "invalid_id_lines": 0,
+    "duplicate_id_lines": 0
+  },
+  "identity": {
+    "unique_uniq_id": 30000,
+    "excess_rows_over_unique_asin": 471,
+    "asin_groups_with_duplicates": 451,
+    "excess_rows_over_unique_normalized_name": 7887,
+    "variant_families_brand_and_title": 1409,
+    "products_in_variant_families": 4942
+  },
+  "brand": {
+    "missing_raw": 8143,
+    "missing_raw_pct": 27.14,
+    "placeholder_values_treated_missing": 313,
+    "usable": 21544,
+    "distinct_usable": 6324,
+    "top_placeholder_examples": [
+      "Generic",
+      "Unknown",
+      "N/A",
+      "#N/A"
+    ]
+  },
+  "price": {
+    "sales_price_missing": 2890,
+    "sales_price_missing_pct": 9.63,
+    "sales_price_min": 39.0,
+    "sales_price_median": 590.0,
+    "sales_price_max": 9988.0,
+    "discount_percentage_present": 14624,
+    "derived_regular_price_available": 14624,
+    "note": "Derived regular price = sales_price / (1 - discount) for 0 < discount < 1; kept as unscored metadata to avoid counting price twice."
+  },
+  "weight": {
+    "placeholder_999999999": 23745,
+    "placeholder_pct": 79.15,
+    "parsed_from_weight_field": 6246,
+    "parsed_from_item_weight_fallback": 0,
+    "usable_pct": 20.82,
+    "rows_with_both_fields": 3821,
+    "rows_where_both_agree": 3814
+  },
+  "rating": {
+    "usable": 30000,
+    "compared_with_customer_reviews": 22206,
+    "exact_agreement_pct": 58.85,
+    "within_0_5_pct": 90.58,
+    "review_count_usable": 25591
+  },
+  "color": {
+    "from_product_name": 9738,
+    "from_meta_keywords_fallback": 3163,
+    "unknown": 17099,
+    "title_keyword_conflicts_flagged": 176,
+    "multi_family_products": 1916,
+    "colour_field_present": 6029,
+    "colour_field_with_multiple_values": 6029,
+    "note": "The colour field lists a listing's available variant colours, so it is kept but not scored."
+  },
+  "category": {
+    "browsenode_missing": 520,
+    "category_map_missing": 4503,
+    "child_category_present": 24851,
+    "filled_from_browsenode": 3877,
+    "unknown": 1272,
+    "distinct_categories": 234,
+    "products_with_multiple_categories": 796
+  },
+  "images": {
+    "medium_missing": 2,
+    "large_missing": 1159,
+    "primary_url_usable": 29998
+  },
+  "text": {
+    "meta_keywords_equal_to_name": 1915,
+    "median_text_tokens": 10.0
+  }
+}

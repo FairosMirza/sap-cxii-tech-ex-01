@@ -1,0 +1,14 @@
+{
+  "products": 30000,
+  "usable_images": 29861,
+  "status_counts": {
+    "ok": 29861,
+    "http_404": 137,
+    "missing_url": 2
+  },
+  "seconds": 511.7,
+  "max_bytes": 5242880,
+  "max_side_px": 320,
+  "attempts_per_image": 3,
+  "concurrency": 16
+}
