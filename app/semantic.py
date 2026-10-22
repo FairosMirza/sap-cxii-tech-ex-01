@@ -4,6 +4,8 @@ Filters exclude only confident conflicts: an explicit price limit removes produc
 products without a price, which cannot be verified); a stated audience or colour removes products whose
 known audience or colours contradict it. Unknown values stay eligible. Soft preferences (colour, material,
 size, cheaper/pricier) add small bonuses that reorder close matches but cannot lift unrelated products.
+An optional relevance cutoff on the query-product cosine (before bonuses) drops unrelated results, so fewer
+than `k`, or none, may come back (D12).
 """
 
 from __future__ import annotations
@@ -39,13 +41,15 @@ class SemanticResult:
 
 
 class SemanticSearcher:
-    def __init__(self, store: FeatureStore, text_key: str, config: ScoringConfig, encode_query=None) -> None:
+    def __init__(self, store: FeatureStore, text_key: str, config: ScoringConfig, encode_query=None,
+                 min_similarity: float | None = None) -> None:
         self.store = store
         self.text_key = text_key
         self.encode_query = encode_query or store.modalities[text_key].query_encoder
         if self.encode_query is None:
             raise ValueError(f"representation {text_key!r} cannot encode free-text queries")
         self.config = config
+        self.min_similarity = min_similarity
         c = store.catalog
         self.title_tokens = [set(normalize_key(text).split()) for text in c.texts]
         self.price_percentile = _price_percentile_within_category(store)
@@ -103,14 +107,17 @@ class SemanticSearcher:
         wanted = self.config.ann_candidates
         while True:
             rows = np.flatnonzero(mask) if index is None or wanted >= count else candidate_rows(index, query_vector, mask, wanted)
+            similarity = np.zeros(0)
             if len(rows):
                 if sparse.issparse(modality.vectors):
                     similarity = np.asarray((modality.vectors[rows] @ query_vector.T).todense()).ravel()
                 else:
                     similarity = modality.vectors[rows] @ query_vector
                 scores[rows] = similarity + self.bonuses(parsed, rows)
-            selected = select_distinct(self.store, order_rows(self.store, rows, scores), k, self.config)
-            if len(selected.rows) == k or len(rows) >= count:
+            kept = rows if self.min_similarity is None else rows[similarity >= self.min_similarity]
+            selected = select_distinct(self.store, order_rows(self.store, kept, scores), k, self.config)
+            # Candidates are the most similar products: once one falls below the cutoff, wider searches add none.
+            if len(selected.rows) == k or len(rows) >= count or len(kept) < len(rows):
                 break
             wanted *= 4
         return SemanticResult(selected.rows, [float(scores[r]) for r in selected.rows], parsed, count, excluded)

@@ -17,11 +17,32 @@ def fake_encode(text: str) -> np.ndarray:
     return vector / norm if norm else vector
 
 
-def searcher_for(records: list[dict]) -> SemanticSearcher:
+def searcher_for(records: list[dict], min_similarity: float | None = None) -> SemanticSearcher:
     store = build_store(records, text=False)
     vectors = np.stack([fake_encode(t) for t in store.catalog.texts])
     store.modalities["fake"] = embedding_modality(store.catalog, vectors)
-    return SemanticSearcher(store, "fake", config(text=0.5, attributes=0.5), fake_encode)
+    return SemanticSearcher(store, "fake", config(text=0.5, attributes=0.5), fake_encode, min_similarity)
+
+
+CUTOFF_RECORDS = [make_record("shoe", "Running Shoes", category="Shoes"),
+                  make_record("halfshoe", "Running Jacket", category="Jackets"),
+                  make_record("wallet", "Leather Wallet", category="Wallets")]
+
+
+def test_cutoff_rejects_unrelated_results_even_when_fewer_are_left():
+    # "running shoes" vs "Running Jacket" has cosine 1/sqrt(6) = 0.41 here; the wallet shares no word.
+    assert short_ids(searcher_for(CUTOFF_RECORDS, min_similarity=0.4), "running shoes") == ["shoe", "halfshoe"]
+    assert short_ids(searcher_for(CUTOFF_RECORDS, min_similarity=0.4), "winter dress") == []
+
+
+def test_cutoff_keeps_useful_results_and_none_means_no_cutoff():
+    assert short_ids(searcher_for(CUTOFF_RECORDS, min_similarity=0.9), "running shoes") == ["shoe"]
+    assert len(short_ids(searcher_for(CUTOFF_RECORDS), "winter dress")) == 3
+
+
+def test_bonuses_cannot_admit_a_result_below_the_cutoff():
+    records = [make_record("black", "Black Leather Jacket", category=None), make_record("shoe", "Running Shoes", category=None)]
+    assert short_ids(searcher_for(records, min_similarity=0.5), "black running shoes") == ["shoe"]
 
 
 def short_ids(searcher: SemanticSearcher, query: str, k: int = 10) -> list[str]:

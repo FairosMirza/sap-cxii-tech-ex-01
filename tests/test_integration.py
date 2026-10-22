@@ -32,6 +32,9 @@ with TestClient(create_app()) as client:
         calls[mode] = [similar.status_code, len(similar.json()), semantic.status_code, len(semantic.json())]
     served = client.get("/find_similar_products", params={"product_id": sys.argv[1], "num_similar": 10}).json()
     calls["part1_function_matches_endpoint"] = find_similar_products(sys.argv[1], 10) == served
+    # Only unrelated products cost under Rs 100, so the relevance cutoff (D12) must drop some of them.
+    calls["cutoff_active"] = len(client.get("/semantic_search", params={"query": "comfortable running shoes under $100",
+                                                                         "num_results": 10}).json()) < 10
 if sys.platform == "darwin":
     dyld = ctypes.CDLL(None)
     dyld._dyld_get_image_name.restype = ctypes.c_char_p
@@ -54,6 +57,6 @@ def test_service_on_real_artifacts():
     assert child.returncode == 0, child.stderr[-3000:]  # -11 is a segmentation fault
     report = json.loads(child.stdout.strip().splitlines()[-1])
     assert report["calls"] == {"ready": 200, "exact": [200, 10, 200, 10], "ann": [200, 10, 200, 10],
-                               "part1_function_matches_endpoint": True}
+                               "part1_function_matches_endpoint": True, "cutoff_active": True}
     assert report["heavy_modules"] == []
     assert len(report["openmp"]) <= 1, report["openmp"]

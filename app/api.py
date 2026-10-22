@@ -93,7 +93,8 @@ def create_app(loader: Callable[[], Loaded] = load_from_artifacts) -> FastAPI:
                         mode: MODE = None) -> List[str]:
         """IDs of products matching a free-text query, filters (price, audience, colour) applied first.
 
-        `num_results` is a maximum: fewer, or none, are returned when fewer products pass the filters.
+        `num_results` is a maximum: fewer, or none, are returned when fewer products pass the filters or the
+        relevance cutoff.
         """
         _, searcher = ready_engine()
         try:

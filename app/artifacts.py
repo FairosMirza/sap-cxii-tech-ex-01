@@ -144,6 +144,9 @@ def load_service() -> tuple[SimilarityEngine, SemanticSearcher, dict]:
     threads = int(os.environ.get("ENCODER_THREADS", "1"))
     store, manifest = load(Path(os.environ.get("ARTIFACTS_DIR", "artifacts")), encoder_threads=threads)
     serving = load_serving(config_path)
-    engine = SimilarityEngine(store, load_config(config_path, serving["similar_method"]).with_search(**serving["similar_search"]))
-    searcher = SemanticSearcher(store, serving["semantic_model"], load_config(config_path).with_search(**serving["semantic_search"]))
+    similar, semantic = serving["similar_search"], serving["semantic_search"]
+    engine = SimilarityEngine(store, load_config(config_path, serving["similar_method"]).with_search(**similar))
+    searcher = SemanticSearcher(store, serving["semantic_model"],
+                                load_config(config_path).with_search(semantic["mode"], semantic["candidates"]),
+                                min_similarity=semantic["min_similarity"])
     return engine, searcher, {**manifest, "serving": serving}

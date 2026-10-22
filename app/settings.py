@@ -124,11 +124,14 @@ def load_serving(path: str | Path = DEFAULT_CONFIG) -> dict[str, Any]:
     if not isinstance(model, str) or not model or model == "tfidf":
         raise ConfigError("serving.semantic_model must name an embedding model")
     searches = {}
-    for name in ("similar_search", "semantic_search"):
-        search = {"mode": "exact", "candidates": 200, **(serving.get(name) or {})}
-        candidates = search["candidates"]
-        if (set(search) != {"mode", "candidates"} or search["mode"] not in SEARCH_MODES
+    for name, extra in (("similar_search", {}), ("semantic_search", {"min_similarity": None})):
+        search = {"mode": "exact", "candidates": 200, **extra, **(serving.get(name) or {})}
+        candidates, cutoff = search["candidates"], search.get("min_similarity")
+        if (set(search) != {"mode", "candidates", *extra} or search["mode"] not in SEARCH_MODES
                 or isinstance(candidates, bool) or not isinstance(candidates, int) or candidates < 1):
-            raise ConfigError(f"serving.{name} takes mode ({' or '.join(SEARCH_MODES)}) and a positive integer candidates")
+            raise ConfigError(f"serving.{name} takes mode ({' or '.join(SEARCH_MODES)}), a positive integer candidates"
+                              + (" and min_similarity" if extra else ""))
+        if cutoff is not None and (isinstance(cutoff, bool) or not isinstance(cutoff, (int, float)) or not -1 <= cutoff <= 1):
+            raise ConfigError(f"serving.{name}.min_similarity must be null or a cosine between -1 and 1")
         searches[name] = search
     return {"similar_method": method, "semantic_model": model, **searches}

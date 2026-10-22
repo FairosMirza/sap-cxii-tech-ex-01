@@ -31,7 +31,8 @@ serving:
   # D08: approximate search is the default where it returns >= 95% of the exact top-10
   # (reports/ann_benchmark.json); requests can still ask for mode=exact. Evaluation always ranks exactly.
   similar_search: {mode: ann, candidates: 800}
-  semantic_search: {mode: ann, candidates: 200}
+  # D12: results whose bge-small cosine to the query is below the cutoff are dropped (reports/relevance_cutoff.json).
+  semantic_search: {mode: ann, candidates: 200, min_similarity: 0.5593}
 
 # Approaches compared during development; each overrides the settings above.
 # C uses sentence embeddings; both small models are pooled for labelling (see reports/text_model_comparison.json).

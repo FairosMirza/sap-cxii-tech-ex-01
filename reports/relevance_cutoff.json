@@ -1,0 +1,92 @@
+{
+ "rule": "docs/decisions.md D12",
+ "model": "bge-small",
+ "min_similarity": 0.5593,
+ "judged_pairs": 232,
+ "useful_pairs": 131,
+ "served_top10_before": {
+  "grade 0": 30,
+  "grade 1": 10,
+  "grade 2": 10,
+  "grade 3": 48
+ },
+ "removed_from_served_top10": {
+  "grade 0": 12
+ },
+ "moved_up_into_top10": {},
+ "queries_left_empty": [],
+ "leave_one_query_out_removed": {
+  "grade 0": 12
+ },
+ "alternative_emptying_queries_without_useful_results": {
+  "queries": [
+   "comfortable running shoes under $100",
+   "cotton kurti for women under a hundred bucks"
+  ],
+  "cutoff_above": 0.6364,
+  "useful_judged_pairs_below_it": 8,
+  "useful_served_results_below_it": 0
+ },
+ "per_query": {
+  "comfortable running shoes under $100": {
+   "results_before": 10,
+   "results_after": 4,
+   "useful_judged": 0,
+   "min_useful_similarity": null
+  },
+  "warm winter jackets size M": {
+   "results_before": 10,
+   "results_after": 10,
+   "useful_judged": 5,
+   "min_useful_similarity": 0.6367
+  },
+  "affordable summer dresses for women": {
+   "results_before": 10,
+   "results_after": 10,
+   "useful_judged": 18,
+   "min_useful_similarity": 0.6189
+  },
+  "black leather wallet for men": {
+   "results_before": 10,
+   "results_after": 10,
+   "useful_judged": 4,
+   "min_useful_similarity": 0.6146
+  },
+  "durable workout gear": {
+   "results_before": 10,
+   "results_after": 10,
+   "useful_judged": 8,
+   "min_useful_similarity": 0.6294
+  },
+  "cotton kurti for women under a hundred bucks": {
+   "results_before": 8,
+   "results_after": 2,
+   "useful_judged": 0,
+   "min_useful_similarity": null
+  },
+  "silk saree around 1500 rupees": {
+   "results_before": 10,
+   "results_after": 10,
+   "useful_judged": 26,
+   "min_useful_similarity": 0.6717
+  },
+  "kids winter jacket between 500 and 1000": {
+   "results_before": 10,
+   "results_after": 10,
+   "useful_judged": 18,
+   "min_useful_similarity": 0.5997
+  },
+  "men's formal shirt below rs 700": {
+   "results_before": 10,
+   "results_after": 10,
+   "useful_judged": 25,
+   "min_useful_similarity": 0.7641
+  },
+  "dress for girls under 10": {
+   "results_before": 10,
+   "results_after": 10,
+   "useful_judged": 27,
+   "min_useful_similarity": 0.5594
+  }
+ }
+}
