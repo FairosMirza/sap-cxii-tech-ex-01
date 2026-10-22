@@ -1,0 +1,11 @@
+# Build context allow-list: only what the image needs. The venv, caches, product images, eval data,
+# reports and .git stay out of the context.
+*
+!requirements.txt
+!requirements-build.txt
+!app/
+!configs/
+!scripts/
+!data/archive.zip
+**/__pycache__
+**/*.pyc

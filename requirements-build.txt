@@ -1,0 +1,3 @@
+# Building the serving artifacts (python -m scripts.prepare): serving dependencies plus TF-IDF. No PyTorch.
+-r requirements.txt
+scikit-learn==1.9.1

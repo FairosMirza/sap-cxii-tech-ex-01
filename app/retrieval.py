@@ -9,8 +9,9 @@ from typing import List
 
 import numpy as np
 
-from app.scoring import FeatureStore, rank, score_all
-from app.settings import DEFAULT_CONFIG, ScoringConfig, load_config
+from app.ann import candidate_rows
+from app.scoring import FeatureStore, eligible_mask, order_rows, rank, score_all, select_distinct
+from app.settings import ScoringConfig
 
 logger = logging.getLogger(__name__)
 
@@ -80,16 +81,39 @@ class SimilarityEngine:
         return row
 
     def search(self, query: int, k: int, config: ScoringConfig | None = None,
-               filters: SimilarFilters | None = None) -> SearchResult:
+               filters: SimilarFilters | None = None, mode: str | None = None) -> SearchResult:
         config = config or self.config
         extra = filters.mask(self.store, query) if filters else None
-        scores = score_all(self.store, query, config)
-        ranked = rank(self.store, query, scores, k, config, extra_mask=extra)
+        if (mode or config.search_mode) == "ann":
+            scores, ranked = self._ann(query, k, config, extra)
+        else:
+            scores = score_all(self.store, query, config)
+            ranked = rank(self.store, query, scores, k, config, extra_mask=extra)
         if ranked.title_cap_shortfall:
             logger.info("title cap left %d of %d result slots empty for product %s",
                         ranked.title_cap_shortfall, k, self.store.catalog.ids[query])
         hits = [(row, float(scores[row])) for row in ranked.rows]
         return SearchResult(hits, ranked.title_cap_skipped, ranked.title_cap_shortfall)
+
+    def _ann(self, query: int, k: int, config: ScoringConfig, extra: np.ndarray | None):
+        """Exact hybrid scores over HNSW text candidates, widening the candidate set until k results survive."""
+        index = self.store.indexes.get(config.text_model)
+        if index is None:
+            raise LookupError(f"no approximate index for text representation {config.text_model!r}")
+        allowed = eligible_mask(self.store, query, config)
+        if extra is not None:
+            allowed &= extra
+        count = int(allowed.sum())
+        vector = self.store.modalities[config.text_model].vectors[query]
+        scores = np.full(len(self.store.catalog), -np.inf)
+        wanted = config.ann_candidates
+        while True:
+            rows = np.flatnonzero(allowed) if wanted >= count else candidate_rows(index, vector, allowed, wanted)
+            scores[rows] = score_all(self.store, query, config, rows=rows)
+            ranked = select_distinct(self.store, order_rows(self.store, rows, scores), k, config)
+            if len(ranked.rows) == k or len(rows) >= count:
+                return scores, ranked
+            wanted *= 4
 
     def search_rows(self, query: int, k: int, config: ScoringConfig | None = None) -> list[tuple[int, float]]:
         return self.search(query, k, config).hits
@@ -104,17 +128,19 @@ _engine: SimilarityEngine | None = None
 
 
 def get_engine() -> SimilarityEngine:
+    """The served engine (configured similar-products method over the prepared artifacts), loaded once."""
     global _engine
     if _engine is None:
-        from app.pipeline import build_store
+        from app.artifacts import load_service
 
-        _engine = SimilarityEngine(build_store(), load_config(DEFAULT_CONFIG))
+        _engine = load_service()[0]
     return _engine
 
 
 def find_similar_products(product_id: str, num_similar: int) -> List[str]:
     """IDs of the `num_similar` products most similar to `product_id`, most similar first.
 
+    Same method and artifacts as GET /find_similar_products; build them first with `python -m scripts.prepare`.
     Raises ProductNotFoundError for an unknown ID and ValueError for an invalid count.
     Fewer IDs are returned only when fewer eligible products exist.
     """

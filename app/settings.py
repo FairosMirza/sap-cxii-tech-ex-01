@@ -12,6 +12,7 @@ import yaml
 BLOCKS = ("text", "image", "attributes")
 ATTRIBUTES = ("category", "brand", "color", "price", "weight", "rating")
 COMPONENTS = ("text", "image", *ATTRIBUTES)
+SEARCH_MODES = ("exact", "ann")
 DEFAULT_CONFIG = Path("configs/default.yaml")
 
 
@@ -34,6 +35,8 @@ class ScoringConfig:
     max_per_family: int = 1
     max_per_title: int | None = None
     max_results: int = 100
+    search_mode: str = "exact"
+    ann_candidates: int = 200
     name: str = "default"
 
     def component_weights(self) -> dict[str, float]:
@@ -80,6 +83,10 @@ def _validated(config: ScoringConfig) -> ScoringConfig:
     cap = config.max_per_title
     if cap is not None and (isinstance(cap, bool) or not isinstance(cap, int) or cap < 1):
         raise ConfigError("max_per_title must be null (off) or an integer of at least 1")
+    if config.search_mode not in SEARCH_MODES:
+        raise ConfigError(f"search_mode must be one of {SEARCH_MODES}")
+    if isinstance(config.ann_candidates, bool) or not isinstance(config.ann_candidates, int) or config.ann_candidates < 1:
+        raise ConfigError("ann_candidates must be a positive integer")
     return ScoringConfig(**{**config.__dict__, "block_weights": blocks, "attribute_weights": attributes})
 
 
@@ -102,3 +109,15 @@ def load_config(path: str | Path = DEFAULT_CONFIG, method: str | None = None) ->
 
 def method_names(path: str | Path = DEFAULT_CONFIG) -> list[str]:
     return list((yaml.safe_load(Path(path).read_text()) or {}).get("methods") or {})
+
+
+def load_serving(path: str | Path = DEFAULT_CONFIG) -> dict[str, str]:
+    """The similar-products method and the semantic-search text model the service runs."""
+    raw = yaml.safe_load(Path(path).read_text()) or {}
+    serving = raw.get("serving") or {}
+    method, model = serving.get("similar_method"), serving.get("semantic_model")
+    if method not in (raw.get("methods") or {}):
+        raise ConfigError(f"serving.similar_method {method!r} is not a configured method")
+    if not isinstance(model, str) or not model or model == "tfidf":
+        raise ConfigError("serving.semantic_model must name an embedding model")
+    return {"similar_method": method, "semantic_model": model}

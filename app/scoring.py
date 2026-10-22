@@ -43,16 +43,19 @@ class DenseModality:
     # Maps free text into the same space as `vectors` (used by semantic search); None if not supported.
     query_encoder: Callable[[str], np.ndarray | sparse.csr_matrix] | None = None
 
-    def raw_similarity(self, query: int) -> np.ndarray:
-        if sparse.issparse(self.vectors):
-            return np.asarray((self.vectors @ self.vectors[query].T).todense()).ravel()
-        return self.vectors @ self.vectors[query]
+    def raw_similarity(self, query: int, rows: np.ndarray | None = None) -> np.ndarray:
+        vectors = self.vectors if rows is None else self.vectors[rows]
+        if sparse.issparse(vectors):
+            return np.asarray((vectors @ self.vectors[query].T).todense()).ravel()
+        return vectors @ self.vectors[query]
 
 
 @dataclass
 class FeatureStore:
     catalog: Catalog
     modalities: dict[str, DenseModality] = field(default_factory=dict)
+    # Approximate-search indexes keyed like `modalities` (app.ann.HNSWIndex); optional.
+    indexes: dict[str, object] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         c = self.catalog
@@ -77,9 +80,11 @@ def _log_kernel(values: np.ndarray, query_value: float, scale: float) -> tuple[n
     return np.where(mask, sims, 0.0), mask
 
 
-def component_scores(store: FeatureStore, query: int, config: ScoringConfig, needed: set[str]) -> ComponentScores:
-    """Similarities between product `query` and every product, for the requested components."""
+def component_scores(store: FeatureStore, query: int, config: ScoringConfig, needed: set[str],
+                     rows: np.ndarray | None = None) -> ComponentScores:
+    """Similarities between product `query` and every product (or only `rows`), for the requested components."""
     c = store.catalog
+    at = slice(None) if rows is None else rows
     sims: dict[str, np.ndarray] = {}
     masks: dict[str, np.ndarray] = {}
 
@@ -88,27 +93,30 @@ def component_scores(store: FeatureStore, query: int, config: ScoringConfig, nee
             if key not in store.modalities:
                 raise LookupError(f"{name} is weighted but representation {key!r} has not been built")
             modality = store.modalities[key]
-            masks[name] = modality.available & modality.available[query]
-            sims[name] = np.where(masks[name], modality.anchors.apply(modality.raw_similarity(query)), 0.0)
+            masks[name] = modality.available[at] & modality.available[query]
+            sims[name] = np.where(masks[name], modality.anchors.apply(modality.raw_similarity(query, rows)), 0.0)
     if "brand" in needed:
-        masks["brand"] = (c.brand_codes >= 0) & (c.brand_codes[query] >= 0)
-        sims["brand"] = (masks["brand"] & (c.brand_codes == c.brand_codes[query])).astype(float)
+        codes = c.brand_codes[at]
+        masks["brand"] = (codes >= 0) & (c.brand_codes[query] >= 0)
+        sims["brand"] = (masks["brand"] & (codes == c.brand_codes[query])).astype(float)
     if "category" in needed:
-        masks["category"] = store.has_category & store.has_category[query]
-        shared = np.asarray((c.category_matrix @ c.category_matrix[query].T).todense()).ravel()
+        masks["category"] = store.has_category[at] & store.has_category[query]
+        shared = np.asarray((c.category_matrix[at] @ c.category_matrix[query].T).todense()).ravel()
         sims["category"] = (masks["category"] & (shared > 0)).astype(float)
     if "color" in needed:
-        masks["color"] = (store.color_counts > 0) & (store.color_counts[query] > 0)
-        overlap = c.color_matrix @ c.color_matrix[query]
-        union = store.color_counts + store.color_counts[query] - overlap
+        counts = store.color_counts[at]
+        masks["color"] = (counts > 0) & (store.color_counts[query] > 0)
+        overlap = c.color_matrix[at] @ c.color_matrix[query]
+        union = counts + store.color_counts[query] - overlap
         sims["color"] = np.where(masks["color"], overlap / np.maximum(union, 1.0), 0.0)
     if "price" in needed:
-        sims["price"], masks["price"] = _log_kernel(store.log_price, store.log_price[query], config.price_scale)
+        sims["price"], masks["price"] = _log_kernel(store.log_price[at], store.log_price[query], config.price_scale)
     if "weight" in needed:
-        sims["weight"], masks["weight"] = _log_kernel(store.log_weight, store.log_weight[query], config.weight_scale)
+        sims["weight"], masks["weight"] = _log_kernel(store.log_weight[at], store.log_weight[query], config.weight_scale)
     if "rating" in needed:
-        masks["rating"] = np.isfinite(c.rating) & np.isfinite(c.rating[query])
-        sims["rating"] = np.where(masks["rating"], 1 - np.abs(np.nan_to_num(c.rating) - np.nan_to_num(c.rating[query])) / _RATING_RANGE, 0.0)
+        ratings = c.rating[at]
+        masks["rating"] = np.isfinite(ratings) & np.isfinite(c.rating[query])
+        sims["rating"] = np.where(masks["rating"], 1 - np.abs(np.nan_to_num(ratings) - np.nan_to_num(c.rating[query])) / _RATING_RANGE, 0.0)
     return ComponentScores(sims, masks)
 
 
@@ -130,11 +138,12 @@ def combine(scores: ComponentScores, weights: dict[str, float], min_evidence: fl
     return numerator / np.maximum(evidence, max(min_evidence * total, 1e-12))
 
 
-def score_all(store: FeatureStore, query: int, config: ScoringConfig) -> np.ndarray:
+def score_all(store: FeatureStore, query: int, config: ScoringConfig, rows: np.ndarray | None = None) -> np.ndarray:
+    """Hybrid scores for every product, or only for `rows` (aligned with `rows`)."""
     weights = config.component_weights()
     needed = {name for name, w in weights.items() if w > 0}
-    scores = component_scores(store, query, config, needed)
-    return combine(scores, weights, config.min_evidence, len(store.catalog))
+    scores = component_scores(store, query, config, needed, rows)
+    return combine(scores, weights, config.min_evidence, len(store.catalog) if rows is None else len(rows))
 
 
 def eligible_mask(store: FeatureStore, query: int, config: ScoringConfig) -> np.ndarray:

@@ -20,6 +20,14 @@ eligibility:
   # 2 is an experimental setting, compared later with human relevance and redundancy judgements.
   max_per_title: null
   max_results: 100
+  # docs/decisions.md D08: approximate search becomes the default only at >= 0.95 coverage of exact results.
+  search_mode: exact
+  ann_candidates: 200
+
+# What the HTTP service runs, chosen on the development labels (decisions D07, D09). bge-small serves both endpoints.
+serving:
+  similar_method: C_bge
+  semantic_model: bge-small
 
 # Approaches compared during development; each overrides the settings above.
 # C uses sentence embeddings; both small models are pooled for labelling (see reports/text_model_comparison.json).

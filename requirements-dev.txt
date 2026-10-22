@@ -1,6 +1,5 @@
-# Offline preparation, evaluation and tests (not needed inside the serving image).
--r requirements.txt
-scikit-learn==1.9.1
+# Evaluation, experiments and tests. PyTorch is only needed for the encoder parity reference and image experiments.
+-r requirements-build.txt
 torch==2.14.1
 torchvision==0.29.1
 sentence-transformers==6.2.0

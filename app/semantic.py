@@ -13,6 +13,7 @@ from dataclasses import dataclass, field
 import numpy as np
 from scipy import sparse
 
+from app.ann import candidate_rows
 from app.features import COLOR_FAMILIES, SOURCE_NONE, normalize_key
 from app.query_parser import ParsedQuery, parse_query
 from app.scoring import FeatureStore, order_rows, select_distinct
@@ -91,21 +92,28 @@ class SemanticSearcher:
             bonus += PRICE_PREFERENCE_BONUS * (1 - percentile if parsed.price_preference == "low" else percentile)
         return bonus
 
-    def search(self, query: str, k: int) -> SemanticResult:
+    def search(self, query: str, k: int, mode: str | None = None) -> SemanticResult:
         parsed = parse_query(query)
         mask, excluded = self.filter_mask(parsed)
-        rows = np.flatnonzero(mask)
+        count = int(mask.sum())
+        modality = self.store.modalities[self.text_key]
+        query_vector = self.encode_query(parsed.semantic_text)
+        index = self.store.indexes.get(self.text_key) if (mode or self.config.search_mode) == "ann" else None
         scores = np.full(len(self.store.catalog), -np.inf)
-        if len(rows):
-            vectors = self.store.modalities[self.text_key].vectors
-            query_vector = self.encode_query(parsed.semantic_text)
-            if sparse.issparse(vectors):
-                similarity = np.asarray((vectors[rows] @ query_vector.T).todense()).ravel()
-            else:
-                similarity = vectors[rows] @ query_vector
-            scores[rows] = similarity + self.bonuses(parsed, rows)
-        selected = select_distinct(self.store, order_rows(self.store, rows, scores), k, self.config)
-        return SemanticResult(selected.rows, [float(scores[r]) for r in selected.rows], parsed, len(rows), excluded)
+        wanted = self.config.ann_candidates
+        while True:
+            rows = np.flatnonzero(mask) if index is None or wanted >= count else candidate_rows(index, query_vector, mask, wanted)
+            if len(rows):
+                if sparse.issparse(modality.vectors):
+                    similarity = np.asarray((modality.vectors[rows] @ query_vector.T).todense()).ravel()
+                else:
+                    similarity = modality.vectors[rows] @ query_vector
+                scores[rows] = similarity + self.bonuses(parsed, rows)
+            selected = select_distinct(self.store, order_rows(self.store, rows, scores), k, self.config)
+            if len(selected.rows) == k or len(rows) >= count:
+                break
+            wanted *= 4
+        return SemanticResult(selected.rows, [float(scores[r]) for r in selected.rows], parsed, count, excluded)
 
 
 def _price_percentile_within_category(store: FeatureStore) -> np.ndarray:

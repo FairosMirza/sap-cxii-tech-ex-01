@@ -18,7 +18,7 @@ from pathlib import Path
 import numpy as np
 from scipy import sparse
 
-from app.embeddings import EMBEDDING_MODELS, TextEncoder, cached_product_vectors
+from app.embeddings import EMBEDDING_MODELS, ONNX_MODEL, TextEncoder, cached_product_vectors
 from app.features import SOURCE_PRIMARY
 from app.pipeline import build_store, embedding_modality
 from app.retrieval import SimilarityEngine
@@ -91,7 +91,7 @@ def main() -> None:
     baseline = SimilarityEngine(store, load_config(method="B_tfidf"))
     baseline_tops = {q["id"]: {c.ids[r] for r, _ in baseline.search(baseline.row_of(q["id"]), K).hits} for q in dev}
 
-    report = {"environment": f"{platform.machine()} {platform.platform()}, Python {platform.python_version()}, CPU, default threads",
+    report = {"environment": f"{platform.machine()} {platform.platform()}, Python {platform.python_version()}, CPU, ONNX Runtime, default threads",
               "query_latency_method": f"median and p95 of encoding one query, {QUERY_RUNS} runs after {QUERY_WARMUP} warm-up runs, CPU",
               "category_purity_method": f"{PURITY_SAMPLE} products with observed category; top-{K} text neighbours excluding same ASIN and variant family",
               "representations": {}}
@@ -115,7 +115,7 @@ def main() -> None:
                 timings.append(1000 * (time.perf_counter() - t0))
         report["representations"][key] = {
             "model_id": spec.model_id, "revision": encoder.revision, "dimensions": spec.dim,
-            "parameters_millions": round(encoder.parameters / 1e6, 1),
+            "onnx_model_mb": round((encoder.path / ONNX_MODEL).stat().st_size / 1e6, 1),
             "product_encoding_seconds": None if from_cache else round(encode_seconds, 1),
             "query_encoding_ms": {"median": round(float(np.median(timings)), 2), "p95": round(float(np.percentile(timings, 95)), 2)},
             "anchors": store.modalities[key].anchors.__dict__,

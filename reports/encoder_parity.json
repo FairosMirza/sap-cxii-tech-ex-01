@@ -1,0 +1,315 @@
+{
+  "created": "2026-10-22",
+  "environment": "arm64 macOS-26.5.2-arm64-arm-64bit, Python 3.12.13, CPU",
+  "candidate": "onnxruntime 1.31.0 running the model repository's onnx/model.onnx",
+  "reference": "the previous encoder: sentence-transformers on PyTorch, run in a child process",
+  "scope": "all 30000 catalogue texts for tokens and product embeddings; development queries only (20 products, 10 text queries) for rankings; exact search, k=10",
+  "latency_method": "median/p95 of 200 single-query encodings after 5 warm-up runs, dev query texts",
+  "models": {
+    "bge-small": {
+      "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+      "pooling": "cls",
+      "max_seq_length": 128,
+      "pytorch_runtime": "torch 2.14.1, sentence-transformers 6.2.0",
+      "token_ids": {
+        "texts": 30000,
+        "identical": true,
+        "truncated_at_max_seq_length": 7
+      },
+      "product_embeddings": {
+        "rows": 30000,
+        "min_cosine": 0.9999997,
+        "mean_cosine": 1.0,
+        "max_abs_diff": 5.59e-07
+      },
+      "query_embeddings": {
+        "rows": 10,
+        "min_cosine": 0.99999988,
+        "mean_cosine": 1.00000012,
+        "max_abs_diff": 2.09e-07
+      },
+      "stored_pytorch_vectors": {
+        "reference_max_abs_diff": 0.0,
+        "onnx_vs_stored": {
+          "rows": 30000,
+          "min_cosine": 0.9999997,
+          "mean_cosine": 1.0,
+          "max_abs_diff": 5.59e-07
+        }
+      },
+      "similar_products": {
+        "method": "C_bge",
+        "queries": 20,
+        "identical_top10": 20,
+        "min_overlap": 10,
+        "mean_overlap": 10.0,
+        "max_score_noise": 4.1e-07,
+        "max_swap_gap": 0.0,
+        "pytorch_pairs_outside_pool": 0,
+        "onnx_pairs_outside_pool": 0,
+        "differences": []
+      },
+      "semantic_search": {
+        "queries": 10,
+        "identical_top10": 8,
+        "min_overlap": 8,
+        "mean_overlap": 9.6,
+        "max_score_noise": 4.17e-07,
+        "max_swap_gap": 1.19e-07,
+        "pytorch_pairs_outside_pool": 0,
+        "onnx_pairs_outside_pool": 2,
+        "differences": [
+          {
+            "query": "comfortable running shoes under $100",
+            "overlap": 9,
+            "score_noise": 2.38e-07,
+            "max_swap_gap": 1.19e-07,
+            "pytorch_outside_pool": 0,
+            "onnx_outside_pool": 1,
+            "changes": [
+              {
+                "rank": 6,
+                "same_text": true,
+                "pytorch": {
+                  "id": "c55570641e28bcb3ce1cf69861563b1f",
+                  "name": "DFH Men's Regular Fit T-Shirt",
+                  "score_pytorch": 0.55096066,
+                  "score_onnx": 0.55096054
+                },
+                "onnx": {
+                  "id": "79bfb1d1cc620cae33d19a2430e49574",
+                  "name": "DFH Men's Regular Fit T-Shirt",
+                  "score_pytorch": 0.55096054,
+                  "score_onnx": 0.55096054
+                }
+              }
+            ]
+          },
+          {
+            "query": "kids winter jacket between 500 and 1000",
+            "overlap": 9,
+            "score_noise": 2.38e-07,
+            "max_swap_gap": 0.0,
+            "pytorch_outside_pool": 0,
+            "onnx_outside_pool": 1,
+            "changes": [
+              {
+                "rank": 8,
+                "same_text": true,
+                "pytorch": {
+                  "id": "ff9c6dd57af310fd30dda2895841316d",
+                  "name": "Brim Hugs And Cuddles Winter Jackets/MultiColour Sweater For Baby Girl",
+                  "score_pytorch": 0.74977243,
+                  "score_onnx": 0.74977219
+                },
+                "onnx": {
+                  "id": "9f3bccfdb7e5c461ec62d587e370f105",
+                  "name": "Brim Hugs And Cuddles Winter Jackets/MultiColour Sweater For Baby Girl",
+                  "score_pytorch": 0.74977243,
+                  "score_onnx": 0.74977219
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "query_latency_ms": {
+        "pytorch (10 threads)": {
+          "median_ms": 7.06,
+          "p95_ms": 8.69
+        },
+        "onnx (1 thread, serving default)": {
+          "median_ms": 3.13,
+          "p95_ms": 3.75
+        },
+        "onnx (all cores)": {
+          "median_ms": 1.98,
+          "p95_ms": 2.59
+        }
+      },
+      "product_encoding_seconds": {
+        "pytorch": 36.0,
+        "onnx": 56.8
+      }
+    },
+    "minilm": {
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "pooling": "mean",
+      "max_seq_length": 128,
+      "pytorch_runtime": "torch 2.14.1, sentence-transformers 6.2.0",
+      "token_ids": {
+        "texts": 30000,
+        "identical": true,
+        "truncated_at_max_seq_length": 7
+      },
+      "product_embeddings": {
+        "rows": 30000,
+        "min_cosine": 0.9999997,
+        "mean_cosine": 1.0,
+        "max_abs_diff": 3.28e-07
+      },
+      "query_embeddings": {
+        "rows": 10,
+        "min_cosine": 0.99999988,
+        "mean_cosine": 1.0,
+        "max_abs_diff": 1.94e-07
+      },
+      "stored_pytorch_vectors": {
+        "reference_max_abs_diff": 0.0,
+        "onnx_vs_stored": {
+          "rows": 30000,
+          "min_cosine": 0.9999997,
+          "mean_cosine": 1.0,
+          "max_abs_diff": 3.28e-07
+        }
+      },
+      "similar_products": {
+        "method": "C_minilm",
+        "queries": 20,
+        "identical_top10": 18,
+        "min_overlap": 9,
+        "mean_overlap": 9.9,
+        "max_score_noise": 4.28e-07,
+        "max_swap_gap": 7.45e-08,
+        "pytorch_pairs_outside_pool": 0,
+        "onnx_pairs_outside_pool": 1,
+        "differences": [
+          {
+            "query": "ab6a6605b0a017c3ca05f793b2ec4cd1",
+            "overlap": 9,
+            "score_noise": 1.49e-07,
+            "max_swap_gap": 7.45e-08,
+            "pytorch_outside_pool": 0,
+            "onnx_outside_pool": 0,
+            "changes": [
+              {
+                "rank": 10,
+                "same_text": true,
+                "pytorch": {
+                  "id": "8c366b255f11b33ab1bed26434099777",
+                  "name": "W for Woman Women's Straight Kurta",
+                  "score_pytorch": 0.77107424,
+                  "score_onnx": 0.77107432
+                },
+                "onnx": {
+                  "id": "56199f2768cd71b9e85ab62a4205c850",
+                  "name": "W for Woman Women's Straight Kurta",
+                  "score_pytorch": 0.77107417,
+                  "score_onnx": 0.77107432
+                }
+              }
+            ]
+          },
+          {
+            "query": "2b7081d70a8db985ca3c4962f0e89b17",
+            "overlap": 9,
+            "score_noise": 2.61e-07,
+            "max_swap_gap": 3.73e-08,
+            "pytorch_outside_pool": 0,
+            "onnx_outside_pool": 1,
+            "changes": [
+              {
+                "rank": 9,
+                "same_text": true,
+                "pytorch": {
+                  "id": "df3b9f52109d86e5eac61d49eb81388b",
+                  "name": "Amazon Brand - Symactive Men's Solid Regular fit T-Shirt",
+                  "score_pytorch": 0.76032112,
+                  "score_onnx": 0.76032127
+                },
+                "onnx": {
+                  "id": "8fa564d608933780fef969edb080ebd0",
+                  "name": "Amazon Brand - Symactive Men's Solid Regular fit T-Shirt",
+                  "score_pytorch": 0.76032108,
+                  "score_onnx": 0.76032127
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "semantic_search": {
+        "queries": 10,
+        "identical_top10": 8,
+        "min_overlap": 8,
+        "mean_overlap": 9.6,
+        "max_score_noise": 2.98e-07,
+        "max_swap_gap": 5.96e-08,
+        "pytorch_pairs_outside_pool": 0,
+        "onnx_pairs_outside_pool": 1,
+        "differences": [
+          {
+            "query": "comfortable running shoes under $100",
+            "overlap": 9,
+            "score_noise": 1.94e-07,
+            "max_swap_gap": 2.98e-08,
+            "pytorch_outside_pool": 0,
+            "onnx_outside_pool": 1,
+            "changes": [
+              {
+                "rank": 9,
+                "same_text": true,
+                "pytorch": {
+                  "id": "83751dd8219a7b38c639e7453b4175a7",
+                  "name": "DFH Men's Regular Fit T-Shirt",
+                  "score_pytorch": 0.16110052,
+                  "score_onnx": 0.16110054
+                },
+                "onnx": {
+                  "id": "79bfb1d1cc620cae33d19a2430e49574",
+                  "name": "DFH Men's Regular Fit T-Shirt",
+                  "score_pytorch": 0.16110049,
+                  "score_onnx": 0.16110054
+                }
+              }
+            ]
+          },
+          {
+            "query": "kids winter jacket between 500 and 1000",
+            "overlap": 9,
+            "score_noise": 2.38e-07,
+            "max_swap_gap": 5.96e-08,
+            "pytorch_outside_pool": 0,
+            "onnx_outside_pool": 0,
+            "changes": [
+              {
+                "rank": 6,
+                "same_text": true,
+                "pytorch": {
+                  "id": "08e7ec91bc7e93786e21473986b42e2f",
+                  "name": "AHHAAAA Kids Velvet Winter Wear Hood Jacket with Pyjama for Baby Boys",
+                  "score_pytorch": 0.60089737,
+                  "score_onnx": 0.60089719
+                },
+                "onnx": {
+                  "id": "4a0c14e3dcf3118b20f4903bd691f82c",
+                  "name": "AHHAAAA Kids Velvet Winter Wear Hood Jacket with Pyjama for Baby Boys",
+                  "score_pytorch": 0.60089731,
+                  "score_onnx": 0.60089719
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "query_latency_ms": {
+        "pytorch (10 threads)": {
+          "median_ms": 3.59,
+          "p95_ms": 4.07
+        },
+        "onnx (1 thread, serving default)": {
+          "median_ms": 1.26,
+          "p95_ms": 1.7
+        },
+        "onnx (all cores)": {
+          "median_ms": 0.86,
+          "p95_ms": 1.31
+        }
+      },
+      "product_encoding_seconds": {
+        "pytorch": 19.2,
+        "onnx": 29.6
+      }
+    }
+  }
+}
