@@ -21,7 +21,7 @@ def searcher_for(records: list[dict]) -> SemanticSearcher:
     store = build_store(records, text=False)
     vectors = np.stack([fake_encode(t) for t in store.catalog.texts])
     store.modalities["fake"] = embedding_modality(store.catalog, vectors)
-    return SemanticSearcher(store, "fake", fake_encode, config(text=0.5, attributes=0.5))
+    return SemanticSearcher(store, "fake", config(text=0.5, attributes=0.5), fake_encode)
 
 
 def short_ids(searcher: SemanticSearcher, query: str, k: int = 10) -> list[str]:

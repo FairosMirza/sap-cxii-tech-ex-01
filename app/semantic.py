@@ -11,6 +11,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 import numpy as np
+from scipy import sparse
 
 from app.features import COLOR_FAMILIES, SOURCE_NONE, normalize_key
 from app.query_parser import ParsedQuery, parse_query
@@ -37,10 +38,12 @@ class SemanticResult:
 
 
 class SemanticSearcher:
-    def __init__(self, store: FeatureStore, text_key: str, encode_query, config: ScoringConfig) -> None:
+    def __init__(self, store: FeatureStore, text_key: str, config: ScoringConfig, encode_query=None) -> None:
         self.store = store
         self.text_key = text_key
-        self.encode_query = encode_query
+        self.encode_query = encode_query or store.modalities[text_key].query_encoder
+        if self.encode_query is None:
+            raise ValueError(f"representation {text_key!r} cannot encode free-text queries")
         self.config = config
         c = store.catalog
         self.title_tokens = [set(normalize_key(text).split()) for text in c.texts]
@@ -95,7 +98,12 @@ class SemanticSearcher:
         scores = np.full(len(self.store.catalog), -np.inf)
         if len(rows):
             vectors = self.store.modalities[self.text_key].vectors
-            scores[rows] = vectors[rows] @ self.encode_query(parsed.semantic_text) + self.bonuses(parsed, rows)
+            query_vector = self.encode_query(parsed.semantic_text)
+            if sparse.issparse(vectors):
+                similarity = np.asarray((vectors[rows] @ query_vector.T).todense()).ravel()
+            else:
+                similarity = vectors[rows] @ query_vector
+            scores[rows] = similarity + self.bonuses(parsed, rows)
         selected = select_distinct(self.store, order_rows(self.store, rows, scores), k, self.config)
         return SemanticResult(selected.rows, [float(scores[r]) for r in selected.rows], parsed, len(rows), excluded)
 

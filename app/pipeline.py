@@ -59,7 +59,10 @@ def tfidf_modality(catalog: Catalog) -> DenseModality:
     except ValueError:  # no term survives the document-frequency limits (tiny catalogues)
         vectors = sparse.csr_matrix((len(catalog), 1), dtype=np.float32)
     available = np.asarray(vectors.getnnz(axis=1) > 0)
-    return DenseModality(vectors, available, fit_anchors(vectors, available, catalog.asins))
+    modality = DenseModality(vectors, available, fit_anchors(vectors, available, catalog.asins))
+    if vectors.shape[1] > 1:
+        modality.query_encoder = lambda text: vectorizer.transform([text])
+    return modality
 
 
 def build_store(records: list[dict] | None = None, text: bool = True) -> FeatureStore:
@@ -71,8 +74,8 @@ def build_store(records: list[dict] | None = None, text: bool = True) -> Feature
     return store
 
 
-def embedding_modality(catalog: Catalog, vectors: np.ndarray) -> DenseModality:
+def embedding_modality(catalog: Catalog, vectors: np.ndarray, query_encoder=None) -> DenseModality:
     """Wrap L2-normalised product embeddings; products with empty text are unavailable."""
     available = np.array([bool(t.strip()) for t in catalog.texts]) & (np.linalg.norm(vectors, axis=1) > 0)
     vectors = np.where(available[:, None], vectors, 0.0).astype(np.float32)
-    return DenseModality(vectors, available, fit_anchors(vectors, available, catalog.asins))
+    return DenseModality(vectors, available, fit_anchors(vectors, available, catalog.asins), query_encoder)

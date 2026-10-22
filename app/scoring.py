@@ -7,6 +7,7 @@ have that evidence. Missing-to-missing is never treated as agreement.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from typing import Callable
 
 import numpy as np
 from scipy import sparse
@@ -39,6 +40,8 @@ class DenseModality:
     vectors: np.ndarray | sparse.csr_matrix
     available: np.ndarray
     anchors: Anchors
+    # Maps free text into the same space as `vectors` (used by semantic search); None if not supported.
+    query_encoder: Callable[[str], np.ndarray | sparse.csr_matrix] | None = None
 
     def raw_similarity(self, query: int) -> np.ndarray:
         if sparse.issparse(self.vectors):
