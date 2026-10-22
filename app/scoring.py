@@ -80,9 +80,11 @@ def component_scores(store: FeatureStore, query: int, config: ScoringConfig, nee
     sims: dict[str, np.ndarray] = {}
     masks: dict[str, np.ndarray] = {}
 
-    for name in ("text", "image"):
-        if name in needed and name in store.modalities:
-            modality = store.modalities[name]
+    for name, key in (("text", config.text_model), ("image", "image")):
+        if name in needed:
+            if key not in store.modalities:
+                raise LookupError(f"{name} is weighted but representation {key!r} has not been built")
+            modality = store.modalities[key]
             masks[name] = modality.available & modality.available[query]
             sims[name] = np.where(masks[name], modality.anchors.apply(modality.raw_similarity(query)), 0.0)
     if "brand" in needed:
@@ -111,7 +113,6 @@ def combine(scores: ComponentScores, weights: dict[str, float], min_evidence: fl
     """Weighted average over evidence both products have, shrunk when that evidence is too thin.
 
     score = sum(w * s over shared components) / max(sum(w over shared components), min_evidence * sum(w))
-    A component that is configured but unavailable (e.g. no image vectors built) counts as missing evidence.
     """
     active = {name: w for name, w in weights.items() if w > 0}
     total = sum(active.values())
@@ -151,22 +152,21 @@ class RankResult:
     title_cap_shortfall: int = 0
 
 
-def rank(store: FeatureStore, query: int, scores: np.ndarray, k: int, config: ScoringConfig,
-         candidates: np.ndarray | None = None) -> RankResult:
-    """Top-k eligible rows: score desc, then rating desc, review count desc, product ID asc.
+def order_rows(store: FeatureStore, rows: np.ndarray, scores: np.ndarray) -> np.ndarray:
+    """Rows sorted by score desc, then rating desc, review count desc, product ID asc."""
+    c = store.catalog
+    rounded = np.round(scores[rows], 9)
+    rating = np.nan_to_num(c.rating[rows], nan=-1.0)
+    reviews = np.nan_to_num(c.review_count[rows], nan=-1.0)
+    return rows[np.lexsort((store.id_rank[rows], -reviews, -rating, -rounded))]
 
-    At most one row per ASIN and `max_per_family` rows per variant family are returned. The optional
-    `max_per_title` cap is a result-diversity rule: it skips further rows with an already-used title,
-    keeps the relevance order, and records how many result slots it left empty.
+
+def select_distinct(store: FeatureStore, ordered: np.ndarray, k: int, config: ScoringConfig) -> RankResult:
+    """Walk the ranked rows keeping one row per ASIN, `max_per_family` per variant family and, when
+    configured, `max_per_title` per normalised title. The title cap is a result-diversity rule: it keeps
+    the relevance order, fills from lower ranks, and records how many result slots it left empty.
     """
     c = store.catalog
-    pool = np.arange(len(c)) if candidates is None else np.asarray(candidates)
-    pool = pool[eligible_mask(store, query, config)[pool]]
-    rounded = np.round(scores[pool], 9)
-    rating = np.nan_to_num(c.rating[pool], nan=-1.0)
-    reviews = np.nan_to_num(c.review_count[pool], nan=-1.0)
-    ordered = pool[np.lexsort((store.id_rank[pool], -reviews, -rating, -rounded))]
-
     result = RankResult(rows=[])
     seen_asins: set[str] = set()
     family_counts: dict[int, int] = {}
@@ -187,3 +187,12 @@ def rank(store: FeatureStore, query: int, scores: np.ndarray, k: int, config: Sc
             break
     result.title_cap_shortfall = min(k - len(result.rows), result.title_cap_skipped)
     return result
+
+
+def rank(store: FeatureStore, query: int, scores: np.ndarray, k: int, config: ScoringConfig,
+         extra_mask: np.ndarray | None = None) -> RankResult:
+    """Top-k rows similar to product `query`, after eligibility rules and any caller filter."""
+    eligible = eligible_mask(store, query, config)
+    if extra_mask is not None:
+        eligible &= extra_mask
+    return select_distinct(store, order_rows(store, np.flatnonzero(eligible), scores), k, config)

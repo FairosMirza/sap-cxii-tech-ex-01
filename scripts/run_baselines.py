@@ -63,7 +63,7 @@ def main() -> None:
 
     report: dict = {
         "k": K, "build_seconds": round(build_seconds, 1), "title_cap": "off (primary comparison)",
-        "text_anchors": store.modalities["text"].anchors.__dict__,
+        "text_anchors": store.modalities["tfidf"].anchors.__dict__,
         "latency_method": {
             "scope": LATENCY_SCOPE,
             "statistic": f"median and p95 over {TIMED_RUNS} timed runs per development query after {WARMUP_RUNS} warm-up run",

@@ -67,5 +67,12 @@ def build_store(records: list[dict] | None = None, text: bool = True) -> Feature
         records, _ = load_records(DEFAULT_DATA_FILE)
     store = FeatureStore(build_catalog(records))
     if text:
-        store.modalities["text"] = tfidf_modality(store.catalog)
+        store.modalities["tfidf"] = tfidf_modality(store.catalog)
     return store
+
+
+def embedding_modality(catalog: Catalog, vectors: np.ndarray) -> DenseModality:
+    """Wrap L2-normalised product embeddings; products with empty text are unavailable."""
+    available = np.array([bool(t.strip()) for t in catalog.texts]) & (np.linalg.norm(vectors, axis=1) > 0)
+    vectors = np.where(available[:, None], vectors, 0.0).astype(np.float32)
+    return DenseModality(vectors, available, fit_anchors(vectors, available, catalog.asins))

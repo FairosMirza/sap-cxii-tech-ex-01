@@ -1,0 +1,796 @@
+{
+  "model": "BAAI/bge-small-en-v1.5",
+  "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+  "k": 5,
+  "results": [
+    {
+      "query": "comfortable running shoes under $100",
+      "parsed": {
+        "raw": "comfortable running shoes under $100",
+        "semantic_text": "comfortable running shoes",
+        "price": {
+          "minimum": null,
+          "maximum": 100.0,
+          "min_inclusive": true,
+          "max_inclusive": false,
+          "approximate": false,
+          "currency": "$",
+          "phrases": [
+            "under $100"
+          ]
+        },
+        "price_preference": null,
+        "audience": [],
+        "colors": [],
+        "materials": [],
+        "sizes": []
+      },
+      "eligible": 20,
+      "excluded_by_filter": {
+        "price": 29980
+      },
+      "hits": [
+        {
+          "id": "de26bbd914045abd3e7b98dab156f94a",
+          "score": 0.5895,
+          "name": "Otovon® ESD Finger Coated Top Fit Gloves - 1 Pair, Size - M",
+          "price": 91.0,
+          "categories": [
+            "ExerciseFitnessGloves"
+          ],
+          "colours": []
+        },
+        {
+          "id": "0c7bfa1eefddb4f5bfd62274db825d05",
+          "score": 0.5758,
+          "name": "BODY MAXX Leather Gym Gloves (Black)",
+          "price": 98.0,
+          "categories": [],
+          "colours": [
+            "black"
+          ]
+        },
+        {
+          "id": "d07f09de637cd94257322a3cbdb70ff0",
+          "score": 0.5703,
+          "name": "Your's Favourite Men & Women Cozy Knitted Woolen Winter Gloves - Unisex Thermal Gloves - Comfy and Warm - Free Size (Pack of 1)",
+          "price": 95.0,
+          "categories": [
+            "WomensClothing"
+          ],
+          "colours": []
+        },
+        {
+          "id": "9be51d44dab6412faed26f0ce052e68a",
+          "score": 0.5634,
+          "name": "Generic Women's VSkin Cotton Cup Bra Pads (BP-01, White, Free Size)",
+          "price": 59.0,
+          "categories": [
+            "WomensLingerieAccessories"
+          ],
+          "colours": [
+            "white"
+          ]
+        },
+        {
+          "id": "c93ecde20366657a86acc170d0c891a5",
+          "score": 0.5584,
+          "name": "Generic Women's VSkin Cotton Cup Bra Pads (Brown, Free Size)",
+          "price": 39.0,
+          "categories": [
+            "WomensLingerieAccessories"
+          ],
+          "colours": [
+            "brown"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "warm winter jackets size M",
+      "parsed": {
+        "raw": "warm winter jackets size M",
+        "semantic_text": "warm winter jackets",
+        "price": null,
+        "price_preference": null,
+        "audience": [],
+        "colors": [],
+        "materials": [],
+        "sizes": [
+          "M"
+        ]
+      },
+      "eligible": 30000,
+      "excluded_by_filter": {},
+      "hits": [
+        {
+          "id": "026e3ea21c2b5bf4d29edf69ddbe9148",
+          "score": 0.7834,
+          "name": "Warmline Woollen Half Sleeve Women Thermal Vest. for Winters",
+          "price": null,
+          "categories": [
+            "WomensThermalTops"
+          ],
+          "colours": []
+        },
+        {
+          "id": "1f82f4f328dfe35381a723d62de6e23c",
+          "score": 0.7808,
+          "name": "Warmline Polywool Full Sleeve Men's Thermal Vest & Lower for Winters",
+          "price": 999.0,
+          "categories": [
+            "MensWinterwear"
+          ],
+          "colours": []
+        },
+        {
+          "id": "5cd058fab7477472b2f15699377445d5",
+          "score": 0.7782,
+          "name": "innovative Edge Mens Jackets for Men Stylish Jackets for Mens Winter | Jacket with Hoodie for Men",
+          "price": 449.0,
+          "categories": [
+            "MensJackets"
+          ],
+          "colours": [
+            "black"
+          ]
+        },
+        {
+          "id": "5c095f4a2a1525d868f619580a8b613b",
+          "score": 0.7766,
+          "name": "HIVER Men's Men's Nylon Jacket for Minus Degree Snow Conditions- Hooded Trekking Jacket",
+          "price": 8990.0,
+          "categories": [
+            "MensJackets"
+          ],
+          "colours": []
+        },
+        {
+          "id": "85db679da35d66581f9f543fbf051765",
+          "score": 0.7614,
+          "name": "Warmline Polywool Woollen Quarter Sleeve Camisole & Short Lower for Winters",
+          "price": null,
+          "categories": [
+            "WomensThermalSets"
+          ],
+          "colours": []
+        }
+      ]
+    },
+    {
+      "query": "affordable summer dresses for women",
+      "parsed": {
+        "raw": "affordable summer dresses for women",
+        "semantic_text": "summer dresses for women",
+        "price": null,
+        "price_preference": "low",
+        "audience": [
+          "women"
+        ],
+        "colors": [],
+        "materials": [],
+        "sizes": []
+      },
+      "eligible": 13538,
+      "excluded_by_filter": {
+        "audience": 16462
+      },
+      "hits": [
+        {
+          "id": "c7b9f0c1da1137c9726afaa030fa006c",
+          "score": 0.8002,
+          "name": "W for Woman Women's A-Line Dress",
+          "price": 679.0,
+          "categories": [
+            "WomensDresses"
+          ],
+          "colours": []
+        },
+        {
+          "id": "e0d3f72b02d28b6b9392bfaf9fe5657c",
+          "score": 0.7959,
+          "name": "W for Woman Women's A-Line Dress",
+          "price": 699.0,
+          "categories": [
+            "WomensDresses"
+          ],
+          "colours": []
+        },
+        {
+          "id": "41bac6667c2ba2612e3d20bb9dc09e4e",
+          "score": 0.7899,
+          "name": "laddu gopal cotton thread knitted dress for summer and winter/stylish dress for ladoo gopal ji",
+          "price": 199.0,
+          "categories": [
+            "WomensEthnicUnstitchedFabric"
+          ],
+          "colours": []
+        },
+        {
+          "id": "a38093a6c5856b21dcc2e4098f8d55d7",
+          "score": 0.7857,
+          "name": "W for Woman Women's A-Line Dress",
+          "price": 799.0,
+          "categories": [
+            "WomensDresses"
+          ],
+          "colours": []
+        },
+        {
+          "id": "a39de43fcf2644dc0e7d3d622b480548",
+          "score": 0.7817,
+          "name": "Hikes Women Sleevless Designer Long Top Tunic Fashion Dress for Summers (Legging Not Included)",
+          "price": 399.0,
+          "categories": [
+            "WomensDresses",
+            "WomensTops"
+          ],
+          "colours": []
+        }
+      ]
+    },
+    {
+      "query": "black leather wallet for men",
+      "parsed": {
+        "raw": "black leather wallet for men",
+        "semantic_text": "black leather wallet for men",
+        "price": null,
+        "price_preference": null,
+        "audience": [
+          "men"
+        ],
+        "colors": [
+          "black"
+        ],
+        "materials": [
+          "leather"
+        ],
+        "sizes": []
+      },
+      "eligible": 9286,
+      "excluded_by_filter": {
+        "audience": 17161,
+        "colour": 3553
+      },
+      "hits": [
+        {
+          "id": "80255ef7a3dd8e61b86f36dde3320e91",
+          "score": 0.8501,
+          "name": "labeeb fashion Men's Leather Jacket (Black)",
+          "price": 1999.0,
+          "categories": [
+            "MensJackets"
+          ],
+          "colours": [
+            "black"
+          ]
+        },
+        {
+          "id": "92548e99169557d420a19fc60904d542",
+          "score": 0.8425,
+          "name": "Gesdy Men's Pu Leather Flat Cap (4331194163_Black)",
+          "price": null,
+          "categories": [
+            "MensCapsHats"
+          ],
+          "colours": [
+            "black"
+          ]
+        },
+        {
+          "id": "f2be2c43109ecd64044165572fdb8a40",
+          "score": 0.8413,
+          "name": "Iftekhar Men's Pure Leather Jacket - Black - (Iftekhar26)",
+          "price": 6999.0,
+          "categories": [
+            "MensJackets"
+          ],
+          "colours": [
+            "black"
+          ]
+        },
+        {
+          "id": "2a8aef07c06b698b17e7a5639ff0958f",
+          "score": 0.8376,
+          "name": "Men's Leather Belt (Black, Free Size)",
+          "price": 339.0,
+          "categories": [
+            "MensBelts"
+          ],
+          "colours": [
+            "black"
+          ]
+        },
+        {
+          "id": "fc8573adf7aba3683e48fcb7f2f0aa21",
+          "score": 0.8341,
+          "name": "Hidesign Men's Leather Belt",
+          "price": 2695.0,
+          "categories": [
+            "MensBelts"
+          ],
+          "colours": [
+            "black"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "durable workout gear",
+      "parsed": {
+        "raw": "durable workout gear",
+        "semantic_text": "durable workout gear",
+        "price": null,
+        "price_preference": null,
+        "audience": [],
+        "colors": [],
+        "materials": [],
+        "sizes": []
+      },
+      "eligible": 30000,
+      "excluded_by_filter": {},
+      "hits": [
+        {
+          "id": "50314d44a172e99ba218c0fa135db58b",
+          "score": 0.744,
+          "name": "dk Active Wear Bodybuilding Tank Top, Stringer Vest, Gym Vest, (Men Shouldn't) Dri Cool",
+          "price": 549.0,
+          "categories": [
+            "MensUnderwearVests"
+          ],
+          "colours": []
+        },
+        {
+          "id": "834118ff37e8e426292ee999207b9653",
+          "score": 0.7307,
+          "name": "ACTIVE & ALIVE Men's Polyester Lycra Full Sleeves Quick Dry Lightweight Breathable Zipper Running Gym Wear Polo Neck T-Shirt",
+          "price": 669.0,
+          "categories": [
+            "MensSportsT_ShirtsJerseys"
+          ],
+          "colours": []
+        },
+        {
+          "id": "c4dbf1e1477d78932d0a62188d1ae65f",
+          "score": 0.7294,
+          "name": "Pepperika Cotton Elastane Non-Padded Non-Wired Full Cup Racerback Gym/Yoga/Running/Cycling/Dancing (Aerobics) / Sports Bra (Pack of 2)",
+          "price": 299.0,
+          "categories": [
+            "WomensEverydayBras"
+          ],
+          "colours": []
+        },
+        {
+          "id": "87dccb3bd69a66cde269a11fcc0cf158",
+          "score": 0.7206,
+          "name": "Branded Sports Men Strechable Track Suit for Gym Yoga Sports",
+          "price": 999.0,
+          "categories": [
+            "MensTracksuits"
+          ],
+          "colours": []
+        },
+        {
+          "id": "d3618d05e5ffa34530ffab513c696eb6",
+          "score": 0.7155,
+          "name": "Spike Leather Fitness Gym Gloves with Wrist Support Grip and Breathable Glove Design Used for Weight Lifting, Pull Up, Crossfit, Cycling, Driving, Fitness, Gym Training for Both Men and Women.",
+          "price": 1199.0,
+          "categories": [],
+          "colours": []
+        }
+      ]
+    },
+    {
+      "query": "cotton kurti for women under a hundred bucks",
+      "parsed": {
+        "raw": "cotton kurti for women under a hundred bucks",
+        "semantic_text": "cotton kurti for women",
+        "price": {
+          "minimum": null,
+          "maximum": 100.0,
+          "min_inclusive": true,
+          "max_inclusive": false,
+          "approximate": false,
+          "currency": "bucks",
+          "phrases": [
+            "under a hundred bucks"
+          ]
+        },
+        "price_preference": null,
+        "audience": [
+          "women"
+        ],
+        "colors": [],
+        "materials": [
+          "cotton"
+        ],
+        "sizes": []
+      },
+      "eligible": 8,
+      "excluded_by_filter": {
+        "price": 29980,
+        "audience": 12
+      },
+      "hits": [
+        {
+          "id": "c93ecde20366657a86acc170d0c891a5",
+          "score": 0.6764,
+          "name": "Generic Women's VSkin Cotton Cup Bra Pads (Brown, Free Size)",
+          "price": 39.0,
+          "categories": [
+            "WomensLingerieAccessories"
+          ],
+          "colours": [
+            "brown"
+          ]
+        },
+        {
+          "id": "9be51d44dab6412faed26f0ce052e68a",
+          "score": 0.6692,
+          "name": "Generic Women's VSkin Cotton Cup Bra Pads (BP-01, White, Free Size)",
+          "price": 59.0,
+          "categories": [
+            "WomensLingerieAccessories"
+          ],
+          "colours": [
+            "white"
+          ]
+        },
+        {
+          "id": "ad71af9eec9174ce3679d383a5da3723",
+          "score": 0.5427,
+          "name": "Urban Secrets Girl's Synthetic Bra Hook Extender (White, Skin, Medium) Pack of 2",
+          "price": 89.0,
+          "categories": [
+            "WomensLingerieAccessories"
+          ],
+          "colours": [
+            "white"
+          ]
+        },
+        {
+          "id": "9d3ac8043cce71801e30bfe454eea548",
+          "score": 0.5364,
+          "name": "DECORS EYE Unisex Leather Gym Gloves (Black)",
+          "price": 99.0,
+          "categories": [],
+          "colours": [
+            "black"
+          ]
+        },
+        {
+          "id": "d07f09de637cd94257322a3cbdb70ff0",
+          "score": 0.5062,
+          "name": "Your's Favourite Men & Women Cozy Knitted Woolen Winter Gloves - Unisex Thermal Gloves - Comfy and Warm - Free Size (Pack of 1)",
+          "price": 95.0,
+          "categories": [
+            "WomensClothing"
+          ],
+          "colours": []
+        }
+      ]
+    },
+    {
+      "query": "silk saree around 1500 rupees",
+      "parsed": {
+        "raw": "silk saree around 1500 rupees",
+        "semantic_text": "silk saree",
+        "price": {
+          "minimum": 1200.0,
+          "maximum": 1800.0,
+          "min_inclusive": true,
+          "max_inclusive": true,
+          "approximate": true,
+          "currency": "rupees",
+          "phrases": [
+            "around 1500 rupees"
+          ]
+        },
+        "price_preference": null,
+        "audience": [],
+        "colors": [],
+        "materials": [
+          "silk"
+        ],
+        "sizes": []
+      },
+      "eligible": 1604,
+      "excluded_by_filter": {
+        "price": 28396
+      },
+      "hits": [
+        {
+          "id": "fa031f63ecb2d4bb6740462d25903f6d",
+          "score": 0.8092,
+          "name": "Wellrobed Fab Present Silk Women's Saree",
+          "price": 1498.0,
+          "categories": [
+            "WomensSarees"
+          ],
+          "colours": []
+        },
+        {
+          "id": "e02e52a468378fab95d5ed1ca8c5d1c2",
+          "score": 0.8044,
+          "name": "Mimosa Silk Saree (Ab-1476-Violt_Voilet)",
+          "price": 1449.0,
+          "categories": [
+            "WomensSarees"
+          ],
+          "colours": []
+        },
+        {
+          "id": "48a94f9175bfa4f9b0a8074bbddfe0be",
+          "score": 0.7902,
+          "name": "Mimosa Silk Saree (103-4D-Bayg_Multi)",
+          "price": 1549.0,
+          "categories": [
+            "WomensSarees"
+          ],
+          "colours": []
+        },
+        {
+          "id": "f58ad7066d9823eef2a84310af9aa964",
+          "score": 0.7898,
+          "name": "Panash Trends Women's Embroidery Work Paper Silk Saree",
+          "price": 1499.0,
+          "categories": [
+            "WomensSarees"
+          ],
+          "colours": []
+        },
+        {
+          "id": "b77f6562ce61366840eaa5ff05036bd7",
+          "score": 0.7845,
+          "name": "Varkala Silk Sarees Women's Raw Silk Saree",
+          "price": 1539.0,
+          "categories": [
+            "WomensSarees"
+          ],
+          "colours": []
+        }
+      ]
+    },
+    {
+      "query": "kids winter jacket between 500 and 1000",
+      "parsed": {
+        "raw": "kids winter jacket between 500 and 1000",
+        "semantic_text": "kids winter jacket",
+        "price": {
+          "minimum": 500.0,
+          "maximum": 1000.0,
+          "min_inclusive": true,
+          "max_inclusive": true,
+          "approximate": false,
+          "currency": null,
+          "phrases": [
+            "between 500 and 1000"
+          ]
+        },
+        "price_preference": null,
+        "audience": [
+          "boys",
+          "girls",
+          "baby"
+        ],
+        "colors": [],
+        "materials": [],
+        "sizes": []
+      },
+      "eligible": 2039,
+      "excluded_by_filter": {
+        "price": 19460,
+        "audience": 8501
+      },
+      "hits": [
+        {
+          "id": "23d6093540c354bb014adc9855c72d1e",
+          "score": 0.8226,
+          "name": "Kidbee Baby Winter Wear Jackets/Sweatshirt/Sweater/Hoodies with Hood and Zipper",
+          "price": 699.0,
+          "categories": [
+            "BoysSweatshirtsHoodies"
+          ],
+          "colours": []
+        },
+        {
+          "id": "e1c3243c4251f0c4af586b88f5b3d467",
+          "score": 0.8094,
+          "name": "Kidbee Baby Winter Wear Jackets/Sweatshirt/Sweater/Hoodies for Baby Boys & Baby Girls with Hood and Zipper",
+          "price": 699.0,
+          "categories": [
+            "BoysSweatshirtsHoodies"
+          ],
+          "colours": []
+        },
+        {
+          "id": "4a0c14e3dcf3118b20f4903bd691f82c",
+          "score": 0.7892,
+          "name": "AHHAAAA Kids Velvet Winter Wear Hood Jacket with Pyjama for Baby Boys",
+          "price": 599.0,
+          "categories": [],
+          "colours": []
+        },
+        {
+          "id": "b91ee2ce52b33626bb3beb7ae589d855",
+          "score": 0.7851,
+          "name": "One Friday European Designed Boy's Cardigan Yellow Sweater Winter Wear for Kids Woolen Front Open Jacket for Boys (0-12 Years)",
+          "price": 899.0,
+          "categories": [
+            "BoysSweaters"
+          ],
+          "colours": [
+            "yellow"
+          ]
+        },
+        {
+          "id": "b908593977cd876d6bab9f920c5b5b8d",
+          "score": 0.7701,
+          "name": "GRAPPLE DEALS Toddlers Boys Girls Winter Warm Thick Hooded Fleece Jacket.",
+          "price": 699.0,
+          "categories": [
+            "BoysJackets"
+          ],
+          "colours": []
+        }
+      ]
+    },
+    {
+      "query": "men's formal shirt below rs 700",
+      "parsed": {
+        "raw": "men's formal shirt below rs 700",
+        "semantic_text": "men's formal shirt",
+        "price": {
+          "minimum": null,
+          "maximum": 700.0,
+          "min_inclusive": true,
+          "max_inclusive": false,
+          "approximate": false,
+          "currency": "rs",
+          "phrases": [
+            "below rs 700"
+          ]
+        },
+        "price_preference": null,
+        "audience": [
+          "men"
+        ],
+        "colors": [],
+        "materials": [],
+        "sizes": []
+      },
+      "eligible": 6344,
+      "excluded_by_filter": {
+        "price": 13217,
+        "audience": 10439
+      },
+      "hits": [
+        {
+          "id": "8b6dcd972cb7910c4576ed235a7ee48a",
+          "score": 0.8395,
+          "name": "VERSATYL Men's Formal Shirt",
+          "price": 599.0,
+          "categories": [
+            "MensFormalShirts"
+          ],
+          "colours": []
+        },
+        {
+          "id": "04e9b57882642bf494bb6c5e9ebb4689",
+          "score": 0.8284,
+          "name": "Amazon Brand - Symbol Men's Solid Regular Fit Formal Shirt",
+          "price": 619.0,
+          "categories": [],
+          "colours": []
+        },
+        {
+          "id": "d1f1634018a32dd6be94e7fb07a2872f",
+          "score": 0.8116,
+          "name": "Peter England Men's Regular fit Formal Shirt",
+          "price": 699.0,
+          "categories": [
+            "MensFormalShirts"
+          ],
+          "colours": []
+        },
+        {
+          "id": "fbc6fb564ad77764c093b05cff6a121a",
+          "score": 0.8116,
+          "name": "Peter England Men's Regular fit Formal Shirt",
+          "price": 699.0,
+          "categories": [
+            "MensFormalShirts"
+          ],
+          "colours": []
+        },
+        {
+          "id": "75fa18c7ff02ffe8971e5c6c21272bc7",
+          "score": 0.8116,
+          "name": "Peter England Men's Regular fit Formal Shirt",
+          "price": 637.0,
+          "categories": [
+            "MensFormalShirts"
+          ],
+          "colours": []
+        }
+      ]
+    },
+    {
+      "query": "dress for girls under 10",
+      "parsed": {
+        "raw": "dress for girls under 10",
+        "semantic_text": "dress for girls under 10",
+        "price": null,
+        "price_preference": null,
+        "audience": [
+          "girls"
+        ],
+        "colors": [],
+        "materials": [],
+        "sizes": []
+      },
+      "eligible": 3692,
+      "excluded_by_filter": {
+        "audience": 26308
+      },
+      "hits": [
+        {
+          "id": "88ebde8af1fea5786b8ba2a077885072",
+          "score": 0.7477,
+          "name": "Evesfashion Girls' A-Line Dress",
+          "price": 449.0,
+          "categories": [
+            "GirlsDressesJumpsuits"
+          ],
+          "colours": []
+        },
+        {
+          "id": "968109deab73a3f53a49974d17807bc0",
+          "score": 0.7466,
+          "name": "612 League Girls' Dress",
+          "price": 717.0,
+          "categories": [
+            "GirlsDressesJumpsuits"
+          ],
+          "colours": [
+            "white"
+          ]
+        },
+        {
+          "id": "10dc070734cb047aa660b9125db95978",
+          "score": 0.7461,
+          "name": "Wish Karo Baby Girls Cotton Frock Causal Dress for Girls-White Dress - (ctn270)",
+          "price": 549.0,
+          "categories": [
+            "GirlsDressesJumpsuits"
+          ],
+          "colours": [
+            "white"
+          ]
+        },
+        {
+          "id": "da69092e3792b780c178199e12d3a124",
+          "score": 0.7417,
+          "name": "My Lil Princess Baby Girls Birthday Frock Dress_RRG_0-10 Years",
+          "price": 499.0,
+          "categories": [
+            "GirlsDressesJumpsuits"
+          ],
+          "colours": []
+        },
+        {
+          "id": "951422694b7489c4ccebc8920faab565",
+          "score": 0.7374,
+          "name": "612 League Girls' Dress",
+          "price": 401.0,
+          "categories": [
+            "GirlsDressesJumpsuits"
+          ],
+          "colours": [
+            "white"
+          ]
+        }
+      ]
+    }
+  ]
+}

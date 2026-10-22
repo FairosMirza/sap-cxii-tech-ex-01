@@ -54,6 +54,18 @@ _COLOR_PATTERN = re.compile(
 )
 _COLOR_INDEX = {name: i for i, name in enumerate(COLOR_FAMILIES)}
 
+MEN, WOMEN, BOYS, GIRLS, BABY = 1, 2, 4, 8, 16
+KIDS = BOYS | GIRLS | BABY
+AUDIENCE_TERMS = {
+    "men": MEN, "mens": MEN, "man": MEN, "male": MEN, "gents": MEN, "gentlemen": MEN,
+    "women": WOMEN, "womens": WOMEN, "woman": WOMEN, "female": WOMEN, "ladies": WOMEN, "lady": WOMEN,
+    "boy": BOYS, "boys": BOYS, "girl": GIRLS, "girls": GIRLS,
+    "kid": KIDS, "kids": KIDS, "child": KIDS, "children": KIDS, "toddler": KIDS,
+    "baby": BABY, "babies": BABY, "infant": BABY, "infants": BABY, "newborn": BABY,
+    "unisex": MEN | WOMEN,
+}
+_CATEGORY_AUDIENCE = (("Womens", WOMEN), ("Mens", MEN), ("Boys", BOYS), ("Girls", GIRLS), ("Baby", BABY))
+
 _NUMBER = re.compile(r"\d+(?:\.\d+)?")
 _WEIGHT = re.compile(r"(\d+(?:\.\d+)?)\s*(g|gm|gms|gram|grams|kg|kgs|kilogram|kilograms)", re.IGNORECASE)
 _GRAMS_PER_UNIT = {"g": 1.0, "gm": 1.0, "gms": 1.0, "gram": 1.0, "grams": 1.0,
@@ -140,6 +152,18 @@ def extract_colors(text: str) -> set[str]:
     return {_COLOR_TERMS[term] for term in _COLOR_PATTERN.findall(normalize_key(text))}
 
 
+def audience_from_text(text: object) -> int:
+    """Bitmask of audiences named in the text (0 = not stated)."""
+    mask = 0
+    for token in normalize_key(text).split():
+        mask |= AUDIENCE_TERMS.get(token, 0)
+    return mask
+
+
+def audience_from_category(name: str) -> int:
+    return next((bits for prefix, bits in _CATEGORY_AUDIENCE if name.startswith(prefix)), 0)
+
+
 def child_categories(record: dict) -> list[str]:
     """Leaf categories from the sales-rank map, best-ranked first (rank numbers are not used as features)."""
     ranks = record.get("sales_rank_in_child_category") or {}
@@ -193,6 +217,8 @@ class Catalog:
     color_matrix: np.ndarray
     color_source: np.ndarray
     color_conflict: np.ndarray
+    variant_color_matrix: np.ndarray
+    audience: np.ndarray
     price: np.ndarray
     derived_regular_price: np.ndarray
     weight_g: np.ndarray
@@ -238,6 +264,9 @@ def build_catalog(records: list[dict]) -> Catalog:
     color_matrix = np.zeros((n, len(COLOR_FAMILIES)), dtype=np.float32)
     color_source = np.zeros(n, dtype=np.int8)
     color_conflict = np.zeros(n, dtype=bool)
+    # "Available in" colours from the variant list; never treated as the item's own colour.
+    variant_color_matrix = np.zeros((n, len(COLOR_FAMILIES)), dtype=np.float32)
+    audience = np.zeros(n, dtype=np.uint8)
     price = np.full(n, np.nan)
     # Unscored metadata: sales_price / (1 - discount), only for 0 < discount < 1.
     derived_regular_price = np.full(n, np.nan)
@@ -263,6 +292,8 @@ def build_catalog(records: list[dict]) -> Catalog:
         for name in categories:
             cat_rows.append(i)
             cat_cols.append(category_vocab.setdefault(name, len(category_vocab)))
+            audience[i] |= audience_from_category(name)
+        audience[i] |= audience_from_text(record.get("product_name"))
 
         # The title is the more specific source; keyword colours are used only when the title has none.
         title_colors = extract_colors(record.get("product_name") or "")
@@ -272,6 +303,8 @@ def build_catalog(records: list[dict]) -> Catalog:
         color_conflict[i] = bool(title_colors and keyword_colors and title_colors != keyword_colors)
         for color in colors:
             color_matrix[i, _COLOR_INDEX[color]] = 1.0
+        for color in extract_colors(clean_text(record.get("colour")).replace("|", " ")):
+            variant_color_matrix[i, _COLOR_INDEX[color]] = 1.0
 
         p = parse_price(record.get("sales_price"))
         if p is not None:
@@ -323,6 +356,8 @@ def build_catalog(records: list[dict]) -> Catalog:
         color_matrix=color_matrix,
         color_source=color_source,
         color_conflict=color_conflict,
+        variant_color_matrix=variant_color_matrix,
+        audience=audience,
         price=price,
         derived_regular_price=derived_regular_price,
         weight_g=weight_g,

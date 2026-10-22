@@ -1,0 +1,79 @@
+{
+  "environment": "arm64 macOS-26.5.2-arm64-arm-64bit, Python 3.12.13, CPU, default threads",
+  "query_latency_method": "median and p95 of encoding one query, 50 runs after 5 warm-up runs, CPU",
+  "category_purity_method": "2000 products with observed category; top-10 text neighbours excluding same ASIN and variant family",
+  "representations": {
+    "tfidf": {
+      "dimensions": 36372,
+      "neighbour_category_purity_at_10": 0.6471,
+      "fused_dev_diagnostics": {
+        "category_agreement_at_10": 0.8474,
+        "brand_agreement_at_10": 0.3,
+        "top10_jaccard_vs_B": 1.0
+      }
+    },
+    "minilm": {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "dimensions": 384,
+      "parameters_millions": 22.7,
+      "product_encoding_seconds": 26.3,
+      "query_encoding_ms": {
+        "median": 4.38,
+        "p95": 5.67
+      },
+      "anchors": {
+        "random_median": 0.3152182698249817,
+        "top1_median": 0.9079722166061401
+      },
+      "neighbour_category_purity_at_10": 0.7338,
+      "fused_dev_diagnostics": {
+        "category_agreement_at_10": 0.8895,
+        "brand_agreement_at_10": 0.2667,
+        "top10_jaccard_vs_B": 0.3431
+      }
+    },
+    "bge-small": {
+      "model_id": "BAAI/bge-small-en-v1.5",
+      "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+      "dimensions": 384,
+      "parameters_millions": 33.4,
+      "product_encoding_seconds": 35.7,
+      "query_encoding_ms": {
+        "median": 7.46,
+        "p95": 9.04
+      },
+      "anchors": {
+        "random_median": 0.5893955826759338,
+        "top1_median": 0.9396985769271851
+      },
+      "neighbour_category_purity_at_10": 0.747,
+      "fused_dev_diagnostics": {
+        "category_agreement_at_10": 0.8895,
+        "brand_agreement_at_10": 0.26,
+        "top10_jaccard_vs_B": 0.3208
+      }
+    },
+    "mpnet": {
+      "model_id": "sentence-transformers/all-mpnet-base-v2",
+      "revision": "e8c3b32edf5434bc2275fc9bab85f82640a19130",
+      "dimensions": 768,
+      "parameters_millions": 109.5,
+      "product_encoding_seconds": 133.4,
+      "query_encoding_ms": {
+        "median": 17.21,
+        "p95": 24.27
+      },
+      "anchors": {
+        "random_median": 0.4203808009624481,
+        "top1_median": 0.9207291007041931
+      },
+      "neighbour_category_purity_at_10": 0.717,
+      "fused_dev_diagnostics": {
+        "category_agreement_at_10": 0.8789,
+        "brand_agreement_at_10": 0.26,
+        "top10_jaccard_vs_B": 0.3252
+      }
+    }
+  }
+}

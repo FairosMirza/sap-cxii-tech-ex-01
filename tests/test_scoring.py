@@ -79,7 +79,7 @@ def test_scores_are_finite_with_sparse_metadata_and_text():
     records = [make_record(f"s{i}", "x", brand=None, price=None, category=None, reviews=None) for i in range(4)]
     records += [make_record("full1", "Black Cotton Kurti"), make_record("full2", "Black Cotton Kurta")]
     engine = engine_for(records, config(text=0.5, attributes=0.5), text=True)
-    assert engine.store.modalities["text"].available.tolist() == [False] * 4 + [True] * 2
+    assert engine.store.modalities["tfidf"].available.tolist() == [False] * 4 + [True] * 2
     for row in range(len(records)):
         assert np.isfinite(score_all(engine.store, row, engine.config)).all()
     assert len(engine.find_similar("s0".ljust(32, "0"), 4)) == 4

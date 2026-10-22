@@ -26,7 +26,7 @@ def winner(wallet: dict, kurti: dict, cfg=ATTRIBUTES_ONLY, with_text: bool = Fal
     if with_text:
         cos = np.array([TEXT_COSINE[short] for short in ("q", "wallet", "kurti")], dtype=np.float32)
         vectors = np.stack([cos, np.sqrt(1 - cos**2), np.zeros_like(cos)], axis=1)
-        engine.store.modalities["text"] = DenseModality(vectors, np.ones(3, dtype=bool), Anchors(0.0, 0.8))
+        engine.store.modalities["tfidf"] = DenseModality(vectors, np.ones(3, dtype=bool), Anchors(0.0, 0.8))
     return engine.find_similar(QUERY["uniq_id"], 1)[0].rstrip("0")
 
 

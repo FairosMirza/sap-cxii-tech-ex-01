@@ -25,6 +25,7 @@ class ScoringConfig:
 
     block_weights: dict[str, float]
     attribute_weights: dict[str, float]
+    text_model: str = "tfidf"
     min_evidence: float = 0.5
     price_scale: float = math.log(2)
     weight_scale: float = math.log(2)
@@ -70,6 +71,8 @@ def _validated(config: ScoringConfig) -> ScoringConfig:
         raise ConfigError("attributes block is weighted but all attribute weights are zero")
     if not 0.0 <= config.min_evidence <= 1.0:
         raise ConfigError("min_evidence must be within [0, 1]")
+    if not isinstance(config.text_model, str) or not config.text_model:
+        raise ConfigError("text_model must be 'tfidf' or an embedding model key")
     if config.price_scale <= 0 or config.weight_scale <= 0:
         raise ConfigError("price_scale and weight_scale must be positive")
     if config.max_per_family < 1 or config.max_results < 1:
