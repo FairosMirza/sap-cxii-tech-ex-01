@@ -28,6 +28,10 @@ eligibility:
 serving:
   similar_method: C_bge
   semantic_model: bge-small
+  # D08: approximate search is the default where it returns >= 95% of the exact top-10
+  # (reports/ann_benchmark.json); requests can still ask for mode=exact. Evaluation always ranks exactly.
+  similar_search: {mode: ann, candidates: 800}
+  semantic_search: {mode: ann, candidates: 200}
 
 # Approaches compared during development; each overrides the settings above.
 # C uses sentence embeddings; both small models are pooled for labelling (see reports/text_model_comparison.json).

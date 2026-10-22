@@ -1,8 +1,9 @@
 import math
 
 import pytest
+import yaml
 
-from app.settings import ConfigError, ScoringConfig, _validated, load_config, method_names
+from app.settings import ConfigError, ScoringConfig, _validated, load_config, load_serving, method_names
 
 
 def make(blocks=None, attributes=None, **kwargs) -> ScoringConfig:
@@ -56,3 +57,27 @@ def test_repository_config_and_methods_load():
         assert sum(load_config(method=method).component_weights().values()) > 0
     with pytest.raises(ConfigError):
         load_config(method="does-not-exist")
+
+
+def test_serving_search_settings_load_and_apply():
+    serving = load_serving()
+    for name in ("similar_search", "semantic_search"):
+        assert serving[name]["mode"] in ("exact", "ann") and serving[name]["candidates"] >= 1
+    served = load_config(method=serving["similar_method"]).with_search(**serving["similar_search"])
+    assert (served.search_mode, served.ann_candidates) == (serving["similar_search"]["mode"], serving["similar_search"]["candidates"])
+    assert load_config(method=serving["similar_method"]).search_mode == "exact"  # evaluation ranks exactly
+
+
+@pytest.mark.parametrize("search", [{"mode": "fast"}, {"candidates": 0}, {"candidates": True}, {"candidates": 2.5}, {"extra": 1}])
+def test_invalid_serving_search_rejected(tmp_path, search):
+    path = tmp_path / "config.yaml"
+    path.write_text(yaml.safe_dump({"methods": {"M": {}}, "serving": {"similar_method": "M", "semantic_model": "bge-small",
+                                                                     "semantic_search": search}}))
+    with pytest.raises(ConfigError):
+        load_serving(path)
+
+
+def test_with_search_validates():
+    with pytest.raises(ConfigError):
+        make().with_search("fast", 10)
+    assert make().with_search("ann", 50).ann_candidates == 50

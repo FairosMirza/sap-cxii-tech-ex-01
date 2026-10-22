@@ -51,6 +51,9 @@ class ScoringConfig:
         merged = {**self.block_weights, **block_weights}
         return _validated(ScoringConfig(**{**self.__dict__, "block_weights": merged}))
 
+    def with_search(self, mode: str, candidates: int) -> "ScoringConfig":
+        return _validated(ScoringConfig(**{**self.__dict__, "search_mode": mode, "ann_candidates": candidates}))
+
 
 def _check_weights(weights: dict[str, Any], expected: tuple[str, ...], label: str) -> dict[str, float]:
     unknown = set(weights) - set(expected)
@@ -111,8 +114,8 @@ def method_names(path: str | Path = DEFAULT_CONFIG) -> list[str]:
     return list((yaml.safe_load(Path(path).read_text()) or {}).get("methods") or {})
 
 
-def load_serving(path: str | Path = DEFAULT_CONFIG) -> dict[str, str]:
-    """The similar-products method and the semantic-search text model the service runs."""
+def load_serving(path: str | Path = DEFAULT_CONFIG) -> dict[str, Any]:
+    """The similar-products method, the semantic-search text model and each endpoint's search mode."""
     raw = yaml.safe_load(Path(path).read_text()) or {}
     serving = raw.get("serving") or {}
     method, model = serving.get("similar_method"), serving.get("semantic_model")
@@ -120,4 +123,12 @@ def load_serving(path: str | Path = DEFAULT_CONFIG) -> dict[str, str]:
         raise ConfigError(f"serving.similar_method {method!r} is not a configured method")
     if not isinstance(model, str) or not model or model == "tfidf":
         raise ConfigError("serving.semantic_model must name an embedding model")
-    return {"similar_method": method, "semantic_model": model}
+    searches = {}
+    for name in ("similar_search", "semantic_search"):
+        search = {"mode": "exact", "candidates": 200, **(serving.get(name) or {})}
+        candidates = search["candidates"]
+        if (set(search) != {"mode", "candidates"} or search["mode"] not in SEARCH_MODES
+                or isinstance(candidates, bool) or not isinstance(candidates, int) or candidates < 1):
+            raise ConfigError(f"serving.{name} takes mode ({' or '.join(SEARCH_MODES)}) and a positive integer candidates")
+        searches[name] = search
+    return {"similar_method": method, "semantic_model": model, **searches}
