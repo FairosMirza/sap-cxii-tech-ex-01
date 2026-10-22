@@ -1,0 +1,814 @@
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "56199f2768cd71b9e85ab62a4205c850", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:32:59+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "b86a8d5078ab8ba5aee9d936c995d900", "grade": 2, "note": "Optional note: “Same use and price; noticeably different silhouette and styling.”", "labelled_at": "2026-10-22T10:35:43+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "6ca90c18dcf6f9813a06c80dcb87d75b", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:36:01+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "a4b8c19421d8ae0010269161fcaa174e", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:36:04+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "262137b2a27e7e48d6be3c976b80f15c", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:36:09+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "3e0dd6fa257554220d4e3fce121edcea", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:36:11+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "cc9676e94964dafc9a76c00faed3125d", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:37:41+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "007b714d7bafff12b9407703331868e9", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:37:44+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "5577bd35dcc4e0af29f5245046d44994", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:37:48+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "da7ee4a073af49bb16f8e71d908954b9", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:37:54+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "9d21a0f866d81bdc8b37b93e7d2aa893", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:39:28+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "bbb709844b4acdde8f7d1663d5dd5ac4", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:39:29+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "2d685614c1eb8866cda29b590d0e1290", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:39:43+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "9900fcf72d53ff03d4b473ae30c059f4", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:39:51+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "1fa065f151508749670ba07dfe055a30", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:40:08+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "8c366b255f11b33ab1bed26434099777", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:40:30+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "4247684c996009321dcb29eafb5434bf", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:40:40+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "c94b51d64702ea8a2b23c2b07d3378d6", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:40:43+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "035740d905f12698c1a5b8ff886f7c88", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:40:45+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "dd1cb64935c8b2a3984518609bfbced0", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:40:50+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "605335b74aa83964dbf316c0a314915d", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:40:54+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "bcec2847273636e52924cf1edece8b2b", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:40:56+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "02c56beec5edd9354c5028f2dd9001c6", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:41:01+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "23380db7fe590f8a887b500beb2654f9", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:41:04+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "462337314b348ff8ec973429f633941a", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:41:09+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "a89b13e0c1562adbb34a87a3a64f80e9", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:41:19+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "2998128e6877dd3fc96fa203ca63dabb", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:41:30+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "8a392cb082daa0d39c4fab8f5eb35bea", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:41:48+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "cd7716a275d98f0350d8439a272a5a35", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:41:56+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "c132a8b583fec7a7ca196c251fe52a00", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:42:08+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "7a05190d9602171a5aecdbdad00fb5db", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:42:17+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "5b1ffbcc5feeef8c25dda0a71617f2c9", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:42:20+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "d1199b4cb6416e31257fdbd856a2c6b2", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:42:23+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "22df072f18f6921c410adce2a191d480", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:42:28+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "ca13f448a1e9184c2677548f39a8629b", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:42:33+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "3122b6750cbf87eb32118b08ecae0886", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:42:35+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "279c4fd20810d72778e8683cb5f9a932", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:42:37+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "fc5052d097945c38b36b8959f825943e", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:42:43+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "722b0e75165f3103b49a8df4514a6699", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:42:46+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "97bdadca0497862d62aebe746104b2e9", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:42:53+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "5699803d24bf8ae25c1de66d59406e0f", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:43:15+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "a66ded18972072091d45bb42732bf9a0", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:43:17+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "c6891975a787a8b853dac196bb8e0afd", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:43:18+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "3a09a50cf36dd38e6a6f053d66922a80", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:43:20+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "76d7f51d1b639fc9b10cc63f79d505fe", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:43:22+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "9d3cd821faf6a7fb2f12194c2e5b9758", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:43:23+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "3ad6d7ca3d9eced54b404f3667a0571f", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:43:30+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "52a6ba7830421032fe4ec8f1f739462e", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:43:34+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "72382817a988cde852a7ea0f9746ebdd", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:43:37+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "7c3eb5a83d17db5a600d2191961187bf", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:43:40+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "35802aa3086cf0434d88ee6988b9b8cb", "grade": 1, "note": "", "labelled_at": "2026-10-22T10:48:48+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "8d89a4ab9cb44009f8b56d8b9b5294d6", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:48:53+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "b42e381a23f7a8b51b006b7d92ef7814", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:49:07+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "c4ec9ad026ebf0f052f47099b2af6d51", "grade": 1, "note": "", "labelled_at": "2026-10-22T10:51:19+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "e2ddbb09612e64e6ed4d97b403cc29d9", "grade": 1, "note": "", "labelled_at": "2026-10-22T10:51:27+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "978450ee54cc58e8c4bf2854f207d381", "grade": 1, "note": "", "labelled_at": "2026-10-22T10:51:33+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "522259fae28a03f81dc3845ba097283d", "grade": 1, "note": "", "labelled_at": "2026-10-22T10:51:42+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "cea76fa5b8ed7d5fe3c5217e3025fd40", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:51:46+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "2717ac1f402956750997915371d909c9", "grade": 1, "note": "", "labelled_at": "2026-10-22T10:51:51+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "689085dc06d328430086aa62e9376f3d", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:51:56+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "d3d7fab97b34846e985c50c0aeaaaf1f", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:52:01+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "bcc900b6fa85e2f98e0fb1829384aaf1", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:52:35+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "ee9988933fbdb69c709e352bcbac8e0c", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:52:38+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "a4e2c24b77215873c9d97354f45bf357", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:52:43+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "7db87b75b4016bb5835f1dba21f7b192", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:52:45+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "968109deab73a3f53a49974d17807bc0", "grade": 1, "note": "", "labelled_at": "2026-10-22T10:52:51+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "5b17b7645e41042026f692b62646d08a", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:52:59+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "3f0cea7297f3a3ee8e2cf890d6aeb496", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:53:01+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "9891686a2ac8c90cb76b670b90c48a60", "grade": 1, "note": "", "labelled_at": "2026-10-22T10:53:03+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "a3d2de7ead19bf943c4b935bf1cb2787", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:53:07+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "894f301347f29430b268070612dc03b8", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:53:15+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "9cad32e6e22a799d3783d953e378e6c0", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:53:18+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "f991bfec156c62e2267332b5e3a6187a", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:53:26+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "096f0b6b0fdeec06b894522d0690c1ee", "grade": 1, "note": "", "labelled_at": "2026-10-22T10:53:33+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "174ba0416f67f1f1a5969bd7265bed83", "grade": 1, "note": "", "labelled_at": "2026-10-22T10:53:42+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "e217fd8493b36379ca8709435f8ed878", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:53:48+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "5104ff2630670e6eb7613ea59eac9617", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:53:54+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "826f82144c55f2457e68d2638618c3b5", "grade": 0, "note": "", "labelled_at": "2026-10-22T10:54:01+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "c2fd485edcd1373be92b2517c233492e", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:54:27+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "e50db9a07f01f0569a3f401e0b8f7c0d", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:54:33+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "81bbb45010d1ea59b8e83946c05dfe09", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:54:46+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "5629e88ea133c27e3a54de404bfa90c2", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:54:54+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "c1a7b944bb12eff42d8181308169d486", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:55:03+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "f6a46350a09f4690330340fcecc965b3", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:55:08+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "e406b43fed1e368caa474b292ec5af4d", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:55:16+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "877df98eed1ea392fa92d551806320ab", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:55:19+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "e3456af19944826339b4acb0eeae10c6", "grade": 1, "note": "", "labelled_at": "2026-10-22T10:55:36+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "04519ee9c0f2bd881f9cb8c6dd966424", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:55:48+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "61da469abfc6396cf61b2152c883e16e", "grade": 0, "note": "", "labelled_at": "2026-10-22T10:56:17+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "b2d7c0f53e1bdea32c54757f72a2dbda", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:56:23+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "de59b121cc3b9f072b72b7c8f609f8c4", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:56:26+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "f0b1b6bf553e32bd4980ac4c969b0cfb", "grade": 1, "note": "", "labelled_at": "2026-10-22T10:56:35+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "0b3afe8b4f9462227fef2f5947102289", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:56:45+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "f5afd7cda432638dfef4a4daeed9b712", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:56:49+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "e64338ca0d646b048fb5af7a60dffcc7", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:56:52+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "24184bb874f9f71b5bd6d0fc9c99a7d9", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:56:56+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "afa6d02d1c6ae3e0e86120907e3b96f6", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:57:00+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "d406402a47a7d635e41fe6756b413ae7", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:57:17+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "84cc57c8eaeefce9dd22a7ef31376176", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:57:22+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "2fddfbb41443f4e2b3eff91e05f55b4e", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:57:24+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "b57f8451b7831fb4f601a83a6bc3e359", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:57:26+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "f8c0a30d868c2eb7cab31b0712f68c7e", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:57:35+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "816b849b974b45b0caea83d02c7648e0", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:57:37+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "081b061356820eea3f99d9669b2d9d0c", "grade": 1, "note": "", "labelled_at": "2026-10-22T10:57:47+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "f12d0887ebe0d95b8fa8a5927ad00be5", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:57:50+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "45df1b5ffca712ba48ece515f8f3e385", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:57:57+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "30dd8002ec46daa68d09413f189885fe", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:58:24+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "acb2fbea8de476d7eb0beff922c323b9", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:58:30+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "af1923dac8da0f8f8aabdfa8ae2d7f77", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:58:40+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "4b457569ebf3e9f3411613ec05324943", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:58:56+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "a45e2a8442b1aa1a875ac925625938db", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:59:03+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "59f0c93c1b645b0715c8c9794b8bc623", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:59:10+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "d2c64b4b9d06853b87b3bc3e969646a9", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:59:16+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "20d29dec0ef5113e624774c68503c3a9", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:59:22+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "71cdaa5c6a8dee02d7a688e5a036cfe6", "grade": 2, "note": "", "labelled_at": "2026-10-22T10:59:28+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "8984021492815a3ccb15f285121ef0c5", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:59:35+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "1dd8d55241b97d68ede26bae2ada1a72", "grade": 3, "note": "", "labelled_at": "2026-10-22T10:59:51+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "9392f8b0e2701fa6e4b94b609e113883", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:00:01+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "1b4e8347c681902600561bc73323c6ac", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:00:07+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "a6aef41154e83911b235689d8da3669f", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:00:11+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "3fc46ab02f0c396ba2475e5e7f514028", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:00:14+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "38783d25d67961d6e4a1381aea134ede", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:00:20+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "d58a71fc81836d24051192dd719db56e", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:00:28+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "c0f70626618a1c714476880ca8fe30d7", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:00:31+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "799ccef2ed9fb63a7479f2fb1282ff5c", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:00:38+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "19cb25dca623725f77bbd28cc7b223fc", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:00:42+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "af6816d1c7e4a63f991dd013a4159eef", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:00:45+00:00"}
+{"task": "similar", "split": "dev", "query": "65ae3f3110f8ead580b7948e9196cf79", "candidate": "8508d300b59deb8592189ec178deee32", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:00:51+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "1ebc6521c7cbd8064164c55e080dceb7", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:01:08+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "1dda982f2f44ab81282a945909dd079b", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:01:13+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "c00112ba50fdeb7e3ca838366ab00dc1", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:01:21+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "c2c0e2c98c062e55acf5733a362cdacb", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:01:25+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "25ab4d2adedc82c287820441af6e75a1", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:01:27+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "9cfd91cebe3697bb9f88d93941cf90a9", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:03:01+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "7fecf1a590d06efc43f720597f479065", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:03:04+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "d0beaef7c497278f15726140834b3028", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:03:27+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "0343ff5a592102888fdd692c15749e88", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:03:28+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "30ae7dc4a423c549bbd6bca20eaeafa3", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:03:29+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "62673f5a1de662b723edb180338e939f", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:03:30+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "0ef2b79c103041050b5c0f488576af9f", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:03:37+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "38cce4723d38fdfac1f54f16445df467", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:03:40+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "1a2d956594596cac9f21b1de0d2dc18c", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:03:43+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "a84a71a034ba065bb90678c6016228f0", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:03:46+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "843107fb50d66fdcd181e404e7d4b37d", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:03:47+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "0e6ba845ba57c2ad0837113e30425318", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:03:51+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "2886624466a3cbfb2122dabb733ac84f", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:03:52+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "76276ec549c34e399461c10a7916c59f", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:05:32+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "c805c258645812a83d3219fd379d076c", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:05:44+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "45073214eb117d9542a5f3596f7f3b20", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:05:47+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "02d83fe6440875fffcf51b6c4f124c24", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:05:55+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "26c7f367dc1f5dab8ad88b610fdd9e9f", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:20:48+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "f7448058371abbe28731169efcc9a963", "grade": 0, "note": "Different garment types: upper-body camisole versus lower-body underwear.", "labelled_at": "2026-10-22T11:22:15+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "1555c6693fc1cb68ae5145a60a5b3137", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:24:45+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "2576fa08dd03aa8395e654cc109e7277", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:24:50+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "5de63f4485c7e076ff112c40212fc327", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:25:06+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "75346454ed73507e01d57e91220b2828", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:25:11+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "147b6bc033a705396f079ef73aee10ef", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:25:13+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "0d8cde1a5bdfd450f77b9710eccd6ea1", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:25:23+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "ef7ef313326573015cdac189147020a8", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:25:31+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "503b2ad8144125761b1a3863abc120bc", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:25:36+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "208c6bb70ea1284843d1256f83d93e96", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:25:39+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "c08d5f166ce2c03164f16259490779ce", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:25:47+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "518254c9cc5843f4072561e0c0abc6de", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:25:50+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "d697c13de7ebfe1a0f09504d3e871f81", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:25:54+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "02e0ccfcbd84602df4a5be59eb5b4086", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:26:01+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "6d75cfc7c037f7e6fbaf723595238f7f", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:26:03+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "9373fe30e003cf310a66fe2fcf00b73c", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:26:06+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "6a8579b2a5cb3e6b8910ba8a555c84e7", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:26:15+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "68240d7b178bcf7ad7bc6602e74ea74c", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:26:18+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "026e3ea21c2b5bf4d29edf69ddbe9148", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:26:20+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "4fceb946c8f1e1fee5def8bf1d6dc95f", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:26:22+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "91310308a3a6bbc725395cc77eb30439", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:26:25+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "a166f04ef5667ca781427148daf6b55e", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:26:30+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "24184bb874f9f71b5bd6d0fc9c99a7d9", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:26:46+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "7034d0a18ee5ec6b4ccef9e9c36ccbdd", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:26:48+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "5e37826fbe4d2921108db5d339bf0ce5", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:26:53+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "ca5e8b6e7309234a443d4c990ab248cb", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:30:19+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "15c28d8421d0a7a37dcd5e63fe5c665b", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:30:44+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "0b650fd39b65c6494e79747a5b6cea97", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:30:54+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "31b8695eed87b920b90b615586a99c63", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:30:56+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "29159bc4c8126b62b81bb9ba789592a2", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:31:01+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "f67b45633eca8f57258c428bd510c144", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:31:05+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "48b78b601ee4d4f127ce79db5a556f63", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:31:13+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "b553dffe942719cd7f67cb735882355b", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:31:14+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "2bfc6ca5c04cf74f1e16c5fa5ea604bc", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:31:19+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "2fddfbb41443f4e2b3eff91e05f55b4e", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:31:21+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "e3a416098dad0a68ab23f0eb79e51cf2", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:31:24+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "07acb0f50c466064c30afe3027522c53", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:31:32+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "16fd4e2dec9133abc567d763ed9b1d4e", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:31:41+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "8b83b7eaafebdff6ece493cd6f87ba2d", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:31:45+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "ecbf95534aefd14214ae7d964faf3789", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:34:19+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "04519ee9c0f2bd881f9cb8c6dd966424", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:34:20+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "0150c32493c0c9124ba49f74c5d6ee4e", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:34:24+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "a223f3e78e5c43f436824887208d0877", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:34:39+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "6ff1ca25dacb642d79138be97f3a3edf", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:34:41+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "2dc03b4c83f2bc2fb2b97067acd739a1", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:34:55+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "9b7fa16a69b9d2f98967633ad6d0f995", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:35:03+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "b41200c48e5cce7d2bf960bd779a05e4", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:35:05+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "0d1f8f803cec507e59af32fa408941fe", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:35:06+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "00e7657fd2836d61d0ea9932be243b71", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:35:07+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "9e7c909c0e191da3a40a86e707452fd4", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:35:09+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "63806599adf16988765c114332f1700b", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:35:11+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "f8a53b0f2d267896c53f0e960711f5ac", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:35:18+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "da57373bb82ff133b5df13edd98fe76a", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:35:20+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "9aab488a71e401eeea1649e58374b77b", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:35:30+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "6d6927b54f4468c20b58707fba695018", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:35:37+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "9455ab1b2444aadcbe8f59acc8171a98", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:35:39+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "ff4c2871594279a9420b6f3d2d4baeb0", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:35:40+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "528aa0992500d3769730481721d5a8ae", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:35:42+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "4707027d4048c6fe76e1e6bd6a9e3333", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:35:44+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "fdf64108222c28ac65619ec40fc01cf5", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:35:45+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "86c2123c9c0b8e15799be7f15429fa6c", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:35:46+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "bb8a59eafffdcb171636b6f3839f2cdb", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:35:48+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "d354a3c0d32ec96927770ed3382d615e", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:35:49+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "560604665163c919513ff1848760395b", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:35:52+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "c003b687132c4713ac0e97d0abdd859c", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:35:55+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "6074601cf454061f73ace43978cfeff0", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:35:57+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "04586e5279a4015704703da19795d8a9", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:35:59+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "a78e7cbd386e09201461d97d6cdcf264", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:36:01+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "c1b843d4519afad1eef3f0ccdd34751f", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:36:03+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "bc05ac0d232310b2e5b7e46188b6e8c4", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:36:20+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "0aee14c02029eafa8d60f8d41ef6385c", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:36:22+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "001e596259c7511264dc5a0eec04af20", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:36:24+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "3458fba9754d19831293f69ae357956d", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:36:32+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "8bb10f832a6431bfce17e0e3f44db22e", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:36:34+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "a0ac63be934fb976f93a03580e0ca714", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:36:37+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "dc2f17cccaaaa14a231b0d126485ad37", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:36:43+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "08d02ff8153169734913a2b82f2831c1", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:36:45+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "bf802260f7738fd50e64c58f4a9b08fb", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:36:47+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "2aa6c8fc86c47efc21cfbc79fbf22b6a", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:36:50+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "53c07f123340aaee911d113130b4b6e8", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:36:52+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "441d07d7d8f02319b695755a22dee842", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:36:55+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "793e59adacf158ca802850448d7d78fd", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:37:05+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "454308e11c4ace20365fc170a3e7f471", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:37:09+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "893250355a4236f37c3f8b16921d97f3", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:37:11+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "7e03c835f7551addc1bfd79d3f141e28", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:37:15+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "faf2dd52711dee6eb9a7c6662fb53f31", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:37:31+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "0fcc3f155262a8f90e967a604ac7bce5", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:37:34+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "e93dd6b0e4d04f098b46f54afc0a4bce", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:37:38+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "1b1f286c6e47a5d8e747a8a5b014928b", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:37:41+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "61da469abfc6396cf61b2152c883e16e", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:37:42+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "91d24d4a984522dd81094bcbbd3b2f0f", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:37:45+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "e7544c16982328126390c4c3dc5bd613", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:37:46+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "43e78d983004b9adef1a5263f6d20c1d", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:37:48+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "d543c7e57d760b14a003d52ca9d85ba5", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:37:53+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "203391060e019182c3290b40497fe9d6", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:37:54+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "963a79ffd43c2ec2cc6197f72da5e069", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:37:55+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "f91c1b1fa6409de0822d18201d26c2a8", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:37:56+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "fa656dfb1028de55f38726d797d78dde", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:37:58+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "4607c7ef41ef7f43245442aed739827f", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:38:01+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "75fb124d13f909aa107b3d9787f76126", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:38:04+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "74062ab3d35ca94d76b695fa8967f7af", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:38:07+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "e910c3231bf8681a77affb158ce6cfab", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:38:08+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "94607c3d4b03e1dff074277312684cbf", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:38:10+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "26839b2700be8b1340f188771dd3e754", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:38:12+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "8c5278be27d1b30109cd0186ed9cbfbe", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:38:17+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "c82df81a5b82a445e1993b2698bb5df0", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:38:31+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "414b6f992804965dd8da36c39a159939", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:38:33+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "515247d46e602cc2bb4a1f9034ca6b21", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:38:34+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "92c77780c417c34d9bee00780fc87595", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:38:41+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "9d4e4d03f7597ea6c12dfce2fb9787f6", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:38:44+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "228abaf95f801804c040272afb29d4f0", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:38:46+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "b4a881cc7d1cf376e96baf8b6de16be9", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:38:48+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "12c7ef01dc805a0d3d77e9a933acfd41", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:40:06+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "d12e8ea145c9b28d2ad437d46363ce21", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:41:14+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "224ac0a8f5da624752a6ea3b1567c1ed", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:41:17+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "6c3e187468ff32ca58422604a33c63ed", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:41:18+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "e74bf0828357583c54fa5bf36c425fd1", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:41:26+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "03e661a1442bc0fc187db282cc709baa", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:41:27+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "f93cebdfaabcbb8d47246433f87f15c7", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:41:29+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "4ea89265ddac1d63deb5098d9fa54955", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:41:32+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "f3b439844ef1243795ebb19e0362198f", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:41:35+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "5df071236d5b33bb2340a6ae9dbd0a05", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:41:38+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "d1cf79532f25d9911670fc08073f9ae8", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:41:40+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "ef86244c7f6c7aa27293608c19307f7a", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:41:43+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "bf15a4abdcb688fd9c9298653d775640", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:41:45+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "29765256432314772a0e3d9219ba9a98", "grade": 0, "note": "", "labelled_at": "2026-10-22T11:41:47+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "7d3ca2f8d6786d2a8f4b868a5d5e7dae", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:41:49+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "7c1e777fbdbe3ef018108ee6c7250dd8", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:41:56+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "39b9bf30ed42b6c9edeed7b8ad034c08", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:42:02+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "02bef27e0455b63972fcb8b44f591925", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:42:07+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "fda97016274ebbd6fb5ffcadcc45bd43", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:42:09+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "0f65ef41890292c033f1ff5c2ce0bbe2", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:42:12+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "5b665d157d68923239aa61459bf65183", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:42:15+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "dde76ec9c65deff2038a319f061ca657", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:42:24+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "9ecf5fccb5b5d35f0ef0a6b51d36de79", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:42:29+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "1b1a2aec2ac6d903a1e438ca57d41b6f", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:42:30+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "5f65cb254084e5771a0be0697f030014", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:42:34+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "d5d7f74449c3fbca2db0206e40fe8656", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:42:36+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "372c7be112efafd9c60db25d9830ad5f", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:42:38+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "cd8ad45c41cec3915beb3122e2b26bdb", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:42:41+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "3a2b3dd016e762854783596b19d820f7", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:42:43+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "8e702df3434a51b4b3d8e9f39fc04abc", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:42:49+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "bfa2fb4f69cb073c4e538cda188903ca", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:42:51+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "cacfcfa51dcf65e701eaec04a221cf17", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:42:52+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "59adecd05cd3e33dc38f0f20d48728c5", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:43:05+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "56358f7f88b062079d1249f74efde9fa", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:43:07+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "beb80b450efe9b7bfe1df6933099004c", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:43:12+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "a9a4019963899ea76c3e4f6a21f624c1", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:43:16+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "c1776fb66ff144c1e7bbbd1399607795", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:43:18+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "b52135b3ab305600fd8bed5ae96b5cd3", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:43:22+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "255cd2df7ed4a5325c88d574e4035624", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:43:27+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "177acdf6f536ae48705c58bb4c61e7ff", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:43:30+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "f84c479baf419c0eefcb1e10cc5186d2", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:43:33+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "01f55cc8ad5aac38479c9cba3a087d24", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:43:36+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "e1d99e9027977ab4ec60191e1b630211", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:43:38+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "dce488f8529faddf9348f77ff0ea1b98", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:43:41+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "d5ad18a6ad800c1dd6957dac73048af0", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:43:42+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "4e294813725cceedb2fee220a0bdcb07", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:43:44+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "46f47cbf4b8b5721110b7280ee60a6a5", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:43:46+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "07245bf280018c2dfdb78058ed0d5b04", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:43:50+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "f825f68bcc78e987153ce0d4f2b32cdf", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:43:53+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "dac56bf7e4e28592e3c0d6065312287f", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:43:58+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "6e323eccc8899103a06013356b47b896", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:44:00+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "f29bba0f0d67655128deeb7fd2ac7784", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:44:01+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "aa30c7ea5a61dc5ca15ace1314d1b50a", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:44:04+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "97c7d5a1a094ccec0ad788ce606364f2", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:44:06+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "3581f544bfe7767d8803fccb06268bc0", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:44:07+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "fd238b89555c0fa1625a28c4a953cc86", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:44:10+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "8530be3ea679f3daa494bc4c6f4cf39c", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:44:15+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "60ab00dd2de94750bbdc08ac0bb1b83c", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:44:22+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "87a74fe4eafb4120d9af86eac86bc4a4", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:44:25+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "5a85c1726935807c8036beefd3947d83", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:44:28+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "e58f5e5c9e7544d69a5acef2f1ecd5fa", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:44:45+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "12d6478aec62252da3d44a00a8e5c86d", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:44:52+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "7646a7cd795d0297788682041da0b1a1", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:44:57+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "8e97d55fe44abc620640189be912064e", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:45:04+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "ef572d8eb449c102479c44d2dc8ebedf", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:45:05+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "f9039dcfa1d7c0a34ee0bd0d1e82c69b", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:45:08+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "1612d7581eb0afae0af7761138a780e0", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:45:13+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "fd96a7048fc0e77318035eb25edf16f0", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:45:17+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "8d427d414269759461fd7ed053b410bf", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:45:19+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "75c9b49f5073ad9004104353e4149159", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:45:22+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "113a19c67e8e2c68394436b20125a2e5", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:45:24+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "63d06176d3097336d32213c93dec7252", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:45:31+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "c597898e1183ad046bfe7b346cf84efa", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:45:34+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "94a7e916d3c4f060b84fb226f32c0bd0", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:45:37+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "ce6a9562355970b46d9eb5501ef4a6d9", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:45:41+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "dd6c1cf4792931664325c46d6dd5b223", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:45:45+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "2801b377dbe8a31ac4571e48c9876aad", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:45:50+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "d9e97929db0bffe136b16264ba360150", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:45:53+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "df3b9f52109d86e5eac61d49eb81388b", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:45:55+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "29168e4655959c510efec7f14d7c20fe", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:46:05+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "9a2cf5afdb9248d93807b6f18aaf9c8f", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:46:13+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "65180282dc35f87d45629fa98ac3ffb2", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:47:06+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "34cac6bd36ad223dfaab27aee464144e", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:47:09+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "30bae2e7be5d4f7667c4214f1ba6045a", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:47:11+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "5f67d8ec49c34999903bcbcd4eb098d3", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:47:15+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "286743584255accf1e0223f957feb2d6", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:47:17+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "eb6f556fb5f5049359b3efa83a4701a9", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:47:25+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "0aa8a450401e1566d22793de8fc49a48", "grade": 1, "note": "", "labelled_at": "2026-10-22T11:47:27+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "6703c7ff7e71f5d9b667e6b661ec3dfe", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:47:28+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "73b44742a3c1b7a77def7225db19d1cb", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:47:33+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "d540a805882e3bfcd795d85278d5e0c5", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:48:40+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "e3e9e08bb7d682a2d9f799432b8fd886", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:48:41+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "a6502aab0e1bad187e82b5f04755bd43", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:48:44+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "d2db7d7debfec17c393b44b12eb7f1a0", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:48:49+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "8908496b362aa09e929da962f3ef50fe", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:48:50+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "ab43d78a9c6e9803008b5e5222641c86", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:48:53+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "7e4f00710dc583c9dfa44ea4bb8b8a63", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:48:53+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "6fbd23f7e299e37429682ddd588bcdd0", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:48:54+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "6fa7995978328e4222d7b8dc8a77111e", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:48:55+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "c6ef381b3e00d712c7b106182cdc3625", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:48:56+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "98a19a2126b4e9a12acf9f01c2f600af", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:48:56+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "33b9c17b1ebf2687626e3682521eaad3", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:48:57+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "d793e8bfb17f0560abc8a84c923e1a4a", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:48:57+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "a918b338547cca39f7a3581c0c027c1a", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:48:58+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "2613a890281b34740bc1743cbac87d07", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:49:00+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "21d9ebc8680351a76204aaf7b1f79760", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:49:01+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "12a4a5d97a5d509199c7bd41550adc2e", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:49:02+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "59fc2c6a00542ea0e13cee8db68660fa", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:49:04+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "0560a0ebd0bf026eb744f76ecdaacdd7", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:49:10+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "fc61b1e3f489a9a98835e6eacabff365", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:49:12+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "46ee05f66ce5e5d97f9c20a0c0a0a332", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:49:13+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "3a70236dc202cd6d2a126929d32a7371", "grade": 2, "note": "", "labelled_at": "2026-10-22T11:49:18+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "d5f4c52837b832bc90427a265b038f03", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:49:20+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "ce7a421153a3118ed8961703dcf98679", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:49:21+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "47708cab2a25375cb29e5802298c0fcf", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:49:22+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "8683a77be9f8ee170c2a12102a2d6c84", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:49:23+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "02190881c9e67a524fe840abcde1fbf1", "grade": 3, "note": "", "labelled_at": "2026-10-22T11:49:25+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "a0beb211a634b1047a488ddce1fe15d5", "grade": 0, "note": "Likely bottom-versus-top mismatch; query image missing, so verify the skirtini’s contents.”", "labelled_at": "2026-10-22T12:00:33+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "28b50f4bab78fee2eae906fd9c63d02e", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:02:21+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "a265dc853d304e11048e4151a7e4f6d3", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:02:30+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "7018875cd889b554bebd91bb9edcc7d6", "grade": 1, "note": "Same swimming use, but separate skirtini versus full legsuit; query image and candidate size unavailable.", "labelled_at": "2026-10-22T12:04:13+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "074e23e699a3e623aa22496a395bc4c2", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:08:09+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "5877d9bf1c601616d3301b503c387214", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:08:18+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "0c9425df8b880e4272e43ac8e33ddb47", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:08:26+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "931862e06b9061c590d28813f68937ae", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:08:33+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "b8230c08d50c91a9a9544fb31d68d3c0", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:08:35+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "c78d15da281060ad901f5aa36dfdaf4d", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:08:36+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "d92bec17561caedad42da2210ad71533", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:08:39+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "e346bdaa3302e47c3cc67e7e675da0b5", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:08:41+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "26bb15bbc7a43953a67e3dacc5ae007b", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:08:44+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "f1e5216211f2fd79f795d51ccb676c30", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:08:47+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "4bd180f851edb76eb1e7f8fb4bc954c3", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:08:54+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "5e935b99ae5a2e8371d03fada29ebb51", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:09:02+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "f0892585878ad1d1bf5d8191eb9f474b", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:09:03+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "24f6990937cebe03528ff1bdc008700f", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:09:05+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "f5f08c6336a722e659b70f8233d4e0a0", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:09:08+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "2beff1b8e3e4f24bfe604851d6970042", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:09:12+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "c63b59abf4d526c532f554702b4beee7", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:09:15+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "f80c180b5ea18d34af5601a6eec2789f", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:09:24+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "db5af638d6ff198796e88c71e03865f5", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:09:32+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "a7c583bce1e7666360214eaec662717b", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:09:37+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "560e2d43b866f4f2d1e7e73cfdfb81e8", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:09:41+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "f187f5af6a9a70591375bfc56ae59d3b", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:10:26+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "b37c7643c4de94ff12b838c8cdf69bf2", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:10:31+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "152675f9eaf20af9ed209932c3ea62f8", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:10:34+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "e8bd22d1cba0f126c4b3efb375292d78", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:10:37+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "3b51f831952550d12edd21e8ecc8cf5b", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:10:39+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "5e0f5aede9963fc64d85325e4f633123", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:10:40+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "fd3c6dab20cad243a4d3c180830f3f23", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:10:43+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "0a31d7a9b3de91de94447361a9ebe439", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:10:46+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "982e681d09a2d04ac9a9203102dacf4d", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:10:49+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "60f00ed55d4117dd1d91e947cf03527d", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:10:53+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "d7a0a8e52cc42d50f548a5a71f003f86", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:10:55+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "1bc1ab3744a97bfcfc445f36a0e3ecde", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:10:59+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "27b7fa90e79a068dd19f962015b740fb", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:11:03+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "82d4fde545fbcbaa20ae579c5f4baf5b", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:11:13+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "f77b04bd2cc6d0eb70ff903e2f953268", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:16+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "f977a8a62a76bf98956fbb50a29af979", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:19+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "0efacb6bbd85df302fb96070eb588a57", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:11:24+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "762e97f1b0706e1aa274c10f88693739", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:26+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "a8b588b8347610f2d988a03701c11203", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:33+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "40299eb8b4b3efa2715a38d676ab32ff", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:36+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "f1c6b1d925b3599e13871b83da7f747b", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:39+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "c0f9e53aeec039767e0dc4d8213ef8e9", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:41+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "5ca64f14bdd56a8c59b8cca8698d9245", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:42+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "afa6d02d1c6ae3e0e86120907e3b96f6", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:43+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "6f44f9f4080f41049b748d6d52837eaa", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:44+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "b1d15663cdb2f7d2d2245c555f158290", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:46+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "646bf1c038db663ce7e0b24b193e1843", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:47+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "b57ad89aad118c552c112dd263fd349f", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:11:49+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "5ffc82d1edf4242b0916153ce2dbb458", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:11:50+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "c98d2f232f00a68ca42cac5ef2eef56d", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:53+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "6e5f77adaa9b712836f7446bc011621d", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:55+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "505c0e50ad10336ba1696940807ce3b3", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:11:59+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "ff40d1fd8a0d96ac061f8720a843b441", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:12:02+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "748d8a2f8df15b6d1c9d9798f9b6f170", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:12:04+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "4b2e1c264384bf3ef1990a01e2ee2a70", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:12:06+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "fc06c8fb889acfad746eb2abe750245a", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:12:08+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "5a30134a317345a65bb392d96e7553a2", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:12:10+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "020455df4c36d6a4aa1724e2f07875c5", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:12:11+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "2813818a1b585a5eb6097cef9531c183", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:12:13+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "b2bc03b57184feebe78cf93e0c67d74b", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:12:14+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "772a9b0a19a54c0734601301be0ec2d8", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:12:18+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "a9c9eaa524ee350148830b11612c23c2", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:12:25+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "b2b628e65c1a9d14b625806ead4dab2b", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:12:29+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "821a65c4de784c43f83b10af4f118309", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:12:31+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "7e3ea272d8d1685721ec46339ada3054", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:12:35+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "7a65fa14e5487a93f30cde45294dc0ea", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:12:39+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "59eb99c577b91a656bdb9683a931758b", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:12:41+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "8979d1bcb359f9104b56f84d2df302b6", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:12:42+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "fad9115e000ff8a4165a4d76650e11e2", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:12:45+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "d6591388c481870062e6b1771c4b50fc", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:12:48+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "6f4c7f2a6f6ea198f77f3e0321fcb51f", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:12:50+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "c1b0f850bc2eed64a49f8bf6352e6213", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:12:51+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "9ea6d0f55081f746f6e2487459ee07ec", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:12:54+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "34932c8dcd1a334772ee934634429d28", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:12:55+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "6a44653526ea417b0d85bcb6f52d1601", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:12:59+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "eef9e8de9a683527ccd62287f3e02f90", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:13:00+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "fc188dc7c5ad3ce9c08de517763d26df", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:13:01+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "ea1bc796f600e57c0717b6e0770328a7", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:13:04+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "490bdfbec919da65ab98228a475f5a75", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:13:06+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "56324361dc2897e8dc5f0168089ab417", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:13:07+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "6f607702b70848339ec540849f3d16b7", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:13:11+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "f10d050e8f918076c2ad02eb447c9770", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:13:13+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "2f5a3eecfc56513a9cb7bcf9d98cb6ec", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:13:15+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "942aa4f11d52959e95e3c7a9c2649c6a", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:13:17+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "ff8ee049075c2f39d7e5ec4c08c1da5b", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:13:19+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "c5ca7abd6404034f2d611356e32eccab", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:13:21+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "a09c1909084a120fdb94bbc9b030d366", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:13:55+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "7177f47b7b40cab09e587f98ec12fca9", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:14:01+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "8e76bcb1d6817f4a7b26c2ed1aa6c723", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:14:07+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "14b78128de7f82deea85b1dd452b4cf7", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:14:10+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "6eaebccbcc8ff7a5e7286f527c02a02e", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:14:13+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "68227070031856d287582583f0682b79", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:14:16+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "60bf6c97f1f3019e5b913fb7a3fcb66e", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:14:19+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "a637567ee9f2b5d68636e5e4730d9c0c", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:14:22+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "65a0c5bad36bdec45ed53e12d69a9ef4", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:14:25+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "726e648b69b1ae1247d604d07838cd0d", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:14:30+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "cb17665778e82f7e26c1bb128271a114", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:14:32+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "857bfd848c3e1c3438fd816c974f6bd4", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:14:35+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "e1fbcc9cb4d3055f4c9f6c5a443f3804", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:14:39+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "29645a3d3a2222189708de01c7c897df", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:14:42+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "24f1d332f3d60ff0490a84802fa7c133", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:14:45+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "42caefdc5e6dcca1569c4e06312b8661", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:14:57+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "df224ee489f86ac10883f7de2c5b5365", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:15:01+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "3a33ba812dfb3cc26d31375ffd477b90", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:15:03+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "a83924211548af9b8ea8c70a78342415", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:15:07+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "1ee8d225460801ec1d4e88fc1fa58904", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:15:09+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "ea13aa9c1be4367485e372e921123ecc", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:15:15+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "d3a01147829420558c183a6b4f9b84ba", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:15:18+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "f41c16cc118fba5b955e7ea5ad97cd8b", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:15:23+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "17d53355f043f3aaea1c2e2a818c63c6", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:15:24+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "5525816175bcfeeb72d679cc6528f631", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:15:26+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "0c7bfa1eefddb4f5bfd62274db825d05", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:38:40+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "c93ecde20366657a86acc170d0c891a5", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:38:43+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "953e60ee487508ab5722cb8bdd67688d", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:38:48+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "25dc2d5933e5ece9e218b13de9f3c374", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:38:50+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "8ad4864b193f39d34990fc5e014d0c4c", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:38:52+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "ad71af9eec9174ce3679d383a5da3723", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:38:53+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "d07f09de637cd94257322a3cbdb70ff0", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:38:54+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "de26bbd914045abd3e7b98dab156f94a", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:38:55+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "e33de938a8d08ec513bbf40872aeaa68", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:02+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "9d3ac8043cce71801e30bfe454eea548", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:03+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "9be51d44dab6412faed26f0ce052e68a", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:04+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "c55570641e28bcb3ce1cf69861563b1f", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:06+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "c63514e237f5599eb67157ea1e8b83da", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:07+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "83751dd8219a7b38c639e7453b4175a7", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:08+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "9f2098fa9dc37b8bd537ec47c4763448", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:09+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "19f485adc03608ab794b707dba8eacb4", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:10+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "85db679da35d66581f9f543fbf051765", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:12+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "73f3235c1053916be36778e2d4e4c480", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:13+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "2a2a873d99a418a53d2c326c564090d3", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:13+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "e46edbbc5d49840116b43e902cb1f55a", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:14+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "bdfed33a10380ac8d245a0d1e839e8c1", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:15+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "03bbdf76f1e83f905cb574967386ce53", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:16+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "f6a49c5db854a2702d0cb897daa7c564", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:16+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "2ee080137ceab2b5c54cb800e3773d04", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:17+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "e151d3578f3219ae278adced6c0c3b8e", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:18+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "d7a74da4cd07e4b732a4927bec073a0a", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:19+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "5cd058fab7477472b2f15699377445d5", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:39:20+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "b4c1b3bfb96b77fb45059b9c724d1904", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:39:36+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "926632ceea90327bd91cad460afba867", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:39:45+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "026e3ea21c2b5bf4d29edf69ddbe9148", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:39:54+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "987482d47022fd78277d05ea62811894", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:40:03+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "1f82f4f328dfe35381a723d62de6e23c", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:40:08+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "de86ac0709591219b8cfccb091f8c1d5", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:40:21+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "4286bedf6d7991c89d623d19e9c36081", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:41:14+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "7aeacf73b7ec76724e59d3e5f8cd980b", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:41:16+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "1054e5eadb425fbc01e117b40a214059", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:41:18+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "ea5922e2b78542ea020e1f050b4af273", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:41:19+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "b16a1e96189e0faf600ae0fbbbe72888", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:41:22+00:00"}
+{"task": "semantic", "split": "dev", "query": "warm winter jackets size M", "candidate": "5c095f4a2a1525d868f619580a8b613b", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:41:25+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "2ee440ea614adc467b3610ee6990f668", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:41:33+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "e334f901db3940e7b92fdfb41d13b448", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:41:38+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "e0d3f72b02d28b6b9392bfaf9fe5657c", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:41:42+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "d3349d2720f666b219b62bf498c8d668", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:41:48+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "01e97f48cd2791fb2184e4752599c9f6", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:43:25+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "1ca204846744b67a3fe2e6e7f937e2d5", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:43:33+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "466d6adf466ac13dc3dba89a72666653", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:43:35+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "601bcca1ec7bd4015d488049ecdd8deb", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:43:38+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "c7b9f0c1da1137c9726afaa030fa006c", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:43:42+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "ddfb43445626599b1a84be3cb9a2eabc", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:43:48+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "70714a7119d030ae2399ed8313d8e74d", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:43:54+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "6d8b43ee67ad81ee6650d80a8d15ac62", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:43:55+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "0236b514e3c2115047fcc800c483c6c6", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:43:59+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "ca0335b27bbc9f7e59a26b8821e62751", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:44:02+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "991e84e0f8e4cc16456178623a5d05e5", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:44:07+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "7956583945d29cb2813e651eb3f567a0", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:44:11+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "be325a9695980dd645724a79c604dc7b", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:44:19+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "a39de43fcf2644dc0e7d3d622b480548", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:44:27+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "fafdd780df93b688c6f7edb83e4d7d13", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:44:31+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "a38093a6c5856b21dcc2e4098f8d55d7", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:44:34+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "47fa6993af380b44f4fc1e4ab4fe71c7", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:44:36+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "046b5cdc105a51ae1ebfa3d49e9d4b42", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:44:40+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "20097f0e7b0e625774489cf13d4079f9", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:44:45+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "81f508308cacb3857f1501a95c39acc9", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:44:49+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "a192fbee76a506560d9e214e9922a275", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:44:53+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "41bac6667c2ba2612e3d20bb9dc09e4e", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:45:05+00:00"}
+{"task": "semantic", "split": "dev", "query": "affordable summer dresses for women", "candidate": "f57ed198094ecbf9dc0dd3697b411485", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:45:08+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "b5aba44ff05b4f060d0e786f6546844f", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:45:12+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "92548e99169557d420a19fc60904d542", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:45:18+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "8cd834d75eeac4fd496643bcd1ce334c", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:45:20+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "3a94f6b7a16e5a624f0f04e516567bc5", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:45:21+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "2a2a006f6c4d980f84e101fc44d2185c", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:45:23+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "5ad44ff052e29a992c1154859491ca54", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:45:25+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "148c177a74acace00528e350c63d06c0", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:45:34+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "6a3ba6bbd8249491e5310dca7e6d2f02", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:45:35+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "2e701cdcc59a8086b2ecc34a3c70bc13", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:45:37+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "2376da402afaa4a8c362763cf200a334", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:45:38+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "fc8573adf7aba3683e48fcb7f2f0aa21", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:45:39+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "61d5bf108a58394768f5b8fbee325a94", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:45:41+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "083f51844ed457dba559997e19b7f916", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:45:46+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "f2be2c43109ecd64044165572fdb8a40", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:45:48+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "8bb4383d844abb93c9276643b77f6fb8", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:45:50+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "18d2596e5442a97cf1a146a5691a64ea", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:45:52+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "3d1156669fd12767f3dcfc7d5cf5ebca", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:45:55+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "acd26f7c45d4069a53a6fb8e2beab328", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:45:59+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "80255ef7a3dd8e61b86f36dde3320e91", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:46:02+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "efcd08661b204e003886ac14430e096d", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:46:03+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "120a0aac0333843aa1ee6fc0097435e9", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:46:04+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "9a32cdddf7ec19fd409d0afb30b444d9", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:46:05+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "0a3fc6b3f6c1b2234a16241e84a39f1d", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:46:08+00:00"}
+{"task": "semantic", "split": "dev", "query": "black leather wallet for men", "candidate": "2a8aef07c06b698b17e7a5639ff0958f", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:46:09+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "a78d112b2f972362c8fc39f65d30ea55", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:11+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "9643aacf3b356791cdf7d2531e71d254", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:14+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "bf29c2dea8532b26e3fcd84a21d17ae2", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:16+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "67cf08d0a67adf960c65436872817139", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:19+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "d9de66af9a33f8c3b817e88234b5ac06", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:20+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "cc0461936d476597a838abd6134d354a", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:22+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "f1618a0f8f54fec3c857ad693b70634f", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:24+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "35ae16249d77c4a181c07c8cbaeb8b12", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:25+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "c49625bd90533c64f796ed2548bfff63", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:27+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "2091f7cdffc7a7adff80eaefac1c2709", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:29+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "b9c863b4ac02e7d0e25d1384b1c3a9cf", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:30+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "f5c71afbb80865d704fde0be70c95655", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:32+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "f948ca0f0c1bf64265acbb895a30e334", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:33+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "6b03963751d5edf561e59f2a2aa79f84", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:35+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "22b221a14cfab63b3a735bfa082a92b3", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:37+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "348748108f6fe1880088aac02408f029", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:38+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "f9039dcfa1d7c0a34ee0bd0d1e82c69b", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:40+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "8bcb236055276e9bbcff95b7ce447071", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:42+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "683cdaf606f7c26e71b072529293e525", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:43+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "6421e52046fa92689a9aa091c7554d0f", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:44+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "ac97c827524a50b03d8b7368fd426525", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:46:57+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "3985e2606d8d72c9418cb7db88ada8e4", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:47:00+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "50b8ffb5b933b15164c8b9caf47d5957", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:47:08+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "c4dbf1e1477d78932d0a62188d1ae65f", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:47:13+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "50314d44a172e99ba218c0fa135db58b", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:47:19+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "834118ff37e8e426292ee999207b9653", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:47:23+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "87dccb3bd69a66cde269a11fcc0cf158", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:47:26+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "6af1383900ba69cddedaab7cfca5ae99", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:47:29+00:00"}
+{"task": "semantic", "split": "dev", "query": "durable workout gear", "candidate": "d3618d05e5ffa34530ffab513c696eb6", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:47:33+00:00"}
+{"task": "semantic", "split": "dev", "query": "cotton kurti for women under a hundred bucks", "candidate": "ad71af9eec9174ce3679d383a5da3723", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:47:41+00:00"}
+{"task": "semantic", "split": "dev", "query": "cotton kurti for women under a hundred bucks", "candidate": "9be51d44dab6412faed26f0ce052e68a", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:47:42+00:00"}
+{"task": "semantic", "split": "dev", "query": "cotton kurti for women under a hundred bucks", "candidate": "c93ecde20366657a86acc170d0c891a5", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:47:43+00:00"}
+{"task": "semantic", "split": "dev", "query": "cotton kurti for women under a hundred bucks", "candidate": "0c7bfa1eefddb4f5bfd62274db825d05", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:47:45+00:00"}
+{"task": "semantic", "split": "dev", "query": "cotton kurti for women under a hundred bucks", "candidate": "9d3ac8043cce71801e30bfe454eea548", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:47:47+00:00"}
+{"task": "semantic", "split": "dev", "query": "cotton kurti for women under a hundred bucks", "candidate": "953e60ee487508ab5722cb8bdd67688d", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:47:48+00:00"}
+{"task": "semantic", "split": "dev", "query": "cotton kurti for women under a hundred bucks", "candidate": "d07f09de637cd94257322a3cbdb70ff0", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:47:50+00:00"}
+{"task": "semantic", "split": "dev", "query": "cotton kurti for women under a hundred bucks", "candidate": "de26bbd914045abd3e7b98dab156f94a", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:47:51+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "f58ad7066d9823eef2a84310af9aa964", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:01+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "cdf6103f74e2485a2f4cf1db27ca59db", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:04+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "fa031f63ecb2d4bb6740462d25903f6d", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:05+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "d781317ab5556965e72f99479281cc72", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:08+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "e02e52a468378fab95d5ed1ca8c5d1c2", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:11+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "46ab9dffaab839e393ccdf06112e685b", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:14+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "d731ca2959c6a0eee0fa2a47c39cbc63", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:16+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "cb457f53070958c70a872cbda6677c18", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:18+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "8323ebddbb43fd1510c836cb92f834fa", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:23+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "78525717e34f31f62764b3123928171e", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:25+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "258e0e0d7bc572b210822d2e3919ae5e", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:26+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "fce0a650c2e59c8fa8dfc1a2ae76825e", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:30+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "90657dce8ca4b3819a4577ead53bbb55", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:31+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "9ab8589d3f90a826a7cd69d77f622773", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:32+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "552e267a458bea6ab15c69797436f2bc", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:35+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "4425035d639a2d4cc5569a9fb0387b71", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:37+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "d679bc8c21c9124350f69eac39f371d6", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:39+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "12998c2b724bc2f7e42c503215fa356b", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:40+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "b77f6562ce61366840eaa5ff05036bd7", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:41+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "3cb5a6e65028531fb95122dd1abaa696", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:48:43+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "19fd83762e49c67fd59393bdac27f338", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:49:06+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "48a94f9175bfa4f9b0a8074bbddfe0be", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:49:08+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "d249f56499659ce05643f447949f6429", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:49:13+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "af1923dac8da0f8f8aabdfa8ae2d7f77", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:49:15+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "75a89a77430d49c31e41e4adafb31d9c", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:49:18+00:00"}
+{"task": "semantic", "split": "dev", "query": "silk saree around 1500 rupees", "candidate": "12c1e7b8572344b2eb7496260a04d741", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:49:20+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "4607c7ef41ef7f43245442aed739827f", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:49:28+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "1f90b6a4cf4275226fbfe52db4ce6db6", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:49:32+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "e1c3243c4251f0c4af586b88f5b3d467", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:49:43+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "75f44fdb6fcde01c09dc5f7cdf43b57b", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:49:47+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "917b57248105065df505c8bd9bb5f897", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:49:53+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "db5bf5fee1ee157ebdbac75a27b74642", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:49:59+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "9532d5aca02a383bee1f63b25ea0d259", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:50:07+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "08e7ec91bc7e93786e21473986b42e2f", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:50:16+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "b908593977cd876d6bab9f920c5b5b8d", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:51:12+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "7aeacf73b7ec76724e59d3e5f8cd980b", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:51:18+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "71c2db65a871f8cb3719c123ea8970e2", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:51:23+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "73f3235c1053916be36778e2d4e4c480", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:51:26+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "23d6093540c354bb014adc9855c72d1e", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:51:31+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "7d98369462d85b127ad3aa616d22b968", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:51:36+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "185820486142a835f5353efcf98743dc", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:51:43+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "a1a2d688ae4efe9662bfb39091ccfd43", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:51:45+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "a0c229287af1a50e0f11773f6e999e4a", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:51:47+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "36ba8981ffa662a49fa5254a9637e6f0", "grade": 0, "note": "", "labelled_at": "2026-10-22T12:51:48+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "b91ee2ce52b33626bb3beb7ae589d855", "grade": 2, "note": "", "labelled_at": "2026-10-22T12:51:53+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "d9fd6074314e4681096f8b68feace01a", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:51:57+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "4a0c14e3dcf3118b20f4903bd691f82c", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:03+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "ff9c6dd57af310fd30dda2895841316d", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:06+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "f6a49c5db854a2702d0cb897daa7c564", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:08+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "4f32e450183cf6bb9d71b1d7d31808e5", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:13+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "2a9fcfb3e2eab99f1f65172d0659ce68", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:15+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "fc2752c30d720bc5f35a85e52e51c635", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:18+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "c2634a4716b1fb2abc9d8049edbb281b", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:20+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "80f66fae00a9ae0b6943289ae737c5bf", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:22+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "8b6dcd972cb7910c4576ed235a7ee48a", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:25+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "51c8209d4bbee3e582d123ed29e471f9", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:28+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "2a4cbf8658ef630fe6ae3ea1eccd8f7f", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:30+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "3c417c46d678f218a2672d5a7ff1375e", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:32+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "7138f6a1d0e7de4e942cdb7cf12be6c0", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:33+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "82d79665b9ffe2131672e80920657e35", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:36+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "75fa18c7ff02ffe8971e5c6c21272bc7", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:38+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "08dcf84a8c97592de4118c09600f764b", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:41+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "f72798fb8efca97a73b477e4c482b4fa", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:54+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "a706fa68d098b7f4aee9a6a6dfb21244", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:52:58+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "7c3a8e8d834b8dcefeb3020f1e7fe1b4", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:03+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "04e9b57882642bf494bb6c5e9ebb4689", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:05+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "fbc6fb564ad77764c093b05cff6a121a", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:06+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "e295da21a53d379a88a74f61e365cac6", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:53:12+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "2b6ae913c28d0277988e94b66471a338", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:14+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "1d4ff62a07c4586e3a36345abdfa8720", "grade": 1, "note": "", "labelled_at": "2026-10-22T12:53:21+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "8546330bc9895de9e2e3c5dd30c56799", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:24+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "11d23f85562e9fc8ba5f5158f488e06b", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:25+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "a112cfa9eb30ad60f357b05fc90145d8", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:27+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "d1f1634018a32dd6be94e7fb07a2872f", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:29+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "a602e70536f40c517b0798896da52d71", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:33+00:00"}
+{"task": "semantic", "split": "dev", "query": "men's formal shirt below rs 700", "candidate": "38ebd72a6e67f0798bebf7ffc031752c", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:35+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "aab988b363f884878ca5b1ff80266ed7", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:44+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "9a9b5bd64cb648b2b18742b2818bfabe", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:46+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "a6cbaeb0d8457f31506ab7e42e139877", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:49+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "7824360e2c97fe20a996d0f3c5fe2ce9", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:51+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "951422694b7489c4ccebc8920faab565", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:53+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "f687a16ece590eb3d4301ad9e8ce0345", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:54+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "d93cb2792c439cc270588b9b6a24d919", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:56+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "59bada4e4c857cce94c1a5562bb2c616", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:53:58+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "968109deab73a3f53a49974d17807bc0", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:01+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "14707797c744559977bb2e29986877bd", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:03+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "d8b0c146e6970c11fbe6f35a25af6b6e", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:06+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "10dc070734cb047aa660b9125db95978", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:08+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "0aef8ea3636c0e63bed8036d863b0f2c", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:10+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "c9b0fab9d9b1da42111a253213ade330", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:11+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "c132fcdef2b5616c45963f0a7f50f86e", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:13+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "d4b72e7b12f31f50b427f8c039700c4e", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:15+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "6a821e96bdd7a5050038a72c2eb38611", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:18+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "8654e9641cc7450f1120fa471d8992af", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:20+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "88ebde8af1fea5786b8ba2a077885072", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:21+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "bd62d92868e7fc2ed388e71694353e87", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:22+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "15c28d8421d0a7a37dcd5e63fe5c665b", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:24+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "da69092e3792b780c178199e12d3a124", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:26+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "2cb02a4e149a4b0d48e1391698e44336", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:30+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "67b640338f3c35ba96c3caba347ee72a", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:33+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "630ba3bc118bbb17e94649a401371909", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:36+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "565705444d345ada5b27a3ba6eea736a", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:38+00:00"}
+{"task": "semantic", "split": "dev", "query": "dress for girls under 10", "candidate": "60bf689cad58a39167cf4725a36cc6ae", "grade": 3, "note": "", "labelled_at": "2026-10-22T12:54:40+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "8fa564d608933780fef969edb080ebd0", "grade": 1, "note": "", "labelled_at": "2026-10-22T14:33:29+00:00"}
+{"task": "semantic", "split": "dev", "query": "kids winter jacket between 500 and 1000", "candidate": "9f3bccfdb7e5c461ec62d587e370f105", "grade": 3, "note": "", "labelled_at": "2026-10-22T14:33:42+00:00"}
+{"task": "semantic", "split": "dev", "query": "comfortable running shoes under $100", "candidate": "79bfb1d1cc620cae33d19a2430e49574", "grade": 0, "note": "", "labelled_at": "2026-10-22T14:33:50+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "674af798cf97926d89687538a5d6d3cc", "grade": 1, "note": "", "labelled_at": "2026-10-22T15:17:34+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "20cec51af7080acfdff054954f5a1d5d", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:17:42+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "e1b44d79132b68ac127385ed7409a59e", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:17:43+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "8f07ba24b280ba96062cc38e94b3318e", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:17:51+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "5792958ea1a6618ab4cacf708f845d71", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:17:56+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "44ed65cf360dae37122d995b1836681f", "grade": 1, "note": "", "labelled_at": "2026-10-22T15:18:00+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "ef2372a21e25ba3b06701e5ba2aa3b47", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:18:17+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "161f0540f5272aab4bd89b7756020f2b", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:18:20+00:00"}
+{"task": "similar", "split": "dev", "query": "c3a4df40ae456e1cc76c107d16382c75", "candidate": "183dcc9837149d2c47e62302c14a3492", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:18:23+00:00"}
+{"task": "similar", "split": "dev", "query": "5b448a5e5ee04b444d9944e119177170", "candidate": "1fbb1bbd4fe85a7bca22c2d4fb222f7e", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:18:31+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "dc3f4cb75eead293fa1fd80526da7c2f", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:18:45+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "2e8f871f2a24755f84496ac0949aab3e", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:18:49+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "685fb49820bbc83ae7b42e899d5176d7", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:18:56+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "28841720668962d5fc7681672d8d99ed", "grade": 2, "note": "", "labelled_at": "2026-10-22T15:19:05+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "086329687b65006df0634450e7104811", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:19:08+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "70d60793e303d3b8bf97b12c008e8d8c", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:19:09+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "a9a0e0c341849d33e9ef81f471d0d9a5", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:19:26+00:00"}
+{"task": "similar", "split": "dev", "query": "ac12b8121767f032eace03ba3ace0164", "candidate": "7faf65d90909f6a5b760d2d0b9d9ca20", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:19:39+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "d25fcdc72008fc45edc1c071a4cafa31", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:19:44+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "913bca1af361b4be6498880d5da04da3", "grade": 2, "note": "", "labelled_at": "2026-10-22T15:19:48+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "d5dee0a26a7bd112bc9b2f69a57ac64c", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:19:50+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "82f5348d35dc4c99fb1e29b39a02ac7f", "grade": 2, "note": "", "labelled_at": "2026-10-22T15:19:54+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "7c4c5d36fd37cf88647a66a775b72722", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:19:57+00:00"}
+{"task": "similar", "split": "dev", "query": "6fc91245defaa0c1210e86268249a132", "candidate": "a0699c7311e3029c7db78a8cc3b3852d", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:20:00+00:00"}
+{"task": "similar", "split": "dev", "query": "e5f36cab588ff86e649372d530a10007", "candidate": "652780ec2eb6097cc779de46724b29a0", "grade": 1, "note": "", "labelled_at": "2026-10-22T15:20:09+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "4b4a3b681e2d24ee9bd092ac77e17901", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:20:22+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "d1cc17f6deadf245fe68d3b6c5a96840", "grade": 1, "note": "", "labelled_at": "2026-10-22T15:20:31+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "47a5cb7cd7f45f27fc17da2e92019abb", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:20:40+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "b19862709a14ec0ddae73754643ab9f0", "grade": 1, "note": "", "labelled_at": "2026-10-22T15:20:47+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "969911a4b349a92af4e8b558cff5a0db", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:20:49+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "ddd96cdc6fa1169839f85b4cff029ab8", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:20:57+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "0bb49c70571c4d74b1e28af536e26da7", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:20:59+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "431ff0b0c5c88f4d49cd804d4f3f50f5", "grade": 2, "note": "", "labelled_at": "2026-10-22T15:21:05+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "b9e07a923b16f835b50c689cdb31383f", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:21:08+00:00"}
+{"task": "similar", "split": "dev", "query": "12831a10980a52f52e495bffe669a6a7", "candidate": "67d110e7a031e6be8d78ed7464fd6997", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:21:10+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "aabf2ea48802ed31f9fa4c8b0af8a353", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:21:21+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "288e78017d5b6485eb6a7ea1981068ca", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:21:23+00:00"}
+{"task": "similar", "split": "dev", "query": "6824ff5de39aa84b58d0698410189a93", "candidate": "8359d5c9a7a0a6f84926bdd6c4618aa3", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:21:24+00:00"}
+{"task": "similar", "split": "dev", "query": "cd3af562275bf079983c4252e8751757", "candidate": "f0b1b6bf553e32bd4980ac4c969b0cfb", "grade": 1, "note": "", "labelled_at": "2026-10-22T15:21:36+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "69e02c91e1555b61205c9dd915c7c399", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:21:39+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "a7dd10134bd83243c4ea8c73f3cdb808", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:21:41+00:00"}
+{"task": "similar", "split": "dev", "query": "9a73f1c1ac4911a5daf786581868e019", "candidate": "84088c0aa2d0afdfb841750fbc9f2eb4", "grade": 1, "note": "", "labelled_at": "2026-10-22T15:21:46+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "64b5048eadead093f9b3e042fd7b6f27", "grade": 1, "note": "", "labelled_at": "2026-10-22T15:21:52+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "5170f3bfa2ea8a57dc5ba12b73a007d1", "grade": 2, "note": "", "labelled_at": "2026-10-22T15:21:56+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "bc45abf09d2d848614185568b265b3ed", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:22:00+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "67baad5a0f0e692a262363c86f5bcfbd", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:22:04+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "4d0252e4451de36d2ad796742df0edce", "grade": 2, "note": "", "labelled_at": "2026-10-22T15:22:12+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "29213286b2715e670aa1777c3e1cf293", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:22:14+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "5075730e2cd3a8272dc4d9f06cc3ac63", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:22:23+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "8c7b3a98e89f2e3bdc77ef0bcd7b5ba3", "grade": 1, "note": "", "labelled_at": "2026-10-22T15:22:36+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "7a8e8ede3a97542c4407c557c139bb77", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:22:38+00:00"}
+{"task": "similar", "split": "dev", "query": "0ac35cf60852dd2e2c6ec5df9c737b2f", "candidate": "ecef5b168f80c075ebdb2f08e21d316f", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:22:41+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "d366eb54c2fce6fe055e2d3bc933f51b", "grade": 1, "note": "", "labelled_at": "2026-10-22T15:22:56+00:00"}
+{"task": "similar", "split": "dev", "query": "41193ccf14fa06857dbc57c9e3f8a857", "candidate": "499bf92d8bd4c6ed1e07dd92e88f4e44", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:22:59+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "e1c5438ba855916813981b412b13b9ea", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:23:02+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "adb851fb8e22a82a81e288ada9c1be6b", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:23:05+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "a8fc0292d60898fee52007c189c29212", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:23:08+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "b246cacae70e603bab232001e8542fbd", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:23:10+00:00"}
+{"task": "similar", "split": "dev", "query": "6a8674d8512c66cb9f89f1617c4929c9", "candidate": "22d314ed85ea60b57c2b7acface55c96", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:23:11+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "6ad331099a7400bbca35e3daa71f1804", "grade": 2, "note": "", "labelled_at": "2026-10-22T15:23:17+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "59fb08351472bc62c33a1499115b6c73", "grade": 2, "note": "", "labelled_at": "2026-10-22T15:23:21+00:00"}
+{"task": "similar", "split": "dev", "query": "314be9c0b9c934e10bbe5b4aa6d2de79", "candidate": "f00a7794be4c479e9a1e669d21712eb7", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:23:23+00:00"}
+{"task": "similar", "split": "dev", "query": "136167a49469fd5c47adb997429516ae", "candidate": "6613e3e06f5811f299b83abdec87e729", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:23:26+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "49d49968dad11365321f042460054307", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:23:32+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "d59e46e73314d14ae3b5152ed4dd1230", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:23:35+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "ab6e4715d7a694484ac7efa341a2ebaa", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:23:39+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "80fd6e40c1ba7d8a3d90e48be6a33714", "grade": 2, "note": "", "labelled_at": "2026-10-22T15:23:46+00:00"}
+{"task": "similar", "split": "dev", "query": "2b7081d70a8db985ca3c4962f0e89b17", "candidate": "20130a6897845cfa8e03ed9094da3072", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:23:48+00:00"}
+{"task": "similar", "split": "dev", "query": "307bed4226c0f82c3451a86f34d7f285", "candidate": "bbd0c100857057de8243b9199e3d0148", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:23:54+00:00"}
+{"task": "similar", "split": "dev", "query": "b275133a29852973c8d88633e4a29e09", "candidate": "9abaff23bb6831538d83a52cca895e05", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:23:58+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "1d5c59fe035e16b4cb5d84bdcfcd1696", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:24:04+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "2dec627936e1454f47a6ef8960d927ab", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:24:05+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "3e5212f3b45ae112fb329fa2224cd899", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:24:06+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "6fab8953557f6d1e74b0f3661d97d688", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:24:07+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "8140ef6b5c9d29548494bdcdfef471e3", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:24:10+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "70c77513c6599c2ac71e12b1042f3136", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:24:12+00:00"}
+{"task": "similar", "split": "dev", "query": "ab6a6605b0a017c3ca05f793b2ec4cd1", "candidate": "d0bc6ef2061bd158f3d5df59ab34955c", "grade": 3, "note": "", "labelled_at": "2026-10-22T15:24:17+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "57226cc7db7678d391c813fd842d2539", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:24:22+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "0a48f17fef188f1678c5fbad7b309140", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:24:29+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "46b2e244b4fd48e0a66f74a6031b10a4", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:24:30+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "ec83e50a5c1e1b4f4a669e07266cdc3c", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:24:31+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "ffee7d4858c4bb9462e2a0b0cf9b571c", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:24:32+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "160f773d28f232729a0a3c3e2108c68a", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:24:33+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "f2efabf67284ab572eb5c9628cc12996", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:24:40+00:00"}
+{"task": "similar", "split": "dev", "query": "3efe54d408d85ddd91800c9f8db62d82", "candidate": "5e935b99ae5a2e8371d03fada29ebb51", "grade": 0, "note": "", "labelled_at": "2026-10-22T15:24:47+00:00"}

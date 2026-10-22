@@ -1,0 +1,18 @@
+{
+ "systems": [
+  "A_structured",
+  "B_tfidf",
+  "C_minilm",
+  "C_bge"
+ ],
+ "queries": {
+  "2b7081d70a8db985ca3c4962f0e89b17": {
+   "A_structured": [],
+   "B_tfidf": [],
+   "C_minilm": [
+    "8fa564d608933780fef969edb080ebd0"
+   ],
+   "C_bge": []
+  }
+ }
+}

@@ -1,27 +1,27 @@
 {
-  "source": "Dev queries 1-5 are the v2 specification's sample queries; dev 6-10 test filter parsing on awkward phrasings. Their results were inspected during development. Holdout queries were written before any system was run on them and stay unrun until the final comparison.",
-  "dev": [
-    "comfortable running shoes under $100",
-    "warm winter jackets size M",
-    "affordable summer dresses for women",
-    "black leather wallet for men",
-    "durable workout gear",
-    "cotton kurti for women under a hundred bucks",
-    "silk saree around 1500 rupees",
-    "kids winter jacket between 500 and 1000",
-    "men's formal shirt below rs 700",
-    "dress for girls under 10"
-  ],
-  "holdout": [
-    "navy blue polo t-shirt for men",
-    "printed cotton saree under 800",
-    "girls party wear frock",
-    "woollen cap for winter",
-    "sports bra for gym under rs 600",
-    "boys jeans between 400 and 900",
-    "anarkali kurta for women around 1200",
-    "thermal innerwear for women",
-    "red lehenga choli for wedding",
-    "waterproof laptop backpack"
-  ]
+    "source": "Dev queries 1-5 are the v2 specification's sample queries; dev 6-10 test filter parsing on awkward phrasings. Their results were inspected during development. Holdout queries were written before any system was run on them and stay unrun until the final comparison.",
+    "dev": [
+        "comfortable running shoes under $100",
+        "warm winter jackets size M",
+        "affordable summer dresses for women",
+        "black leather wallet for men",
+        "durable workout gear",
+        "cotton kurti for women under a hundred bucks",
+        "silk saree around 1500 rupees",
+        "kids winter jacket between 500 and 1000",
+        "men's formal shirt below rs 700",
+        "dress for girls under 10"
+    ],
+    "holdout": [
+        "navy blue polo t-shirt for men",
+        "printed cotton saree under 800",
+        "girls party wear frock",
+        "woollen cap for winter",
+        "sports bra for gym under rs 600",
+        "boys jeans between 400 and 900",
+        "anarkali kurta for women around 1200",
+        "thermal innerwear for women",
+        "red lehenga choli for wedding",
+        "waterproof laptop backpack"
+    ]
 }

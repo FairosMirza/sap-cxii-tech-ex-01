@@ -1,0 +1,14 @@
+{
+ "task": "similar",
+ "split": "dev",
+ "k": 10,
+ "seed": 20261023,
+ "queries": [
+  {
+   "query": "2b7081d70a8db985ca3c4962f0e89b17",
+   "candidates": [
+    "8fa564d608933780fef969edb080ebd0"
+   ]
+  }
+ ]
+}

@@ -72,3 +72,17 @@ def test_missing_image_returns_placeholder(setup):
     client, _, _, _ = setup
     response = client.get(f"/img/{CAND_B}")
     assert response.status_code == 200 and response.headers["content-type"].startswith("image/svg+xml")
+
+
+def test_supplemental_pool_is_served_on_its_own_and_labelled_for_the_split(tmp_path):
+    records = [make_record("a1", "Black Kurti"), make_record("b2", "Red Kurti"), make_record("c3", "Green Kurti")]
+    (tmp_path / "similar_dev.json").write_text(json.dumps({"queries": [{"query": QUERY, "candidates": [CAND_A]}]}))
+    (tmp_path / "similar_dev_supplement.json").write_text(json.dumps({"queries": [{"query": QUERY, "candidates": [CAND_B]}]}))
+    labels = tmp_path / "labels.jsonl"
+    app = create_app("dev", records=records, pools_dir=tmp_path, labels_path=labels, images_dir=tmp_path, supplement="")
+    client = TestClient(app, follow_redirects=False)
+    page = client.get("/item/similar/0/0").text
+    assert "Green Kurti" in page and "Red Kurti" not in page and "supplement" not in page.lower()
+    token = re.search(r'name="token" value="([^"]+)"', page).group(1)
+    post(client, token, grade=1)
+    assert list(read_labels(labels)) == [("similar", "dev", QUERY, CAND_B)]

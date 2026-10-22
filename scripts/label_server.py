@@ -1,6 +1,7 @@
 """Local labelling page for blind relevance judgements (listens on 127.0.0.1 only).
 
 Run from the repository root:  python -m scripts.label_server --split dev   then open http://127.0.0.1:8765
+A supplemental pool is served the same way:  --split dev --supplement [NAME] --port 8766
 Shows the query and one candidate at a time (image, title, brand, price). The producing system, scores and
 extracted category are never shown. Keys 0-3 grade, B goes back, N focuses the note box. Labels are appended
 to eval/labels.jsonl; re-grading appends a newer line and the latest one counts.
@@ -56,11 +57,12 @@ def read_labels(path: Path = LABELS) -> dict[tuple[str, str, str, str], dict]:
 
 
 def create_app(split: str, records: list[dict] | None = None, pools_dir: Path = POOLS,
-               labels_path: Path = LABELS, images_dir: Path = IMAGES) -> FastAPI:
+               labels_path: Path = LABELS, images_dir: Path = IMAGES, supplement: str | None = None) -> FastAPI:
     records = records if records is not None else load_records()[0]
     products = {r["uniq_id"]: r for r in records}
-    pools = {task: json.loads((pools_dir / f"{task}_{split}.json").read_text())["queries"]
-             for task in TASKS if (pools_dir / f"{task}_{split}.json").exists()}
+    suffix = "" if supplement is None else "_supplement" + (f"_{supplement}" if supplement else "")
+    pools = {task: json.loads((pools_dir / f"{task}_{split}{suffix}.json").read_text())["queries"]
+             for task in TASKS if (pools_dir / f"{task}_{split}{suffix}.json").exists()}
     items = {task: [(qi, ci) for qi, q in enumerate(pool) for ci in range(len(q["candidates"]))] for task, pool in pools.items()}
     labels = read_labels(labels_path)
     token = secrets.token_urlsafe(16)
@@ -154,9 +156,11 @@ def create_app(split: str, records: list[dict] | None = None, pools_dir: Path = 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--split", choices=["dev", "holdout"], default="dev")
+    parser.add_argument("--supplement", nargs="?", const="", default=None, metavar="NAME",
+                        help="serve a supplemental pool of the split (unnamed, or the given name)")
     parser.add_argument("--port", type=int, default=8765)
     args = parser.parse_args()
-    uvicorn.run(create_app(args.split), host="127.0.0.1", port=args.port, log_level="warning")
+    uvicorn.run(create_app(args.split, supplement=args.supplement), host="127.0.0.1", port=args.port, log_level="warning")
 
 
 if __name__ == "__main__":
