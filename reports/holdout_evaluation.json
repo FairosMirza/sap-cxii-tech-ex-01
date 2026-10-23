@@ -1,0 +1,1150 @@
+{
+ "split": "holdout",
+ "definitions": "docs/decisions.md D07",
+ "k": 10,
+ "bootstrap_resamples": 10000,
+ "judgements": {
+  "file": "eval/qrels_holdout.json",
+  "created": "2026-10-23T09:51:35+00:00"
+ },
+ "tasks": {
+  "similar": {
+   "queries": 9,
+   "excluded_no_relevant_product": [
+    "0fc48853ec5cedfd815557996e96287c"
+   ],
+   "rankers": {
+    "B_tfidf": {
+     "complete": true,
+     "unjudged_results": 0,
+     "mean_results_shown": 10.0,
+     "grade_0_results_shown": 24,
+     "mean_title_repeats": 1.89,
+     "ndcg": 0.6356,
+     "ndcg_ci95": [
+      0.451,
+      0.8079
+     ],
+     "ndcg_linear": 0.7048,
+     "ndcg_linear_ci95": [
+      0.5267,
+      0.8655
+     ],
+     "p5": 0.6667,
+     "p5_ci95": [
+      0.4222,
+      0.8889
+     ]
+    },
+    "C_bge": {
+     "complete": true,
+     "unjudged_results": 0,
+     "mean_results_shown": 10.0,
+     "grade_0_results_shown": 22,
+     "mean_title_repeats": 1.33,
+     "ndcg": 0.7428,
+     "ndcg_ci95": [
+      0.6058,
+      0.8795
+     ],
+     "ndcg_linear": 0.7869,
+     "ndcg_linear_ci95": [
+      0.6463,
+      0.9161
+     ],
+     "p5": 0.6222,
+     "p5_ci95": [
+      0.3556,
+      0.8667
+     ]
+    },
+    "C_minilm": {
+     "complete": true,
+     "unjudged_results": 0,
+     "mean_results_shown": 10.0,
+     "grade_0_results_shown": 26,
+     "mean_title_repeats": 1.11,
+     "ndcg": 0.6654,
+     "ndcg_ci95": [
+      0.481,
+      0.8353
+     ],
+     "ndcg_linear": 0.7156,
+     "ndcg_linear_ci95": [
+      0.5224,
+      0.8818
+     ],
+     "p5": 0.6222,
+     "p5_ci95": [
+      0.3556,
+      0.8667
+     ]
+    },
+    "served": {
+     "complete": true,
+     "unjudged_results": 0,
+     "mean_results_shown": 10.0,
+     "grade_0_results_shown": 22,
+     "mean_title_repeats": 1.33,
+     "ndcg": 0.7428,
+     "ndcg_ci95": [
+      0.6058,
+      0.8795
+     ],
+     "ndcg_linear": 0.7869,
+     "ndcg_linear_ci95": [
+      0.6463,
+      0.9161
+     ],
+     "p5": 0.6222,
+     "p5_ci95": [
+      0.3556,
+      0.8667
+     ]
+    },
+    "served_exact": {
+     "complete": true,
+     "unjudged_results": 0,
+     "mean_results_shown": 10.0,
+     "grade_0_results_shown": 22,
+     "mean_title_repeats": 1.33,
+     "ndcg": 0.7428,
+     "ndcg_ci95": [
+      0.6058,
+      0.8795
+     ],
+     "ndcg_linear": 0.7869,
+     "ndcg_linear_ci95": [
+      0.6463,
+      0.9161
+     ],
+     "p5": 0.6222,
+     "p5_ci95": [
+      0.3556,
+      0.8667
+     ]
+    }
+   },
+   "choice": {
+    "lead": "C_bge",
+    "choice": "C_bge",
+    "versus_lead": {
+     "B_tfidf": {
+      "mean": -0.1072,
+      "se": 0.0518,
+      "ci95": [
+       -0.2004,
+       -0.0084
+      ]
+     },
+     "C_minilm": {
+      "mean": -0.0774,
+      "se": 0.0456,
+      "ci95": [
+       -0.1703,
+       -0.0059
+      ]
+     }
+    }
+   },
+   "choice_with_linear_gains": "C_bge",
+   "variants": {},
+   "deployed_vs_exact": {
+    "path": "served",
+    "reference": "served_exact",
+    "queries": 10,
+    "coverage": {
+     "mean": 0.91,
+     "min": 0.1,
+     "fully_covered": 9
+    },
+    "dropped": {
+     "relevant": 0,
+     "grade_1": 0,
+     "grade_0": 9,
+     "unjudged": 0
+    },
+    "added": {
+     "relevant": 0,
+     "grade_1": 0,
+     "grade_0": 9,
+     "unjudged": 0
+    },
+    "queries_below_full_coverage": [
+     {
+      "query": "0fc48853ec5cedfd815557996e96287c",
+      "coverage": 0.1,
+      "dropped": {
+       "grade_0": 9
+      },
+      "added": {
+       "grade_0": 9
+      }
+     }
+    ],
+    "ndcg_difference": {
+     "mean": 0.0,
+     "se": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "p5_difference": {
+     "mean": 0.0,
+     "se": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "exact_vs_base": {
+    "path": "served_exact",
+    "reference": "C_bge",
+    "queries": 10,
+    "coverage": {
+     "mean": 1.0,
+     "min": 1.0,
+     "fully_covered": 10
+    },
+    "dropped": {
+     "relevant": 0,
+     "grade_1": 0,
+     "grade_0": 0,
+     "unjudged": 0
+    },
+    "added": {
+     "relevant": 0,
+     "grade_1": 0,
+     "grade_0": 0,
+     "unjudged": 0
+    },
+    "queries_below_full_coverage": [],
+    "ndcg_difference": {
+     "mean": 0.0,
+     "se": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "p5_difference": {
+     "mean": 0.0,
+     "se": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "per_query": {
+    "B_tfidf": {
+     "2730bc07d8321f1766b63d0ebe5f28c4": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.5977,
+      "ndcg_linear": 0.7821
+     },
+     "781b8b8c0ff454479e50cba23967ce16": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.4,
+      "ndcg": 0.6298,
+      "ndcg_linear": 0.7571
+     },
+     "e6a692821ea347a5c0be699573d090f9": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "ba87dae5b45b81f4c30c2991f9900ced": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.8,
+      "ndcg": 0.6609,
+      "ndcg_linear": 0.7105
+     },
+     "9a3716a16c7012941ec585aab6122f3d": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.8058,
+      "ndcg_linear": 0.818
+     },
+     "67f00af00e1ddfd2415de4c13861b5a9": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.0,
+      "ndcg": 0.2394,
+      "ndcg_linear": 0.2394
+     },
+     "4b3cd01a0d2fa712ab96edd4978a1eaa": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.6,
+      "ndcg": 0.687,
+      "ndcg_linear": 0.8064
+     },
+     "6e7cfe7eee23a2ed3dd648b375ef14ac": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.9581,
+      "ndcg_linear": 0.9755
+     },
+     "b35378d7bc3038fc63f57dbe120883c8": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.2,
+      "ndcg": 0.1421,
+      "ndcg_linear": 0.254
+     }
+    },
+    "C_bge": {
+     "2730bc07d8321f1766b63d0ebe5f28c4": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.6426,
+      "ndcg_linear": 0.8064
+     },
+     "781b8b8c0ff454479e50cba23967ce16": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.4,
+      "ndcg": 0.8618,
+      "ndcg_linear": 0.9093
+     },
+     "e6a692821ea347a5c0be699573d090f9": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "ba87dae5b45b81f4c30c2991f9900ced": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.8,
+      "ndcg": 0.6838,
+      "ndcg_linear": 0.7239
+     },
+     "9a3716a16c7012941ec585aab6122f3d": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "67f00af00e1ddfd2415de4c13861b5a9": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.0,
+      "ndcg": 0.5291,
+      "ndcg_linear": 0.5291
+     },
+     "4b3cd01a0d2fa712ab96edd4978a1eaa": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.2,
+      "ndcg": 0.525,
+      "ndcg_linear": 0.7229
+     },
+     "6e7cfe7eee23a2ed3dd648b375ef14ac": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "b35378d7bc3038fc63f57dbe120883c8": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.2,
+      "ndcg": 0.4434,
+      "ndcg_linear": 0.391
+     }
+    },
+    "C_minilm": {
+     "2730bc07d8321f1766b63d0ebe5f28c4": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.6597,
+      "ndcg_linear": 0.8157
+     },
+     "781b8b8c0ff454479e50cba23967ce16": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.4,
+      "ndcg": 0.6298,
+      "ndcg_linear": 0.7571
+     },
+     "e6a692821ea347a5c0be699573d090f9": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.9581,
+      "ndcg_linear": 0.9755
+     },
+     "ba87dae5b45b81f4c30c2991f9900ced": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.8,
+      "ndcg": 0.7006,
+      "ndcg_linear": 0.7336
+     },
+     "9a3716a16c7012941ec585aab6122f3d": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "67f00af00e1ddfd2415de4c13861b5a9": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.0,
+      "ndcg": 0.1493,
+      "ndcg_linear": 0.1493
+     },
+     "4b3cd01a0d2fa712ab96edd4978a1eaa": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.0,
+      "ndcg": 0.4709,
+      "ndcg_linear": 0.6384
+     },
+     "6e7cfe7eee23a2ed3dd648b375ef14ac": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "b35378d7bc3038fc63f57dbe120883c8": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.4,
+      "ndcg": 0.4206,
+      "ndcg_linear": 0.3709
+     }
+    },
+    "served": {
+     "2730bc07d8321f1766b63d0ebe5f28c4": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.6426,
+      "ndcg_linear": 0.8064
+     },
+     "781b8b8c0ff454479e50cba23967ce16": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.4,
+      "ndcg": 0.8618,
+      "ndcg_linear": 0.9093
+     },
+     "e6a692821ea347a5c0be699573d090f9": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "ba87dae5b45b81f4c30c2991f9900ced": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.8,
+      "ndcg": 0.6838,
+      "ndcg_linear": 0.7239
+     },
+     "9a3716a16c7012941ec585aab6122f3d": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "67f00af00e1ddfd2415de4c13861b5a9": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.0,
+      "ndcg": 0.5291,
+      "ndcg_linear": 0.5291
+     },
+     "4b3cd01a0d2fa712ab96edd4978a1eaa": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.2,
+      "ndcg": 0.525,
+      "ndcg_linear": 0.7229
+     },
+     "6e7cfe7eee23a2ed3dd648b375ef14ac": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "b35378d7bc3038fc63f57dbe120883c8": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.2,
+      "ndcg": 0.4434,
+      "ndcg_linear": 0.391
+     }
+    },
+    "served_exact": {
+     "2730bc07d8321f1766b63d0ebe5f28c4": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.6426,
+      "ndcg_linear": 0.8064
+     },
+     "781b8b8c0ff454479e50cba23967ce16": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.4,
+      "ndcg": 0.8618,
+      "ndcg_linear": 0.9093
+     },
+     "e6a692821ea347a5c0be699573d090f9": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "ba87dae5b45b81f4c30c2991f9900ced": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.8,
+      "ndcg": 0.6838,
+      "ndcg_linear": 0.7239
+     },
+     "9a3716a16c7012941ec585aab6122f3d": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "67f00af00e1ddfd2415de4c13861b5a9": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.0,
+      "ndcg": 0.5291,
+      "ndcg_linear": 0.5291
+     },
+     "4b3cd01a0d2fa712ab96edd4978a1eaa": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.2,
+      "ndcg": 0.525,
+      "ndcg_linear": 0.7229
+     },
+     "6e7cfe7eee23a2ed3dd648b375ef14ac": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "b35378d7bc3038fc63f57dbe120883c8": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.2,
+      "ndcg": 0.4434,
+      "ndcg_linear": 0.391
+     }
+    }
+   }
+  },
+  "semantic": {
+   "queries": 10,
+   "excluded_no_relevant_product": [],
+   "rankers": {
+    "bge-small": {
+     "complete": true,
+     "unjudged_results": 0,
+     "mean_results_shown": 10.0,
+     "grade_0_results_shown": 15,
+     "mean_title_repeats": 0.5,
+     "ndcg": 0.7584,
+     "ndcg_ci95": [
+      0.5542,
+      0.9173
+     ],
+     "ndcg_linear": 0.801,
+     "ndcg_linear_ci95": [
+      0.596,
+      0.9438
+     ],
+     "p5": 0.82,
+     "p5_ci95": [
+      0.5995,
+      1.0
+     ]
+    },
+    "minilm": {
+     "complete": true,
+     "unjudged_results": 0,
+     "mean_results_shown": 10.0,
+     "grade_0_results_shown": 16,
+     "mean_title_repeats": 0.3,
+     "ndcg": 0.7785,
+     "ndcg_ci95": [
+      0.7121,
+      0.852
+     ],
+     "ndcg_linear": 0.825,
+     "ndcg_linear_ci95": [
+      0.7587,
+      0.8892
+     ],
+     "p5": 0.76,
+     "p5_ci95": [
+      0.56,
+      0.92
+     ]
+    },
+    "served": {
+     "complete": true,
+     "unjudged_results": 0,
+     "mean_results_shown": 10.0,
+     "grade_0_results_shown": 15,
+     "mean_title_repeats": 0.5,
+     "ndcg": 0.7584,
+     "ndcg_ci95": [
+      0.5542,
+      0.9173
+     ],
+     "ndcg_linear": 0.801,
+     "ndcg_linear_ci95": [
+      0.596,
+      0.9438
+     ],
+     "p5": 0.82,
+     "p5_ci95": [
+      0.5995,
+      1.0
+     ]
+    },
+    "served_exact": {
+     "complete": true,
+     "unjudged_results": 0,
+     "mean_results_shown": 10.0,
+     "grade_0_results_shown": 15,
+     "mean_title_repeats": 0.5,
+     "ndcg": 0.7584,
+     "ndcg_ci95": [
+      0.5542,
+      0.9173
+     ],
+     "ndcg_linear": 0.801,
+     "ndcg_linear_ci95": [
+      0.596,
+      0.9438
+     ],
+     "p5": 0.82,
+     "p5_ci95": [
+      0.5995,
+      1.0
+     ]
+    },
+    "tfidf": {
+     "complete": true,
+     "unjudged_results": 0,
+     "mean_results_shown": 10.0,
+     "grade_0_results_shown": 25,
+     "mean_title_repeats": 1.2,
+     "ndcg": 0.7235,
+     "ndcg_ci95": [
+      0.5978,
+      0.8419
+     ],
+     "ndcg_linear": 0.7741,
+     "ndcg_linear_ci95": [
+      0.6525,
+      0.8854
+     ],
+     "p5": 0.76,
+     "p5_ci95": [
+      0.54,
+      0.94
+     ]
+    }
+   },
+   "choice": {
+    "lead": "minilm",
+    "choice": "tfidf",
+    "versus_lead": {
+     "tfidf": {
+      "mean": -0.055,
+      "se": 0.0771,
+      "ci95": [
+       -0.2039,
+       0.0844
+      ]
+     },
+     "bge-small": {
+      "mean": -0.02,
+      "se": 0.079,
+      "ci95": [
+       -0.1803,
+       0.1093
+      ]
+     }
+    }
+   },
+   "choice_with_linear_gains": "tfidf",
+   "variants": {},
+   "deployed_vs_exact": {
+    "path": "served",
+    "reference": "served_exact",
+    "queries": 10,
+    "coverage": {
+     "mean": 1.0,
+     "min": 1.0,
+     "fully_covered": 10
+    },
+    "dropped": {
+     "relevant": 0,
+     "grade_1": 0,
+     "grade_0": 0,
+     "unjudged": 0
+    },
+    "added": {
+     "relevant": 0,
+     "grade_1": 0,
+     "grade_0": 0,
+     "unjudged": 0
+    },
+    "queries_below_full_coverage": [],
+    "ndcg_difference": {
+     "mean": 0.0,
+     "se": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "p5_difference": {
+     "mean": 0.0,
+     "se": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "exact_vs_base": {
+    "path": "served_exact",
+    "reference": "bge-small",
+    "queries": 10,
+    "coverage": {
+     "mean": 1.0,
+     "min": 1.0,
+     "fully_covered": 10
+    },
+    "dropped": {
+     "relevant": 0,
+     "grade_1": 0,
+     "grade_0": 0,
+     "unjudged": 0
+    },
+    "added": {
+     "relevant": 0,
+     "grade_1": 0,
+     "grade_0": 0,
+     "unjudged": 0
+    },
+    "queries_below_full_coverage": [],
+    "ndcg_difference": {
+     "mean": 0.0,
+     "se": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "p5_difference": {
+     "mean": 0.0,
+     "se": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "per_query": {
+    "bge-small": {
+     "navy blue polo t-shirt for men": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.4,
+      "ndcg": 0.4653,
+      "ndcg_linear": 0.6168
+     },
+     "printed cotton saree under 800": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.9258,
+      "ndcg_linear": 0.9567
+     },
+     "girls party wear frock": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.9207,
+      "ndcg_linear": 0.9537
+     },
+     "woollen cap for winter": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.6418,
+      "ndcg_linear": 0.7809
+     },
+     "sports bra for gym under rs 600": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "boys jeans between 400 and 900": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.8,
+      "ndcg": 0.836,
+      "ndcg_linear": 0.8205
+     },
+     "anarkali kurta for women around 1200": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.8993,
+      "ndcg_linear": 0.9412
+     },
+     "thermal innerwear for women": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "red lehenga choli for wedding": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.8957,
+      "ndcg_linear": 0.9401
+     },
+     "waterproof laptop backpack": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.0,
+      "ndcg": 0.0,
+      "ndcg_linear": 0.0
+     }
+    },
+    "minilm": {
+     "navy blue polo t-shirt for men": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.7067,
+      "ndcg_linear": 0.8274
+     },
+     "printed cotton saree under 800": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.8,
+      "ndcg": 0.6865,
+      "ndcg_linear": 0.7051
+     },
+     "girls party wear frock": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.8,
+      "ndcg": 0.8358,
+      "ndcg_linear": 0.8584
+     },
+     "woollen cap for winter": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.8,
+      "ndcg": 0.7432,
+      "ndcg_linear": 0.8338
+     },
+     "sports bra for gym under rs 600": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "boys jeans between 400 and 900": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.4,
+      "ndcg": 0.7023,
+      "ndcg_linear": 0.7793
+     },
+     "anarkali kurta for women around 1200": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.8611,
+      "ndcg_linear": 0.919
+     },
+     "thermal innerwear for women": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.8,
+      "ndcg": 0.9149,
+      "ndcg_linear": 0.9149
+     },
+     "red lehenga choli for wedding": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.7214,
+      "ndcg_linear": 0.7992
+     },
+     "waterproof laptop backpack": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.0,
+      "ndcg": 0.6131,
+      "ndcg_linear": 0.6131
+     }
+    },
+    "served": {
+     "navy blue polo t-shirt for men": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.4,
+      "ndcg": 0.4653,
+      "ndcg_linear": 0.6168
+     },
+     "printed cotton saree under 800": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.9258,
+      "ndcg_linear": 0.9567
+     },
+     "girls party wear frock": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.9207,
+      "ndcg_linear": 0.9537
+     },
+     "woollen cap for winter": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.6418,
+      "ndcg_linear": 0.7809
+     },
+     "sports bra for gym under rs 600": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "boys jeans between 400 and 900": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.8,
+      "ndcg": 0.836,
+      "ndcg_linear": 0.8205
+     },
+     "anarkali kurta for women around 1200": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.8993,
+      "ndcg_linear": 0.9412
+     },
+     "thermal innerwear for women": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "red lehenga choli for wedding": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.8957,
+      "ndcg_linear": 0.9401
+     },
+     "waterproof laptop backpack": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.0,
+      "ndcg": 0.0,
+      "ndcg_linear": 0.0
+     }
+    },
+    "served_exact": {
+     "navy blue polo t-shirt for men": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.4,
+      "ndcg": 0.4653,
+      "ndcg_linear": 0.6168
+     },
+     "printed cotton saree under 800": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.9258,
+      "ndcg_linear": 0.9567
+     },
+     "girls party wear frock": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.9207,
+      "ndcg_linear": 0.9537
+     },
+     "woollen cap for winter": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.6418,
+      "ndcg_linear": 0.7809
+     },
+     "sports bra for gym under rs 600": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "boys jeans between 400 and 900": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.8,
+      "ndcg": 0.836,
+      "ndcg_linear": 0.8205
+     },
+     "anarkali kurta for women around 1200": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.8993,
+      "ndcg_linear": 0.9412
+     },
+     "thermal innerwear for women": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     },
+     "red lehenga choli for wedding": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.8957,
+      "ndcg_linear": 0.9401
+     },
+     "waterproof laptop backpack": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.0,
+      "ndcg": 0.0,
+      "ndcg_linear": 0.0
+     }
+    },
+    "tfidf": {
+     "navy blue polo t-shirt for men": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.6622,
+      "ndcg_linear": 0.7674
+     },
+     "printed cotton saree under 800": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.7549,
+      "ndcg_linear": 0.8571
+     },
+     "girls party wear frock": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.9513,
+      "ndcg_linear": 0.9716
+     },
+     "woollen cap for winter": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.8,
+      "ndcg": 0.5625,
+      "ndcg_linear": 0.6438
+     },
+     "sports bra for gym under rs 600": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.9552,
+      "ndcg_linear": 0.9739
+     },
+     "boys jeans between 400 and 900": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.6,
+      "ndcg": 0.6373,
+      "ndcg_linear": 0.6281
+     },
+     "anarkali kurta for women around 1200": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 1.0,
+      "ndcg": 0.8036,
+      "ndcg_linear": 0.8854
+     },
+     "thermal innerwear for women": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.4,
+      "ndcg": 0.3401,
+      "ndcg_linear": 0.3836
+     },
+     "red lehenga choli for wedding": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.8,
+      "ndcg": 0.5677,
+      "ndcg_linear": 0.6298
+     },
+     "waterproof laptop backpack": {
+      "returned": 10,
+      "judged": 10,
+      "p5": 0.0,
+      "ndcg": 1.0,
+      "ndcg_linear": 1.0
+     }
+    }
+   }
+  }
+ }
+}
