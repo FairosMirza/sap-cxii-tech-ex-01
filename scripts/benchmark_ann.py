@@ -261,12 +261,8 @@ def rule(dev: dict, sample: dict, exhaustive_key: str) -> dict:
             "exhaustive_median_ms": sample[exhaustive_key]["median_ms"]}
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--out", default="reports/ann_benchmark.json")
-    args = parser.parse_args()
-
-    engine, searcher, info = load_service()
+def query_sets(engine: SimilarityEngine) -> dict:
+    """The benchmark's query sets (fixed seed, holdout excluded), shared with the semantic-ID experiment."""
     store, c = engine.store, engine.store.catalog
     queries = json.loads(Path("eval/queries.json").read_text())["queries"]
     dev_rows = [c.index[q["id"]] for q in queries if q["split"] == "dev"]
@@ -280,7 +276,20 @@ def main() -> None:
         source.setdefault(" ".join(c.names[row].split()[:5]), row)
     title_queries = list(source)[:SEARCH_SAMPLE]
     priced_queries = [f"{q} under {int(c.price[source[q]])}" for q in title_queries if np.isfinite(c.price[source[q]])]
-    dev_searches = json.loads(Path("eval/semantic_queries.json").read_text())["dev"]
+    return {"dev_rows": dev_rows, "sample_rows": sample_rows, "title_queries": title_queries,
+            "priced_queries": priced_queries, "dev_searches": json.loads(Path("eval/semantic_queries.json").read_text())["dev"]}
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--out", default="reports/ann_benchmark.json")
+    args = parser.parse_args()
+
+    engine, searcher, info = load_service()
+    c = engine.store.catalog
+    sets = query_sets(engine)
+    dev_rows, sample_rows, dev_searches = sets["dev_rows"], sets["sample_rows"], sets["dev_searches"]
+    title_queries, priced_queries = sets["title_queries"], sets["priced_queries"]
 
     rep = info["representations"][engine.config.text_model]
     similar = {"dev": similar_benchmark(engine, dev_rows), "sample": similar_benchmark(engine, sample_rows),
