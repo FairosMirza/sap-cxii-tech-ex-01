@@ -43,6 +43,14 @@ def test_a_list_with_an_unjudged_result_gets_no_metrics():
     assert metrics["ndcg"] is None and metrics["ndcg_linear"] is None and metrics["p5"] is None
 
 
+def test_all_query_precision_counts_a_query_without_relevant_products_as_zero():
+    from scripts.evaluation_checks import precision_at_5
+
+    assert precision_at_5(["a", "b"], {"a": 0, "b": 0}) == 0
+    assert precision_at_5(["a", "b", "c"], {"a": 3, "b": 1, "c": 2}) == pytest.approx(2 / 5)
+    assert precision_at_5(["a", "x"], {"a": 2}) is None
+
+
 def test_one_standard_error_rule_prefers_the_simpler_system_within_noise():
     base = np.linspace(0.4, 0.8, 20)
     scores = {"simple": base, "complex": base + 0.01 + np.tile([0.05, -0.05], 10)}  # +0.01 mean, SE about 0.0115
