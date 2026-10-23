@@ -1,0 +1,217 @@
+{
+ "frozen_at": "2026-10-23T09:06:04+00:00",
+ "commit": "77372d73be77d5146c2830844d9de9958be6c074",
+ "code": {
+  "app": "c211271538701d429578a20df2bf1f872430f192",
+  "configs": "c2166506717edf6c4afa673ff1311257d3db915e",
+  "scripts/build_label_pools.py": "3ba86d343564477232330bca2326f4a65d9d6773",
+  "scripts/check_labels.py": "f4ee60cb90e4b5527813a6e0d2e1597ad45ce431",
+  "scripts/evaluate.py": "c89c5656d78bee6f51b65a61051a0268e0e860ef",
+  "scripts/freeze.py": "bdf6260d69c8590f83cba904c408433d34c3fdf3",
+  "scripts/label_server.py": "e36cee896a9e51959b770c7f7907e65927d1aac3"
+ },
+ "files": {
+  "configs/default.yaml": "b3c982a3949fa69fe5abaaf3570b25ea4aa85319b12749003f9f1f0b90667e2f",
+  "data/marketing_sample_for_amazon_com-amazon_fashion_products__20200201_20200430__30k_data.ldjson": "dfe14353fc4b31419fa67ad04e6f57baf4ab9de7b37ba73cb3f762d602be9d12",
+  "eval/queries.json": "a699db40b315207d78d25aa0e59ad068c208fb3eb12175e4f51a4eb3852fc50f",
+  "eval/semantic_queries.json": "85bd684dbb1dead16d9bc6508adafdda9cff80257f514e0d65ac32b39b07a773",
+  "artifacts/bge-small.hnsw": "e9f5716171af5f9fda10d7945548d1a2c1b5001e9f9511eb329d07eb06956fd5",
+  "artifacts/bge-small.npy": "ff2b123b0582968961b40bb63b11111671ee35116035238c821597dacbd4336a",
+  "artifacts/manifest.json": "9f68023bd39d72c9b9137ae600ec40372075cdf922dd60f128fcf6cf04dd2f0c",
+  "artifacts/models/bge-small/1_Pooling/config.json": "d1caf60c96f5fba2157c0c26b76d80818fad6cf0b8eb5e73ec372ff9818eba5c",
+  "artifacts/models/bge-small/config.json": "094f8e891b932f2000c92cfc663bac4c62069f5d8af5b5278c4306aef3084750",
+  "artifacts/models/bge-small/config_sentence_transformers.json": "940d5f50db195fa6e5e6a4f122c095f77880de259d74b14a65779ed48bdd7c56",
+  "artifacts/models/bge-small/modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+  "artifacts/models/bge-small/onnx/model.onnx": "828e1496d7fabb79cfa4dcd84fa38625c0d3d21da474a00f08db0f559940cf35",
+  "artifacts/models/bge-small/sentence_bert_config.json": "84e39fda68ccbff05bfa723ae9c0e70e23e2ec373b76e0f8c6e71af72a693cbf",
+  "artifacts/models/bge-small/special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+  "artifacts/models/bge-small/tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+  "artifacts/models/bge-small/tokenizer_config.json": "9261e7d79b44c8195c1cada2b453e55b00aeb81e907a6664974b4d7776172ab3",
+  "artifacts/models/bge-small/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+  "artifacts/tfidf.npz": "d7208250577ebd27a43435afa5926a6812a65cad3c41784dee29b31fc98c79f2",
+  "model bge-small/1_Pooling/config.json": "d1caf60c96f5fba2157c0c26b76d80818fad6cf0b8eb5e73ec372ff9818eba5c",
+  "model bge-small/config.json": "094f8e891b932f2000c92cfc663bac4c62069f5d8af5b5278c4306aef3084750",
+  "model bge-small/config_sentence_transformers.json": "940d5f50db195fa6e5e6a4f122c095f77880de259d74b14a65779ed48bdd7c56",
+  "model bge-small/modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+  "model bge-small/onnx/model.onnx": "828e1496d7fabb79cfa4dcd84fa38625c0d3d21da474a00f08db0f559940cf35",
+  "model bge-small/sentence_bert_config.json": "84e39fda68ccbff05bfa723ae9c0e70e23e2ec373b76e0f8c6e71af72a693cbf",
+  "model bge-small/special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+  "model bge-small/tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+  "model bge-small/tokenizer_config.json": "9261e7d79b44c8195c1cada2b453e55b00aeb81e907a6664974b4d7776172ab3",
+  "model bge-small/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+  "cached vectors bge-small": "ff2b123b0582968961b40bb63b11111671ee35116035238c821597dacbd4336a",
+  "model minilm/1_Pooling/config.json": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23",
+  "model minilm/config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+  "model minilm/config_sentence_transformers.json": "061ca9d39661d6c6d6de5ba27f79a1cd5770ea247f8d46412a68a498dc5ac9f3",
+  "model minilm/data_config.json": "32edcb108fc2516b920734a862ae0692bcae1c5d45d5f8d972cb0d53434a4c54",
+  "model minilm/modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+  "model minilm/onnx/model.onnx": "6fd5d72fe4589f189f8ebc006442dbb529bb7ce38f8082112682524616046452",
+  "model minilm/sentence_bert_config.json": "fc1993fde0a95c24ec6c022539d41cf6e2f7c9721e5415d6fb6897472a9cd4b7",
+  "model minilm/special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+  "model minilm/tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+  "model minilm/tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+  "model minilm/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+  "cached vectors minilm": "73539eb2d3752381c8713e3b4c197f9912efde639e86c66c83f9ef941ba2c472"
+ },
+ "packages": {
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "scikit-learn": "1.9.1",
+  "faiss-cpu": "1.15.1",
+  "onnxruntime": "1.31.0",
+  "tokenizers": "0.23.3"
+ },
+ "settings": {
+  "serving": {
+   "similar_method": "C_bge",
+   "semantic_model": "bge-small",
+   "similar_search": {
+    "mode": "ann",
+    "candidates": 800
+   },
+   "semantic_search": {
+    "mode": "ann",
+    "candidates": 200,
+    "min_similarity": 0.5593
+   }
+  },
+  "methods": {
+   "A_structured": {
+    "block_weights": {
+     "text": 0.0,
+     "image": 0.0,
+     "attributes": 1.0
+    },
+    "attribute_weights": {
+     "category": 0.4,
+     "brand": 0.15,
+     "color": 0.15,
+     "price": 0.2,
+     "weight": 0.1,
+     "rating": 0.0
+    },
+    "text_model": "tfidf",
+    "min_evidence": 0.5,
+    "price_scale": 0.6931,
+    "weight_scale": 0.6931,
+    "exclude_same_asin": true,
+    "exclude_query_family": true,
+    "max_per_family": 1,
+    "max_per_title": null,
+    "max_results": 100,
+    "search_mode": "exact",
+    "ann_candidates": 200,
+    "name": "A_structured"
+   },
+   "B_tfidf": {
+    "block_weights": {
+     "text": 0.5,
+     "image": 0.0,
+     "attributes": 0.5
+    },
+    "attribute_weights": {
+     "category": 0.4,
+     "brand": 0.15,
+     "color": 0.15,
+     "price": 0.2,
+     "weight": 0.1,
+     "rating": 0.0
+    },
+    "text_model": "tfidf",
+    "min_evidence": 0.5,
+    "price_scale": 0.6931,
+    "weight_scale": 0.6931,
+    "exclude_same_asin": true,
+    "exclude_query_family": true,
+    "max_per_family": 1,
+    "max_per_title": null,
+    "max_results": 100,
+    "search_mode": "exact",
+    "ann_candidates": 200,
+    "name": "B_tfidf"
+   },
+   "C_minilm": {
+    "block_weights": {
+     "text": 0.5,
+     "image": 0.0,
+     "attributes": 0.5
+    },
+    "attribute_weights": {
+     "category": 0.4,
+     "brand": 0.15,
+     "color": 0.15,
+     "price": 0.2,
+     "weight": 0.1,
+     "rating": 0.0
+    },
+    "text_model": "minilm",
+    "min_evidence": 0.5,
+    "price_scale": 0.6931,
+    "weight_scale": 0.6931,
+    "exclude_same_asin": true,
+    "exclude_query_family": true,
+    "max_per_family": 1,
+    "max_per_title": null,
+    "max_results": 100,
+    "search_mode": "exact",
+    "ann_candidates": 200,
+    "name": "C_minilm"
+   },
+   "C_bge": {
+    "block_weights": {
+     "text": 0.5,
+     "image": 0.0,
+     "attributes": 0.5
+    },
+    "attribute_weights": {
+     "category": 0.4,
+     "brand": 0.15,
+     "color": 0.15,
+     "price": 0.2,
+     "weight": 0.1,
+     "rating": 0.0
+    },
+    "text_model": "bge-small",
+    "min_evidence": 0.5,
+    "price_scale": 0.6931,
+    "weight_scale": 0.6931,
+    "exclude_same_asin": true,
+    "exclude_query_family": true,
+    "max_per_family": 1,
+    "max_per_title": null,
+    "max_results": 100,
+    "search_mode": "exact",
+    "ann_candidates": 200,
+    "name": "C_bge"
+   }
+  },
+  "models": {
+   "bge-small": {
+    "key": "bge-small",
+    "model_id": "BAAI/bge-small-en-v1.5",
+    "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+    "dim": 384,
+    "query_prefix": "Represent this sentence for searching relevant passages: ",
+    "max_seq_length": 128
+   },
+   "minilm": {
+    "key": "minilm",
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "dim": 384,
+    "query_prefix": "",
+    "max_seq_length": 128
+   }
+  },
+  "index": {
+   "bge-small": {
+    "m": 32,
+    "ef_construction": 200,
+    "ef_search": 128,
+    "candidates": 200,
+    "exact_below": 2000
+   }
+  },
+  "artifacts_built_from": "77372d73be77d5146c2830844d9de9958be6c074"
+ }
+}

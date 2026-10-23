@@ -202,6 +202,8 @@ P@5 by 0.10.
     counts, cutoff, de-duplication rules); the serving artifacts rebuilt at that commit (vectors, HNSW index and its
     parameters); encoder files at their pinned revisions; the cached vectors the pooled rankers load; the dataset;
     the query sets; numerical package versions. Holdout pooling and evaluation stop if anything differs.
+    Frozen on 23 Oct at commit `77372d7`, after the development evaluation was final; the artifacts rebuilt there
+    are byte-identical to those the D08 benchmark measured.
   - *Rankers.* `served_exact` is the frozen configuration searched exhaustively (`mode=exact`); `served` is the
     deployed path (approximate search with 800 candidates for similar products, 200 plus the relevance cutoff for
     search; D08, D12). Both join the finalists in one de-duplicated, blinded pool per task. Similar products and
@@ -297,7 +299,8 @@ sizes would be a separate requirement, to be verified for its ranking impact bef
 **Decision.** Both endpoints default to approximate search with the smallest candidate count that meets the bar on
 both of the rule's query sets (development and sample): 800 for similar products, 200 for search (`serving` in
 `configs/default.yaml`). `mode=exact` stays available per request and remains the reference. *Provisional:* the
-holdout scores the served paths themselves, for relevance and coverage (D07); the counts are not tuned on it. The
+holdout scores the served paths themselves, for relevance and coverage, with the configuration frozen at `77372d7`
+(D07); the counts are not tuned on it. The
 numbers hold for the scorer measured (C_bge with text 0.5 and attributes 0.5, bge-small, no image block): rerun the
 benchmark if the text model changes (to MiniLM, for example), image scoring is added or the weights change. At
 30,000 products both modes are fast; the default matters more as the catalogue grows. Index: HNSW (M 32,
