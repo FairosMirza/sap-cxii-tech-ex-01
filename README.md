@@ -13,7 +13,7 @@ Every decision, with the evidence and the alternatives rejected, is in [docs/dec
 | | Core submission | Experimental submission |
 |---|---|---|
 | What | The service as it runs: hybrid similarity, semantic search, approximate search | Image features (multimodal bonus) and semantic IDs |
-| Status | Frozen at commit `77372d7` ([eval/freeze.json](eval/freeze.json)), selected on development labels, assessed once on an untouched holdout | Pre-registered before running (D14, D15). Semantic IDs: tested, not adopted. Images: development labels in progress |
+| Status | Frozen at commit `77372d7` ([eval/freeze.json](eval/freeze.json)), selected on development labels, assessed once on an untouched holdout | Pre-registered before running (D14, D15). Semantic IDs: not adopted. Image weight 0.1: qualified on development labels |
 | Served | Yes | No. Adoption would need new held-out queries, because the holdout is spent (D07) |
 
 Everything below describes the core submission unless it says otherwise.
@@ -172,10 +172,24 @@ Pre-registered in the decision log before anything was computed. The code is in 
   adopted.* They build in 0.18 s instead of 6.2 s and take 0.9 MB instead of an 8.2 MB graph, but at the deployed
   candidate counts they cover far less of the exact top-10: 0.789 against 0.991 for similar products, and 0.438
   against 0.991 for title searches. At equal latency HNSW still wins (0.991 in 1.71 ms against 0.944 in 1.85 ms).
-- **Image features** (D14, `python -m experiments.image_features`, then `experiments.image_experiment`). ResNet-50
-  vectors for all 29,861 usable images (38 minutes on CPU), and C_bge with an image block of weight 0.1, 0.2 or
-  0.3. The 56 new pairs these configurations retrieve for the development products are being judged blind; the
-  pre-registered rule then decides. Development evidence only, because the holdout is spent.
+- **Combined text and image similarity** (D14; `python -m experiments.image_features`, then
+  `python -m experiments.image_experiment {pool,label,evaluate,coverage}`).
+  - *Method.* ResNet-50 vectors for all 29,861 usable images (38 minutes on CPU) form an image block, combined with
+    text and attributes in the same weighted average. The weights are configurable; a pair missing an image drops
+    the block and the weights renormalise.
+  - *Relevance.* Blind judgements of the 56 new pairs, on the 20 development products:
+
+    | Image weight | nDCG@10 | vs C_bge (95% interval) | P@5 | Irrelevant shown (of 200) |
+    |---|---|---|---|---|
+    | 0 (C_bge) | 0.740 | | 0.82 | 11 |
+    | **0.1** (chosen by the rule) | 0.788 | +0.048 (0.019 to 0.082) | 0.86 | 4 |
+    | 0.2 | 0.819 | +0.079 (0.040 to 0.121) | 0.86 | 2 |
+    | 0.3 | 0.820 | +0.080 (0.044 to 0.119) | 0.84 | 6 |
+
+  - *Fallback.* The development product without an image gets exactly C_bge's results.
+  - *Not served.* At 800 candidates approximate search covers only 0.930 of the exact top-10 on development (the
+    bar is 0.95), because candidates come from text; 1,600 candidates would meet it. Serving would also need new
+    held-out queries, because the holdout is spent.
 
 ## Limitations
 
@@ -233,6 +247,6 @@ are the record.
 | Part 4 (bonus): approximate search, filtered search | `app/ann.py` (HNSW reference), `same_brand` / `min_price` / `max_price`; D08 |
 | v2 Part 5: `/semantic_search` with parsed filters | `app/query_parser.py`, `app/semantic.py`; D10–D12 |
 | v2 Part 6: trade-off note | `docs/tradeoff_note.md` |
-| Multimodal similarity (bonus) | Experimental submission; the scorer already supports a weighted image block with a per-pair fallback (D14) |
+| Multimodal similarity (bonus) | Experimental submission: ResNet-50 image block combined with text and attributes, configurable weights, per-pair fallback; weight 0.1 qualified on development labels (D14) |
 | Suggested: dimensionality reduction | Not used: the 384-dimension vectors already take only 1.5 ms per approximate query, and reducing them would change the evaluated scorer |
 | Suggested: caching | Offline only (product vectors keyed by model revision and texts). Responses are deterministic, so a response cache would be valid, but at 2–7 ms per request none was needed |

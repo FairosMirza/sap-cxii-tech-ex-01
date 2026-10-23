@@ -6,8 +6,10 @@
             from the core's development labels, which stay unchanged
   evaluate  validate the labels, then nDCG@10, P@5, grade-0 results shown and paired differences against C_bge, the
             D14 rule and the missing-image checks -> reports/experiments/images.json
+  coverage  the D08 approximate-search benchmark for the chosen configuration: candidates still come from text, so
+            serving image scores needs it -> reports/experiments/images_ann_coverage.json
 Needs the image vectors first:  python -m experiments.image_features
-Run from the repository root:  python -m experiments.image_experiment {pool,label,evaluate}
+Run from the repository root:  python -m experiments.image_experiment {pool,label,evaluate,coverage}
 """
 
 from __future__ import annotations
@@ -162,18 +164,42 @@ def evaluate(out: Path) -> None:
     print(f"written to {out}")
 
 
+def coverage(out: Path, candidates: int = 800) -> None:
+    from app.ann import HNSWIndex, HNSWParams
+    from scripts.benchmark_ann import similar_benchmark
+
+    store = image_store()
+    index = json.loads(Path("artifacts/manifest.json").read_text())["representations"]["bge-small"]["index"]
+    store.indexes["bge-small"] = HNSWIndex.load(Path("artifacts") / index["file"], HNSWParams(**index["params"]))
+    chosen = json.loads(Path("reports/experiments/images.json").read_text())["rule_d14"]["chosen_image_weight"]
+    name = f"C_bge+image_{chosen}"
+    engine = SimilarityEngine(store, configurations()[name].with_search("ann", candidates))
+    sets = query_sets(engine)
+    report = {"configuration": name, "deployed_candidates": candidates, "bar": 0.95, "method": "scripts.benchmark_ann (D08)",
+              "dev": similar_benchmark(engine, sets["dev_rows"]), "sample": similar_benchmark(engine, sets["sample_rows"])}
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(report, indent=1, ensure_ascii=False) + "\n")
+    for split in ("dev", "sample"):
+        for n, e in report[split]["by_candidates"].items():
+            print(f"{name} {split} N={n}: exact-text {e['exact_text']['mean']:.4f} | faiss {e['faiss']['mean']:.4f} | "
+                  f"served {e['served']['mean']:.4f} {e['served']['median_ms']} ms")
+    print(f"written to {out}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("command", choices=["pool", "label", "evaluate"])
+    parser.add_argument("command", choices=["pool", "label", "evaluate", "coverage"])
     parser.add_argument("--port", type=int, default=8769)
-    parser.add_argument("--out", default="reports/experiments/images.json")
+    parser.add_argument("--out", help="default: reports/experiments/images.json (evaluate), images_ann_coverage.json (coverage)")
     args = parser.parse_args()
     if args.command == "pool":
         pool()
     elif args.command == "label":
         label(args.port)
+    elif args.command == "evaluate":
+        evaluate(Path(args.out or "reports/experiments/images.json"))
     else:
-        evaluate(Path(args.out))
+        coverage(Path(args.out or "reports/experiments/images_ann_coverage.json"))
 
 
 if __name__ == "__main__":

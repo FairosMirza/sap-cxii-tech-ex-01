@@ -1,0 +1,616 @@
+{
+ "configuration": "C_bge+image_0.1",
+ "deployed_candidates": 800,
+ "bar": 0.95,
+ "method": "scripts.benchmark_ann (D08)",
+ "dev": {
+  "queries": 20,
+  "exhaustive": {
+   "median_ms": 7.75,
+   "p95_ms": 9.11
+  },
+  "best_text_neighbour_cosine": {
+   "p1": 0.752,
+   "p5": 0.756,
+   "median": 0.94
+  },
+  "served_at_deployed_by_category_source": {
+   "none": {
+    "queries": 1,
+    "mean": 1.0
+   },
+   "sales rank": {
+    "queries": 12,
+    "mean": 0.925
+   },
+   "browse node": {
+    "queries": 7,
+    "mean": 0.9286
+   }
+  },
+  "served_at_deployed_by_neighbour_strength": {
+   "weakest_5_percent": {
+    "queries": 1,
+    "mean": 0.9
+   },
+   "rest": {
+    "queries": 19,
+    "mean": 0.9316
+   }
+  },
+  "by_candidates": {
+   "200": {
+    "exact_text": {
+     "mean": 0.855,
+     "min": 0.1,
+     "queries": 20,
+     "full": 14,
+     "0.9_to_1": 1,
+     "0.8_to_0.9": 0,
+     "0.5_to_0.8": 3,
+     "below_0.5": 2
+    },
+    "faiss": {
+     "mean": 0.855,
+     "min": 0.1,
+     "queries": 20,
+     "full": 14,
+     "0.9_to_1": 1,
+     "0.8_to_0.9": 0,
+     "0.5_to_0.8": 3,
+     "below_0.5": 2
+    },
+    "served": {
+     "mean": 0.855,
+     "min": 0.1,
+     "queries": 20,
+     "full": 14,
+     "0.9_to_1": 1,
+     "0.8_to_0.9": 0,
+     "0.5_to_0.8": 3,
+     "below_0.5": 2,
+     "median_ms": 0.85,
+     "p95_ms": 1.07
+    },
+    "hnsw_vector_recall": {
+     "mean": 0.9868,
+     "min": 0.925
+    }
+   },
+   "400": {
+    "exact_text": {
+     "mean": 0.92,
+     "min": 0.1,
+     "queries": 20,
+     "full": 17,
+     "0.9_to_1": 0,
+     "0.8_to_0.9": 1,
+     "0.5_to_0.8": 1,
+     "below_0.5": 1
+    },
+    "faiss": {
+     "mean": 0.92,
+     "min": 0.1,
+     "queries": 20,
+     "full": 17,
+     "0.9_to_1": 0,
+     "0.8_to_0.9": 1,
+     "0.5_to_0.8": 1,
+     "below_0.5": 1
+    },
+    "served": {
+     "mean": 0.92,
+     "min": 0.1,
+     "queries": 20,
+     "full": 17,
+     "0.9_to_1": 0,
+     "0.8_to_0.9": 1,
+     "0.5_to_0.8": 1,
+     "below_0.5": 1,
+     "median_ms": 1.16,
+     "p95_ms": 1.67
+    },
+    "hnsw_vector_recall": {
+     "mean": 0.9869,
+     "min": 0.955
+    }
+   },
+   "800": {
+    "exact_text": {
+     "mean": 0.93,
+     "min": 0.2,
+     "queries": 20,
+     "full": 17,
+     "0.9_to_1": 1,
+     "0.8_to_0.9": 0,
+     "0.5_to_0.8": 1,
+     "below_0.5": 1
+    },
+    "faiss": {
+     "mean": 0.93,
+     "min": 0.2,
+     "queries": 20,
+     "full": 17,
+     "0.9_to_1": 1,
+     "0.8_to_0.9": 0,
+     "0.5_to_0.8": 1,
+     "below_0.5": 1
+    },
+    "served": {
+     "mean": 0.93,
+     "min": 0.2,
+     "queries": 20,
+     "full": 17,
+     "0.9_to_1": 1,
+     "0.8_to_0.9": 0,
+     "0.5_to_0.8": 1,
+     "below_0.5": 1,
+     "median_ms": 2.05,
+     "p95_ms": 2.63
+    },
+    "hnsw_vector_recall": {
+     "mean": 0.9911,
+     "min": 0.9712
+    }
+   },
+   "1600": {
+    "exact_text": {
+     "mean": 0.95,
+     "min": 0.4,
+     "queries": 20,
+     "full": 18,
+     "0.9_to_1": 0,
+     "0.8_to_0.9": 0,
+     "0.5_to_0.8": 1,
+     "below_0.5": 1
+    },
+    "faiss": {
+     "mean": 0.95,
+     "min": 0.4,
+     "queries": 20,
+     "full": 18,
+     "0.9_to_1": 0,
+     "0.8_to_0.9": 0,
+     "0.5_to_0.8": 1,
+     "below_0.5": 1
+    },
+    "served": {
+     "mean": 0.95,
+     "min": 0.4,
+     "queries": 20,
+     "full": 18,
+     "0.9_to_1": 0,
+     "0.8_to_0.9": 0,
+     "0.5_to_0.8": 1,
+     "below_0.5": 1,
+     "median_ms": 4.82,
+     "p95_ms": 5.72
+    },
+    "hnsw_vector_recall": {
+     "mean": 0.995,
+     "min": 0.9819
+    }
+   },
+   "3200": {
+    "exact_text": {
+     "mean": 0.96,
+     "min": 0.6,
+     "queries": 20,
+     "full": 18,
+     "0.9_to_1": 0,
+     "0.8_to_0.9": 0,
+     "0.5_to_0.8": 2,
+     "below_0.5": 0
+    },
+    "faiss": {
+     "mean": 0.96,
+     "min": 0.6,
+     "queries": 20,
+     "full": 18,
+     "0.9_to_1": 0,
+     "0.8_to_0.9": 0,
+     "0.5_to_0.8": 2,
+     "below_0.5": 0
+    },
+    "served": {
+     "mean": 0.96,
+     "min": 0.6,
+     "queries": 20,
+     "full": 18,
+     "0.9_to_1": 0,
+     "0.8_to_0.9": 0,
+     "0.5_to_0.8": 2,
+     "below_0.5": 0,
+     "median_ms": 11.44,
+     "p95_ms": 12.22
+    },
+    "hnsw_vector_recall": {
+     "mean": 0.9969,
+     "min": 0.9906
+    }
+   }
+  },
+  "loss_at_deployed": {
+   "queries": 20,
+   "below_full_coverage": 3,
+   "text_only_candidates_lose": 3,
+   "approximation_loses_more": 0,
+   "approximation_recovers_some": 0,
+   "widening_recovers_some": 0
+  },
+  "worst_at_deployed": [
+   {
+    "id": "c3a4df40ae456e1cc76c107d16382c75",
+    "name": "TIRUPUR GUIDEFASHION Mens Cotton Sports Night Capri Black Combo Style - 011",
+    "category": [
+     "BoysPyjamaSets",
+     "MensLoungeShorts",
+     "BoysSportsTrousers"
+    ],
+    "category_source": "sales rank",
+    "best_text_cosine": 0.944,
+    "exact_text": 0.2,
+    "faiss": 0.2,
+    "served": 0.2
+   },
+   {
+    "id": "6a8674d8512c66cb9f89f1617c4929c9",
+    "name": "Kavish Women's Black Windcheater with Hidden Collar Pocket for Cap",
+    "category": [
+     "WomensRainwear"
+    ],
+    "category_source": "browse node",
+    "best_text_cosine": 0.837,
+    "exact_text": 0.5,
+    "faiss": 0.5,
+    "served": 0.5
+   },
+   {
+    "id": "9a73f1c1ac4911a5daf786581868e019",
+    "name": "DREAMDROP WHITE WINTER SPAKDY FOR WOMEN",
+    "category": [
+     "WomensThermalTops"
+    ],
+    "category_source": "sales rank",
+    "best_text_cosine": 0.751,
+    "exact_text": 0.9,
+    "faiss": 0.9,
+    "served": 0.9
+   }
+  ]
+ },
+ "sample": {
+  "queries": 1000,
+  "exhaustive": {
+   "median_ms": 7.65,
+   "p95_ms": 8.89
+  },
+  "best_text_neighbour_cosine": {
+   "p1": 0.744,
+   "p5": 0.777,
+   "median": 0.935
+  },
+  "served_at_deployed_by_category_source": {
+   "none": {
+    "queries": 41,
+    "mean": 1.0
+   },
+   "sales rank": {
+    "queries": 849,
+    "mean": 0.99
+   },
+   "browse node": {
+    "queries": 110,
+    "mean": 0.9773
+   }
+  },
+  "served_at_deployed_by_neighbour_strength": {
+   "weakest_5_percent": {
+    "queries": 50,
+    "mean": 0.902
+   },
+   "rest": {
+    "queries": 950,
+    "mean": 0.9936
+   }
+  },
+  "by_candidates": {
+   "200": {
+    "exact_text": {
+     "mean": 0.9514,
+     "min": 0.0,
+     "queries": 1000,
+     "full": 794,
+     "0.9_to_1": 101,
+     "0.8_to_0.9": 33,
+     "0.5_to_0.8": 54,
+     "below_0.5": 18
+    },
+    "faiss": {
+     "mean": 0.9504,
+     "min": 0.0,
+     "queries": 1000,
+     "full": 789,
+     "0.9_to_1": 101,
+     "0.8_to_0.9": 40,
+     "0.5_to_0.8": 51,
+     "below_0.5": 19
+    },
+    "served": {
+     "mean": 0.9504,
+     "min": 0.0,
+     "queries": 1000,
+     "full": 789,
+     "0.9_to_1": 101,
+     "0.8_to_0.9": 40,
+     "0.5_to_0.8": 51,
+     "below_0.5": 19,
+     "median_ms": 0.78,
+     "p95_ms": 0.98
+    },
+    "hnsw_vector_recall": {
+     "mean": 0.9849,
+     "min": 0.83
+    }
+   },
+   "400": {
+    "exact_text": {
+     "mean": 0.9789,
+     "min": 0.0,
+     "queries": 1000,
+     "full": 899,
+     "0.9_to_1": 59,
+     "0.8_to_0.9": 21,
+     "0.5_to_0.8": 13,
+     "below_0.5": 8
+    },
+    "faiss": {
+     "mean": 0.9786,
+     "min": 0.0,
+     "queries": 1000,
+     "full": 899,
+     "0.9_to_1": 58,
+     "0.8_to_0.9": 22,
+     "0.5_to_0.8": 11,
+     "below_0.5": 10
+    },
+    "served": {
+     "mean": 0.9786,
+     "min": 0.0,
+     "queries": 1000,
+     "full": 899,
+     "0.9_to_1": 58,
+     "0.8_to_0.9": 22,
+     "0.5_to_0.8": 11,
+     "below_0.5": 10,
+     "median_ms": 1.0,
+     "p95_ms": 1.41
+    },
+    "hnsw_vector_recall": {
+     "mean": 0.9891,
+     "min": 0.895
+    }
+   },
+   "800": {
+    "exact_text": {
+     "mean": 0.9896,
+     "min": 0.1,
+     "queries": 1000,
+     "full": 950,
+     "0.9_to_1": 28,
+     "0.8_to_0.9": 12,
+     "0.5_to_0.8": 8,
+     "below_0.5": 2
+    },
+    "faiss": {
+     "mean": 0.989,
+     "min": 0.0,
+     "queries": 1000,
+     "full": 948,
+     "0.9_to_1": 28,
+     "0.8_to_0.9": 14,
+     "0.5_to_0.8": 8,
+     "below_0.5": 2
+    },
+    "served": {
+     "mean": 0.989,
+     "min": 0.0,
+     "queries": 1000,
+     "full": 948,
+     "0.9_to_1": 28,
+     "0.8_to_0.9": 14,
+     "0.5_to_0.8": 8,
+     "below_0.5": 2,
+     "median_ms": 1.95,
+     "p95_ms": 2.58
+    },
+    "hnsw_vector_recall": {
+     "mean": 0.9922,
+     "min": 0.9387
+    }
+   },
+   "1600": {
+    "exact_text": {
+     "mean": 0.9958,
+     "min": 0.2,
+     "queries": 1000,
+     "full": 979,
+     "0.9_to_1": 13,
+     "0.8_to_0.9": 5,
+     "0.5_to_0.8": 1,
+     "below_0.5": 2
+    },
+    "faiss": {
+     "mean": 0.9957,
+     "min": 0.2,
+     "queries": 1000,
+     "full": 978,
+     "0.9_to_1": 14,
+     "0.8_to_0.9": 5,
+     "0.5_to_0.8": 1,
+     "below_0.5": 2
+    },
+    "served": {
+     "mean": 0.9957,
+     "min": 0.2,
+     "queries": 1000,
+     "full": 978,
+     "0.9_to_1": 14,
+     "0.8_to_0.9": 5,
+     "0.5_to_0.8": 1,
+     "below_0.5": 2,
+     "median_ms": 4.6,
+     "p95_ms": 5.45
+    },
+    "hnsw_vector_recall": {
+     "mean": 0.9951,
+     "min": 0.9712
+    }
+   },
+   "3200": {
+    "exact_text": {
+     "mean": 0.9978,
+     "min": 0.2,
+     "queries": 1000,
+     "full": 989,
+     "0.9_to_1": 8,
+     "0.8_to_0.9": 1,
+     "0.5_to_0.8": 1,
+     "below_0.5": 1
+    },
+    "faiss": {
+     "mean": 0.9977,
+     "min": 0.2,
+     "queries": 1000,
+     "full": 989,
+     "0.9_to_1": 7,
+     "0.8_to_0.9": 2,
+     "0.5_to_0.8": 1,
+     "below_0.5": 1
+    },
+    "served": {
+     "mean": 0.9977,
+     "min": 0.2,
+     "queries": 1000,
+     "full": 989,
+     "0.9_to_1": 7,
+     "0.8_to_0.9": 2,
+     "0.5_to_0.8": 1,
+     "below_0.5": 1,
+     "median_ms": 11.36,
+     "p95_ms": 12.64
+    },
+    "hnsw_vector_recall": {
+     "mean": 0.9972,
+     "min": 0.9856
+    }
+   }
+  },
+  "loss_at_deployed": {
+   "queries": 1000,
+   "below_full_coverage": 52,
+   "text_only_candidates_lose": 50,
+   "approximation_loses_more": 7,
+   "approximation_recovers_some": 1,
+   "widening_recovers_some": 0
+  },
+  "worst_at_deployed": [
+   {
+    "id": "08ef2205f9024064616b65e0ac3140e3",
+    "name": "Care n Care Cotton B Cup Sporty",
+    "category": [
+     "WomensSportsBras"
+    ],
+    "category_source": "sales rank",
+    "best_text_cosine": 0.74,
+    "exact_text": 0.1,
+    "faiss": 0.0,
+    "served": 0.0
+   },
+   {
+    "id": "88d0723105dcf55668eaf030f9ef9e72",
+    "name": "Hirt%27s Gardens Lucifer Crocosmia Very Hardy Deer Resistant Gallon Pot",
+    "category": [
+     "MensCapsHats"
+    ],
+    "category_source": "browse node",
+    "best_text_cosine": 0.636,
+    "exact_text": 0.1,
+    "faiss": 0.1,
+    "served": 0.1
+   },
+   {
+    "id": "99332a9e8c7883700f0de9f5bd318347",
+    "name": "sucker Plus Size Big Size Jambo Size Tall Size King Size Huge Size NASA Hoodies ",
+    "category": [
+     "MensJackets"
+    ],
+    "category_source": "sales rank",
+    "best_text_cosine": 0.733,
+    "exact_text": 0.5,
+    "faiss": 0.5,
+    "served": 0.5
+   },
+   {
+    "id": "29ba20ae9a4781a71b13440dd6f72140",
+    "name": "Rupa Softline Women's Leggings",
+    "category": [
+     "WomensChuridarSalwarBottoms"
+    ],
+    "category_source": "sales rank",
+    "best_text_cosine": 0.899,
+    "exact_text": 0.5,
+    "faiss": 0.5,
+    "served": 0.5
+   },
+   {
+    "id": "a6ad19d0869efa7acf3dcc34438517f0",
+    "name": "Radhe Fashion Green Khadi Cotton A-line Kurti For Womens, Free Size, Casual Wear",
+    "category": [
+     "WomensEthnicUnstitchedFabric"
+    ],
+    "category_source": "sales rank",
+    "best_text_cosine": 0.921,
+    "exact_text": 0.5,
+    "faiss": 0.5,
+    "served": 0.5
+   },
+   {
+    "id": "69d486d3f2c58231cd7b238706235b4c",
+    "name": "Klean Kanteen Sport Cap 3. 0 Replacement Cap",
+    "category": [
+     "SwimmingSwimwear"
+    ],
+    "category_source": "browse node",
+    "best_text_cosine": 0.773,
+    "exact_text": 0.5,
+    "faiss": 0.5,
+    "served": 0.5
+   },
+   {
+    "id": "d9f861cf2907315ef4fae35a6d283922",
+    "name": "SBO FASHION Cold Shoulder Printed T-Shirt for Women & Girls.",
+    "category": [
+     "WomensT_Shirts"
+    ],
+    "category_source": "sales rank",
+    "best_text_cosine": 0.775,
+    "exact_text": 0.6,
+    "faiss": 0.5,
+    "served": 0.5
+   },
+   {
+    "id": "6e1d25df3e13f5e771f53dbfe4c46a1c",
+    "name": "Badger Ladies Sleeveless Tee - 4163 Black XX-Large",
+    "category": [
+     "MensSportsT_ShirtsJerseys"
+    ],
+    "category_source": "browse node",
+    "best_text_cosine": 0.809,
+    "exact_text": 0.6,
+    "faiss": 0.6,
+    "served": 0.6
+   }
+  ]
+ }
+}
