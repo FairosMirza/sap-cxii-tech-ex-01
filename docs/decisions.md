@@ -485,6 +485,28 @@ an image block with its own configurable weight (`block_weights.image`) and a pe
 either image drops the block and the weights renormalise, D05). No image vectors were computed, so every
 configuration weights images 0 and no multimodal result is claimed. The required parts came first (D02).
 
+**Experiment protocol** (pre-registered 23 Oct, before any image vector was computed; experimental submission,
+`experiments/`, kept apart from the frozen core so its files do not change).
+- *Features.* torchvision ResNet-50 with its ImageNet weights (`IMAGENET1K_V2`) and their standard preprocessing;
+  the 2,048-dimension global-average-pooled output, L2-normalised, computed on CPU in a separate process (PyTorch
+  must not share a process with FAISS, D17). The 139 products without a usable image get no vector. Calibrated as
+  text is (D05).
+- *Configurations.* C_bge plus an image block of weight w = 0.1, 0.2 or 0.3, taken equally from text and attributes
+  (text = attributes = (1 − w) / 2). Nothing else changes.
+- *Labels.* Each configuration's top-10 for the 20 development products is pooled; pairs no development pool
+  holds go to a blind supplement judged with the same rubric before any metric is computed
+  (`eval/experiments/images/`).
+- *Rule* (as D05). An image weight is adopted into the experimental submission only if it beats C_bge on
+  development nDCG@10 by more than one paired standard error; if several do, the smallest weight, then the higher
+  mean. Reported for every configuration: nDCG@10, P@5 over scored and all queries, grade-0 results shown, paired
+  differences with intervals.
+- *Missing images.* The per-pair fallback (a pair lacking an image drops the block, D05) is checked three ways: the
+  development query without an image; the share of results without an image in each configuration's top-10
+  against the catalogue rate; and the 1,000 benchmark products (D08) with their own image removed, counting
+  top-10 lists identical to C_bge's (the evidence floor can make them differ).
+- *Scope.* Development evidence only: the holdout is spent (D07). Serving image scores would also need the D08
+  benchmark rerun, because candidates come from text, and new held-out queries.
+
 ## D15 Semantic IDs
 *21 Oct · Decided (experiment)*
 
@@ -496,6 +518,23 @@ in OneRec, and do not claim to reproduce a generative recommender.
 
 **Status (23 Oct): not built.** The design above was not implemented; no semantic-ID code or result exists. The
 served candidate index is HNSW (D08).
+
+**Experiment protocol** (pre-registered 23 Oct, before any code was trained; experimental submission).
+- *Codes.* Residual k-means on the L2-normalised bge-small product vectors: 3 levels of 64 centroids (FAISS
+  k-means, 25 iterations, fixed seed), each level fitted to the previous level's residuals. A product's semantic
+  ID is its 3 codes.
+- *Retrieval.* A query vector's inner products with each level's centroids give three lookup tables. Two-code
+  prefixes are ranked by the sum of their two entries, and allowed products are collected prefix by prefix until N
+  are found. The collected products are ordered by their three-code score, and the top N go to the same exact
+  reranker as HNSW's candidates. A second variant orders the collected products by exact cosine instead. As for
+  HNSW, every allowed product is scored when there are at most N, or at most 2,000 (D08).
+- *Comparison.* The D08 benchmark's query sets, seed, scorer and coverage definition, with N from 200 to 3,200,
+  in the same process and with the same thread settings as HNSW. Reported: coverage (mean, distribution, worst
+  cases); latency of candidate generation and of the whole query (median, p95); memory of the index structures,
+  with and without the product vectors both rerankers need; and single-thread build time.
+- *Rule.* Semantic IDs replace HNSW only if, at the deployed counts (800 for similar products, 200 for search),
+  their coverage is no lower than HNSW's on every query set and their median query latency is lower; otherwise
+  they are reported, not adopted. Adoption would still need a new held-out check (D07).
 
 ## D16 Engineering choices
 *21–22 Oct · Decided*
