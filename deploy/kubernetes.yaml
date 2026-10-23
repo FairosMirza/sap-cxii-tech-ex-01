@@ -1,0 +1,65 @@
+# Local Kubernetes deployment (tested on kind). Build and load the image first:
+#   docker build -t product-similarity:1.1.0 .
+#   kind load docker-image product-similarity:1.1.0 --name <cluster>
+#   kubectl apply -f deploy/kubernetes.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-similarity
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-similarity
+  namespace: product-similarity
+  labels: {app: product-similarity}
+spec:
+  replicas: 2
+  selector:
+    matchLabels: {app: product-similarity}
+  template:
+    metadata:
+      labels: {app: product-similarity}
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: service
+          image: product-similarity:1.1.0
+          # Loaded into the cluster by `kind load`; there is no registry to pull from.
+          imagePullPolicy: IfNotPresent
+          ports:
+            - {name: http, containerPort: 8000}
+          env:
+            # One CPU per pod: one encoder thread and one OpenMP thread for FAISS.
+            - {name: ENCODER_THREADS, value: "1"}
+            - {name: OMP_NUM_THREADS, value: "1"}
+          resources:
+            requests: {cpu: 500m, memory: 768Mi}
+            limits: {cpu: "1", memory: 1Gi}
+          startupProbe:
+            httpGet: {path: /ready, port: http}
+            periodSeconds: 5
+            failureThreshold: 36
+          readinessProbe:
+            httpGet: {path: /ready, port: http}
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 20
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-similarity
+  namespace: product-similarity
+spec:
+  selector: {app: product-similarity}
+  ports:
+    - {name: http, port: 80, targetPort: http}

@@ -511,6 +511,10 @@ served candidate index is HNSW (D08).
 - **Docker:** two stages. The build stage unpacks the dataset and runs `scripts.prepare` from a clean state, so a
   fresh clone needs only `docker build`; the runtime stage holds serving dependencies, data and artifacts, runs as
   a non-root user and has a readiness health check.
+- **Kubernetes** (`deploy/kubernetes.yaml`): two replicas behind a Service, startup, readiness and liveness probes,
+  non-root with a read-only root filesystem and no capabilities, one CPU and 1 GiB per pod. *Verified 23 Oct:*
+  the committed tree, built with no cache (10.5 min), and the same image on kind both returned the frozen
+  configuration's results for all 60 smoke-test requests (`scripts.smoke_api --compare`).
 
 ## D17 Inference runtime: ONNX Runtime instead of PyTorch
 *22 Oct · Decided* · evidence: `reports/encoder_parity.json` (`python -m scripts.check_encoder_parity`),
