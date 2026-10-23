@@ -4,7 +4,7 @@ Run from the repository root:  python -m scripts.label_server --split dev   then
 A supplemental pool is served the same way:  --split dev --supplement [NAME] --port 8766
 Shows the query and one candidate at a time (image, title, brand, price). The producing system, scores and
 extracted category are never shown. Keys 0-3 grade, B goes back, N focuses the note box. Labels are appended
-to eval/labels.jsonl; re-grading appends a newer line and the latest one counts.
+to eval/labels.jsonl (holdout: eval/labels_holdout.jsonl); re-grading appends a newer line and the latest one counts.
 """
 
 from __future__ import annotations
@@ -22,6 +22,7 @@ from fastapi import FastAPI, Form, HTTPException
 from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse, Response
 
 from app.data import load_records
+from scripts.check_labels import labels_file
 
 LABELS = Path("eval/labels.jsonl")
 IMAGES = Path("data/images")
@@ -160,7 +161,8 @@ def main() -> None:
                         help="serve a supplemental pool of the split (unnamed, or the given name)")
     parser.add_argument("--port", type=int, default=8765)
     args = parser.parse_args()
-    uvicorn.run(create_app(args.split, supplement=args.supplement), host="127.0.0.1", port=args.port, log_level="warning")
+    uvicorn.run(create_app(args.split, labels_path=labels_file(args.split), supplement=args.supplement),
+                host="127.0.0.1", port=args.port, log_level="warning")
 
 
 if __name__ == "__main__":

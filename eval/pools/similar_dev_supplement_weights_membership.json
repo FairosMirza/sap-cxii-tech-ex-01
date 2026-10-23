@@ -1,0 +1,167 @@
+{
+ "systems": [
+  "C_bge+text_0.3",
+  "C_bge+text_0.4",
+  "C_bge+text_0.6",
+  "C_bge+text_0.7"
+ ],
+ "queries": {
+  "5b448a5e5ee04b444d9944e119177170": {
+   "C_bge+text_0.3": [],
+   "C_bge+text_0.4": [],
+   "C_bge+text_0.6": [
+    "af4b1051bcb0d702d744de48ee6fc28c"
+   ],
+   "C_bge+text_0.7": [
+    "af4b1051bcb0d702d744de48ee6fc28c"
+   ]
+  },
+  "ac12b8121767f032eace03ba3ace0164": {
+   "C_bge+text_0.3": [
+    "8fe29efc3daf1d366603c42cc9409ccd"
+   ],
+   "C_bge+text_0.4": [
+    "8fe29efc3daf1d366603c42cc9409ccd"
+   ],
+   "C_bge+text_0.6": [
+    "3cf28f987a7e9bc1806ae8e71432a069"
+   ],
+   "C_bge+text_0.7": [
+    "3cf28f987a7e9bc1806ae8e71432a069",
+    "931d4c07f95ff98376877aee77bf5119",
+    "c7876dd7f1583a24ce751b29c8a29242"
+   ]
+  },
+  "314be9c0b9c934e10bbe5b4aa6d2de79": {
+   "C_bge+text_0.3": [
+    "51ccc6657406500e5d39af498f6025e6"
+   ],
+   "C_bge+text_0.4": [],
+   "C_bge+text_0.6": [
+    "4c4030f416228e12870ff4e242fc499f"
+   ],
+   "C_bge+text_0.7": [
+    "4c4030f416228e12870ff4e242fc499f"
+   ]
+  },
+  "65ae3f3110f8ead580b7948e9196cf79": {
+   "C_bge+text_0.3": [],
+   "C_bge+text_0.4": [],
+   "C_bge+text_0.6": [],
+   "C_bge+text_0.7": [
+    "7eae44b4204df3ccbfa221d05e05a5f2",
+    "f2c4f4a0e7b59dcb1aca1d0db5cf32c5"
+   ]
+  },
+  "307bed4226c0f82c3451a86f34d7f285": {
+   "C_bge+text_0.3": [],
+   "C_bge+text_0.4": [],
+   "C_bge+text_0.6": [],
+   "C_bge+text_0.7": [
+    "a1e2b54c897b4a9a05cdae2c010f8292"
+   ]
+  },
+  "6fc91245defaa0c1210e86268249a132": {
+   "C_bge+text_0.3": [
+    "f0fea6c6aa1a25ef4f7976be8212d772"
+   ],
+   "C_bge+text_0.4": [
+    "f0fea6c6aa1a25ef4f7976be8212d772"
+   ],
+   "C_bge+text_0.6": [
+    "067eebfb429cff7560704ea5c50bdf54"
+   ],
+   "C_bge+text_0.7": [
+    "067eebfb429cff7560704ea5c50bdf54",
+    "3e874a54bb63ce6a642edfc91125e736"
+   ]
+  },
+  "b275133a29852973c8d88633e4a29e09": {
+   "C_bge+text_0.3": [],
+   "C_bge+text_0.4": [],
+   "C_bge+text_0.6": [
+    "302591e17ae112179ec636f0da47e9b0"
+   ],
+   "C_bge+text_0.7": [
+    "302591e17ae112179ec636f0da47e9b0"
+   ]
+  },
+  "e5f36cab588ff86e649372d530a10007": {
+   "C_bge+text_0.3": [],
+   "C_bge+text_0.4": [],
+   "C_bge+text_0.6": [
+    "ae64f17223537f99402546d4595e943e"
+   ],
+   "C_bge+text_0.7": [
+    "ae64f17223537f99402546d4595e943e",
+    "19a99cecba6e50f7baf916fd4803d5a6"
+   ]
+  },
+  "136167a49469fd5c47adb997429516ae": {
+   "C_bge+text_0.3": [],
+   "C_bge+text_0.4": [],
+   "C_bge+text_0.6": [
+    "a2804822d6aca585d8de90165d45a17c"
+   ],
+   "C_bge+text_0.7": [
+    "a2804822d6aca585d8de90165d45a17c",
+    "4012c72d76de88fbef7ade1ba8a0471d"
+   ]
+  },
+  "ab6a6605b0a017c3ca05f793b2ec4cd1": {
+   "C_bge+text_0.3": [
+    "837a526b98ebee68998e8d75312ccb14"
+   ],
+   "C_bge+text_0.4": [],
+   "C_bge+text_0.6": [],
+   "C_bge+text_0.7": []
+  },
+  "c3a4df40ae456e1cc76c107d16382c75": {
+   "C_bge+text_0.3": [],
+   "C_bge+text_0.4": [],
+   "C_bge+text_0.6": [
+    "9ca2d0273d5c9d0ac75df630a1129973"
+   ],
+   "C_bge+text_0.7": []
+  },
+  "cd3af562275bf079983c4252e8751757": {
+   "C_bge+text_0.3": [],
+   "C_bge+text_0.4": [],
+   "C_bge+text_0.6": [
+    "9edb77e24ee44f44741954626f07b6b4"
+   ],
+   "C_bge+text_0.7": [
+    "9edb77e24ee44f44741954626f07b6b4",
+    "2d2ab7ef1dea20b68463a7b8c7b8b33b"
+   ]
+  },
+  "2b7081d70a8db985ca3c4962f0e89b17": {
+   "C_bge+text_0.3": [
+    "a40ada94bb0ad0924e64fe68aa05cb2e"
+   ],
+   "C_bge+text_0.4": [
+    "a40ada94bb0ad0924e64fe68aa05cb2e"
+   ],
+   "C_bge+text_0.6": [],
+   "C_bge+text_0.7": []
+  },
+  "12831a10980a52f52e495bffe669a6a7": {
+   "C_bge+text_0.3": [
+    "8636779d82b339c8bb6fabac3b1d9ce3"
+   ],
+   "C_bge+text_0.4": [],
+   "C_bge+text_0.6": [
+    "71ffb9b9a094de5a351a6b5e5ecabb1c",
+    "ce267b5c160434227a7f85a3910503fb",
+    "315c0adf8a53bd8294122bc90e2231b0",
+    "23590ee2c0cf328be85ec9958df82ac9"
+   ],
+   "C_bge+text_0.7": [
+    "71ffb9b9a094de5a351a6b5e5ecabb1c",
+    "ce267b5c160434227a7f85a3910503fb",
+    "23590ee2c0cf328be85ec9958df82ac9",
+    "315c0adf8a53bd8294122bc90e2231b0"
+   ]
+  }
+ }
+}

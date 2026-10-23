@@ -1,0 +1,32 @@
+{
+ "systems": [
+  "served",
+  "served_exact"
+ ],
+ "served": {
+  "serving": {
+   "similar_method": "C_bge",
+   "semantic_model": "bge-small",
+   "similar_search": {
+    "mode": "ann",
+    "candidates": 800
+   },
+   "semantic_search": {
+    "mode": "ann",
+    "candidates": 200,
+    "min_similarity": 0.5593
+   }
+  },
+  "code_commit": "873714abca1540c507fd64ffbd8f96957e2d572b-dirty",
+  "artifacts_created": "2026-10-22T13:14:41+00:00"
+ },
+ "queries": {
+  "c3a4df40ae456e1cc76c107d16382c75": {
+   "served": [
+    "98c228bed23598d47ad9c3b897a60bb7",
+    "498adc8424d65d944a9de4e41582afe7"
+   ],
+   "served_exact": []
+  }
+ }
+}

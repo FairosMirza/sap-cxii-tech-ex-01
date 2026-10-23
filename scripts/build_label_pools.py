@@ -1,18 +1,23 @@
 """Build blind candidate pools for human relevance labelling.
 
 Similar products: top-10 of each approach (title cap off). Semantic search: top-10 of each text
-representation, with no relevance cutoff. Candidates are de-duplicated and shuffled with a fixed seed.
+representation, with no relevance cutoff. The ranker `served` is the deployed path of each task as configured in
+configs/default.yaml (approximate search, and the relevance cutoff for search); `served_exact` is the same
+configuration searched exhaustively (mode=exact). Their membership files record that configuration.
+Candidates are de-duplicated and shuffled with a fixed seed.
 Which system produced each candidate goes to a separate membership file the labelling page never reads.
 Run from the repository root:  python -m scripts.build_label_pools --split dev
-The holdout is pooled only for named finalists:  --split holdout --systems <finalists...>
+The holdout is pooled only for named finalists, after the freeze (scripts.freeze):  --split holdout --systems ...
 With --supplement [NAME] the existing pools stay untouched: only pairs the rankers now retrieve that no pool of the
 split holds (after a model change, or for a variant such as C_bge+title_cap) go to
-{task}_{split}_supplement[_NAME].json, queries shuffled. Pools are never overwritten.
+{task}_{split}_supplement[_NAME].json, queries shuffled. A supplement is written even without new pairs, to record
+its rankers. Pools are never overwritten.
 """
 
 from __future__ import annotations
 
 import argparse
+import functools
 import json
 import re
 from dataclasses import replace
@@ -20,6 +25,7 @@ from pathlib import Path
 
 import numpy as np
 
+from app.artifacts import load_service
 from app.embeddings import EMBEDDING_MODELS, TextEncoder, cached_product_vectors
 from app.pipeline import build_store, embedding_modality
 from app.retrieval import SimilarityEngine
@@ -33,13 +39,27 @@ SEED = 20261022
 SUPPLEMENT_SEED = 20261023
 SIMILAR_SYSTEMS = ("A_structured", "B_tfidf", "C_minilm", "C_bge")
 SEMANTIC_SYSTEMS = ("tfidf", "minilm", "bge-small")
-# Similar-products rankers may carry one variant, written SYSTEM+VARIANT (e.g. C_bge+no_category).
+# Similar-products rankers may carry one variant, written SYSTEM+VARIANT (e.g. C_bge+no_category, C_bge+text_0.3).
 VARIANTS = {
     "title_cap": lambda config: replace(config, max_per_title=2),
     "no_category": lambda config: replace(config, attribute_weights={**config.attribute_weights, "category": 0.0}),
+    **{f"text_{w}": lambda config, w=w: config.with_blocks(text=w, attributes=round(1 - w, 2)) for w in (0.3, 0.4, 0.6, 0.7)},
 }
 SEED_OFFSETS = {"similar": 0, "semantic": 1000}
 POOL_DIR = Path("eval/pools")
+SERVED, SERVED_EXACT = "served", "served_exact"
+SERVED_RANKERS = (SERVED, SERVED_EXACT)
+
+
+@functools.cache
+def served_service() -> tuple[SimilarityEngine, SemanticSearcher, dict]:
+    return load_service()
+
+
+def served_base(task: str) -> str:
+    """The ranker that the served configuration of `task` applies its search settings to."""
+    serving = served_service()[2]["serving"]
+    return serving["similar_method"] if task == "similar" else serving["semantic_model"]
 
 
 def ranker_config(spec: str) -> ScoringConfig:
@@ -50,7 +70,15 @@ def ranker_config(spec: str) -> ScoringConfig:
 
 def is_similar_ranker(spec: str) -> bool:
     method, _, variant = spec.partition("+")
-    return method in SIMILAR_SYSTEMS and (not variant or variant in VARIANTS)
+    return spec in SERVED_RANKERS or (method in SIMILAR_SYSTEMS and (not variant or variant in VARIANTS))
+
+
+def is_semantic_ranker(spec: str) -> bool:
+    return spec in SERVED_RANKERS or spec in SEMANTIC_SYSTEMS
+
+
+def _mode(spec: str) -> str | None:
+    return "exact" if spec == SERVED_EXACT else None
 
 
 def store_with_embeddings(keys: tuple[str, ...] = ("minilm", "bge-small")) -> FeatureStore:
@@ -67,8 +95,12 @@ def _write(out: Path, name: str, task: str, split: str, seed: int, queries: list
     out.mkdir(parents=True, exist_ok=True)
     pool = {"task": task, "split": split, "k": K, "seed": seed, "queries": queries}
     (out / f"{name}.json").write_text(json.dumps(pool, indent=1, ensure_ascii=False) + "\n")
+    served = {}
+    if set(SERVED_RANKERS) & set(systems):
+        info = served_service()[2]
+        served = {"served": {"serving": info["serving"], "code_commit": info["code_commit"], "artifacts_created": info["created"]}}
     (out / f"{name}_membership.json").write_text(
-        json.dumps({"systems": list(systems), "queries": membership}, indent=1, ensure_ascii=False) + "\n")
+        json.dumps({"systems": list(systems), **served, "queries": membership}, indent=1, ensure_ascii=False) + "\n")
     return sum(len(q["candidates"]) for q in queries)
 
 
@@ -80,15 +112,16 @@ def _blind(index: int, ids: set[str]) -> list[str]:
 def similar_rankings(store: FeatureStore, split: str, systems: tuple[str, ...]) -> dict[str, dict[str, list[str]]]:
     """Top-k product IDs of each ranker for every query product of the split, in query order."""
     queries = [q["id"] for q in json.loads(Path("eval/queries.json").read_text())["queries"] if q["split"] == split]
-    engines = {spec: SimilarityEngine(store, ranker_config(spec)) for spec in systems}
-    return {q: {name: [store.catalog.ids[r] for r, _ in e.search(e.row_of(q), K).hits] for name, e in engines.items()}
+    engines = {spec: served_service()[0] if spec in SERVED_RANKERS else SimilarityEngine(store, ranker_config(spec)) for spec in systems}
+    return {q: {name: [e.store.catalog.ids[r] for r, _ in e.search(e.row_of(q), K, mode=_mode(name)).hits] for name, e in engines.items()}
             for q in queries}
 
 
 def semantic_rankings(store: FeatureStore, split: str, systems: tuple[str, ...]) -> dict[str, dict[str, list[str]]]:
     texts = json.loads(Path("eval/semantic_queries.json").read_text())[split]
-    searchers = {key: SemanticSearcher(store, key, load_config()) for key in systems}
-    return {text: {key: [store.catalog.ids[r] for r in s.search(text, K).rows] for key, s in searchers.items()} for text in texts}
+    searchers = {key: served_service()[1] if key in SERVED_RANKERS else SemanticSearcher(store, key, load_config()) for key in systems}
+    return {text: {key: [s.store.catalog.ids[r] for r in s.search(text, K, mode=_mode(key)).rows] for key, s in searchers.items()}
+            for text in texts}
 
 
 def pool_queries(rankings: dict[str, dict[str, list[str]]], offset: int) -> list[dict]:
@@ -116,16 +149,21 @@ def main() -> None:
     args = parser.parse_args()
     if args.split == "holdout" and not args.systems:
         parser.error("the holdout is pooled only for explicitly named finalists (--systems ...)")
-    unknown = [s for s in args.systems or () if not is_similar_ranker(s) and s not in SEMANTIC_SYSTEMS]
+    unknown = [s for s in args.systems or () if not is_similar_ranker(s) and not is_semantic_ranker(s)]
     if unknown:
-        parser.error(f"unknown systems {unknown}; variants are written SYSTEM+VARIANT with VARIANT in {sorted(VARIANTS)}")
+        parser.error(f"unknown systems {unknown}; variants are written SYSTEM+VARIANT with VARIANT in {sorted(VARIANTS)}, "
+                     f"and {SERVED!r} and {SERVED_EXACT!r} are the deployed configuration, searched as served or exactly")
     if args.supplement and not re.fullmatch(r"[a-z0-9_]+", args.supplement):
         parser.error("supplement names use lowercase letters, digits and underscores")
+    if args.split == "holdout":
+        from scripts.freeze import check
+
+        check()
 
     out = Path(args.out_dir)
     suffix = "" if args.supplement is None else "_supplement" + (f"_{args.supplement}" if args.supplement else "")
     similar = tuple(s for s in (args.systems or SIMILAR_SYSTEMS) if is_similar_ranker(s))
-    semantic = tuple(s for s in (args.systems or SEMANTIC_SYSTEMS) if s in SEMANTIC_SYSTEMS)
+    semantic = tuple(s for s in (args.systems or SEMANTIC_SYSTEMS) if is_semantic_ranker(s))
     jobs = [(task, systems, rank) for task, systems, rank in (("similar", similar, similar_rankings),
                                                             ("semantic", semantic, semantic_rankings)) if systems]
     for task, _, _ in jobs:
@@ -146,11 +184,9 @@ def main() -> None:
         pooled = {(q["query"], c) for path in pool_files(out, task, args.split)
                   for q in json.loads(path.read_text())["queries"] for c in q["candidates"]}
         queries, membership = supplement_queries(rankings, pooled)
-        if not queries:
-            print(f"{task}: the existing pools already cover every retrieved pair")
-            continue
         count = _write(out, f"{task}_{args.split}{suffix}", task, args.split, SUPPLEMENT_SEED, queries, membership, systems)
-        print(f"{task} supplemental pool ({args.split}{suffix}): {count} judgements over {len(queries)} queries")
+        print(f"{task} supplemental pool ({args.split}{suffix}): {count} judgements over {len(queries)} queries"
+              + ("; the existing pools already cover every retrieved pair (rankers recorded)" if not queries else ""))
 
 
 if __name__ == "__main__":

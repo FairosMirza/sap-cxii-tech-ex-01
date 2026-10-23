@@ -5,7 +5,8 @@ label, a pair pooled twice, conflicting grades for one pair (unless --latest-win
 re-grades, which is the labelling page's rule) and labels on holdout queries. Repeats with the same grade are
 only reported. With --rankings it also recomputes the current top-10 of every ranker that contributed to a pool
 (systems and variants, read from the membership files) and fails if any retrieved pair is unlabelled. The merged
-judgements are written only when every check passes.
+judgements are written only when every check passes. Development labels live in eval/labels.jsonl and holdout labels
+in eval/labels_holdout.jsonl, so the development files never change once the holdout is labelled.
 Run from the repository root:  python -m scripts.check_labels --rankings
 """
 
@@ -23,6 +24,10 @@ from pathlib import Path
 TASKS = ("similar", "semantic")
 FIELDS = {"task", "split", "query", "candidate", "grade", "labelled_at"}
 PRODUCT_ID = re.compile(r"[0-9a-f]{32}")
+
+
+def labels_file(split: str) -> Path:
+    return Path("eval/labels.jsonl" if split == "dev" else f"eval/labels_{split}.jsonl")
 
 
 def pool_files(pools_dir: Path, task: str, split: str) -> list[Path]:
@@ -104,7 +109,7 @@ def check(labels_path: Path, pools_dir: Path, split: str, holdout: dict[str, set
 
     report = {
         "split": split,
-        "pool_files": sorted(set(expected.values())),
+        "pool_files": sorted(path.name for task in TASKS for path in pool_files(pools_dir, task, split)),
         "expected_pairs": len(expected),
         "labelled_pairs": sum(len(products) for queries in merged.values() for products in queries.values()),
         "repeats_with_same_grade": repeats,
@@ -134,14 +139,14 @@ def sha256(path: Path) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--split", choices=["dev", "holdout"], default="dev")
-    parser.add_argument("--labels", default="eval/labels.jsonl")
+    parser.add_argument("--labels", help="default: eval/labels.jsonl (dev) or eval/labels_holdout.jsonl")
     parser.add_argument("--pools", default="eval/pools")
     parser.add_argument("--rankings", action="store_true", help="also confirm every current top-10 pair is labelled")
     parser.add_argument("--latest-wins", action="store_true", help="accept conflicting grades as deliberate re-grades")
     parser.add_argument("--out", help="merged judgements (default: eval/qrels_<split>.json)")
     args = parser.parse_args()
 
-    labels, pools = Path(args.labels), Path(args.pools)
+    labels, pools = Path(args.labels) if args.labels else labels_file(args.split), Path(args.pools)
     report, merged = check(labels, pools, args.split, holdout_queries(), args.latest_wins)
     report["holdout_pool_files"] = sorted(p.name for p in pools.glob("*_holdout*.json"))
     if args.rankings:

@@ -1,0 +1,7 @@
+{
+ "task": "semantic",
+ "split": "dev",
+ "k": 10,
+ "seed": 20261023,
+ "queries": []
+}

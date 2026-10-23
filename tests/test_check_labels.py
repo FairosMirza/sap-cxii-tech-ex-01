@@ -39,6 +39,12 @@ def test_missing_supplemental_label_fails(run):
     assert report["failures"] == {"missing_labels": [["similar", Q, C]]}
 
 
+def test_a_pool_without_pairs_is_still_recorded(run, tmp_path):
+    (tmp_path / "semantic_dev_supplement_x.json").write_text(json.dumps({"queries": []}))
+    report, _ = run(label(A, 3), label(B, 0), label(C, 2))
+    assert report["failures"] == {} and "semantic_dev_supplement_x.json" in report["pool_files"]
+
+
 def test_identical_repeat_is_reported_not_failed(run):
     report, _ = run(label(A), label(A), label(B), label(C))
     assert report["failures"] == {} and report["repeats_with_same_grade"] == 1
@@ -97,3 +103,28 @@ def test_variant_rankers_change_only_their_setting():
     assert capped.text_model == blind.text_model == base.text_model == "bge-small"
     assert is_similar_ranker("A_structured+title_cap") and not is_similar_ranker("C_bge+unknown")
     assert not is_similar_ranker("bge-small")
+    swept = ranker_config("C_bge+text_0.3")
+    assert swept.block_weights == {"text": 0.3, "image": 0.0, "attributes": 0.7} and swept.text_model == "bge-small"
+
+
+def test_served_rankers_belong_to_both_tasks():
+    from scripts.build_label_pools import is_semantic_ranker, is_similar_ranker
+
+    for spec in ("served", "served_exact"):
+        assert is_similar_ranker(spec) and is_semantic_ranker(spec)
+    assert is_semantic_ranker("bge-small") and not is_semantic_ranker("C_bge") and not is_similar_ranker("served+title_cap")
+
+
+def test_holdout_labels_live_apart_from_development_labels():
+    from scripts.check_labels import labels_file
+
+    assert labels_file("dev").name == "labels.jsonl" and labels_file("holdout").name == "labels_holdout.jsonl"
+
+
+def test_freeze_lists_every_changed_entry():
+    from scripts.freeze import differences
+
+    frozen = {"code": {"app": "t1"}, "files": {"configs/default.yaml": "h1", "artifacts/x": "h2"}, "packages": {}, "settings": {}}
+    current = {"code": {"app": "t2"}, "files": {"configs/default.yaml": "h1", "artifacts/y": "h3"}, "packages": {}, "settings": {}}
+    assert differences(frozen, current) == ["code: app", "files: artifacts/x", "files: artifacts/y"]
+    assert differences(frozen, frozen) == []
