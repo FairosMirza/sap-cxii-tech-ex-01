@@ -94,7 +94,8 @@ def similar_set(engine, sid: SemanticIdIndex, rows: list[int]) -> dict:
     index, vectors = store.indexes[config.text_model], store.modalities[config.text_model].vectors
     c = store.catalog
     per_query = {}
-    for repeat, row in enumerate(rows[:WARMUP] + rows):
+    warm = rows[:WARMUP]
+    for repeat, row in enumerate(warm + rows):
         exhaustive = [r for r, _ in engine.search(row, K, mode="exact").hits]
         allowed = eligible_mask(store, row, config)
         text_order = np.argsort(-np.where(allowed, vectors @ vectors[row], -np.inf), kind="stable")[:int(allowed.sum())]
@@ -107,7 +108,7 @@ def similar_set(engine, sid: SemanticIdIndex, rows: list[int]) -> dict:
                 cands, cand_ms = timed(generate)
                 ranked, rank_ms = timed(lambda: rerank_similar(engine, row, cands))
                 result[n].update({name: coverage(ranked, exhaustive), f"{name}_candidates_ms": cand_ms, f"{name}_total_ms": cand_ms + rank_ms})
-        if repeat >= WARMUP:
+        if repeat >= len(warm):
             per_query[row] = result
     return {"queries": len(rows), **summarise(per_query, DEPLOYED["similar_products"], lambda r: {"id": c.ids[r], "name": c.names[r][:70]})}
 
@@ -116,7 +117,8 @@ def search_set(searcher, sid: SemanticIdIndex, queries: list[str]) -> dict:
     index = searcher.store.indexes[searcher.text_key]
     vectors = searcher.store.modalities[searcher.text_key].vectors
     per_query = {}
-    for repeat, query in enumerate(queries[:WARMUP] + queries):
+    warm = queries[:WARMUP]
+    for repeat, query in enumerate(warm + queries):
         exhaustive = list(searcher.search(query, K, mode="exact").rows)
         (parsed, mask, vector), prep_ms = timed(lambda: _prepare(searcher, query))
         text_order = np.argsort(-np.where(mask, vectors @ vector, -np.inf), kind="stable")[:int(mask.sum())]
@@ -130,7 +132,7 @@ def search_set(searcher, sid: SemanticIdIndex, queries: list[str]) -> dict:
                 ranked, rank_ms = timed(lambda: rerank_search(searcher, parsed, vector, cands))
                 result[n].update({name: coverage(ranked, exhaustive), f"{name}_candidates_ms": cand_ms,
                                   f"{name}_total_ms": prep_ms + cand_ms + rank_ms})
-        if repeat >= WARMUP:
+        if repeat >= len(warm):
             per_query[query] = result
     return {"queries": len(queries), **summarise(per_query, DEPLOYED["semantic_search"], lambda q: {"query": q})}
 

@@ -1,0 +1,2271 @@
+{
+ "protocol": "docs/decisions.md D15, pre-registered before any code was trained",
+ "codes": {
+  "levels": 3,
+  "codewords": 64,
+  "niter": 25,
+  "seed": 20261023,
+  "distinct_ids": 7492,
+  "products": 30000,
+  "non_empty_prefixes": 1194,
+  "largest_prefix": 384,
+  "median_non_empty_prefix": 13
+ },
+ "build_seconds_single_thread": {
+  "semantic_ids": 0.18,
+  "hnsw": 6.2
+ },
+ "memory_bytes": {
+  "semantic_ids_structures": 897688,
+  "hnsw_index_with_its_vector_copy": 54244258,
+  "hnsw_graph_without_vectors": 8164258,
+  "product_vectors_both_rerankers_need": 46080000
+ },
+ "method": "in-process, same query sets, scorer and coverage definition as scripts.benchmark_ann; FAISS on 1 thread",
+ "similar_products": {
+  "dev": {
+   "queries": 20,
+   "by_candidates": {
+    "200": {
+     "exact_text": {
+      "mean": 0.89,
+      "min": 0.2,
+      "queries": 20,
+      "full": 13,
+      "0.9_to_1": 2,
+      "0.8_to_0.9": 1,
+      "0.5_to_0.8": 3,
+      "below_0.5": 1
+     },
+     "hnsw": {
+      "mean": 0.89,
+      "min": 0.2,
+      "queries": 20,
+      "full": 13,
+      "0.9_to_1": 2,
+      "0.8_to_0.9": 1,
+      "0.5_to_0.8": 3,
+      "below_0.5": 1
+     },
+     "sid": {
+      "mean": 0.445,
+      "min": 0.0,
+      "queries": 20,
+      "full": 2,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 1,
+      "0.5_to_0.8": 7,
+      "below_0.5": 10
+     },
+     "sid_exact_order": {
+      "mean": 0.465,
+      "min": 0.0,
+      "queries": 20,
+      "full": 2,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 2,
+      "0.5_to_0.8": 6,
+      "below_0.5": 10
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 0.5,
+        "p95_ms": 0.7
+       },
+       "total": {
+        "median_ms": 0.76,
+        "p95_ms": 0.99
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.24,
+        "p95_ms": 0.27
+       },
+       "total": {
+        "median_ms": 0.48,
+        "p95_ms": 0.51
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.2,
+        "p95_ms": 0.23
+       },
+       "total": {
+        "median_ms": 0.39,
+        "p95_ms": 0.44
+       }
+      }
+     }
+    },
+    "400": {
+     "exact_text": {
+      "mean": 0.945,
+      "min": 0.2,
+      "queries": 20,
+      "full": 17,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 1,
+      "0.5_to_0.8": 0,
+      "below_0.5": 1
+     },
+     "hnsw": {
+      "mean": 0.945,
+      "min": 0.2,
+      "queries": 20,
+      "full": 17,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 1,
+      "0.5_to_0.8": 0,
+      "below_0.5": 1
+     },
+     "sid": {
+      "mean": 0.6,
+      "min": 0.0,
+      "queries": 20,
+      "full": 2,
+      "0.9_to_1": 2,
+      "0.8_to_0.9": 3,
+      "0.5_to_0.8": 7,
+      "below_0.5": 6
+     },
+     "sid_exact_order": {
+      "mean": 0.605,
+      "min": 0.0,
+      "queries": 20,
+      "full": 2,
+      "0.9_to_1": 2,
+      "0.8_to_0.9": 4,
+      "0.5_to_0.8": 6,
+      "below_0.5": 6
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 0.6,
+        "p95_ms": 0.85
+       },
+       "total": {
+        "median_ms": 0.93,
+        "p95_ms": 1.25
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.21,
+        "p95_ms": 0.35
+       },
+       "total": {
+        "median_ms": 0.51,
+        "p95_ms": 0.75
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.22,
+        "p95_ms": 0.31
+       },
+       "total": {
+        "median_ms": 0.46,
+        "p95_ms": 0.71
+       }
+      }
+     }
+    },
+    "800": {
+     "exact_text": {
+      "mean": 0.96,
+      "min": 0.3,
+      "queries": 20,
+      "full": 18,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 1
+     },
+     "hnsw": {
+      "mean": 0.96,
+      "min": 0.3,
+      "queries": 20,
+      "full": 18,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 1
+     },
+     "sid": {
+      "mean": 0.72,
+      "min": 0.0,
+      "queries": 20,
+      "full": 4,
+      "0.9_to_1": 7,
+      "0.8_to_0.9": 2,
+      "0.5_to_0.8": 3,
+      "below_0.5": 4
+     },
+     "sid_exact_order": {
+      "mean": 0.72,
+      "min": 0.0,
+      "queries": 20,
+      "full": 4,
+      "0.9_to_1": 7,
+      "0.8_to_0.9": 2,
+      "0.5_to_0.8": 3,
+      "below_0.5": 4
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 1.19,
+        "p95_ms": 1.78
+       },
+       "total": {
+        "median_ms": 1.72,
+        "p95_ms": 2.34
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.26,
+        "p95_ms": 0.33
+       },
+       "total": {
+        "median_ms": 0.69,
+        "p95_ms": 0.81
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.29,
+        "p95_ms": 0.38
+       },
+       "total": {
+        "median_ms": 0.63,
+        "p95_ms": 0.85
+       }
+      }
+     }
+    },
+    "1600": {
+     "exact_text": {
+      "mean": 0.97,
+      "min": 0.5,
+      "queries": 20,
+      "full": 18,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 1,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 0.97,
+      "min": 0.5,
+      "queries": 20,
+      "full": 18,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 1,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.785,
+      "min": 0.0,
+      "queries": 20,
+      "full": 10,
+      "0.9_to_1": 4,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 2,
+      "below_0.5": 4
+     },
+     "sid_exact_order": {
+      "mean": 0.785,
+      "min": 0.0,
+      "queries": 20,
+      "full": 10,
+      "0.9_to_1": 4,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 2,
+      "below_0.5": 4
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 2.93,
+        "p95_ms": 3.59
+       },
+       "total": {
+        "median_ms": 3.97,
+        "p95_ms": 4.66
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.32,
+        "p95_ms": 0.37
+       },
+       "total": {
+        "median_ms": 1.15,
+        "p95_ms": 1.46
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.57,
+        "p95_ms": 0.71
+       },
+       "total": {
+        "median_ms": 1.22,
+        "p95_ms": 1.48
+       }
+      }
+     }
+    },
+    "3200": {
+     "exact_text": {
+      "mean": 0.985,
+      "min": 0.8,
+      "queries": 20,
+      "full": 18,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 1,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 0.985,
+      "min": 0.8,
+      "queries": 20,
+      "full": 18,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 1,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.89,
+      "min": 0.2,
+      "queries": 20,
+      "full": 13,
+      "0.9_to_1": 3,
+      "0.8_to_0.9": 1,
+      "0.5_to_0.8": 2,
+      "below_0.5": 1
+     },
+     "sid_exact_order": {
+      "mean": 0.89,
+      "min": 0.2,
+      "queries": 20,
+      "full": 13,
+      "0.9_to_1": 3,
+      "0.8_to_0.9": 1,
+      "0.5_to_0.8": 2,
+      "below_0.5": 1
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 7.95,
+        "p95_ms": 8.7
+       },
+       "total": {
+        "median_ms": 9.76,
+        "p95_ms": 10.53
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.42,
+        "p95_ms": 0.55
+       },
+       "total": {
+        "median_ms": 1.93,
+        "p95_ms": 2.23
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.93,
+        "p95_ms": 1.13
+       },
+       "total": {
+        "median_ms": 2.16,
+        "p95_ms": 2.76
+       }
+      }
+     }
+    }
+   },
+   "worst_sid_minus_hnsw_at_deployed": [
+    {
+     "id": "b275133a29852973c8d88633e4a29e09",
+     "name": "Speedo Women's Active Skirtini, Black, X-Small",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.1,
+     "sid_exact_order": 0.1
+    },
+    {
+     "id": "6a8674d8512c66cb9f89f1617c4929c9",
+     "name": "Kavish Women's Black Windcheater with Hidden Collar Pocket for Cap",
+     "exact_text": 0.9,
+     "hnsw": 0.9,
+     "sid": 0.3,
+     "sid_exact_order": 0.3
+    },
+    {
+     "id": "12831a10980a52f52e495bffe669a6a7",
+     "name": "Max Boy's Shorts",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.4,
+     "sid_exact_order": 0.4
+    },
+    {
+     "id": "e5f36cab588ff86e649372d530a10007",
+     "name": "Nomad Skull Cap Biker Style Headwraps Doo Rags - Black",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.5,
+     "sid_exact_order": 0.5
+    },
+    {
+     "id": "307bed4226c0f82c3451a86f34d7f285",
+     "name": "Marvel Avengers Girls Cotton Poly Round Neck Cap Sleeves Tops - Black ",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.5,
+     "sid_exact_order": 0.5
+    },
+    {
+     "id": "9a73f1c1ac4911a5daf786581868e019",
+     "name": "DREAMDROP WHITE WINTER SPAKDY FOR WOMEN",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.7,
+     "sid_exact_order": 0.7
+    },
+    {
+     "id": "c3a4df40ae456e1cc76c107d16382c75",
+     "name": "TIRUPUR GUIDEFASHION Mens Cotton Sports Night Capri Black Combo Style ",
+     "exact_text": 0.3,
+     "hnsw": 0.3,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "id": "0ac35cf60852dd2e2c6ec5df9c737b2f",
+     "name": "Amazon Brand - Inkast Denim Co. Men's Solid Slim fit T-Shirt (AZ-TS-10",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.8,
+     "sid_exact_order": 0.8
+    }
+   ]
+  },
+  "sample": {
+   "queries": 1000,
+   "by_candidates": {
+    "200": {
+     "exact_text": {
+      "mean": 0.9601,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 847,
+      "0.9_to_1": 63,
+      "0.8_to_0.9": 36,
+      "0.5_to_0.8": 37,
+      "below_0.5": 17
+     },
+     "hnsw": {
+      "mean": 0.9585,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 840,
+      "0.9_to_1": 68,
+      "0.8_to_0.9": 35,
+      "0.5_to_0.8": 37,
+      "below_0.5": 20
+     },
+     "sid": {
+      "mean": 0.5417,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 213,
+      "0.9_to_1": 71,
+      "0.8_to_0.9": 74,
+      "0.5_to_0.8": 210,
+      "below_0.5": 432
+     },
+     "sid_exact_order": {
+      "mean": 0.5609,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 227,
+      "0.9_to_1": 72,
+      "0.8_to_0.9": 87,
+      "0.5_to_0.8": 202,
+      "below_0.5": 412
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 0.44,
+        "p95_ms": 0.64
+       },
+       "total": {
+        "median_ms": 0.69,
+        "p95_ms": 0.96
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.24,
+        "p95_ms": 0.29
+       },
+       "total": {
+        "median_ms": 0.47,
+        "p95_ms": 0.62
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.2,
+        "p95_ms": 0.3
+       },
+       "total": {
+        "median_ms": 0.39,
+        "p95_ms": 0.59
+       }
+      }
+     }
+    },
+    "400": {
+     "exact_text": {
+      "mean": 0.9829,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 925,
+      "0.9_to_1": 42,
+      "0.8_to_0.9": 13,
+      "0.5_to_0.8": 13,
+      "below_0.5": 7
+     },
+     "hnsw": {
+      "mean": 0.9825,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 923,
+      "0.9_to_1": 43,
+      "0.8_to_0.9": 15,
+      "0.5_to_0.8": 12,
+      "below_0.5": 7
+     },
+     "sid": {
+      "mean": 0.6712,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 328,
+      "0.9_to_1": 118,
+      "0.8_to_0.9": 77,
+      "0.5_to_0.8": 195,
+      "below_0.5": 282
+     },
+     "sid_exact_order": {
+      "mean": 0.6775,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 332,
+      "0.9_to_1": 124,
+      "0.8_to_0.9": 74,
+      "0.5_to_0.8": 195,
+      "below_0.5": 275
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 0.58,
+        "p95_ms": 0.9
+       },
+       "total": {
+        "median_ms": 0.9,
+        "p95_ms": 1.32
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.22,
+        "p95_ms": 0.29
+       },
+       "total": {
+        "median_ms": 0.51,
+        "p95_ms": 0.71
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.21,
+        "p95_ms": 0.34
+       },
+       "total": {
+        "median_ms": 0.45,
+        "p95_ms": 0.69
+       }
+      }
+     }
+    },
+    "800": {
+     "exact_text": {
+      "mean": 0.9914,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 963,
+      "0.9_to_1": 18,
+      "0.8_to_0.9": 9,
+      "0.5_to_0.8": 7,
+      "below_0.5": 3
+     },
+     "hnsw": {
+      "mean": 0.9908,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 960,
+      "0.9_to_1": 21,
+      "0.8_to_0.9": 8,
+      "0.5_to_0.8": 8,
+      "below_0.5": 3
+     },
+     "sid": {
+      "mean": 0.7892,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 463,
+      "0.9_to_1": 133,
+      "0.8_to_0.9": 82,
+      "0.5_to_0.8": 181,
+      "below_0.5": 141
+     },
+     "sid_exact_order": {
+      "mean": 0.7928,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 470,
+      "0.9_to_1": 134,
+      "0.8_to_0.9": 81,
+      "0.5_to_0.8": 177,
+      "below_0.5": 138
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 1.2,
+        "p95_ms": 1.66
+       },
+       "total": {
+        "median_ms": 1.71,
+        "p95_ms": 2.29
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.25,
+        "p95_ms": 0.33
+       },
+       "total": {
+        "median_ms": 0.7,
+        "p95_ms": 0.93
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.29,
+        "p95_ms": 0.45
+       },
+       "total": {
+        "median_ms": 0.63,
+        "p95_ms": 0.96
+       }
+      }
+     }
+    },
+    "1600": {
+     "exact_text": {
+      "mean": 0.9961,
+      "min": 0.1,
+      "queries": 1000,
+      "full": 983,
+      "0.9_to_1": 10,
+      "0.8_to_0.9": 3,
+      "0.5_to_0.8": 2,
+      "below_0.5": 2
+     },
+     "hnsw": {
+      "mean": 0.996,
+      "min": 0.1,
+      "queries": 1000,
+      "full": 982,
+      "0.9_to_1": 11,
+      "0.8_to_0.9": 3,
+      "0.5_to_0.8": 2,
+      "below_0.5": 2
+     },
+     "sid": {
+      "mean": 0.8781,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 611,
+      "0.9_to_1": 142,
+      "0.8_to_0.9": 69,
+      "0.5_to_0.8": 112,
+      "below_0.5": 66
+     },
+     "sid_exact_order": {
+      "mean": 0.879,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 615,
+      "0.9_to_1": 139,
+      "0.8_to_0.9": 69,
+      "0.5_to_0.8": 112,
+      "below_0.5": 65
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 2.92,
+        "p95_ms": 3.52
+       },
+       "total": {
+        "median_ms": 3.93,
+        "p95_ms": 4.59
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.31,
+        "p95_ms": 0.39
+       },
+       "total": {
+        "median_ms": 1.1,
+        "p95_ms": 1.41
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.52,
+        "p95_ms": 0.68
+       },
+       "total": {
+        "median_ms": 1.14,
+        "p95_ms": 1.53
+       }
+      }
+     }
+    },
+    "3200": {
+     "exact_text": {
+      "mean": 0.9977,
+      "min": 0.1,
+      "queries": 1000,
+      "full": 989,
+      "0.9_to_1": 7,
+      "0.8_to_0.9": 2,
+      "0.5_to_0.8": 1,
+      "below_0.5": 1
+     },
+     "hnsw": {
+      "mean": 0.9977,
+      "min": 0.1,
+      "queries": 1000,
+      "full": 989,
+      "0.9_to_1": 7,
+      "0.8_to_0.9": 2,
+      "0.5_to_0.8": 1,
+      "below_0.5": 1
+     },
+     "sid": {
+      "mean": 0.9439,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 771,
+      "0.9_to_1": 110,
+      "0.8_to_0.9": 50,
+      "0.5_to_0.8": 44,
+      "below_0.5": 25
+     },
+     "sid_exact_order": {
+      "mean": 0.944,
+      "min": 0.0,
+      "queries": 1000,
+      "full": 771,
+      "0.9_to_1": 111,
+      "0.8_to_0.9": 49,
+      "0.5_to_0.8": 44,
+      "below_0.5": 25
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 7.93,
+        "p95_ms": 8.78
+       },
+       "total": {
+        "median_ms": 9.7,
+        "p95_ms": 10.63
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.39,
+        "p95_ms": 0.49
+       },
+       "total": {
+        "median_ms": 1.85,
+        "p95_ms": 2.25
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.91,
+        "p95_ms": 1.17
+       },
+       "total": {
+        "median_ms": 2.22,
+        "p95_ms": 2.72
+       }
+      }
+     }
+    }
+   },
+   "worst_sid_minus_hnsw_at_deployed": [
+    {
+     "id": "4d327a38995972693fb16e7419764427",
+     "name": "WEXFORD Men's Round Neck Printed Casual T-Shirt",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "id": "96a5724773e5ddfc0469feb5597a2a91",
+     "name": "Atrangi Store Tee Shirts T Shirt Tshirts for Men’s Fashion T-Shirts Be",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "id": "a62709339f3db5feb3a521bb16b5028b",
+     "name": "INDISSH Men's Jack Daniel's Graphic T-Shirt, Black",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "id": "604ae852c14237d01225157dcc4f8120",
+     "name": "Uniplanet Store Men's Eat Sleep Dota Repeat Black T Shirt",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "id": "cbb2603e524dbea786542dac06030d55",
+     "name": "Proline Classic Blue Crew Neck Short Sleeve Print Detail Cotton T Shir",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "id": "dae4083cb3c8c7630dd26316d2b2de89",
+     "name": "Indi lite Women's Straight Kurti",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "id": "524748f1034d437e58c1300381146d9f",
+     "name": "Dummy Shape Women's Pure Cotton Maternity cum Feeding Red Printed Long",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "id": "5617f7c9a22f687592b7674cbf2bd5d0",
+     "name": "WEXFORD Men's Full Sleeve High Neck Printed Casual T-Shirt - WEX-WFS09",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    }
+   ]
+  }
+ },
+ "semantic_search": {
+  "dev": {
+   "queries": 10,
+   "by_candidates": {
+    "200": {
+     "exact_text": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 10,
+      "full": 10,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 10,
+      "full": 10,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.67,
+      "min": 0.2,
+      "queries": 10,
+      "full": 5,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 2,
+      "below_0.5": 3
+     },
+     "sid_exact_order": {
+      "mean": 0.69,
+      "min": 0.2,
+      "queries": 10,
+      "full": 5,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 3,
+      "below_0.5": 2
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 0.42,
+        "p95_ms": 0.53
+       },
+       "total": {
+        "median_ms": 4.88,
+        "p95_ms": 6.9
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.26,
+        "p95_ms": 0.32
+       },
+       "total": {
+        "median_ms": 4.81,
+        "p95_ms": 6.73
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.22,
+        "p95_ms": 0.29
+       },
+       "total": {
+        "median_ms": 4.74,
+        "p95_ms": 6.67
+       }
+      }
+     }
+    },
+    "400": {
+     "exact_text": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 10,
+      "full": 10,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 10,
+      "full": 10,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.77,
+      "min": 0.2,
+      "queries": 10,
+      "full": 5,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 4,
+      "below_0.5": 1
+     },
+     "sid_exact_order": {
+      "mean": 0.77,
+      "min": 0.2,
+      "queries": 10,
+      "full": 5,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 4,
+      "below_0.5": 1
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 0.51,
+        "p95_ms": 0.63
+       },
+       "total": {
+        "median_ms": 4.98,
+        "p95_ms": 6.99
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.22,
+        "p95_ms": 0.27
+       },
+       "total": {
+        "median_ms": 4.81,
+        "p95_ms": 6.74
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.23,
+        "p95_ms": 0.25
+       },
+       "total": {
+        "median_ms": 4.75,
+        "p95_ms": 6.7
+       }
+      }
+     }
+    },
+    "800": {
+     "exact_text": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 10,
+      "full": 10,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 10,
+      "full": 10,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.88,
+      "min": 0.4,
+      "queries": 10,
+      "full": 6,
+      "0.9_to_1": 2,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 1,
+      "below_0.5": 1
+     },
+     "sid_exact_order": {
+      "mean": 0.88,
+      "min": 0.4,
+      "queries": 10,
+      "full": 6,
+      "0.9_to_1": 2,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 1,
+      "below_0.5": 1
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 1.03,
+        "p95_ms": 1.25
+       },
+       "total": {
+        "median_ms": 5.42,
+        "p95_ms": 7.59
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.27,
+        "p95_ms": 0.33
+       },
+       "total": {
+        "median_ms": 4.95,
+        "p95_ms": 6.97
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.29,
+        "p95_ms": 0.39
+       },
+       "total": {
+        "median_ms": 4.89,
+        "p95_ms": 6.91
+       }
+      }
+     }
+    },
+    "1600": {
+     "exact_text": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 10,
+      "full": 10,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 10,
+      "full": 10,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.93,
+      "min": 0.4,
+      "queries": 10,
+      "full": 8,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 1
+     },
+     "sid_exact_order": {
+      "mean": 0.93,
+      "min": 0.4,
+      "queries": 10,
+      "full": 8,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 1
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 2.65,
+        "p95_ms": 3.1
+       },
+       "total": {
+        "median_ms": 6.73,
+        "p95_ms": 9.47
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.36,
+        "p95_ms": 0.52
+       },
+       "total": {
+        "median_ms": 5.42,
+        "p95_ms": 7.32
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.54,
+        "p95_ms": 0.78
+       },
+       "total": {
+        "median_ms": 5.3,
+        "p95_ms": 7.39
+       }
+      }
+     }
+    },
+    "3200": {
+     "exact_text": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 10,
+      "full": 10,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 10,
+      "full": 10,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.96,
+      "min": 0.7,
+      "queries": 10,
+      "full": 8,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 1,
+      "below_0.5": 0
+     },
+     "sid_exact_order": {
+      "mean": 0.96,
+      "min": 0.7,
+      "queries": 10,
+      "full": 8,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 1,
+      "below_0.5": 0
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 7.28,
+        "p95_ms": 8.13
+       },
+       "total": {
+        "median_ms": 12.15,
+        "p95_ms": 14.41
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.45,
+        "p95_ms": 0.69
+       },
+       "total": {
+        "median_ms": 5.59,
+        "p95_ms": 7.47
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.85,
+        "p95_ms": 1.15
+       },
+       "total": {
+        "median_ms": 5.76,
+        "p95_ms": 7.51
+       }
+      }
+     }
+    }
+   },
+   "worst_sid_minus_hnsw_at_deployed": [
+    {
+     "query": "black leather wallet for men",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.2,
+     "sid_exact_order": 0.2
+    },
+    {
+     "query": "durable workout gear",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.2,
+     "sid_exact_order": 0.2
+    },
+    {
+     "query": "affordable summer dresses for women",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.3,
+     "sid_exact_order": 0.5
+    },
+    {
+     "query": "warm winter jackets size M",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.5,
+     "sid_exact_order": 0.5
+    },
+    {
+     "query": "dress for girls under 10",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.5,
+     "sid_exact_order": 0.5
+    }
+   ]
+  },
+  "title_pseudo_queries": {
+   "queries": 300,
+   "by_candidates": {
+    "200": {
+     "exact_text": {
+      "mean": 0.9993,
+      "min": 0.8,
+      "queries": 300,
+      "full": 299,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 1,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 0.991,
+      "min": 0.7,
+      "queries": 300,
+      "full": 280,
+      "0.9_to_1": 15,
+      "0.8_to_0.9": 3,
+      "0.5_to_0.8": 2,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.4383,
+      "min": 0.0,
+      "queries": 300,
+      "full": 51,
+      "0.9_to_1": 19,
+      "0.8_to_0.9": 17,
+      "0.5_to_0.8": 51,
+      "below_0.5": 162
+     },
+     "sid_exact_order": {
+      "mean": 0.4553,
+      "min": 0.0,
+      "queries": 300,
+      "full": 56,
+      "0.9_to_1": 20,
+      "0.8_to_0.9": 17,
+      "0.5_to_0.8": 50,
+      "below_0.5": 157
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 0.48,
+        "p95_ms": 0.68
+       },
+       "total": {
+        "median_ms": 4.36,
+        "p95_ms": 5.27
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.31,
+        "p95_ms": 0.38
+       },
+       "total": {
+        "median_ms": 4.17,
+        "p95_ms": 5.0
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.26,
+        "p95_ms": 0.35
+       },
+       "total": {
+        "median_ms": 4.1,
+        "p95_ms": 4.9
+       }
+      }
+     }
+    },
+    "400": {
+     "exact_text": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 300,
+      "full": 300,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 0.9957,
+      "min": 0.8,
+      "queries": 300,
+      "full": 289,
+      "0.9_to_1": 9,
+      "0.8_to_0.9": 2,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.555,
+      "min": 0.0,
+      "queries": 300,
+      "full": 77,
+      "0.9_to_1": 28,
+      "0.8_to_0.9": 21,
+      "0.5_to_0.8": 44,
+      "below_0.5": 130
+     },
+     "sid_exact_order": {
+      "mean": 0.559,
+      "min": 0.0,
+      "queries": 300,
+      "full": 79,
+      "0.9_to_1": 27,
+      "0.8_to_0.9": 22,
+      "0.5_to_0.8": 43,
+      "below_0.5": 129
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 0.6,
+        "p95_ms": 0.96
+       },
+       "total": {
+        "median_ms": 4.56,
+        "p95_ms": 5.6
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.26,
+        "p95_ms": 0.41
+       },
+       "total": {
+        "median_ms": 4.18,
+        "p95_ms": 5.05
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.25,
+        "p95_ms": 0.42
+       },
+       "total": {
+        "median_ms": 4.12,
+        "p95_ms": 4.94
+       }
+      }
+     }
+    },
+    "800": {
+     "exact_text": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 300,
+      "full": 300,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 0.998,
+      "min": 0.8,
+      "queries": 300,
+      "full": 295,
+      "0.9_to_1": 4,
+      "0.8_to_0.9": 1,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.665,
+      "min": 0.0,
+      "queries": 300,
+      "full": 108,
+      "0.9_to_1": 32,
+      "0.8_to_0.9": 22,
+      "0.5_to_0.8": 39,
+      "below_0.5": 99
+     },
+     "sid_exact_order": {
+      "mean": 0.666,
+      "min": 0.0,
+      "queries": 300,
+      "full": 108,
+      "0.9_to_1": 32,
+      "0.8_to_0.9": 22,
+      "0.5_to_0.8": 39,
+      "below_0.5": 99
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 1.25,
+        "p95_ms": 1.78
+       },
+       "total": {
+        "median_ms": 5.33,
+        "p95_ms": 6.56
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.3,
+        "p95_ms": 0.42
+       },
+       "total": {
+        "median_ms": 4.35,
+        "p95_ms": 5.35
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.33,
+        "p95_ms": 0.52
+       },
+       "total": {
+        "median_ms": 4.29,
+        "p95_ms": 5.22
+       }
+      }
+     }
+    },
+    "1600": {
+     "exact_text": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 300,
+      "full": 300,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 0.9997,
+      "min": 0.9,
+      "queries": 300,
+      "full": 299,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.7753,
+      "min": 0.0,
+      "queries": 300,
+      "full": 147,
+      "0.9_to_1": 33,
+      "0.8_to_0.9": 23,
+      "0.5_to_0.8": 39,
+      "below_0.5": 58
+     },
+     "sid_exact_order": {
+      "mean": 0.7757,
+      "min": 0.0,
+      "queries": 300,
+      "full": 148,
+      "0.9_to_1": 32,
+      "0.8_to_0.9": 23,
+      "0.5_to_0.8": 39,
+      "below_0.5": 58
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 3.02,
+        "p95_ms": 3.64
+       },
+       "total": {
+        "median_ms": 7.62,
+        "p95_ms": 9.33
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.39,
+        "p95_ms": 0.55
+       },
+       "total": {
+        "median_ms": 4.82,
+        "p95_ms": 5.96
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.6,
+        "p95_ms": 0.81
+       },
+       "total": {
+        "median_ms": 4.82,
+        "p95_ms": 5.88
+       }
+      }
+     }
+    },
+    "3200": {
+     "exact_text": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 300,
+      "full": 300,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 300,
+      "full": 300,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.8777,
+      "min": 0.0,
+      "queries": 300,
+      "full": 194,
+      "0.9_to_1": 29,
+      "0.8_to_0.9": 24,
+      "0.5_to_0.8": 28,
+      "below_0.5": 25
+     },
+     "sid_exact_order": {
+      "mean": 0.878,
+      "min": 0.0,
+      "queries": 300,
+      "full": 194,
+      "0.9_to_1": 29,
+      "0.8_to_0.9": 24,
+      "0.5_to_0.8": 28,
+      "below_0.5": 25
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 8.02,
+        "p95_ms": 9.02
+       },
+       "total": {
+        "median_ms": 13.41,
+        "p95_ms": 15.72
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.48,
+        "p95_ms": 0.86
+       },
+       "total": {
+        "median_ms": 5.57,
+        "p95_ms": 7.22
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 1.03,
+        "p95_ms": 1.52
+       },
+       "total": {
+        "median_ms": 5.89,
+        "p95_ms": 7.61
+       }
+      }
+     }
+    }
+   },
+   "worst_sid_minus_hnsw_at_deployed": [
+    {
+     "query": "Louis Philippe Men's Printed Regular",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "query": "GoSriKi Art Silk with Blouse",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.6
+    },
+    {
+     "query": "KUNDAN SULZ GWALIOR Men's Cotton",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "query": "Divine International Women's Denim A-Line",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "query": "Elk Womens Cotton Printed Long",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "query": "nuzada adjustable snapback flatbrim fashion",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "query": "Tweedle women’s hand embroided chanderi",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.1
+    },
+    {
+     "query": "EASY 2 WEAR Men's Loose",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    }
+   ]
+  },
+  "title_pseudo_queries_with_price_ceiling": {
+   "queries": 280,
+   "by_candidates": {
+    "200": {
+     "exact_text": {
+      "mean": 0.9982,
+      "min": 0.6,
+      "queries": 280,
+      "full": 278,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 1,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 0.9879,
+      "min": 0.5,
+      "queries": 280,
+      "full": 259,
+      "0.9_to_1": 13,
+      "0.8_to_0.9": 6,
+      "0.5_to_0.8": 2,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.6318,
+      "min": 0.0,
+      "queries": 280,
+      "full": 96,
+      "0.9_to_1": 23,
+      "0.8_to_0.9": 22,
+      "0.5_to_0.8": 48,
+      "below_0.5": 91
+     },
+     "sid_exact_order": {
+      "mean": 0.6382,
+      "min": 0.0,
+      "queries": 280,
+      "full": 98,
+      "0.9_to_1": 22,
+      "0.8_to_0.9": 21,
+      "0.5_to_0.8": 49,
+      "below_0.5": 90
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 0.44,
+        "p95_ms": 0.64
+       },
+       "total": {
+        "median_ms": 7.28,
+        "p95_ms": 8.17
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.29,
+        "p95_ms": 0.37
+       },
+       "total": {
+        "median_ms": 7.09,
+        "p95_ms": 7.95
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.24,
+        "p95_ms": 0.33
+       },
+       "total": {
+        "median_ms": 7.02,
+        "p95_ms": 7.85
+       }
+      }
+     }
+    },
+    "400": {
+     "exact_text": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 280,
+      "full": 280,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 0.9975,
+      "min": 0.8,
+      "queries": 280,
+      "full": 274,
+      "0.9_to_1": 5,
+      "0.8_to_0.9": 1,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.7207,
+      "min": 0.0,
+      "queries": 280,
+      "full": 122,
+      "0.9_to_1": 22,
+      "0.8_to_0.9": 20,
+      "0.5_to_0.8": 54,
+      "below_0.5": 62
+     },
+     "sid_exact_order": {
+      "mean": 0.7232,
+      "min": 0.0,
+      "queries": 280,
+      "full": 122,
+      "0.9_to_1": 24,
+      "0.8_to_0.9": 19,
+      "0.5_to_0.8": 54,
+      "below_0.5": 61
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 0.56,
+        "p95_ms": 0.9
+       },
+       "total": {
+        "median_ms": 7.46,
+        "p95_ms": 8.35
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.25,
+        "p95_ms": 0.35
+       },
+       "total": {
+        "median_ms": 7.1,
+        "p95_ms": 7.94
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.24,
+        "p95_ms": 0.36
+       },
+       "total": {
+        "median_ms": 7.03,
+        "p95_ms": 7.82
+       }
+      }
+     }
+    },
+    "800": {
+     "exact_text": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 280,
+      "full": 280,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 0.9996,
+      "min": 0.9,
+      "queries": 280,
+      "full": 279,
+      "0.9_to_1": 1,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.8082,
+      "min": 0.0,
+      "queries": 280,
+      "full": 151,
+      "0.9_to_1": 27,
+      "0.8_to_0.9": 18,
+      "0.5_to_0.8": 48,
+      "below_0.5": 36
+     },
+     "sid_exact_order": {
+      "mean": 0.8093,
+      "min": 0.0,
+      "queries": 280,
+      "full": 151,
+      "0.9_to_1": 27,
+      "0.8_to_0.9": 18,
+      "0.5_to_0.8": 49,
+      "below_0.5": 35
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 1.13,
+        "p95_ms": 1.61
+       },
+       "total": {
+        "median_ms": 8.18,
+        "p95_ms": 9.22
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.3,
+        "p95_ms": 0.43
+       },
+       "total": {
+        "median_ms": 7.27,
+        "p95_ms": 8.12
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.31,
+        "p95_ms": 0.51
+       },
+       "total": {
+        "median_ms": 7.2,
+        "p95_ms": 8.0
+       }
+      }
+     }
+    },
+    "1600": {
+     "exact_text": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 280,
+      "full": 280,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 280,
+      "full": 280,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.8989,
+      "min": 0.0,
+      "queries": 280,
+      "full": 193,
+      "0.9_to_1": 28,
+      "0.8_to_0.9": 18,
+      "0.5_to_0.8": 23,
+      "below_0.5": 18
+     },
+     "sid_exact_order": {
+      "mean": 0.8989,
+      "min": 0.0,
+      "queries": 280,
+      "full": 193,
+      "0.9_to_1": 28,
+      "0.8_to_0.9": 18,
+      "0.5_to_0.8": 23,
+      "below_0.5": 18
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 2.79,
+        "p95_ms": 3.5
+       },
+       "total": {
+        "median_ms": 10.23,
+        "p95_ms": 11.73
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.41,
+        "p95_ms": 0.69
+       },
+       "total": {
+        "median_ms": 7.74,
+        "p95_ms": 8.8
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.61,
+        "p95_ms": 0.94
+       },
+       "total": {
+        "median_ms": 7.84,
+        "p95_ms": 8.72
+       }
+      }
+     }
+    },
+    "3200": {
+     "exact_text": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 280,
+      "full": 280,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "hnsw": {
+      "mean": 1.0,
+      "min": 1.0,
+      "queries": 280,
+      "full": 280,
+      "0.9_to_1": 0,
+      "0.8_to_0.9": 0,
+      "0.5_to_0.8": 0,
+      "below_0.5": 0
+     },
+     "sid": {
+      "mean": 0.9496,
+      "min": 0.1,
+      "queries": 280,
+      "full": 230,
+      "0.9_to_1": 21,
+      "0.8_to_0.9": 7,
+      "0.5_to_0.8": 15,
+      "below_0.5": 7
+     },
+     "sid_exact_order": {
+      "mean": 0.95,
+      "min": 0.1,
+      "queries": 280,
+      "full": 230,
+      "0.9_to_1": 21,
+      "0.8_to_0.9": 7,
+      "0.5_to_0.8": 15,
+      "below_0.5": 7
+     },
+     "latency_ms": {
+      "hnsw": {
+       "candidates": {
+        "median_ms": 7.64,
+        "p95_ms": 8.62
+       },
+       "total": {
+        "median_ms": 15.73,
+        "p95_ms": 17.99
+       }
+      },
+      "sid": {
+       "candidates": {
+        "median_ms": 0.49,
+        "p95_ms": 0.84
+       },
+       "total": {
+        "median_ms": 8.25,
+        "p95_ms": 9.91
+       }
+      },
+      "sid_exact_order": {
+       "candidates": {
+        "median_ms": 0.95,
+        "p95_ms": 1.37
+       },
+       "total": {
+        "median_ms": 8.5,
+        "p95_ms": 10.32
+       }
+      }
+     }
+    }
+   },
+   "worst_sid_minus_hnsw_at_deployed": [
+    {
+     "query": "Louis Philippe Men's Printed Regular under 1439",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "query": "BAWRI Women's Rayon Gold Print under 636",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.1
+    },
+    {
+     "query": "TOMMY HILFIGER Men's Striped Slim under 2529",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "query": "Forever 21 Synthetic Body con under 1107",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "query": "PRASITA FASHION Women Cotton Lycra under 549",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "query": "Black Collection Men's Half-Zip Cotton under 579",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    },
+    {
+     "query": "Red Tape Men's Jacket under 3080",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.2
+    },
+    {
+     "query": "Under Armour Soft Cup Sports under 1446",
+     "exact_text": 1.0,
+     "hnsw": 1.0,
+     "sid": 0.0,
+     "sid_exact_order": 0.0
+    }
+   ]
+  }
+ },
+ "rule_d15": {
+  "sid": {
+   "adopt": false,
+   "checks": [
+    {
+     "task": "similar_products",
+     "set": "dev",
+     "candidates": 800,
+     "coverage_not_lower": false,
+     "median_latency_lower": true
+    },
+    {
+     "task": "similar_products",
+     "set": "sample",
+     "candidates": 800,
+     "coverage_not_lower": false,
+     "median_latency_lower": true
+    },
+    {
+     "task": "semantic_search",
+     "set": "dev",
+     "candidates": 200,
+     "coverage_not_lower": false,
+     "median_latency_lower": true
+    },
+    {
+     "task": "semantic_search",
+     "set": "title_pseudo_queries",
+     "candidates": 200,
+     "coverage_not_lower": false,
+     "median_latency_lower": true
+    },
+    {
+     "task": "semantic_search",
+     "set": "title_pseudo_queries_with_price_ceiling",
+     "candidates": 200,
+     "coverage_not_lower": false,
+     "median_latency_lower": true
+    }
+   ]
+  },
+  "sid_exact_order": {
+   "adopt": false,
+   "checks": [
+    {
+     "task": "similar_products",
+     "set": "dev",
+     "candidates": 800,
+     "coverage_not_lower": false,
+     "median_latency_lower": true
+    },
+    {
+     "task": "similar_products",
+     "set": "sample",
+     "candidates": 800,
+     "coverage_not_lower": false,
+     "median_latency_lower": true
+    },
+    {
+     "task": "semantic_search",
+     "set": "dev",
+     "candidates": 200,
+     "coverage_not_lower": false,
+     "median_latency_lower": true
+    },
+    {
+     "task": "semantic_search",
+     "set": "title_pseudo_queries",
+     "candidates": 200,
+     "coverage_not_lower": false,
+     "median_latency_lower": true
+    },
+    {
+     "task": "semantic_search",
+     "set": "title_pseudo_queries_with_price_ceiling",
+     "candidates": 200,
+     "coverage_not_lower": false,
+     "median_latency_lower": true
+    }
+   ]
+  }
+ }
+}

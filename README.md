@@ -13,7 +13,7 @@ Every decision, with the evidence and the alternatives rejected, is in [docs/dec
 | | Core submission | Experimental submission |
 |---|---|---|
 | What | The service as it runs: hybrid similarity, semantic search, approximate search | Image features (multimodal bonus) and semantic IDs |
-| Status | Frozen at commit `77372d7` ([eval/freeze.json](eval/freeze.json)), selected on development labels, assessed once on an untouched holdout | In progress: pre-registered, evaluated on development data only |
+| Status | Frozen at commit `77372d7` ([eval/freeze.json](eval/freeze.json)), selected on development labels, assessed once on an untouched holdout | Pre-registered before running (D14, D15). Semantic IDs: tested, not adopted. Images: development labels in progress |
 | Served | Yes | No. Adoption would need new held-out queries, because the holdout is spent (D07) |
 
 Everything below describes the core submission unless it says otherwise.
@@ -161,6 +161,21 @@ any relevant product as 0.
 - **kind** (Kubernetes 1.37): both replicas were ready within 6 seconds, with the read-only root filesystem and all
   capabilities dropped. The same 60 lists came back identical, and the Service spread 40 in-cluster requests over
   both pods (16 and 24).
+
+## Experimental submission
+
+Pre-registered in the decision log before anything was computed. The code is in `experiments/`, with results in
+`reports/experiments/`; none of it is served.
+
+- **Semantic IDs** (D15, `python -m experiments.semantic_ids`). Residual k-means codes over the product vectors
+  (3 levels of 64) serve as a candidate index, compared with HNSW under the D08 benchmark's conditions. *Not
+  adopted.* They build in 0.18 s instead of 6.2 s and take 0.9 MB instead of an 8.2 MB graph, but at the deployed
+  candidate counts they cover far less of the exact top-10: 0.789 against 0.991 for similar products, and 0.438
+  against 0.991 for title searches. At equal latency HNSW still wins (0.991 in 1.71 ms against 0.944 in 1.85 ms).
+- **Image features** (D14, `python -m experiments.image_features`, then `experiments.image_experiment`). ResNet-50
+  vectors for all 29,861 usable images (38 minutes on CPU), and C_bge with an image block of weight 0.1, 0.2 or
+  0.3. The 56 new pairs these configurations retrieve for the development products are being judged blind; the
+  pre-registered rule then decides. Development evidence only, because the holdout is spent.
 
 ## Limitations
 
