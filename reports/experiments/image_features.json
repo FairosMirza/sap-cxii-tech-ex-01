@@ -1,0 +1,11 @@
+{
+  "model": "torchvision resnet50",
+  "weights": "IMAGENET1K_V2",
+  "torch": "2.14.1",
+  "products": 30000,
+  "with_vector": 29861,
+  "unreadable": [],
+  "seconds": 2305.9,
+  "threads": 14,
+  "file": ".cache/embeddings/images-resnet50-imagenet1k_v2-2ee3cfdf79f6.npy"
+}
