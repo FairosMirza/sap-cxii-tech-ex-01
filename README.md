@@ -13,8 +13,8 @@ Every decision, with the evidence and the alternatives rejected, is in [docs/dec
 | | Core submission | Experimental submission |
 |---|---|---|
 | What | The service as it runs: hybrid similarity, semantic search, approximate search | Image features (multimodal bonus) and semantic IDs |
-| Status | Frozen at commit `77372d7` ([eval/freeze.json](eval/freeze.json)), selected on development labels, assessed once on an untouched holdout | Pre-registered before running (D14, D15). Semantic IDs: not adopted. Image weight 0.1: qualified on development labels |
-| Served | Yes | No. Adoption would need new held-out queries, because the holdout is spent (D07) |
+| Status | Frozen at commit `77372d7` ([eval/freeze.json](eval/freeze.json)), selected on development labels, assessed once on an untouched holdout | Pre-registered before running (D14, D15). Semantic IDs: not adopted. Image weight 0.1: the smallest tested weight meeting the adoption rule on development labels |
+| Served | Yes | No. Semantic IDs were not adopted and the image block is not promoted (see below); BGE (C_bge) stays in serving |
 
 Everything below describes the core submission unless it says otherwise.
 
@@ -173,7 +173,7 @@ Pre-registered in the decision log before anything was computed. The code is in 
   candidate counts they cover far less of the exact top-10: 0.789 against 0.991 for similar products, and 0.438
   against 0.991 for title searches. At equal latency HNSW still wins (0.991 in 1.71 ms against 0.944 in 1.85 ms).
 - **Combined text and image similarity** (D14; `python -m experiments.image_features`, then
-  `python -m experiments.image_experiment {pool,label,evaluate,coverage}`).
+  `python -m experiments.image_experiment {pool,label,evaluate,coverage,fallback}`).
   - *Method.* ResNet-50 vectors for all 29,861 usable images (38 minutes on CPU) form an image block, combined with
     text and attributes in the same weighted average. The weights are configurable; a pair missing an image drops
     the block and the weights renormalise.
@@ -182,14 +182,25 @@ Pre-registered in the decision log before anything was computed. The code is in 
     | Image weight | nDCG@10 | vs C_bge (95% interval) | P@5 | Irrelevant shown (of 200) |
     |---|---|---|---|---|
     | 0 (C_bge) | 0.740 | | 0.82 | 11 |
-    | **0.1** (chosen by the rule) | 0.788 | +0.048 (0.019 to 0.082) | 0.86 | 4 |
+    | **0.1** (smallest weight meeting the rule) | 0.788 | +0.048 (0.019 to 0.082) | 0.86 | 4 |
     | 0.2 | 0.819 | +0.079 (0.040 to 0.121) | 0.86 | 2 |
     | 0.3 | 0.820 | +0.080 (0.044 to 0.119) | 0.84 | 6 |
 
-  - *Fallback.* The development product without an image gets exactly C_bge's results.
-  - *Not served.* At 800 candidates approximate search covers only 0.930 of the exact top-10 on development (the
-    bar is 0.95), because candidates come from text; 1,600 candidates would meet it. Serving would also need new
-    held-out queries, because the holdout is spent.
+    The rule adopts the smallest weight that beats C_bge by more than one paired standard error, so 0.1 is not the
+    best-performing weight: 0.2 and 0.3 scored higher on nDCG@10.
+  - *Fallback: implemented, but not exact.* With their own image removed, 990, 970 and 842 of 995 sample products
+    get C_bge's top-10 at weights 0.1, 0.2 and 0.3. Recomputing each differing list with one cause removed at a
+    time explains every difference. Most (4, 25 and 152 lists) come from the evidence floor, which still counts the
+    missing image block, so candidates sharing little evidence are scaled down, to as little as (1 − w) of their
+    score. The rest (1, 0 and 1) come from float32 weighting, which breaks one exact tie. With both corrected, all
+    995 match, and none of the 20 development lists changes, so the results above stand. Neither correction is
+    applied: either would be a new, versioned configuration with its development results recomputed.
+  - *Why it is not promoted.* BGE stays in serving: the gain is development evidence (20 queries, one labeller),
+    and the holdout is spent. Promotion would need a deliberate, verified missing-image policy; retrieval that
+    meets the coverage requirement for the multimodal scorer (800 text candidates cover 0.930 of the exact top-10
+    on development, against a 0.95 bar; 1,600 meet it at 4.6–4.8 ms instead of 1.95 ms, a plausible option to
+    investigate, though latency alone does not show that deployment is worthwhile); image vectors built and
+    validated through the artifact pipeline; and a fresh held-out evaluation after the configuration is frozen.
 
 ## Limitations
 
@@ -247,6 +258,6 @@ are the record.
 | Part 4 (bonus): approximate search, filtered search | `app/ann.py` (HNSW reference), `same_brand` / `min_price` / `max_price`; D08 |
 | v2 Part 5: `/semantic_search` with parsed filters | `app/query_parser.py`, `app/semantic.py`; D10–D12 |
 | v2 Part 6: trade-off note | `docs/tradeoff_note.md` |
-| Multimodal similarity (bonus) | Experimental submission: ResNet-50 image block combined with text and attributes, configurable weights, per-pair fallback; weight 0.1 qualified on development labels (D14) |
+| Multimodal similarity (bonus) | Experimental submission: ResNet-50 image block combined with text and attributes, configurable weights, per-pair fallback (not exact; causes in D14); weight 0.1, the smallest meeting the adoption rule on development labels, not served (D14) |
 | Suggested: dimensionality reduction | Not used: the 384-dimension vectors already take only 1.5 ms per approximate query, and reducing them would change the evaluated scorer |
 | Suggested: caching | Offline only (product vectors keyed by model revision and texts). Responses are deterministic, so a response cache would be valid, but at 2–7 ms per request none was needed |

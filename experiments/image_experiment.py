@@ -8,21 +8,26 @@
             D14 rule and the missing-image checks -> reports/experiments/images.json
   coverage  the D08 approximate-search benchmark for the chosen configuration: candidates still come from text, so
             serving image scores needs it -> reports/experiments/images_ann_coverage.json
+  fallback  why some lists change when the query's image is removed: each differing list is recomputed with the
+            evidence floor excluding the image block, then also weighted in float64, and attributed to the evidence
+            floor, float32 weighting or both; plus how many lists float64 weighting changes with images present
+            -> reports/experiments/images_fallback.json
 Needs the image vectors first:  python -m experiments.image_features
-Run from the repository root:  python -m experiments.image_experiment {pool,label,evaluate,coverage}
+Run from the repository root:  python -m experiments.image_experiment {pool,label,evaluate,coverage,fallback}
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+from dataclasses import dataclass, replace
 from pathlib import Path
 
 import numpy as np
 
 from app.pipeline import fit_anchors
 from app.retrieval import SimilarityEngine
-from app.scoring import DenseModality, FeatureStore
+from app.scoring import Anchors, DenseModality, FeatureStore
 from app.settings import ScoringConfig, load_config
 from experiments.image_features import vectors_path
 from scripts.benchmark_ann import query_sets
@@ -43,6 +48,19 @@ def image_store() -> FeatureStore:
     available = np.linalg.norm(vectors, axis=1) > 0
     store.modalities["image"] = DenseModality(vectors, available, fit_anchors(vectors, available, store.catalog.asins))
     return store
+
+
+@dataclass(frozen=True)
+class Float64Anchors(Anchors):
+    """The served calibration, returned in float64 so that weights multiply without float32 rounding."""
+
+    def apply(self, raw: np.ndarray) -> np.ndarray:
+        return super().apply(raw).astype(np.float64)
+
+
+def float64_store(store: FeatureStore) -> FeatureStore:
+    """The same store with dense similarities weighted in float64; availability arrays are shared, not copied."""
+    return replace(store, modalities={key: replace(m, anchors=Float64Anchors(**vars(m.anchors))) for key, m in store.modalities.items()})
 
 
 def configurations() -> dict[str, ScoringConfig]:
@@ -186,11 +204,99 @@ def coverage(out: Path, candidates: int = 800) -> None:
     print(f"written to {out}")
 
 
+CAUSES = ("evidence floor", "float32 weighting", "both", "unexplained")
+
+
+def fallback(out: Path) -> None:
+    from app.scoring import component_scores, score_all
+
+    store = image_store()
+    exact = float64_store(store)
+    configs = configurations()
+    base, image = configs["C_bge"], store.modalities["image"]
+    weights = {name: w for name, w in base.component_weights().items() if w > 0}
+    floor = base.min_evidence * sum(base.component_weights().values())
+    sample = [r for r in query_sets(SimilarityEngine(store, base))["sample_rows"] if image.available[r]]
+    variants = {name: config for name, config in configs.items() if name != "C_bge"}
+    # The same text and attribute weights without the image block, so the evidence floor no longer counts it.
+    without_block = {name: base.with_blocks(text=c.block_weights["text"], image=0.0, attributes=c.block_weights["attributes"])
+                     for name, c in variants.items()}
+    probe = component_scores(store, sample[0], configs["C_bge+image_0.1"], {"text", "image"})
+    report = {"queries": len(sample), "floor": floor, "similarity_dtypes": {k: str(v.dtype) for k, v in probe.sims.items()},
+              "weights": {}}
+    for name in variants:
+        report["weights"][name] = {"identical_to_C_bge": 0, "identical_once_the_floor_excludes_the_image_block": 0,
+                                   "identical_once_also_weighted_in_float64": 0, "causes": dict.fromkeys(CAUSES, 0),
+                                   "evidence_threshold": round(floor / (1 - variants[name].block_weights["image"]), 4), "differing": []}
+    for row in sample:
+        image.available[row] = False
+        try:
+            reference = top10(store, {"C_bge": base}, [row])["C_bge"][row]
+            for name, config in variants.items():
+                entry = report["weights"][name]
+                lists = {k: v[row] for k, v in top10(store, {name: config, "without": without_block[name]}, [row]).items()}
+                corrected = top10(exact, {"without": without_block[name]}, [row])["without"][row] == reference
+                entry["identical_once_the_floor_excludes_the_image_block"] += lists["without"] == reference
+                entry["identical_once_also_weighted_in_float64"] += corrected
+                if lists[name] == reference:
+                    entry["identical_to_C_bge"] += 1
+                    continue
+                if lists["without"] == reference:
+                    cause = "evidence floor"
+                elif top10(exact, {name: config}, [row])[name][row] == reference:
+                    cause = "float32 weighting"
+                else:
+                    cause = "both" if corrected else "unexplained"
+                entry["causes"][cause] += 1
+                moved = [r for r in dict.fromkeys(reference + lists[name])
+                         if (reference.index(r) if r in reference else None) != (lists[name].index(r) if r in lists[name] else None)]
+                rows = np.array(moved)
+                masks = component_scores(store, row, base, set(weights), rows).masks
+                evidence = sum(w * masks[c] for c, w in weights.items())
+                ratio = score_all(store, row, config, rows=rows) / score_all(store, row, base, rows=rows)
+                entry["differing"].append({"query": store.catalog.ids[row], "name": store.catalog.names[row][:60], "cause": cause, "moved": [
+                    {"id": store.catalog.ids[r], "rank_C_bge": reference.index(r) + 1 if r in reference else None,
+                     "rank_with_image_weight": lists[name].index(r) + 1 if r in lists[name] else None,
+                     "evidence": round(float(e), 4), "score_ratio": round(float(q), 4)}
+                    for r, e, q in zip(moved, evidence, ratio)]})
+        finally:
+            image.available[row] = True
+    for entry in report["weights"].values():
+        entry["products_at_full_evidence_keep_their_score"] = all(
+            m["score_ratio"] == 1.0 for d in entry["differing"] for m in d["moved"] if m["evidence"] >= entry["evidence_threshold"])
+    # Would correcting both (float64 weighting; the floor excluding the image block when the query has none) change
+    # the development lists the reported results were computed from?
+    dev = dev_rows(store)
+    served = top10(store, configs, dev)
+    report["development_lists_unchanged_by_both_corrections"] = {"queries": len(dev), **{
+        name: sum(top10(exact, {name: configs[name] if image.available[r] else without_block[name]}, [r])[name][r] == served[name][r]
+                  for r in dev) for name in variants}}
+    served, wide = top10(store, configs, sample), top10(exact, configs, sample)
+    report["sample_lists_unchanged_by_float64_weighting_with_images_present"] = {"queries": len(sample), **{
+        name: sum(served[name][r] == wide[name][r] for r in sample) for name in configs}}
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(report, indent=1, ensure_ascii=False) + "\n")
+    n = report["queries"]
+    for name, entry in report["weights"].items():
+        print(f"{name}: identical {entry['identical_to_C_bge']}/{n}; once the floor excludes the image block "
+              f"{entry['identical_once_the_floor_excludes_the_image_block']}/{n}; once also weighted in float64 "
+              f"{entry['identical_once_also_weighted_in_float64']}/{n}; differing lists by cause {json.dumps(entry['causes'])}; "
+              f"threshold E < {entry['evidence_threshold']}; full-evidence products unchanged: {entry['products_at_full_evidence_keep_their_score']}")
+    for d in report["weights"]["C_bge+image_0.1"]["differing"]:
+        print(f"  [{d['cause']}] {d['name']}: " + "; ".join(
+            f"rank {m['rank_C_bge']}->{m['rank_with_image_weight']} E={m['evidence']} ratio={m['score_ratio']}" for m in d["moved"]))
+    print("similarity dtypes:", json.dumps(report["similarity_dtypes"]))
+    print("development lists unchanged by both corrections:", json.dumps(report["development_lists_unchanged_by_both_corrections"]))
+    print("sample lists unchanged by float64 weighting, images present:",
+          json.dumps(report["sample_lists_unchanged_by_float64_weighting_with_images_present"]))
+    print(f"written to {out}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("command", choices=["pool", "label", "evaluate", "coverage"])
+    parser.add_argument("command", choices=["pool", "label", "evaluate", "coverage", "fallback"])
     parser.add_argument("--port", type=int, default=8769)
-    parser.add_argument("--out", help="default: reports/experiments/images.json (evaluate), images_ann_coverage.json (coverage)")
+    parser.add_argument("--out", help="default: reports/experiments/images.json (evaluate), images_<command>.json otherwise")
     args = parser.parse_args()
     if args.command == "pool":
         pool()
@@ -198,8 +304,10 @@ def main() -> None:
         label(args.port)
     elif args.command == "evaluate":
         evaluate(Path(args.out or "reports/experiments/images.json"))
-    else:
+    elif args.command == "coverage":
         coverage(Path(args.out or "reports/experiments/images_ann_coverage.json"))
+    else:
+        fallback(Path(args.out or "reports/experiments/images_fallback.json"))
 
 
 if __name__ == "__main__":
