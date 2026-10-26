@@ -221,7 +221,7 @@ Pre-registered in the decision log before anything was computed. The code is in 
 
 ```bash
 .venv/bin/pip install -r requirements-dev.txt     # tests and research scripts (adds PyTorch for the parity reference)
-.venv/bin/python -m pytest                        # 262 tests (3 expected failures document D06); real-artifact tests skip until scripts.prepare has run
+.venv/bin/python -m pytest                        # 262 pass, 3 expected failures (D06); real-artifact tests skip until scripts.prepare has run
 .venv/bin/python -m scripts.benchmark_ann         # reports/ann_benchmark.json (D08)
 .venv/bin/python -m scripts.check_labels --rankings   # validates eval/labels.jsonl, writes eval/qrels_dev.json
 .venv/bin/python -m scripts.evaluate              # reports/dev_evaluation.json
