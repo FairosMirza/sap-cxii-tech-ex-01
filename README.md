@@ -1,13 +1,20 @@
-# Product similarity search: SAP CX technical exercise
+# Product similarity search: experimental companion (Submission 2)
+
+**[Submission 1](https://github.com/FairosMirza/sap-cxii-tech-ex-01_base) is the final, primary deliverable for the
+original assignment.** This repository is an optional experimental companion: additional methods, human relevance
+evaluation, alternative design choices and the v2 requirements. Start with
+[docs/relationship_to_primary.md](docs/relationship_to_primary.md) for the reviewed commits, design differences,
+evidence and limits. These experiments do not establish that this repository outperforms the complete primary system.
 
 Given a product's `uniq_id`, the service returns similar products from the Amazon Fashion 2020 catalogue (30,000
 products); given a free-text query such as "red lehenga choli for wedding", it returns matching products and applies
-the filters it reads from the query. One codebase answers the
+the filters it reads from the query. It explores the
 [original exercise](https://github.com/punitmishra/sap-cxii-tech-ex-01) (kept verbatim in
 [docs/assignment.md](docs/assignment.md)) and its
-[v2 specification](https://github.com/andrijaperovic/sap-cxii-tech-ex-01/tree/v2-update).
+[v2 specification](https://github.com/andrijaperovic/sap-cxii-tech-ex-01/tree/v2-update), with the scope differences
+listed under [Requirements coverage](#requirements-coverage).
 
-The served configuration was chosen on blind human relevance judgements, frozen at commit `77372d7`
+The served experimental configuration was chosen on blind human relevance judgements, frozen at commit `77372d7`
 ([eval/freeze.json](eval/freeze.json)) and assessed once on held-out queries.
 
 **Contents:** [At a glance](#at-a-glance) · [Documentation](#documentation) · [Quickstart](#quickstart) ·
@@ -31,6 +38,7 @@ The served configuration was chosen on blind human relevance judgements, frozen 
 
 | Document | What it covers |
 |---|---|
+| [docs/relationship_to_primary.md](docs/relationship_to_primary.md) | How this optional companion relates to the final primary submission; verified differences and comparison limits |
 | [solutions.md](solutions.md) | The approach end to end: workflow diagrams, each finding and the solution built for it, results and experiments |
 | [decision_summary.md](decision_summary.md) | Every decision in one line, and the key trade-offs |
 | [docs/decisions.md](docs/decisions.md) | The full decision log (D01–D17): evidence, alternatives rejected, rules fixed in advance |
@@ -157,6 +165,11 @@ The build, both request paths and the evaluation workflow are drawn step by step
 
 ## Results
 
+All systems below are variants within this companion. **C_minilm is not Submission 1**: it has no images and
+uses this repository's text preparation, attributes, scoring, missing-data and duplicate policies. These tables
+do not compare the two complete submissions. The primary's co-purchase diagnostics, ANN coverage and timings
+also have different meanings or measurement conditions; see the [comparison boundaries](docs/relationship_to_primary.md#evidence-boundaries-and-a-fair-future-comparison).
+
 **Method** (D07). Blind, pooled human judgements, graded 0–3, with nDCG@10 and P@5 as metrics. The selection rule
 was fixed before any metric was computed; 95% intervals are bootstrapped over queries, and comparisons use paired
 differences. Selection used the development queries (20 products, 10 searches). The holdout (10 products, 10
@@ -207,9 +220,11 @@ any relevant product as 0.
 
 ## Experiments (not served)
 
-Two experiments are part of this submission but do not change the served configuration. Each was pre-registered in
+Two experiments are part of this companion but do not change its served configuration. Each was pre-registered in
 the decision log before anything was computed; the code is in `experiments/`, the results in `reports/experiments/`,
 and [solutions.md](solutions.md#10-experiments-not-served) explains both.
+Submission 1 already serves images through a different pipeline; the promotion gates and measurements below
+apply only to this companion's experiments.
 
 - **Semantic IDs** (D15, `python -m experiments.semantic_ids`). Residual k-means codes over the product vectors
   (3 levels of 64) serve as a candidate index, compared with HNSW under the D08 benchmark's conditions. *Not
@@ -242,8 +257,9 @@ and [solutions.md](solutions.md#10-experiments-not-served) explains both.
   - *Why it is not promoted.* BGE stays in serving: the gain is development evidence (20 queries, one labeller),
     and the holdout is spent. Promotion would need a deliberate, verified missing-image policy; retrieval that
     meets the coverage requirement for the multimodal scorer (800 text candidates cover 0.930 of the exact top-10
-    on development, against a 0.95 bar; 1,600 meet it at 4.6–4.8 ms instead of 1.95 ms, a plausible option to
-    investigate, though latency alone does not show that deployment is worthwhile); image vectors built and
+    on development, against a 0.95 bar; 1,600 meet it on development and sample, with median latency rising from
+    2.05 to 4.82 ms on development and 1.95 to 4.60 ms on the sample, a plausible option to investigate, though
+    latency alone does not show that deployment is worthwhile); image vectors built and
     validated through the artifact pipeline; and a fresh held-out evaluation after the configuration is frozen.
 
 ## Limitations
@@ -297,6 +313,10 @@ on a fresh clone; on another platform they can also differ in the last floating-
 | `tests/` | Unit, API and real-artifact integration tests |
 
 ## Requirements coverage
+
+This maps the companion's capabilities, not identical attribute coverage to the primary: derived list price is
+unscored metadata, rating only breaks ties, and image scoring is experimental rather than served. Submission 1
+remains the final deliverable for the original assignment.
 
 | Requirement | Where |
 |---|---|

@@ -1,5 +1,8 @@
 # Trade-off note: ONNX Runtime instead of PyTorch for text encoding
 
+**Scope.** This is Submission 2's runtime decision. The [primary submission](relationship_to_primary.md) already
+uses ONNX offline and serves precomputed vectors; the footprint comparison below is not against that system.
+
 **Decision.** The service encodes search queries, and the build encodes products, with ONNX Runtime running
 each pinned model's own ONNX export, instead of PyTorch through sentence-transformers. The first real search
 request had crashed the service: the FAISS and PyTorch wheels each bundle an OpenMP runtime, both loaded into
@@ -12,7 +15,7 @@ compressed), comparing dependency-only images on the same Linux arm64 base. The 
 810 MB unpacked, also holds data and artifacts that this decision does not change. The switch was acceptable
 only because behaviour stayed equivalent: embeddings of all 30,000 products agree to a cosine of at least
 0.9999997, and 54 of 60 development top-10 lists are identical. Each of the other six swaps two listings with
-identical text, whose scores differ by at most 1.2e-7. Full verification: `docs/decisions.md`, D17.
+identical text, whose scores differ by at most 1.2e-7. Full verification: [D17](decisions.md#d17-inference-runtime-onnx-runtime-instead-of-pytorch).
 
 **What it costs.** Encoding the catalogue offline takes about 20 s longer (36 s to 57 s for bge-small). We also
 now own what sentence-transformers did for us (tokenizer settings, truncation, pooling, normalisation), so a
@@ -20,7 +23,7 @@ model or library upgrade could change vectors silently. Pooling is read from eac
 configurations we do not reproduce are rejected, and a parity script compares every vector and top-10 list
 against the PyTorch reference.
 
-**With two weeks instead of six hours:**
+**Follow-up work:**
 1. Run the parity script in CI on every model, revision or runtime upgrade, failing on a cosine below 0.99999
    or on any top-10 change that is not a near-tie (score gap above 1e-6) on the labelled development queries.
 2. Test INT8 quantisation (MiniLM's repository ships INT8 exports; bge-small would be quantised with ONNX

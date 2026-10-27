@@ -5,6 +5,10 @@ explains how to run it; [decision_summary.md](decision_summary.md) gives every d
 trade-offs; [docs/decisions.md](docs/decisions.md) holds the full evidence and the alternatives rejected. References
 such as (D05) point to entries there, and every number comes from a file in `reports/`.
 
+This describes **Submission 2, the optional experimental companion**. Submission 1 is the final primary solution
+for the original assignment. [docs/relationship_to_primary.md](docs/relationship_to_primary.md) connects the two
+at their reviewed commits; "served" below always means this companion's configuration, not the primary submission.
+
 ## Contents
 
 1. [Problem and framing](#1-problem-and-framing)
@@ -22,15 +26,18 @@ such as (D05) point to entries there, and every number comes from a file in `rep
 ## 1. Problem and framing
 
 - **Task.** Given a product's `uniq_id`, return similar products from the Amazon Fashion 2020 catalogue (30,000
-  products); given a free-text query, return matching products while honouring the filters it expresses. One
-  service answers both the original exercise and its v2 specification (D02).
+  products); given a free-text query, return matching products while honouring the filters it expresses. This
+  companion explores alternative similarity choices and the v2 specification; it does not replace the primary
+  original-assignment deliverable (D02).
 - **What "similar" means (D01).** A plausible substitute: a product a shopper might buy instead. Product type and
   use dominate; style, material, colour, brand and price refine the ranking. Other brands are eligible;
   complements and personalisation are out of scope. A definition a person can judge makes relevance measurable.
-- **How choices were made (D07).** Competing options were compared on blind human relevance judgements, with the
+- **How choices were made (D07).** Model and weight variants were compared on blind human relevance judgements, with the
   selection rule written down before any metric was computed. The chosen configuration was frozen and then
   checked once on held-out queries that no one had looked at. The experiments followed the same discipline:
-  protocol and adoption rule first, results second.
+  protocol and adoption rule first, results second. Parsing and missing-data policies were not individually
+  established as better than the primary's policies. This is a conceptual progression, not a claim about the order
+  in which the two repositories were developed.
 
 ## 2. Workflows
 
@@ -78,7 +85,7 @@ flowchart TD
 ```mermaid
 flowchart TD
     req["GET /semantic_search<br/>query, num_results"] --> parse["Parse with rules: price limits, audience,<br/>colour, material, size"]
-    parse --> filt["Filter first: strict price limits;<br/>exclude only confident audience or colour conflicts"]
+    parse --> filt["Filter first: strict price limits;<br/>audience and colour compatibility, unknowns retained"]
     parse --> text["Text to embed: the query without its<br/>price, price-preference and size phrases"]
     text --> enc["Encode with bge-small<br/>plus its retrieval prefix"]
     filt --> cand["HNSW: 200 nearest within the filter,<br/>or all if at most 2,000"]
@@ -126,9 +133,9 @@ by `python -m scripts.profile_data` (`reports/data_profile.json`).
 |---|---|
 | `weight` is the placeholder `999999999` for 79.15% of products, in mixed g and kg | Placeholder becomes missing; units normalised; 1 g to 20 kg accepted. Weight is usable for 20.8% |
 | Brand missing for 27.1%, plus placeholders such as "Generic" and "Unknown" | Normalised (case, punctuation, Unicode); placeholders become missing |
-| Price missing or invalid for 9.6%; ₹39 to ₹9,988, median ₹590 | Only a positive, finite `sales_price` counts. A regular price derived from the discount is kept as metadata, not scored, which would count price twice |
-| The `colour` field lists the colours a listing is available in, not the item's colour | Item colour is read from the title (keywords as fallback), with conflicts flagged; 57% stay unknown rather than guessed |
-| No category field | Leaf from the sales-rank map, else the browse node when it maps cleanly (at least 5 products, 80% purity); 4.2% unknown |
+| Price missing or invalid for 9.6%; ₹39 to ₹9,988, median ₹590 | Positive, finite `sales_price` is scored. Derived regular price is metadata only, avoiding correlated evidence but losing a separate list-price signal; no isolated relevance gain was measured |
+| The `colour` field lists available variant colours | Title colours win; keywords are a fallback. Disagreements are flagged, not merged or downweighted; 57% stay unknown under this policy. Available colours are separate search evidence, never item-colour similarity |
+| Categories appear in nested maps and can be missing | Child sales-rank categories are retained; otherwise use a browse node with at least 5 observations and 80% purity; 4.2% unknown |
 | Rating agrees with the review summary in only 58.9% of products | Not scored; used only to break ties |
 | 471 duplicate-ASIN rows in 451 groups; size variants listed separately | The query's ASIN and variant family (same brand and normalised title) are excluded; at most one listing per ASIN and per family (D04) |
 | Identical titles without a brand can be different products: five "Juniper Women's Straight Kurta" listings with different ASINs, prices (₹599 to ₹1,036) and images | Not merged: a shared title alone does not prove duplication |
@@ -159,18 +166,22 @@ score(q, x) = Σ w·s over the components both products have
 | Rating | Not scored; breaks ties | 0 |
 
 Why this design:
-- **Late fusion, not one concatenated vector:** every component stays interpretable, and missing data is handled
-  pair by pair instead of being zero-filled.
+- **Per-component scoring with pairwise availability:** components stay interpretable and only shared evidence
+  enters the numerator. The primary also has an interpretable component scorer; its concatenated representation
+  is for ANN candidates, with explicit imputation and query-side renormalisation, not naive zero-filling.
 - **Calibration:** representations have different baselines (random bge-small pairs already score about 0.59
-  cosine). Without it, the modality with the higher baseline dominates and merely having a feature is rewarded.
+  cosine). Calibration aims to reduce baseline-driven imbalance; no isolated comparison establishes it as better
+  than the primary's centred embeddings.
 - **Normalised numbers:** raw prices never meet unit vectors. Price and weight enter only through a bounded,
   scale-free log kernel, where halving or doubling gives 1/e.
-- **Evidence floor:** a candidate matching on one cheap field cannot score as if it matched everything.
+- **Evidence floor:** thin shared evidence is penalised. The floor includes configured components the query lacks,
+  so this is not pure query renormalisation; D14 measures the resulting missing-image fallback differences.
 - **Cosine:** for unit vectors, cosine, dot product and Euclidean distance rank identically
   (‖a − b‖² = 2 − 2·cos a,b); cosine is interpretable and maps directly onto inner-product indexes.
 - **Three tuned weights only** (text, image, attributes): 20 development queries cannot tune eight.
 
-Ties are broken by rating, review count and product ID, so results are deterministic.
+Scores equal after rounding to 9 decimals are tied by rating, review count and product ID. The primary uses
+6 decimals and a lower-price tie-break before ID. Neither policy has a measured relevance advantage.
 
 **Findings on the development labels:**
 - *Text weight* (rule fixed before labelling): 0.5 stays. Only 0.6 scored higher, by 0.0055 nDCG@10, less than
@@ -194,7 +205,8 @@ switch described below):
 | Encode one query, median | – | 4.4 ms | 7.5 ms | 17.2 ms |
 | Top-10 text neighbours sharing a category | 64.7% | 73.4% | 74.7% | 71.7% |
 
-- **mpnet dropped:** four times slower and no better on this catalogue, which answers v2's "why not a larger model".
+- **mpnet dropped:** roughly four times slower than BGE to encode the catalogue, with lower category agreement.
+  This was a diagnostic screening result, not a judged relevance comparison.
 - **bge-small serves both endpoints.** On the development searches it beats MiniLM by 0.183 nDCG@10 (95% interval
   0.065 to 0.328); for similar products the two are indistinguishable (0.760 against 0.749). One model also means
   one vector set and one index. The cost is about 1.9 ms per search and 43 MB.
@@ -203,6 +215,9 @@ switch described below):
   the holdout assesses it without changing it.
 - **Domain:** both models are general-domain English models, not trained on fashion, so Indian garment terms such
   as "kurti" may be weakly represented.
+
+**C_minilm is not Submission 1.** It is the companion's no-image model variant, sharing its preparation, attributes,
+pairwise scoring and family exclusions. The primary's MiniLM-plus-ResNet system was not evaluated in these tables.
 
 **A crash and its fix: ONNX Runtime instead of PyTorch (D17).** The first real search request crashed the service
 with a segmentation fault: the FAISS and PyTorch wheels each bundle an OpenMP runtime, and with both loaded in one
@@ -255,7 +270,8 @@ top-10 (coverage). Measured in process on Apple silicon (`reports/ann_benchmark.
   ("girls under 10"). It is deterministic, free and offline, and 36 unit tests cover it. An LLM parser would add
   per-query cost, latency, non-determinism and an API key for every reviewer.
 - **Filter first, then rank.** A price limit is strict and excludes unpriced products, which cannot be verified.
-  Audience and colour exclude only confident conflicts, because 57% of products have no extracted colour.
+  Audience and colour filters retain unknowns; colour compatibility also includes available variants. The
+  title/keyword colour-conflict flag is diagnostic and does not relax the filter or discount a colour bonus.
 - **Ranking.** Query–product cosine plus small bonuses that reorder close matches but cannot lift unrelated
   products: item colour 0.06 (available colour 0.03), material 0.04, size 0.02, and 0.05 for a cheaper or pricier
   position within the product's category when the query asks for one.
@@ -290,6 +306,10 @@ top-10 (coverage). Measured in process on Apple silicon (`reports/ann_benchmark.
 
 ## 9. Evaluation and results
 
+These are within-companion comparisons, not a head-to-head with Submission 1. The primary's co-purchase hit rate
+is explicitly described as a weak proxy, compatible with rejecting it as relevance ground truth here; it cannot be compared
+numerically with nDCG or precision. ANN fidelity and latency likewise require matched scorers and conditions.
+
 **Protocol (D07):**
 - *Queries.* 30 products chosen by stratum with a fixed seed before any model ran (common and rare categories,
   missing fields, image failures, variant families, ambiguous titles, duplicates), and 20 searches (the v2 samples
@@ -303,7 +323,7 @@ top-10 (coverage). Measured in process on Apple silicon (`reports/ann_benchmark.
   irrelevant.
 - *Selection.* Fixed before any metric: the least complex system within one standard error of the best. One
   documented amendment, made after seeing development results, judged complexity for the whole service: C_bge for
-  similar products, because search needs bge-small anyway. The holdout is the unbiased check of that choice.
+  similar products, because development search favoured bge-small. The holdout assesses that frozen choice.
 - *Freeze and holdout.* `scripts.freeze` fingerprinted the code, configuration, artifacts, encoder files and
   package versions at commit `77372d7` (`eval/freeze.json`). The holdout was then pooled, labelled and evaluated
   once; nothing was tuned on it.
@@ -339,7 +359,9 @@ no pair of models is separated.
 ## 10. Experiments (not served)
 
 Two experiments, each pre-registered in the decision log before anything was computed, are part of this
-submission but do not change the served configuration. Code: `experiments/`; results: `reports/experiments/`.
+companion but do not change its served configuration. Code: `experiments/`; results: `reports/experiments/`.
+Submission 1 serves a different image pipeline and fused ANN representation. The gains, fallback defects,
+coverage measurements and promotion gates here apply only to these experiments, not to that primary system.
 
 ### Image similarity (D14, the multimodal bonus)
 
@@ -366,8 +388,8 @@ submission but do not change the served configuration. Code: `experiments/`; res
   recomputed.
 - **Finding: retrieval coverage.** Candidates still come from text, so at 800 candidates the image configuration
   covers only 0.930 of its exact top-10 on development, below the 0.95 bar. 1,600 candidates meet it at 4.6 to
-  4.8 ms instead of 1.95 ms: a plausible option to investigate, though latency alone does not show that
-  deployment is worthwhile.
+  4.8 ms: development median 2.05 to 4.82 ms, sample median 1.95 to 4.60 ms. This is a plausible option to
+  investigate, though latency alone does not show that deployment is worthwhile.
 - **Why it is not promoted.** BGE (C_bge) stays in serving. The gain is development evidence from 20 queries and
   one labeller, and the holdout is spent. Promotion requires a deliberate, verified missing-image policy; retrieval
   that meets the coverage requirement for the multimodal scorer; image vectors built and validated through the
@@ -399,5 +421,5 @@ submission but do not change the served configuration. Code: `experiments/`; res
 - Give the relevance cutoff a rule for empty answers, with its own development evidence.
 - For images: a versioned missing-image policy, retrieval that meets the coverage bar, vectors built by
   `scripts.prepare` (an ONNX export of ResNet-50 would keep the pipeline free of PyTorch) and a fresh holdout.
-- From the trade-off note's two-week plan: run the encoder parity check in CI, test INT8 quantisation against
+- From the trade-off note: run the encoder parity check in CI, test INT8 quantisation against
   nDCG@10, load-test under the Kubernetes CPU limit, and repeat the platform comparison on amd64.

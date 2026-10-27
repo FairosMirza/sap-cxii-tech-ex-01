@@ -5,13 +5,18 @@ Every decision in one line, then the key trade-offs. Each ID links to the full e
 explains the approach end to end. The single most consequential decision has its own one-page note, as v2 Part 6
 asks: [docs/tradeoff_note.md](docs/tradeoff_note.md).
 
+These are decisions for **Submission 2, the optional experimental companion**, not replacements for the final
+primary Submission 1. [docs/relationship_to_primary.md](docs/relationship_to_primary.md) separates recorded
+rationale, measured findings and retrospective interpretation. All model comparisons here are internal to this
+repository: **C_minilm is not the primary MiniLM-plus-ResNet system**.
+
 ## Decisions
 
 | ID | Area | Decision | Key evidence |
 |---|---|---|---|
 | [D01](docs/decisions.md#d01-what-similar-means) | Definition | "Similar" means a plausible substitute: type and use dominate; style, colour, brand and price refine | Makes relevance judgeable; co-purchase data mixes complements with substitutes |
-| [D02](docs/decisions.md#d02-scope-and-priorities) | Scope | One service for the original and v2 specifications; essentials first, experiments after | v2's 5–7 hour budget rewards depth over breadth |
-| [D03](docs/decisions.md#d03-data-parsing-rules) | Data | An explicit parsing rule per field; placeholders become missing; missing never matches missing | Weight is a placeholder for 79%, brand missing for 27%, item colour unknown for 57% |
+| [D02](docs/decisions.md#d02-scope-and-priorities) | Scope | Experimental companion exploring similarity and v2 capabilities; Submission 1 remains the final primary deliverable | [Reviewed scope and differences](docs/relationship_to_primary.md) |
+| [D03](docs/decisions.md#d03-data-parsing-rules) | Data | Explicit parsing rules; derived list price unscored; unknown brands not inferred; title-first item colour | Weight placeholder 79%; raw brand missing 27%; after processing brand known 71.8%, item colour known 43.0%; no isolated superiority test |
 | [D04](docs/decisions.md#d04-duplicates-and-variants) | Duplicates | Exclude the query's ASIN and variant family; one listing per family; title cap available, off | 471 duplicate-ASIN rows; the cap changed nDCG@10 by −0.001 |
 | [D05](docs/decisions.md#d05-scoring-and-fusion-maths) | Scoring | Evidence-aware weighted average of calibrated components; text 0.5, attributes 0.5 | No text weight beat 0.5 by more than one standard error |
 | [D06](docs/decisions.md#d06-product-type-must-dominate) | Product type | No type penalty | Only 3 of C_bge's 200 development results are irrelevant products of another category |
@@ -34,10 +39,10 @@ asks: [docs/tradeoff_note.md](docs/tradeoff_note.md).
 | Text runtime (D17) | ONNX Runtime over PyTorch | No crash; dependencies 1,436 MB down to 522 MB | Offline encoding about 20 s slower; we own pooling and normalisation, covered by a parity check |
 | Text model (D09) | bge-small over MiniLM | Better development search (+0.183 nDCG@10); one model, vector set and index | About 1.9 ms more per search and 43 MB; the search lead did not replicate on the holdout |
 | Search mode (D08) | Approximate over exhaustive | 1.5 ms instead of 6.3 ms per similar-products query, and room to grow | 0.9% of the exact top-10 lost on 1,000 sampled products |
-| Fusion (D05) | Late fusion with fixed attribute weights, over concatenated vectors or learned weights | Interpretable scores; missing data handled per pair; stable with 20 queries | Weights are not learned; on attributes alone, product type can lose (D06) |
+| Fusion (D05) | Component scores, fixed attribute weights, pairwise availability and an evidence floor | Explicit contributions and missing-evidence policy; few weights to select | The primary is also interpretable; pair-dependent scores complicate fused retrieval, text candidates can miss attribute winners, and sparse evidence is penalised |
 | Query parsing (D10) | Rules over an LLM | Deterministic, free, offline and testable | Phrasings outside the rules are missed; amounts are read as rupees (D11) |
 | Relevance cutoff (D12) | Keep every useful development pair | Clearly irrelevant results removed without losing useful ones | Too low to empty a query that has no suitable product |
 | De-duplication (D04) | One listing per variant family; title cap off | No size-variant repeats | Listings sharing a title still repeat (1.45 per top-10) |
-| Evaluation (D07) | Fixed rules, blind labels, a once-only holdout | An unbiased check of the frozen configuration | Small samples, wide intervals and one person's judgements |
+| Evaluation (D07) | Fixed rules, blind labels, a once-only holdout | Held-out assessment of the frozen configuration | Small samples, wide intervals and one person's judgements; no complete-primary comparison |
 | Images (D14) | Not served | The served path stays verified and simple | The +0.048 nDCG@10 seen on development is not delivered |
 | Candidate index (D15) | HNSW over semantic IDs | 0.991 coverage against 0.789 | A larger index (8.2 MB against 0.9 MB) and a slower build (6.2 s against 0.18 s) |
