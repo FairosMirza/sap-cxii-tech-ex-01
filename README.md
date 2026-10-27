@@ -26,6 +26,7 @@ Everything below describes the core submission unless it says otherwise.
 docker build -t product-similarity .
 docker run --rm -p 8000:8000 product-similarity
 curl -s localhost:8000/ready        # 200 once the artifacts are loaded, a few seconds after start
+# interactive API documentation: http://localhost:8000/docs (the root path / has no page and returns 404)
 ```
 
 The build needs network access and takes about 10 minutes from scratch: it installs the pinned dependencies,
@@ -225,15 +226,17 @@ Pre-registered in the decision log before anything was computed. The code is in 
 .venv/bin/python -m scripts.benchmark_ann         # reports/ann_benchmark.json (D08)
 .venv/bin/python -m scripts.check_labels --rankings   # validates eval/labels.jsonl, writes eval/qrels_dev.json
 .venv/bin/python -m scripts.evaluate              # reports/dev_evaluation.json
-.venv/bin/python -m scripts.evaluation_checks     # reports/evaluation_checks.json (all-query P@5, every pair's interval)
+.venv/bin/python -m scripts.evaluation_checks     # reports/evaluation_checks.json; stops on rebuilt artifacts (see below)
 .venv/bin/python -m scripts.smoke_api --base-url http://127.0.0.1:8000 --out smoke.json   # against a running service
 ```
 
 The holdout was evaluated once (`scripts.evaluate --split holdout`, which refuses to overwrite
 `reports/holdout_evaluation.json`), with the code, configuration, artifacts and packages fingerprinted in
-`eval/freeze.json` by `scripts.freeze`. Anything that re-ranks the holdout first checks those fingerprints; artifacts
-rebuilt on another platform can differ in the last floating-point bits and fail the check. The committed reports
-are the record.
+`eval/freeze.json` by `scripts.freeze`. Anything that re-ranks the holdout first checks those fingerprints, so
+`scripts.evaluation_checks` (all-query P@5, every pair's interval) runs only against the frozen artifacts, which are
+not distributed. Rebuilt artifacts always fail the check, even when their vectors and index are byte-identical (as
+on a fresh clone; on another platform they can also differ in the last floating-point bits), because
+`artifacts/manifest.json` records when and from which commit they were built. The committed reports are the record.
 
 ## Repository
 
