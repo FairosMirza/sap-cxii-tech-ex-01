@@ -1,22 +1,41 @@
 # Product similarity search: SAP CX technical exercise
 
-Given a product's `uniq_id`, return similar products from the Amazon Fashion 2020 catalogue (30,000 products), and
-answer free-text searches such as "red lehenga choli for wedding" with filters read from the query. One codebase
-covers the [original exercise](https://github.com/punitmishra/sap-cxii-tech-ex-01) (kept verbatim in
-[docs/assignment.md](docs/assignment.md)) and its [v2 specification](https://github.com/andrijaperovic/sap-cxii-tech-ex-01/tree/v2-update).
+Given a product's `uniq_id`, the service returns similar products from the Amazon Fashion 2020 catalogue (30,000
+products); given a free-text query such as "red lehenga choli for wedding", it returns matching products and applies
+the filters it reads from the query. One codebase answers the
+[original exercise](https://github.com/punitmishra/sap-cxii-tech-ex-01) (kept verbatim in
+[docs/assignment.md](docs/assignment.md)) and its
+[v2 specification](https://github.com/andrijaperovic/sap-cxii-tech-ex-01/tree/v2-update).
 
-Every decision, with the evidence and the alternatives rejected, is in [docs/decisions.md](docs/decisions.md)
-(D01–D17). The one-page trade-off note (v2 Part 6) is [docs/tradeoff_note.md](docs/tradeoff_note.md).
+The served configuration was chosen on blind human relevance judgements, frozen at commit `77372d7`
+([eval/freeze.json](eval/freeze.json)) and assessed once on held-out queries.
 
-## Two submissions
+**Contents:** [At a glance](#at-a-glance) · [Documentation](#documentation) · [Quickstart](#quickstart) ·
+[API](#api) · [How it works](#how-it-works) · [Results](#results) ·
+[Experiments (not served)](#experiments-not-served) · [Limitations](#limitations) · [Reproduce](#reproduce) ·
+[Repository](#repository) · [Requirements coverage](#requirements-coverage)
 
-| | Core submission | Experimental submission |
-|---|---|---|
-| What | The service as it runs: hybrid similarity, semantic search, approximate search | Image features (multimodal bonus) and semantic IDs |
-| Status | Frozen at commit `77372d7` ([eval/freeze.json](eval/freeze.json)), selected on development labels, assessed once on an untouched holdout | Pre-registered before running (D14, D15). Semantic IDs: not adopted. Image weight 0.1: the smallest tested weight meeting the adoption rule on development labels |
-| Served | Yes | No. Semantic IDs were not adopted and the image block is not promoted (see below); BGE (C_bge) stays in serving |
+## At a glance
 
-Everything below describes the core submission unless it says otherwise.
+| | |
+|---|---|
+| **Similar products** | `GET /find_similar_products`: a hybrid score of text similarity and product attributes (category, price, brand, colour, weight), with one listing per product family |
+| **Semantic search** | `GET /semantic_search`: price, audience, colour, material and size read from the query by rules; filter first, then rank by embedding similarity and drop clearly unrelated results |
+| **Text model** | bge-small-en-v1.5 (384 dimensions), pinned and run with ONNX Runtime: the service contains no PyTorch |
+| **Speed** | FAISS HNSW candidates re-ranked exactly: 1.5 ms per similar-products query against 6.3 ms exhaustive (in process), keeping 99.1% of the exact top-10 |
+| **Quality** | Holdout nDCG@10 of 0.743 for similar products (9 scored queries) and 0.758 for search (10 queries), from blind human judgements |
+| **Deployment** | Two-stage Docker image (non-root, health check); Kubernetes manifest verified on kind |
+| **Experiments** | Image similarity and semantic IDs, pre-registered and evaluated; not served |
+
+## Documentation
+
+| Document | What it covers |
+|---|---|
+| [solutions.md](solutions.md) | The approach end to end: workflow diagrams, each finding and the solution built for it, results and experiments |
+| [decision_summary.md](decision_summary.md) | Every decision in one line, and the key trade-offs |
+| [docs/decisions.md](docs/decisions.md) | The full decision log (D01–D17): evidence, alternatives rejected, rules fixed in advance |
+| [docs/tradeoff_note.md](docs/tradeoff_note.md) | v2 Part 6: the most consequential decision (ONNX Runtime instead of PyTorch), on one page |
+| [docs/assignment.md](docs/assignment.md) | The original exercise, verbatim |
 
 ## Quickstart
 
@@ -96,7 +115,24 @@ from app.retrieval import find_similar_products
 find_similar_products("ab6a6605b0a017c3ca05f793b2ec4cd1", 5)
 ```
 
-## Approach
+## How it works
+
+```mermaid
+flowchart LR
+    subgraph offline["Offline: scripts.prepare, run by the Docker build"]
+        data["Catalogue<br/>30,000 products"] --> parse["Parse and clean fields"]
+        parse --> enc["Encode product text<br/>bge-small, ONNX Runtime"]
+        enc --> idx["Build HNSW index<br/>FAISS"]
+    end
+    enc --> art[("artifacts/<br/>vectors, index,<br/>model, manifest")]
+    idx --> art
+    subgraph online["Online: FastAPI service"]
+        sim["GET /find_similar_products<br/>HNSW text candidates,<br/>exact hybrid re-ranking"]
+        sem["GET /semantic_search<br/>parse filters, filter first,<br/>rank, relevance cutoff"]
+    end
+    art --> sim
+    art --> sem
+```
 
 - **Data** (D03): weight placeholders, normalised brands, valid prices, colours read from titles, categories from
   the sales-rank map or the browse node. Missing values stay missing; missing never matches missing.
@@ -115,6 +151,9 @@ find_similar_products("ab6a6605b0a017c3ca05f793b2ec4cd1", 5)
   clearly unrelated results.
 - **Service** (D16): FastAPI with plain handlers run in the thread pool (the work is CPU-bound), input validation
   and request logging; a two-stage Docker image that runs as a non-root user with a readiness health check.
+
+The build, both request paths and the evaluation workflow are drawn step by step in
+[solutions.md](solutions.md#2-workflows), with the finding behind every choice.
 
 ## Results
 
@@ -153,20 +192,24 @@ any relevant product as 0.
   Apple silicon. Over HTTP on macOS (client side, k = 10), similar products take 3.2 ms against 6.9 ms and search
   6.1 ms against 8.1 ms, median.
 
-**Verified deployments** (23 Oct).
-- **Clean Docker build** of the committed tree, with no build cache: 10.5 minutes. The image is 342 MB compressed
-  (810 MB unpacked, of which data 71 MB and artifacts 227 MB) and runs as a non-root user; it uses 560 MiB after the
-  smoke test, and its serving code is identical to the frozen commit. The
-  container rebuilt its own artifacts and returned the same 60 result lists as the frozen artifacts (both endpoints,
-  both search modes).
-- **kind** (Kubernetes 1.37): both replicas were ready within 6 seconds, with the read-only root filesystem and all
-  capabilities dropped. The same 60 lists came back identical, and the Service spread 40 in-cluster requests over
-  both pods (16 and 24).
+**Verified deployments.**
+- **Clean Docker build** (23 Oct) of the committed tree, with no build cache: 10.5 minutes. The image is 342 MB
+  compressed (810 MB unpacked, of which data 71 MB and artifacts 227 MB) and runs as a non-root user; it uses
+  560 MiB after the smoke test, and its serving code is identical to the frozen commit. The container rebuilt its own
+  artifacts and returned the same 60 result lists as the frozen artifacts (both endpoints, both search modes).
+- **kind** (23 Oct; Kubernetes 1.37): both replicas were ready within 6 seconds, with the read-only root filesystem
+  and all capabilities dropped. The same 60 lists came back identical, and the Service spread 40 in-cluster requests
+  over both pods (16 and 24).
+- **Fresh-clone review** (27 Oct), following this README as a reviewer would: an anonymous clone built with no cache
+  in 9.5 minutes and was ready 4.9 seconds after start. Docker, local Python and kind each passed every API example
+  and error case above and returned the same 60 result lists, and `scripts.check_labels` and `scripts.evaluate`
+  regenerated the committed development judgements and metrics exactly.
 
-## Experimental submission
+## Experiments (not served)
 
-Pre-registered in the decision log before anything was computed. The code is in `experiments/`, with results in
-`reports/experiments/`; none of it is served.
+Two experiments are part of this submission but do not change the served configuration. Each was pre-registered in
+the decision log before anything was computed; the code is in `experiments/`, the results in `reports/experiments/`,
+and [solutions.md](solutions.md#10-experiments-not-served) explains both.
 
 - **Semantic IDs** (D15, `python -m experiments.semantic_ids`). Residual k-means codes over the product vectors
   (3 levels of 64) serve as a candidate index, compared with HNSW under the D08 benchmark's conditions. *Not
@@ -242,25 +285,27 @@ on a fresh clone; on another platform they can also differ in the last floating-
 
 | Path | Contents |
 |---|---|
+| `solutions.md`, `decision_summary.md` | The approach with workflows and findings; every decision in one line, with the key trade-offs |
 | `app/` | Data parsing, features, scoring, approximate search, query parser, semantic search, HTTP service |
 | `scripts/` | Artifact preparation, benchmarks, label pools, labelling page, label checks, evaluation, freeze, smoke test |
+| `experiments/` | The image-similarity and semantic-ID experiments (not served) |
 | `configs/default.yaml` | Scoring weights, eligibility rules, compared methods and the serving configuration |
 | `deploy/kubernetes.yaml` | Namespace, Deployment and Service for kind |
 | `docs/` | Decision log, trade-off note, original assignment |
-| `eval/` | Query sets, blind pools, labels, merged judgements, freeze record |
-| `reports/` | Every number quoted here and in the decision log |
+| `eval/` | Query sets, blind pools, labels, merged judgements, freeze record (`eval/experiments/` for the experiments) |
+| `reports/` | Every number quoted here and in the decision log (`reports/experiments/` for the experiments) |
 | `tests/` | Unit, API and real-artifact integration tests |
 
 ## Requirements coverage
 
 | Requirement | Where |
 |---|---|
-| Part 1: `find_similar_products` | `app/retrieval.py`; D01, D05 |
-| Part 2: FastAPI service, Dockerfile, optional Kubernetes | `app/api.py`, `Dockerfile`, `deploy/kubernetes.yaml`; D16 |
-| v2 Part 3: embeddings fused with normalised numeric features | D05 (fusion maths and normalisation), D09 (model: corpus, dimensions, latency, alternatives) |
-| Part 4 (bonus): approximate search, filtered search | `app/ann.py` (HNSW reference), `same_brand` / `min_price` / `max_price`; D08 |
-| v2 Part 5: `/semantic_search` with parsed filters | `app/query_parser.py`, `app/semantic.py`; D10–D12 |
-| v2 Part 6: trade-off note | `docs/tradeoff_note.md` |
-| Multimodal similarity (bonus) | Experimental submission: ResNet-50 image block combined with text and attributes, configurable weights, per-pair fallback (not exact; causes in D14); weight 0.1, the smallest meeting the adoption rule on development labels, not served (D14) |
+| Part 1: `find_similar_products` | `app/retrieval.py`; D01, D05; [solutions.md §4](solutions.md#4-similar-products) |
+| Part 2: FastAPI service, Dockerfile, optional Kubernetes | `app/api.py`, `Dockerfile`, `deploy/kubernetes.yaml`; D16; [solutions.md §8](solutions.md#8-service-and-deployment) |
+| v2 Part 3: embeddings fused with normalised numeric features | D05 (fusion maths and normalisation), D09 (model: corpus, dimensions, latency, alternatives); [solutions.md §4–5](solutions.md#4-similar-products) |
+| Part 4 (bonus): approximate search, filtered search | `app/ann.py` (HNSW reference), `same_brand` / `min_price` / `max_price`; D08; [solutions.md §6](solutions.md#6-approximate-search) |
+| v2 Part 5: `/semantic_search` with parsed filters | `app/query_parser.py`, `app/semantic.py`; D10–D12; [solutions.md §7](solutions.md#7-semantic-search) |
+| v2 Part 6: trade-off note | `docs/tradeoff_note.md`; the other key trade-offs in `decision_summary.md` |
+| Multimodal similarity (bonus) | Experiment, not served: ResNet-50 image block combined with text and attributes, configurable weights, per-pair fallback (not exact; causes in D14); weight 0.1, the smallest meeting the adoption rule on development labels (D14; [solutions.md §10](solutions.md#10-experiments-not-served)) |
 | Suggested: dimensionality reduction | Not used: the 384-dimension vectors already take only 1.5 ms per approximate query, and reducing them would change the evaluated scorer |
 | Suggested: caching | Offline only (product vectors keyed by model revision and texts). Responses are deterministic, so a response cache would be valid, but at 2–7 ms per request none was needed |

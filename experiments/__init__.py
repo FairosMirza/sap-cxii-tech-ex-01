@@ -1,1 +1,1 @@
-"""Experimental submission: image-based similarity (D14) and semantic IDs (D15). Not used by the served core."""
+"""Experiments: image-based similarity (D14) and semantic IDs (D15). Not used by the service."""
